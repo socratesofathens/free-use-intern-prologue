@@ -34,5 +34,8 @@
 	"staticFiles": {
 		"staticPath": "public",
 		"watcherGlob": "**"
-	}
+	},
+  "standard": {
+    "parser": "babel-eslint"
+  }
 }
