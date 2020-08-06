@@ -1,0 +1,11 @@
+body {
+  background: black;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'futura';
+  src: url('Futura.ttc');
+  font-weight: 600;
+  font-style: normal;
+}
