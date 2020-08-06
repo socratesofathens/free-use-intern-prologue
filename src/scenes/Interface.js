@@ -8,6 +8,15 @@ export default class Interface extends Phaser.Scene {
   preload = () => {}
 
   create = () => {
+    this
+      .add
+      .text(
+        0,
+        0,
+        'I need your semen for a science experiment',
+        { fontFamily: 'futura', fontSize: '50px' }
+      )
+
     const size = {
       width: 1350,
       height: 190

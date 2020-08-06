@@ -20,6 +20,8 @@ export default class Title extends Phaser.Scene {
         this
       )
 
+    this.add.text(0, 0, '', { font: 'futura' })
+
     this.cameras.main.setBackgroundColor('#FFFFFF')
   }
 }
