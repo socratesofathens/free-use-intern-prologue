@@ -1,4 +1,5 @@
 import Phaser from 'phaser'
+import WebFont from 'webfontloader'
 
 export default class Interface extends Phaser.Scene {
   constructor () {
@@ -8,78 +9,67 @@ export default class Interface extends Phaser.Scene {
   preload = () => {}
 
   create = () => {
-    this
+    const paper = this
       .add
-      .text(
-        0,
-        0,
-        'I need your semen for a science experiment',
-        { fontFamily: 'futura', fontSize: '50px' }
-      )
+      .rectangle(0, 900, 1350, 190, 0x2b3043)
+      .setOrigin(0, 1)
+    paper.setInteractive()
+    paper.on(
+      'pointerup',
+      () => console.log('test')
+    )
 
-    const size = {
-      width: 1350,
-      height: 190
-    }
+    const sidebar = this
+      .add
+      .rectangle(1600, 900, 250, 900, 0xFFFFFF)
+    sidebar.setOrigin(1, 1)
 
+    const inventory = this
+      .add
+      .rectangle(1600, 0, 250, 531.595, 0x666666)
+    inventory.setOrigin(1, 0)
+
+    WebFont.load({
+      custom: { families: ['futura'] },
+      active: () => {
+        this.addText(
+          { x: 18, y: 654.84 },
+          'Emma',
+          { fontSize: '35px' }
+        )
+
+        this.addText(
+          { x: 18, y: 728 },
+          "I need your semen for a science experiment. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+          {
+            fontSize: '31px',
+            lineSpacing: 16,
+            wordWrap: { width: 1314 }
+          }
+        )
+      }
+    })
+  }
+
+  addText = (position, content, options) => {
+    const base = { fontFamily: 'futura' }
+    const merged = { ...base, ...options }
+
+    return this.add.text(
+      position.x, position.y, content, merged
+    )
+  }
+
+  half = entity => {
     function halfEntry (entry) {
       const [key, value] = entry
 
       return [key, value / 2]
     }
 
-    function half (entity) {
-      const entries = Object.entries(entity)
-      const halved = entries.map(halfEntry)
+    const entries = Object.entries(entity)
+    const halved = entries.map(halfEntry)
 
-      return Object.fromEntries(halved)
-    }
-
-    const halved = half(size)
-
-    const paper = this
-      .add
-      .rectangle(0, 900, 1350, 190, 0x2b3043)
-      .setOrigin(0, 1)
-
-    const sidebar = this
-      .add
-      .rectangle(1600, 900, 250, 900, 0xFFFFFF)
-      .setOrigin(1, 1)
-
-    const inventory = this
-      .add
-      .rectangle(
-        1600, 0, 250, 531.595, 0x666666
-      )
-      .setOrigin(1, 0)
-
-    paper.setInteractive()
-
-    const clickButton = this
-      .add
-      .text(100, 100, 'Click me!', { fill: '#0f0' })
-      .setInteractive()
-      .on('pointerdown', () => console.log('$'))
-
-    this.add.rectangle(0, 748, 18, 18, 0xFF0000).setOrigin(0, 0)
-
-    this
-      .add
-      .text(
-        18,
-        728,
-        "I need your semen for a science experiment. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        {
-          fontFamily: 'futura',
-          fontSize: '31px',
-          wordWrap: { width: 1314, height: 150 }
-        }
-      )
-
-    paper.on(
-      'pointerup',
-      () => console.log('test')
-    )
+    return Object.fromEntries(halved)
   }
 }

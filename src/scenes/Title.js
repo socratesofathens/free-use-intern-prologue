@@ -12,19 +12,19 @@ export default class Title extends Phaser.Scene {
   create = () => {
     this.physics.add.image(800, 450, 'logo')
 
-    const advance = () => {
-      this.scene.start('interface')
-    }
+    this.input.on('pointerup', this.advance)
 
-    this
+    const space = this
       .input
-      .on('pointerup', advance, this)
+      .keyboard
+      .addKey('SPACE')
+    space.on('down', this.advance)
 
-    const space = this.input.keyboard.addKey('SPACE')
-    space.on('down', advance)
+    const { main } = this.cameras
+    main.setBackgroundColor('#FFFFFF')
+  }
 
-    this.add.text(0, 0, '', { font: 'futura' })
-
-    this.cameras.main.setBackgroundColor('#FFFFFF')
+  advance = () => {
+    this.scene.start('interface')
   }
 }
