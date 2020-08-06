@@ -12,9 +12,13 @@ export default class Title extends Phaser.Scene {
   create = () => {
     this.physics.add.image(800, 450, 'logo')
 
-    this.input.on('pointerup', function (pointer) {
-      this.scene.start('hello-world')
-    }, this)
+    this
+      .input
+      .on(
+        'pointerup',
+        () => this.scene.start('interface'),
+        this
+      )
 
     this.cameras.main.setBackgroundColor('#FFFFFF')
   }
