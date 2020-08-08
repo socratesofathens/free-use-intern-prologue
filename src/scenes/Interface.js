@@ -1,14 +1,26 @@
 import Phaser from 'phaser'
+
 import WebFont from 'webfontloader'
+
+import Inventory from '../ui/Inventory'
 
 export default class Interface extends Phaser.Scene {
   constructor () {
     super('interface')
+
+    this.inventory = null
   }
 
-  preload = () => {}
+  preload = () => {
+    this
+      .load
+      .image('logo', 'assets/free-use-intern.png')
+  }
 
   create = () => {
+    const { main } = this.cameras
+    main.setBackgroundColor('#12ffff')
+
     const paper = this
       .add
       .rectangle(0, 900, 1350, 190, 0x2b3043)
@@ -29,13 +41,21 @@ export default class Interface extends Phaser.Scene {
       .rectangle(1600, 0, 250, 531.595, 0x666666)
     inventory.setOrigin(1, 0)
 
+    const logo = this.physics.add.image(
+      1371.343, 547.264, 'logo'
+    )
+    logo.setOrigin(0, 0)
+    logo.setDisplaySize(178.527, 228.662)
+
     WebFont.load({
       custom: { families: ['futura'] },
       active: () => {
+        this.addMenu()
+
         this.addText(
           { x: 18, y: 654.84 },
           'Emma',
-          { fontSize: '35px' }
+          { fontSize: '35px', color: 'black' }
         )
 
         this.addText(
@@ -47,11 +67,55 @@ export default class Interface extends Phaser.Scene {
             wordWrap: { width: 1314 }
           }
         )
+
+        this.inventory = new Inventory(this)
       }
     })
   }
 
-  addText = (position, content, options) => {
+  addItem = ({
+    text,
+    position = {},
+    options = {}
+  }) => {
+    const positioned = {
+      y: 829.919, ...position
+    }
+
+    const base = {
+      fontSize: '28px', color: 'black'
+    }
+    const merged = { ...base, ...options }
+
+    const item = this.addText(
+      positioned, text, merged
+    )
+    item.setOrigin(0, 1)
+
+    return item
+  }
+
+  addMenu = () => {
+    this.addItem({
+      position: { x: 1371.343 }, text: 'Save'
+    })
+
+    const load = this.addItem({
+      position: { x: 1578.657 }, text: 'Load'
+    })
+    load.setOrigin(1, 1)
+
+    const panther = this.addItem({
+      position: { x: 1475, y: 882 },
+      text: 'Panther VN'
+    })
+
+    panther.setOrigin(0.5, 1)
+  }
+
+  addText = (
+    position, content = '', options = {}
+  ) => {
     const base = { fontFamily: 'futura' }
     const merged = { ...base, ...options }
 
