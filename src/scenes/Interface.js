@@ -18,9 +18,49 @@ export default class Interface extends Phaser.Scene {
   }
 
   create = () => {
-    const { main } = this.cameras
-    main.setBackgroundColor('#12ffff')
+    this.setBackground('#000000')
 
+    WebFont.load({
+      custom: { families: ['futura'] },
+      active: () => {
+        this.setBackground('#12ffff')
+
+        this.addBook()
+
+        this.addSidebar()
+      }
+    })
+  }
+
+  setBackground = color => {
+    const { main } = this.cameras
+
+    main.setBackgroundColor(color)
+  }
+
+  addSidebar = () => {
+    const sidebar = this
+      .add
+      .rectangle(1600, 900, 250, 900, 0xFFFFFF)
+    sidebar.setOrigin(1, 1)
+
+    this.addMenu()
+
+    const logo = this.physics.add.image(
+      1371.343, 547.264, 'logo'
+    )
+    logo.setOrigin(0, 0)
+    logo.setDisplaySize(178.527, 228.662)
+
+    const inventory = this
+      .add
+      .rectangle(1600, 0, 250, 531.595, 0x666666)
+    inventory.setOrigin(1, 0)
+
+    this.inventory = new Inventory(this)
+  }
+
+  addBook = () => {
     const paper = this
       .add
       .rectangle(0, 900, 1350, 190, 0x2b3043)
@@ -31,46 +71,21 @@ export default class Interface extends Phaser.Scene {
       () => console.log('test')
     )
 
-    const sidebar = this
-      .add
-      .rectangle(1600, 900, 250, 900, 0xFFFFFF)
-    sidebar.setOrigin(1, 1)
-
-    const inventory = this
-      .add
-      .rectangle(1600, 0, 250, 531.595, 0x666666)
-    inventory.setOrigin(1, 0)
-
-    const logo = this.physics.add.image(
-      1371.343, 547.264, 'logo'
+    this.addText(
+      { x: 18, y: 654.84 },
+      'Emma',
+      { fontSize: '35px', color: 'black' }
     )
-    logo.setOrigin(0, 0)
-    logo.setDisplaySize(178.527, 228.662)
 
-    WebFont.load({
-      custom: { families: ['futura'] },
-      active: () => {
-        this.addMenu()
-
-        this.addText(
-          { x: 18, y: 654.84 },
-          'Emma',
-          { fontSize: '35px', color: 'black' }
-        )
-
-        this.addText(
-          { x: 18, y: 728 },
-          "I need your semen for a science experiment. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-          {
-            fontSize: '31px',
-            lineSpacing: 16,
-            wordWrap: { width: 1314 }
-          }
-        )
-
-        this.inventory = new Inventory(this)
+    this.addText(
+      { x: 18, y: 728 },
+      "I need your semen for a science experiment. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      {
+        fontSize: '31px',
+        lineSpacing: 16,
+        wordWrap: { width: 1314 }
       }
-    })
+    )
   }
 
   addItem = ({
