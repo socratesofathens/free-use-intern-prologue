@@ -1,41 +1,57 @@
-import Item from './Item'
+import Toolkit from './Toolkit'
 
-export default class Inventory {
+class Inventory extends Toolkit {
   constructor (scene) {
-    this.scene = scene
+    super(scene)
 
-    this.TOP = 161.591
-    this.MIDDLE = 299.591
-    this.BOTTOM = 437.491
+    this.scene.sidebar.inventory = this
 
-    this.LEFT = 1379.344
-    this.RIGHT = 1485.344
+    this.background = this
+      .scene
+      .add
+      .rectangle(
+        1600, 0, 250, 531.595, 0x666666
+      )
+    this.background.setOrigin(1, 0)
+    this.elements.push(this.background)
 
-    const room = this.scene.addText(
+    this.room = this.scene.addText(
       { x: 1475, y: 51.146 },
       'Cyan Room',
-      { fontSize: '30px', fontFamily: 'futura' }
+      {
+        fontSize: '30px',
+        fontFamily: 'futura'
+      }
     )
-    room.setOrigin(0.5, 1)
+    this.room.setOrigin(0.5, 1)
+    this.elements.push(this.room)
 
-    const { left, right } = this.addRow(this.TOP)
+    this.addItems()
+  }
 
-    left.square.setFillStyle(0xFF0000)
-    right.square.setFillStyle(0xFFFF00)
+  addItems = () => {
+    const {
+      left: phone, right
+    } = this.addRow(this.TOP)
 
-    this.addRow(this.MIDDLE)
+    this.phone = phone
+    this.phone.setToggler('P')
+
+    right.setTool(
+      'F',
+      'The letter F.',
+      'Failure!'
+    )
+
+    const { left } = this.addRow(this.MIDDLE)
+    left.setTool(
+      'A',
+      'The letter A.',
+      'Adulterer!'
+    )
+
     this.addRow(this.BOTTOM)
   }
-
-  addRow = y => {
-    const left = new Item(
-      this.scene, { x: this.LEFT, y }
-    )
-
-    const right = new Item(
-      this.scene, { x: this.RIGHT, y }
-    )
-
-    return { left, right }
-  }
 }
+
+export default Inventory
