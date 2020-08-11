@@ -2,24 +2,27 @@ import Phaser from 'phaser'
 
 import WebFont from 'webfontloader'
 
-import Inventory from '../ui/Inventory'
+import Sidebar from '../ui/Sidebar'
 
 export default class Interface extends Phaser.Scene {
   constructor () {
     super('interface')
 
-    this.inventory = null
+    this.blue = null
+    this.characterName = null
+    this.sidebar = null
+    this.tool = null
   }
 
   preload = () => {
-    this
-      .load
-      .image('logo', 'assets/free-use-intern.png')
+    this.loadImage({
+      image: 'logo',
+      name: 'free-use-intern'
+    })
+    this.loadImage({ image: 'phone' })
   }
 
   create = () => {
-    this.setBackground('#000000')
-
     WebFont.load({
       custom: { families: ['futura'] },
       active: () => {
@@ -27,37 +30,50 @@ export default class Interface extends Phaser.Scene {
 
         this.addBook()
 
-        this.addSidebar()
+        this.sidebar = new Sidebar(this)
+
+        this.red = this.add.rectangle(
+          500, 300, 200, 200, 0xFF0000
+        )
+        this.red.setInteractive()
+        this.red.on('pointerdown', this.onRed)
       }
     })
+  }
+
+  loadImage = ({
+    image,
+    name,
+    type = 'png'
+  }) => {
+    name = name || image
+
+    const path = `assets/${name}.${type}`
+
+    return this.load.image(image, path)
+  }
+
+  onRed = () => {
+    this.red.setFillStyle(0xFF0000)
+
+    if (this.tool) {
+      this.tool.use()
+    } else {
+      this
+        .setText('Give me some inspiration.')
+    }
+  }
+
+  setText = (content, name) => {
+    this.dialogue.setText(content)
+
+    this.characterName.setText(name)
   }
 
   setBackground = color => {
     const { main } = this.cameras
 
     main.setBackgroundColor(color)
-  }
-
-  addSidebar = () => {
-    const sidebar = this
-      .add
-      .rectangle(1600, 900, 250, 900, 0xFFFFFF)
-    sidebar.setOrigin(1, 1)
-
-    this.addMenu()
-
-    const logo = this.physics.add.image(
-      1371.343, 547.264, 'logo'
-    )
-    logo.setOrigin(0, 0)
-    logo.setDisplaySize(178.527, 228.662)
-
-    const inventory = this
-      .add
-      .rectangle(1600, 0, 250, 531.595, 0x666666)
-    inventory.setOrigin(1, 0)
-
-    this.inventory = new Inventory(this)
   }
 
   addBook = () => {
@@ -71,13 +87,13 @@ export default class Interface extends Phaser.Scene {
       () => console.log('test')
     )
 
-    this.addText(
+    this.characterName = this.addText(
       { x: 18, y: 654.84 },
       'Emma',
       { fontSize: '35px', color: 'black' }
     )
 
-    this.addText(
+    this.dialogue = this.addText(
       { x: 18, y: 728 },
       "I need your semen for a science experiment. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       {
@@ -86,6 +102,12 @@ export default class Interface extends Phaser.Scene {
         wordWrap: { width: 1314 }
       }
     )
+  }
+
+  addGroup = () => {
+    return this.add.group({
+      classType: Phaser.GameObjects.Image
+    })
   }
 
   addItem = ({
