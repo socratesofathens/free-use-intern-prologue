@@ -23,10 +23,6 @@ export default class Figure {
   onClick = () => {
     this.reset()
 
-    this.scene.setText(
-      'Give me some inspiration.'
-    )
-
     this.uses.forEach(this.use, this)
   }
 
@@ -35,7 +31,9 @@ export default class Figure {
   use ({ key, text, color, callback }) {
     const { tool } = this.scene
     const match = key
-      ? tool && tool.key === key
+      ? key === ' '
+        ? !tool
+        : tool && tool.key === key
       : true
 
     if (match) {

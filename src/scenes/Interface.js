@@ -42,6 +42,10 @@ class Interface extends Phaser.Scene {
           color: 0xFF0000,
           uses: [
             {
+              key: ' ',
+              text: 'Give me some inspiration'
+            },
+            {
               key: 'A', text: 'Adulterer!'
             },
             {
@@ -51,6 +55,14 @@ class Interface extends Phaser.Scene {
               key: 'E',
               text: "I'm so jealous of your email!",
               color: 0x00FF00
+            },
+            {
+              key: 'W',
+              text: "You probably don't even know what type of wrench that is!"
+            },
+            {
+              key: 'B',
+              color: 0x0000FF
             }
           ]
         })
@@ -63,7 +75,40 @@ class Interface extends Phaser.Scene {
           uses: [{
             text: 'You picked up some type of wrench.',
             callback: () => {
-              console.log('wrench')
+              const slot = this
+                .sidebar
+                .inventory
+                .next()
+
+              slot.setTool({
+                key: 'W',
+                label: 'Some type of wrench.'
+              })
+
+              this.wrench.element.destroy()
+            }
+          }]
+        })
+
+        this.blue = new Phrase({
+          scene: this,
+          position: { x: 700, y: 200 },
+          text: 'Bucket of blue paint',
+          options: { fontSize: '40px' },
+          uses: [{
+            text: 'You picked up a bucket of blue paint.',
+            callback: () => {
+              const slot = this
+                .sidebar
+                .inventory
+                .next()
+
+              slot.setTool({
+                key: 'B',
+                label: 'A bucket of of blue paint.'
+              })
+
+              this.blue.element.destroy()
             }
           }]
         })

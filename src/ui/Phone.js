@@ -41,7 +41,10 @@ export default class Phone extends Toolkit {
       left: email
     } = this.addRow(this.MIDDLE)
 
-    email.setTool('E', 'Your email app.')
+    email.setTool({
+      key: 'E',
+      label: 'Your email app.'
+    })
 
     this.addRow(this.BOTTOM)
   }
