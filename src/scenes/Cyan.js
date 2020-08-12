@@ -3,9 +3,9 @@ import Phrase from '../Figure/Phrase'
 
 import Room from './Room'
 
-class Interface extends Room {
+class Cyan extends Room {
   constructor () {
-    super('interface', 0x12ffff)
+    super('cyan', 0x12ffff)
   }
 
   setup = () => {
@@ -100,11 +100,11 @@ class Interface extends Room {
       options: { fontSize: '40px' },
       uses: [{
         callback: () => {
-          console.log('door')
+          this.scene.start('pink')
         }
       }]
     })
   }
 }
 
-export default Interface
+export default Cyan

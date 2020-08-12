@@ -31,7 +31,7 @@ class Title extends Phaser.Scene {
   }
 
   advance = () => {
-    this.scene.start('interface')
+    this.scene.start('cyan')
   }
 }
 
