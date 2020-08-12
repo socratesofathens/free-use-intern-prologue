@@ -17,7 +17,7 @@ class Inventory extends Toolkit {
 
     this.room = this.scene.addText({
       position: { x: 1475, y: 51.146 },
-      content: 'Cyan Room',
+      content: this.scene.name,
       options: {
         fontSize: '30px',
         fontFamily: 'futura',
