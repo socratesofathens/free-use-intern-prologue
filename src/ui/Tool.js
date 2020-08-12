@@ -71,7 +71,6 @@ export default class Tool {
   }
 
   setItem = (item) => {
-    console.log('set item item test:', item)
     const items = this
       .scene
       .registry
@@ -100,8 +99,6 @@ export default class Tool {
   }) => {
     letter = letter || key
     label = label || `The letter ${letter}.`
-
-    console.log('setTool letter test:', letter)
 
     this.label = label
     this.key = key
