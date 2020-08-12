@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
 
 import HelloWorldScene from './scenes/HelloWorldScene'
-import Interface from './scenes/Interface'
+import Cyan from './scenes/Cyan'
 import Title from './scenes/Title'
 
 const config = {
@@ -13,7 +13,7 @@ const config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH
   },
-  scene: [Title, Interface, HelloWorldScene]
+  scene: [Title, Cyan, HelloWorldScene]
 }
 
 export default new Phaser.Game(config)

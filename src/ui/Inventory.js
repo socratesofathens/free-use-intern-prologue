@@ -31,25 +31,32 @@ class Inventory extends Toolkit {
   }
 
   addItems = () => {
-    const {
-      left: phone, right
-    } = this.addRow(this.TOP)
+    const { left } = this.addRow(this.TOP)
 
-    this.phone = phone
+    this.phone = left
     this.phone.setToggler('P')
 
-    right.setTool({ key: 'F' })
-
-    const { left } = this.addRow(this.MIDDLE)
-    left.setTool({ key: 'A' })
+    this.addRow(this.MIDDLE)
 
     this.addRow(this.BOTTOM)
+
+    const items = this
+      .scene
+      .registry
+      .get('items')
+    items.forEach(this.setItem)
   }
 
   next = () => {
     return this
       .tools
       .find(tool => !tool.letter)
+  }
+
+  setItem = (item) => {
+    const slot = this.next()
+
+    slot.setItem(item)
   }
 }
 

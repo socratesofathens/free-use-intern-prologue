@@ -70,6 +70,25 @@ export default class Tool {
     }
   }
 
+  setItem = (item) => {
+    console.log('set item item test:', item)
+    const items = this
+      .scene
+      .registry
+      .get('items')
+
+    const has = items
+      .find(has => has.key === item.key)
+
+    if (!has) {
+      items.push(item)
+
+      this.scene.registry.set('items', items)
+    }
+
+    this.setTool(item)
+  }
+
   setToggler = (letter) => {
     this.setup(
       letter, this.scene.sidebar.toggle
@@ -81,6 +100,8 @@ export default class Tool {
   }) => {
     letter = letter || key
     label = label || `The letter ${letter}.`
+
+    console.log('setTool letter test:', letter)
 
     this.label = label
     this.key = key
