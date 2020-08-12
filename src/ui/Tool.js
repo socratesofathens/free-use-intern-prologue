@@ -13,8 +13,7 @@ export default class Tool {
     this.toolkit = toolkit
 
     this.active = false
-    this.dialogue = null
-    this.fill = null
+    this.key = null
     this.label = null
     this.letter = null
 
@@ -77,9 +76,9 @@ export default class Tool {
     )
   }
 
-  setTool = (
+  setTool = ({
     key, label, letter
-  ) => {
+  }) => {
     letter = letter || key
     label = label || `The letter ${letter}.`
 
