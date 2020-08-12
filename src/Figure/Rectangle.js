@@ -5,7 +5,8 @@ class Rectangle extends Figure {
     scene,
     position,
     size,
-    color = 0xFF0000
+    color = 0xFF0000,
+    uses
   }) {
     const { x, y } = position
     const { width, height } = size
@@ -14,13 +15,13 @@ class Rectangle extends Figure {
     )
 
     super({
-      scene, position, element
+      scene, position, element, uses
     })
 
     this.color = color
   }
 
-  do ({ text, color }) {
+  do ({ text, color, callback }) {
     console.log('color 1 test:', color)
     if (color) {
       console.log('color test:', color)
@@ -29,7 +30,7 @@ class Rectangle extends Figure {
       this.colorful = true
     }
 
-    super.do({ text, color })
+    super.do({ text, color, callback })
   }
 
   reset () {

@@ -1,6 +1,6 @@
 export default class Figure {
   constructor ({
-    scene, position, element
+    scene, position, element, uses = []
   }) {
     this.scene = scene
     this.position = position
@@ -10,40 +10,36 @@ export default class Figure {
     this.element.on(
       'pointerdown', this.onClick
     )
+
+    this.uses = uses
   }
 
-  do ({ text }) {
+  do ({ text, callback }) {
     if (text) this.scene.setText(text)
+
+    if (callback) callback()
   }
 
   onClick = () => {
-    if (this.scene.tool) {
-      this.reset()
+    this.reset()
 
-      this.use({
-        key: 'A', text: 'Adulterer!'
-      })
-      this.use({
-        key: 'F', text: 'Failure!'
-      })
-      this.use({
-        key: 'E',
-        text: "I'm so jealous of your email!",
-        color: 0x00FF00
-      })
-    } else {
-      this.scene.setText(
-        'Give me some inspiration.'
-      )
-    }
+    this.scene.setText(
+      'Give me some inspiration.'
+    )
+
+    this.uses.forEach(this.use, this)
   }
 
   reset () {}
 
-  use ({ key, text, color }) {
+  use ({ key, text, color, callback }) {
     const { tool } = this.scene
-    const match = tool.key === key
+    const match = key
+      ? tool && tool.key === key
+      : true
 
-    if (match) this.do({ text, color })
+    if (match) {
+      this.do({ text, color, callback })
+    }
   }
 }

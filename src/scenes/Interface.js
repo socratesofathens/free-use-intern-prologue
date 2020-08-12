@@ -39,14 +39,33 @@ class Interface extends Phaser.Scene {
           scene: this,
           position: { x: 500, y: 400 },
           size: { width: 200, height: 200 },
-          color: 0xFF0000
+          color: 0xFF0000,
+          uses: [
+            {
+              key: 'A', text: 'Adulterer!'
+            },
+            {
+              key: 'F', text: 'Failure!'
+            },
+            {
+              key: 'E',
+              text: "I'm so jealous of your email!",
+              color: 0x00FF00
+            }
+          ]
         })
 
         this.wrench = new Phrase({
           scene: this,
           position: { x: 1000, y: 500 },
           text: 'Wrench',
-          options: { fontSize: '40px' }
+          options: { fontSize: '40px' },
+          uses: [{
+            text: 'You picked up some type of wrench.',
+            callback: () => {
+              console.log('wrench')
+            }
+          }]
         })
       }
     })
