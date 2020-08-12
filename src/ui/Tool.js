@@ -37,9 +37,9 @@ export default class Tool {
     this.letter = this.scene.addText({
       position: { x: midX, y: midY },
       content: letter,
-      options: { fontSize: '50px' }
+      options: { fontSize: '50px' },
+      origin: { x: 0.5, y: 0.5 }
     })
-    this.letter.setOrigin(0.5, 0.5)
     this.letter.setColor('black')
 
     return this.letter

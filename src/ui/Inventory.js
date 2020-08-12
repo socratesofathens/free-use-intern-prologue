@@ -20,10 +20,11 @@ class Inventory extends Toolkit {
       content: 'Cyan Room',
       options: {
         fontSize: '30px',
-        fontFamily: 'futura'
-      }
+        fontFamily: 'futura',
+        color: 'white'
+      },
+      origin: { x: 0.5, y: 1 }
     })
-    this.room.setOrigin(0.5, 1)
     this.elements.push(this.room)
 
     this.addItems()
