@@ -1,27 +1,24 @@
 export default class Figure {
   constructor ({
-    scene, position, size, color, element
+    scene, position, element
   }) {
+    this.scene = scene
+    this.position = position
+
     this.element = element
     this.element.setInteractive()
     this.element.on(
       'pointerdown', this.onClick
     )
+  }
 
-    this.scene = scene
-    this.positoin = position
-    this.size = size
-    this.color = color
-    this.colorful = false
+  do ({ text }) {
+    if (text) this.scene.setText(text)
   }
 
   onClick = () => {
     if (this.scene.tool) {
-      if (this.colorful) {
-        this.element.setFillStyle(this.color)
-
-        this.colorful = false
-      }
+      this.reset()
 
       this.use({
         key: 'A', text: 'Adulterer!'
@@ -41,15 +38,12 @@ export default class Figure {
     }
   }
 
+  reset () {}
+
   use ({ key, text, color }) {
-    if (this.scene.tool.key === key) {
-      if (text) this.scene.setText(text)
+    const { tool } = this.scene
+    const match = tool.key === key
 
-      if (color) {
-        this.element.setFillStyle(color)
-
-        this.colorful = true
-      }
-    }
+    if (match) this.do({ text, color })
   }
 }

@@ -5,6 +5,7 @@ import WebFont from 'webfontloader'
 import Sidebar from '../ui/Sidebar'
 
 import Rectangle from '../Figure/Rectangle'
+import Phrase from '../Figure/Phrase'
 
 class Interface extends Phaser.Scene {
   constructor () {
@@ -39,6 +40,13 @@ class Interface extends Phaser.Scene {
           position: { x: 500, y: 400 },
           size: { width: 200, height: 200 },
           color: 0xFF0000
+        })
+
+        this.wrench = new Phrase({
+          scene: this,
+          position: { x: 1000, y: 500 },
+          text: 'Wrench',
+          options: { fontSize: '40px' }
         })
       }
     })
