@@ -14,8 +14,28 @@ class Rectangle extends Figure {
     )
 
     super({
-      scene, position, size, color, element
+      scene, position, element
     })
+
+    this.color = color
+  }
+
+  do ({ text, color }) {
+    console.log('color 1 test:', color)
+    if (color) {
+      console.log('color test:', color)
+      this.element.setFillStyle(color)
+
+      this.colorful = true
+    }
+
+    super.do({ text, color })
+  }
+
+  reset () {
+    this.element.setFillStyle(this.color)
+
+    super.reset()
   }
 }
 
