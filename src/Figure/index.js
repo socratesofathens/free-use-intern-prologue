@@ -23,13 +23,17 @@ export default class Figure {
         this.colorful = false
       }
 
-      this.use('A', 'Adulterer!')
-      this.use('F', 'Failure!')
-      this.use(
-        'E',
-        "I'm so jealous of your email!",
-        0x00FF00
-      )
+      this.use({
+        key: 'A', text: 'Adulterer!'
+      })
+      this.use({
+        key: 'F', text: 'Failure!'
+      })
+      this.use({
+        key: 'E',
+        text: "I'm so jealous of your email!",
+        color: 0x00FF00
+      })
     } else {
       this.scene.setText(
         'Give me some inspiration.'
@@ -37,7 +41,7 @@ export default class Figure {
     }
   }
 
-  use (key, text, color) {
+  use ({ key, text, color }) {
     if (this.scene.tool.key === key) {
       if (text) this.scene.setText(text)
 
