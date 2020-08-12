@@ -4,6 +4,8 @@ import WebFont from 'webfontloader'
 
 import Sidebar from '../ui/Sidebar'
 
+import Rectangle from '../Figure/Rectangle'
+
 export default class Interface extends Phaser.Scene {
   constructor () {
     super('interface')
@@ -32,11 +34,12 @@ export default class Interface extends Phaser.Scene {
 
         this.sidebar = new Sidebar(this)
 
-        this.red = this.add.rectangle(
-          500, 300, 200, 200, 0xFF0000
-        )
-        this.red.setInteractive()
-        this.red.on('pointerdown', this.onRed)
+        this.red = new Rectangle({
+          scene: this,
+          position: { x: 500, y: 400 },
+          size: { width: 200, height: 200 },
+          color: 0xFF0000
+        })
       }
     })
   }

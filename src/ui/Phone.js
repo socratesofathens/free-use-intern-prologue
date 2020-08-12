@@ -19,6 +19,7 @@ export default class Phone extends Toolkit {
     this.addItems()
 
     this.toggle()
+    this.virgin = true
   }
 
   addItems = () => {
@@ -40,13 +41,18 @@ export default class Phone extends Toolkit {
       left: email
     } = this.addRow(this.MIDDLE)
 
-    email.setTool(
-      'E',
-      'Your email app.',
-      'I am so jealous of your email!',
-      0x00ff00
-    )
+    email.setTool('E', 'Your email app.')
 
     this.addRow(this.BOTTOM)
+  }
+
+  toggle () {
+    super.toggle()
+
+    if (this.virgin) {
+      this.scene.setText('Your phone is an Accuity 556D. It has all kinds of cool apps.')
+
+      this.virgin = false
+    }
   }
 }

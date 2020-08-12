@@ -37,11 +37,9 @@ export default class Toolkit {
     this.tools.forEach(tool => tool.reset())
   }
 
-  toggle = () => {
+  toggle () {
     this.tools.forEach(tool => tool.toggle())
 
-    this.elements.forEach(
-      element => toggle(element)
-    )
+    this.elements.forEach(toggle)
   }
 }

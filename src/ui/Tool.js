@@ -72,22 +72,21 @@ export default class Tool {
   }
 
   setToggler = (letter) => {
-    const toggle = () => {
-      this.scene.sidebar.toggle()
-    }
-
-    this.setup(letter, toggle)
+    this.setup(
+      letter, this.scene.sidebar.toggle
+    )
   }
 
   setTool = (
-    letter, label, dialogue, fill
+    key, label, letter
   ) => {
+    letter = letter || key
+    label = label || `The letter ${letter}.`
+
     this.label = label
-    this.dialogue = dialogue
-    this.fill = fill
+    this.key = key
 
     const onClick = () => {
-      console.log('onClick')
       const active = !this.active
 
       this.scene.sidebar.toolkit.reset()
@@ -99,8 +98,6 @@ export default class Tool {
 
         if (this.active) {
           this.scene.tool = this
-
-          console.log('this.scene.tool test:', this.scene.tool)
 
           this.set(0xFF0000, 'white')
         } else {
@@ -121,13 +118,5 @@ export default class Tool {
     toggle(this.square)
 
     if (this.letter) toggle(this.letter)
-  }
-
-  use = () => {
-    this.scene.setText(this.dialogue)
-
-    if (this.fill) {
-      this.scene.red.setFillStyle(this.fill)
-    }
   }
 }

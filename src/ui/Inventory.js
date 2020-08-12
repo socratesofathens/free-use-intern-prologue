@@ -37,18 +37,10 @@ class Inventory extends Toolkit {
     this.phone = phone
     this.phone.setToggler('P')
 
-    right.setTool(
-      'F',
-      'The letter F.',
-      'Failure!'
-    )
+    right.setTool('F')
 
     const { left } = this.addRow(this.MIDDLE)
-    left.setTool(
-      'A',
-      'The letter A.',
-      'Adulterer!'
-    )
+    left.setTool('A')
 
     this.addRow(this.BOTTOM)
   }
