@@ -6,14 +6,26 @@ import Room from './Room'
 class Cyan extends Room {
   constructor () {
     super('cyan', 0x12ffff)
+
+    this.name = 'Cyan Room'
   }
 
   setup = () => {
+    const r = this.registry.get('color')
+
+    const color = r === 'blue'
+      ? 0x0000FF
+      : r === 'green'
+        ? 0x00FF00
+        : r === 'orange'
+          ? 0xFF8C00
+          : 0xFF0000
+
     this.red = new Rectangle({
       scene: this,
       position: { x: 500, y: 400 },
       size: { width: 200, height: 200 },
-      color: 0xFF0000,
+      color,
       uses: [
         {
           key: ' ',
@@ -28,7 +40,10 @@ class Cyan extends Room {
         {
           key: 'E',
           text: "I'm so jealous of your email!",
-          color: 0x00FF00
+          color: 0x00FF00,
+          callback: () => {
+            this.registry.set('color', 'green')
+          }
         },
         {
           key: 'W',
@@ -36,62 +51,54 @@ class Cyan extends Room {
         },
         {
           key: 'B',
-          color: 0x0000FF
+          color: 0x0000FF,
+          callback: (scene, element) => {
+            this.registry.set('color', 'blue')
+          }
+        },
+        {
+          key: 'Y',
+          callback: (scene, element) => {
+            const before = this.registry.get('color')
+            if (before === 'blue') {
+              this.registry.set('color', 'green')
+            }
+
+            if (before === 'red') {
+              this.registry.set('color', 'orange')
+              this.red.element.setFillStyle(
+                0xFF8C00
+              )
+            }
+
+            const color = this.registry.get('color')
+
+            if (color === 'green') {
+              this.red.element.setFillStyle(
+                0x00FF00
+              )
+
+              this.setText('You win!')
+            }
+          }
         }
       ]
     })
+    this.red.cn = 'red'
 
-    const wrench = this.registry.get('wrench')
-    if (!wrench) {
-      this.wrench = new Phrase({
-        scene: this,
-        position: { x: 1000, y: 500 },
-        text: 'Wrench',
-        options: { fontSize: '40px' },
-        uses: [{
-          text: 'You picked up some type of wrench.',
-          callback: () => {
-            this.registry.set('wrench', true)
+    this.figure({
+      Figure: Phrase,
+      position: { x: 1000, y: 500 },
+      text: 'Wrench',
+      label: 'Some type of wrench.'
+    })
 
-            this
-              .sidebar
-              .inventory
-              .setItem({
-                key: 'W',
-                label: 'Some type of wrench.'
-              })
-
-            this.wrench.element.destroy()
-          }
-        }]
-      })
-    }
-
-    const blue = this.registry.get('blue')
-    if (!blue) {
-      this.blue = new Phrase({
-        scene: this,
-        position: { x: 700, y: 200 },
-        text: 'Bucket of blue paint',
-        options: { fontSize: '40px' },
-        uses: [{
-          text: 'You picked up a bucket of blue paint.',
-          callback: () => {
-            this.registry.set('blue', true)
-
-            this
-              .sidebar
-              .inventory
-              .setItem({
-                key: 'B',
-                label: 'A bucket of of blue paint.'
-              })
-
-            this.blue.element.destroy()
-          }
-        }]
-      })
-    }
+    this.figure({
+      Figure: Phrase,
+      position: { x: 700, y: 200 },
+      text: 'Bucket of blue paint',
+      label: 'A bucket of blue paint.'
+    })
 
     this.door = new Phrase({
       scene: this,

@@ -17,7 +17,13 @@ export default class Figure {
   do ({ text, callback }) {
     if (text) this.scene.setText(text)
 
-    if (callback) callback()
+    if (callback) {
+      const onClick = () => {
+        callback(this.scene, this.element)
+      }
+
+      onClick()
+    }
   }
 
   onClick = () => {

@@ -11,6 +11,9 @@ class Room extends Phaser.Scene {
     this.color = color
 
     this.characterName = null
+    this.content = null
+    this.dialogue = null
+    this.name = null
     this.sidebar = null
     this.tool = null
   }
@@ -24,11 +27,11 @@ class Room extends Phaser.Scene {
   }
 
   create = () => {
+    this.setBackground(this.color)
+
     WebFont.load({
       custom: { families: ['futura'] },
       active: () => {
-        this.setBackground(this.color)
-
         this.addBook()
 
         this.sidebar = new Sidebar(this)
@@ -114,6 +117,44 @@ class Room extends Phaser.Scene {
     const halved = entries.map(halfEntry)
 
     return Object.fromEntries(halved)
+  }
+
+  figure = ({
+    key,
+    Figure,
+    position,
+    text,
+    label
+  }) => {
+    key = key || text[0]
+
+    const done = this.registry.get(key)
+
+    if (!done) {
+      const lower = label.toLowerCase()
+
+      const callback = (scene, element) => {
+        const text = `You picked up ${lower}.`
+        scene.setText(text)
+
+        this.registry.set(key, true)
+
+        this
+          .sidebar
+          .inventory
+          .setItem({ key, label })
+
+        element.destroy()
+      }
+
+      return new Figure({
+        scene: this,
+        position,
+        text,
+        options: { fontSize: '40px' },
+        uses: [{ text, callback }]
+      })
+    }
   }
 
   loadImage = ({
