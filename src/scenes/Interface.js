@@ -6,7 +6,7 @@ import Sidebar from '../ui/Sidebar'
 
 import Rectangle from '../Figure/Rectangle'
 
-export default class Interface extends Phaser.Scene {
+class Interface extends Phaser.Scene {
   constructor () {
     super('interface')
 
@@ -84,7 +84,8 @@ export default class Interface extends Phaser.Scene {
       content: 'Emma',
       options: {
         fontSize: '35px', color: 'black'
-      }
+      },
+      origin: { x: 0, y: 0 }
     })
 
     this.dialogue = this.addText({
@@ -95,9 +96,9 @@ export default class Interface extends Phaser.Scene {
         lineSpacing: 16,
         wordWrap: { width: 1314 },
         color: 'white'
-      }
+      },
+      origin: { x: 0, y: 0 }
     })
-    this.dialogue.setOrigin(0, 0)
   }
 
   addGroup = () => {
@@ -109,6 +110,7 @@ export default class Interface extends Phaser.Scene {
   addText = ({
     content,
     position = {},
+    origin = { x: 0, y: 1 },
     options = {}
   }) => {
     const positioned = {
@@ -126,7 +128,7 @@ export default class Interface extends Phaser.Scene {
     const text = this.add.text(
       x, y, content, merged
     )
-    text.setOrigin(0, 1)
+    text.setOrigin(origin.x, origin.y)
 
     return text
   }
@@ -144,3 +146,5 @@ export default class Interface extends Phaser.Scene {
     return Object.fromEntries(halved)
   }
 }
+
+export default Interface

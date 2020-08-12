@@ -37,18 +37,17 @@ export default class Sidebar {
       position: { x: 1371.343 }
     })
 
-    const load = this.scene.addText({
+    this.scene.addText({
       content: 'Load',
-      position: { x: 1578.657 }
+      position: { x: 1578.657 },
+      origin: { x: 1, y: 1 }
     })
-    load.setOrigin(1, 1)
 
-    const panther = this.scene.addText({
+    this.scene.addText({
       content: 'Panther VN',
-      position: { x: 1475, y: 882 }
+      position: { x: 1475, y: 882 },
+      origin: { x: 0.5, y: 1 }
     })
-
-    panther.setOrigin(0.5, 1)
   }
 
   reset = () => {
