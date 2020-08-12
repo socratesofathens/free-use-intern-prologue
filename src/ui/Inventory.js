@@ -15,14 +15,14 @@ class Inventory extends Toolkit {
     this.background.setOrigin(1, 0)
     this.elements.push(this.background)
 
-    this.room = this.scene.addText(
-      { x: 1475, y: 51.146 },
-      'Cyan Room',
-      {
+    this.room = this.scene.addText({
+      position: { x: 1475, y: 51.146 },
+      content: 'Cyan Room',
+      options: {
         fontSize: '30px',
         fontFamily: 'futura'
       }
-    )
+    })
     this.room.setOrigin(0.5, 1)
     this.elements.push(this.room)
 

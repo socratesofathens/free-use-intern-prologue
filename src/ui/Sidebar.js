@@ -32,18 +32,20 @@ export default class Sidebar {
   }
 
   addMenu = () => {
-    this.scene.addItem({
-      position: { x: 1371.343 }, text: 'Save'
+    this.scene.addText({
+      content: 'Save',
+      position: { x: 1371.343 }
     })
 
-    const load = this.scene.addItem({
-      position: { x: 1578.657 }, text: 'Load'
+    const load = this.scene.addText({
+      content: 'Load',
+      position: { x: 1578.657 }
     })
     load.setOrigin(1, 1)
 
-    const panther = this.scene.addItem({
-      position: { x: 1475, y: 882 },
-      text: 'Panther VN'
+    const panther = this.scene.addText({
+      content: 'Panther VN',
+      position: { x: 1475, y: 882 }
     })
 
     panther.setOrigin(0.5, 1)

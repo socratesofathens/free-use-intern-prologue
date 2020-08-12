@@ -34,11 +34,11 @@ export default class Tool {
     const midX = this.position.x + HALF
     const midY = this.position.y - HALF
 
-    this.letter = this.scene.addText(
-      { x: midX, y: midY },
-      letter,
-      { fontSize: '50px' }
-    )
+    this.letter = this.scene.addText({
+      position: { x: midX, y: midY },
+      content: letter,
+      options: { fontSize: '50px' }
+    })
     this.letter.setOrigin(0.5, 0.5)
     this.letter.setColor('black')
 
