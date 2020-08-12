@@ -22,9 +22,7 @@ class Rectangle extends Figure {
   }
 
   do ({ text, color, callback }) {
-    console.log('color 1 test:', color)
     if (color) {
-      console.log('color test:', color)
       this.element.setFillStyle(color)
 
       this.colorful = true
