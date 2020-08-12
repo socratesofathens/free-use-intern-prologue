@@ -5,7 +5,8 @@ class Phrase extends Figure {
     scene,
     position,
     text,
-    options
+    options,
+    uses
   }) {
     const element = scene.addText({
       position,
@@ -14,7 +15,7 @@ class Phrase extends Figure {
     })
 
     super({
-      scene, position, element
+      scene, position, element, uses
     })
   }
 }
