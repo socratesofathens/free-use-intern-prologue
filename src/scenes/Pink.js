@@ -18,7 +18,7 @@ class Pink extends Room {
       options: { fontSize: '40px' },
       uses: [{
         callback: () => {
-          this.scene.start('cyan')
+          this.scene.start('introduction')
         }
       }]
     })
