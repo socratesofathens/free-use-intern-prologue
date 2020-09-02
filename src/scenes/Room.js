@@ -1,7 +1,5 @@
 import Phaser from 'phaser'
 
-import WebFont from 'webfontloader'
-
 import Sidebar from '../ui/Sidebar'
 
 class Room extends Phaser.Scene {
@@ -29,16 +27,11 @@ class Room extends Phaser.Scene {
   create = () => {
     this.setBackground(this.color)
 
-    WebFont.load({
-      custom: { families: ['futura'] },
-      active: () => {
-        this.addBook()
+    this.addBook()
 
-        this.sidebar = new Sidebar(this)
+    this.sidebar = new Sidebar(this)
 
-        this.setup()
-      }
-    })
+    this.setup()
   }
 
   addBook = () => {

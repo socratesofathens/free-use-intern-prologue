@@ -44,7 +44,8 @@ class Inventory extends Toolkit {
       .scene
       .registry
       .get('items')
-    items.forEach(this.setItem)
+
+    if (items) items.forEach(this.setItem)
   }
 
   next = () => {
