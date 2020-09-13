@@ -1,37 +1,50 @@
-import Phaser from 'phaser'
+import GAME_SIZE from '../lib/game'
+import ORIGIN from '../lib/origin'
 
-class Title extends Phaser.Scene {
+import Scene from './Scene'
+
+class Title extends Scene {
   constructor () {
     super('title')
+
+    this.name = 'Title'
   }
 
   preload = () => {
-    this.load.image(
-      'logo', 'assets/free-use-intern.png'
-    )
+    this.loadImage({ image: 'panther-vn' })
+    this.loadImage({
+      image: 'interface-logo'
+    })
+    this.loadImage({ image: 'phone' })
+    this.loadImage({ image: 'emma' })
   }
 
-  create = () => {
-    this.registry.set(
-      'items', [{ key: 'F' }, { key: 'A' }]
-    )
+  setup = () => {
+    super.setup()
 
-    this.physics.add.image(800, 450, 'logo')
+    this.see({
+      name: 'panther-vn',
+      position: ORIGIN,
+      size: GAME_SIZE
+    })
 
     this.input.on('pointerup', this.advance)
-
-    const space = this
-      .input
-      .keyboard
-      .addKey('SPACE')
-    space.on('down', this.advance)
-
-    const { main } = this.cameras
-    main.setBackgroundColor('#FFFFFF')
   }
 
   advance = () => {
-    this.scene.start('cyan')
+    this.scene.start('introduction')
+  }
+
+  loadImage = ({
+    image,
+    name,
+    type = 'png'
+  }) => {
+    name = name || image
+
+    const path = `${name}.${type}`
+
+    return this.load.image(image, path)
   }
 }
 

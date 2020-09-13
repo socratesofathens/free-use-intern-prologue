@@ -6,14 +6,14 @@ import Title from './scenes/Title'
 
 const config = {
   type: Phaser.AUTO,
-  width: 1600,
-  height: 900,
+  width: 3911,
+  height: 2200,
   physics: { default: 'arcade' },
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH
   },
-  scene: [Introduction, Title, Pink]
+  scene: [Title, Introduction, Pink]
 }
 
 export default new Phaser.Game(config)

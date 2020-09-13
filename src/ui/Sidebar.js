@@ -1,27 +1,31 @@
-import Inventory from '../ui/Inventory'
+import { upY, GAME_WIDTH } from '../lib/game'
 
-import Phone from '../ui/Phone'
+import Inventory from './Inventory'
+import Phone from './Phone'
 
 export default class Sidebar {
   constructor (scene) {
     this.scene = scene
     this.scene.sidebar = this
 
-    this.sidebarGroup = this.scene.addGroup()
+    this.X = 3300
+    this.MARGIN = 40
+    this.LEFT = this.X + this.MARGIN
+    this.RIGHT = GAME_WIDTH - this.MARGIN
+    this.WIDTH = GAME_WIDTH - this.X
+    this.HALF_WIDTH = this.WIDTH / 2
+    this.CENTER = this.X + this.HALF_WIDTH
 
     this.background = this
       .scene
-      .add
-      .rectangle(1600, 900, 250, 900, 0xFFFFFF)
-    this.background.setOrigin(1, 1)
+      .addRectangle({
+        position: { x: this.X, y: 0 },
+        size: { width: 611, height: 2200 },
+        color: 0xffffff
+      })
 
+    this.addLogo()
     this.addMenu()
-
-    const logo = this.sidebarGroup.create(
-      1371.343, 547.264, 'logo'
-    )
-    logo.setOrigin(0, 0)
-    logo.setDisplaySize(178.527, 228.662)
 
     this.inventory = new Inventory(
       this.scene, this
@@ -31,22 +35,44 @@ export default class Sidebar {
     this.phone = new Phone(this.scene)
   }
 
-  addMenu = () => {
+  addLogo () {
+    const y = upY(302.625)
+
+    this.scene.see({
+      name: 'interface-logo',
+      position: { x: this.LEFT, y },
+      size: {
+        width: 436.499, height: 559.026
+      },
+      origin: { x: 0, y: 1 }
+    })
+  }
+
+  addMenu () {
+    const y = upY(251.799)
+
     this.scene.addText({
       content: 'Save',
-      position: { x: 1371.343 }
+      position: { x: this.LEFT, y },
+      origin: { x: 0, y: 0 }
     })
 
     this.scene.addText({
       content: 'Load',
-      position: { x: 1578.657 },
-      origin: { x: 1, y: 1 }
+      position: { x: this.RIGHT, y },
+      origin: { x: 1, y: 0 }
     })
+
+    this.addPanther()
+  }
+
+  addPanther () {
+    const y = upY(125.879)
 
     this.scene.addText({
       content: 'Panther VN',
-      position: { x: 1475, y: 882 },
-      origin: { x: 0.5, y: 1 }
+      position: { x: this.CENTER, y },
+      origin: { x: 0.5, y: 0 }
     })
   }
 

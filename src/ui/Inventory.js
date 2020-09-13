@@ -1,3 +1,5 @@
+import { upY } from '../lib/game'
+
 import Toolkit from './Toolkit'
 
 class Inventory extends Toolkit {
@@ -6,14 +8,7 @@ class Inventory extends Toolkit {
 
     this.scene.sidebar.inventory = this
 
-    this.background = this
-      .scene
-      .add
-      .rectangle(
-        1600, 0, 250, 531.595, 0x666666
-      )
-    this.background.setOrigin(1, 0)
-    this.elements.push(this.background)
+    this.addBackground()
 
     this.room = this.scene.addText({
       position: { x: 1475, y: 51.146 },
@@ -28,6 +23,21 @@ class Inventory extends Toolkit {
     this.elements.push(this.room)
 
     this.addItems()
+  }
+
+  addBackground () {
+    const y = upY(900)
+
+    this.background = this
+      .scene
+      .addRectangle({
+        size: { width: 611, height: 1300 },
+        position: { x: 3300, y },
+        origin: { x: 0, y: 1 },
+        color: 0x666666
+      })
+
+    this.elements.push(this.background)
   }
 
   addItems = () => {
