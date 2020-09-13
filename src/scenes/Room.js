@@ -1,12 +1,16 @@
 import Phaser from 'phaser'
 
+import { upY } from '../lib/game'
+import lorem from '../lib/lorem'
+import ORIGIN from '../lib/origin'
+
 import Sidebar from '../ui/Sidebar'
 
-class Room extends Phaser.Scene {
-  constructor (key, color) {
-    super(key)
+import Scene from './Scene'
 
-    this.color = color
+class Room extends Scene {
+  constructor (key, color) {
+    super(key, color)
 
     this.characterName = null
     this.content = null
@@ -14,56 +18,58 @@ class Room extends Phaser.Scene {
     this.name = null
     this.sidebar = null
     this.tool = null
+    this.save = 0
+    this.interaction = null
+    this.saves = []
+    this.OFFSET = 10
   }
 
-  preload = () => {
-    this.loadImage({
-      image: 'logo',
-      name: 'free-use-intern'
-    })
-    this.loadImage({ image: 'phone' })
-  }
-
-  create = () => {
-    this.setBackground(this.color)
+  setup () {
+    super.setup()
 
     this.addBook()
 
     this.sidebar = new Sidebar(this)
 
-    this.setup()
+    this.read()
   }
 
   addBook = () => {
-    const paper = this
-      .add
-      .rectangle(0, 900, 1350, 190, 0x2b3043)
-      .setOrigin(0, 1)
-    paper.setInteractive()
-    paper.on(
-      'pointerup',
-      () => console.log('test')
-    )
+    this.HEIGHT = 339
+    this.TOP = upY(this.HEIGHT)
+    this.MARGIN = 35
 
+    this.addPaper()
+
+    this.addCharacterName()
+
+    this.addDialogue()
+  }
+
+  addCharacterName () {
+    const y = upY(443.481)
     this.characterName = this.addText({
-      position: { x: 18, y: 654.84 },
+      position: { x: this.MARGIN, y },
       content: 'Emma',
-      options: {
-        fontSize: '35px', color: 'black'
-      },
       origin: { x: 0, y: 0 }
     })
+  }
+
+  addDialogue () {
+    const topline = this.TOP + this.MARGIN
+    const y = topline - this.OFFSET
 
     this.dialogue = this.addText({
-      position: { x: 18, y: 728 },
-      content: "I need your semen for a science experiment. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      position: { x: this.MARGIN, y },
+      content: lorem,
       options: {
-        fontSize: '31px',
-        lineSpacing: 16,
-        wordWrap: { width: 1314 },
+        fontSize: '56.25247765pt',
+        lineSpacing: 5,
+        wordWrap: { width: 3270 },
         color: 'white'
       },
-      origin: { x: 0, y: 0 }
+      origin: { x: 0, y: 0 },
+      action: this.advance
     })
   }
 
@@ -73,30 +79,80 @@ class Room extends Phaser.Scene {
     })
   }
 
-  addText = ({
-    content,
-    position = {},
-    origin = { x: 0, y: 1 },
-    options = {}
-  }) => {
-    const positioned = {
-      y: 829.919, ...position
+  addPaper () {
+    const height = 339
+    const y = upY(height)
+    const position = { x: 0, y }
+    const size = { width: 3300, height }
+
+    return this.addRectangle({
+      position,
+      size,
+      color: 0x2b3043,
+      action: this.advance
+    })
+  }
+
+  addRectangle ({
+    size,
+    position,
+    color,
+    origin = ORIGIN,
+    action
+  }) {
+    const { x, y } = position
+    const { width, height } = size
+    const rectangle = this
+      .add
+      .rectangle(x, y, width, height, color)
+
+    if (origin) {
+      const { x, y } = origin
+
+      rectangle.setOrigin(x, y)
     }
 
+    if (action) {
+      rectangle.setInteractive()
+
+      rectangle.on('pointerdown', action)
+    }
+  }
+
+  addText = ({
+    content,
+    position = ORIGIN,
+    origin = { x: 0, y: 1 },
+    options = {},
+    action
+  }) => {
     const base = {
       fontFamily: 'futura',
-      fontSize: '28px',
+      fontSize: '67.50299835pt',
       color: 'black'
     }
     const merged = { ...base, ...options }
 
-    const { x, y } = positioned
+    const { x, y } = position
+    const offset = y - this.OFFSET
     const text = this.add.text(
-      x, y, content, merged
+      x, offset, content, merged
     )
     text.setOrigin(origin.x, origin.y)
 
+    if (action) {
+      text.on('pointerdown', action)
+    }
+
     return text
+  }
+
+  advance = () => {
+    this.save = this.save + 1
+
+    this.registry.set(this.save, this.save)
+
+    this.setup()
   }
 
   half = entity => {
@@ -150,31 +206,30 @@ class Room extends Phaser.Scene {
     }
   }
 
-  loadImage = ({
-    image,
-    name,
-    type = 'png'
-  }) => {
-    name = name || image
+  read () {
+    const value = this.registry.get('save')
+    if (value) this.save = value
 
-    const path = `assets/${name}.${type}`
+    this.interaction = this
+      .registry
+      .get('interaction')
 
-    return this.load.image(image, path)
+    const save = this.saves[this.save]
+
+    if (save) {
+      this.setText(
+        save.dialogue, save.speakerName
+      )
+
+      return save.images?.map(this.see)
+    }
   }
 
-  setText = (content, name) => {
-    this.dialogue.setText(content)
+  setText = (dialogue, speakerName) => {
+    this.dialogue.setText(dialogue)
 
-    this.characterName.setText(name)
+    this.characterName.setText(speakerName)
   }
-
-  setBackground = color => {
-    const { main } = this.cameras
-
-    main.setBackgroundColor(color)
-  }
-
-  setup () {}
 }
 
 export default Room
