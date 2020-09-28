@@ -1,18 +1,17 @@
 import Phaser from 'phaser'
 
-import ORIGIN from '../lib/origin'
-
 class Scene extends Phaser.Scene {
   constructor (key, color = '#FFFFFF') {
     super(key)
 
     this.color = color
     this.image = null
+    this.animations = []
   }
 
   see = ({
     name,
-    origin = ORIGIN,
+    origin = { x: 0.5, y: 0.5 },
     position,
     to,
     time,
@@ -43,6 +42,8 @@ class Scene extends Phaser.Scene {
       this.physics.moveTo(
         image, x, y, 0, time
       )
+
+      this.animations.push({ image, to })
     }
 
     return image
@@ -72,7 +73,28 @@ class Scene extends Phaser.Scene {
 
   advance () {}
 
+  stopImage = ({ image, to }) => {
+    if (image.body.speed > 0) {
+      const { x, y } = to
+
+      const distance = Phaser
+        .Math
+        .Distance
+        .Between(
+          image.x, image.y, x, y
+        )
+
+      if (distance < 5) {
+        image.body.reset(x, y)
+      }
+    }
+  }
+
   setup () {}
+
+  update () {
+    this.animations.forEach(this.stopImage)
+  }
 }
 
 export default Scene
