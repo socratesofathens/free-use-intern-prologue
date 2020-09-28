@@ -9,20 +9,6 @@ class Inventory extends Toolkit {
     this.scene.sidebar.inventory = this
 
     this.addBackground()
-
-    this.room = this.scene.addText({
-      position: { x: 1475, y: 51.146 },
-      content: this.scene.name,
-      options: {
-        fontSize: '30px',
-        fontFamily: 'futura',
-        color: 'white'
-      },
-      origin: { x: 0.5, y: 1 }
-    })
-    this.elements.push(this.room)
-
-    this.addItems()
   }
 
   addBackground () {
