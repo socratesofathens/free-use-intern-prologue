@@ -1,50 +1,20 @@
 import Phaser from 'phaser'
 
+import Image from '../Figure/Image'
+
 class Scene extends Phaser.Scene {
   constructor (key, color = '#FFFFFF') {
     super(key)
 
     this.color = color
     this.image = null
-    this.animations = []
+    this.figures = []
   }
 
-  see = ({
-    name,
-    origin = { x: 0.5, y: 0.5 },
-    position,
-    to,
-    time,
-    size
-  }) => {
-    const { x, y } = position
+  see = (options) => {
+    const seen = { ...options, scene: this }
 
-    const image = this
-      .physics
-      .add
-      .image(x, y, name)
-
-    if (origin) {
-      const { x, y } = origin
-
-      image.setOrigin(x, y)
-    }
-
-    if (size) {
-      const { width, height } = size
-
-      image.setDisplaySize(width, height)
-    }
-
-    if (to) {
-      const { x, y } = to
-
-      this.physics.moveTo(
-        image, x, y, 0, time
-      )
-
-      this.animations.push({ image, to })
-    }
+    const image = new Image(seen)
 
     return image
   }
@@ -73,27 +43,12 @@ class Scene extends Phaser.Scene {
 
   advance () {}
 
-  stopImage = ({ image, to }) => {
-    if (image.body.speed > 0) {
-      const { x, y } = to
-
-      const distance = Phaser
-        .Math
-        .Distance
-        .Between(
-          image.x, image.y, x, y
-        )
-
-      if (distance < 5) {
-        image.body.reset(x, y)
-      }
-    }
-  }
-
   setup () {}
 
   update () {
-    this.animations.forEach(this.stopImage)
+    this
+      .figures
+      .forEach(figure => figure.update())
   }
 }
 
