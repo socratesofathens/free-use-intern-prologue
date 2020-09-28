@@ -152,7 +152,7 @@ class Room extends Scene {
 
     this.registry.set(this.save, this.save)
 
-    this.setup()
+    this.read()
   }
 
   half = entity => {

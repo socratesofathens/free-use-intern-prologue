@@ -20,7 +20,7 @@ class Introduction extends Room {
           name: 'emma',
           position: { x: 1650, y: 478 },
           to: { x: 1650, y: 1522 },
-          for: 5000
+          time: 5000
         }],
         dialogue: 'She’s funny, and smart, and hot as hell. Everyone who meets her falls in love with her...including me.'
       }
