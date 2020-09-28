@@ -14,11 +14,16 @@ class Scene extends Phaser.Scene {
     name,
     origin = ORIGIN,
     position,
+    to,
+    time,
     size
   }) => {
     const { x, y } = position
 
-    const image = this.add.image(x, y, name)
+    const image = this
+      .physics
+      .add
+      .image(x, y, name)
 
     if (origin) {
       const { x, y } = origin
@@ -30,6 +35,14 @@ class Scene extends Phaser.Scene {
       const { width, height } = size
 
       image.setDisplaySize(width, height)
+    }
+
+    if (to) {
+      const { x, y } = to
+
+      this.physics.moveTo(
+        image, x, y, 0, time
+      )
     }
 
     return image
