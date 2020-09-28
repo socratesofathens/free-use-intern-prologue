@@ -18,8 +18,8 @@ class Introduction extends Room {
       {
         images: [{
           name: 'emma',
-          position: { x: 1650, y: 478 },
-          to: { x: 1650, y: 1522 },
+          position: { x: 1763, y: 510 },
+          to: { x: 1773, y: 1626 },
           time: 5000
         }],
         dialogue: 'She’s funny, and smart, and hot as hell. Everyone who meets her falls in love with her...including me.'

@@ -71,6 +71,8 @@ class Room extends Scene {
       origin: { x: 0, y: 0 },
       action: this.advance
     })
+
+    this.dialogue.setDepth(1)
   }
 
   addGroup = () => {
@@ -85,12 +87,16 @@ class Room extends Scene {
     const position = { x: 0, y }
     const size = { width: 3300, height }
 
-    return this.addRectangle({
+    const paper = this.addRectangle({
       position,
       size,
       color: 0x2b3043,
       action: this.advance
     })
+
+    paper.setDepth(1)
+
+    return paper
   }
 
   addRectangle ({
@@ -117,6 +123,8 @@ class Room extends Scene {
 
       rectangle.on('pointerdown', action)
     }
+
+    return rectangle
   }
 
   addText = ({

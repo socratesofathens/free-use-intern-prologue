@@ -25,6 +25,7 @@ class Title extends Scene {
     this.see({
       name: 'panther-vn',
       position: ORIGIN,
+      origin: ORIGIN,
       size: GAME_SIZE
     })
 
