@@ -3,6 +3,8 @@ export default class Figure {
     scene, position, element, uses = []
   }) {
     this.scene = scene
+    this.scene.figures.push(this)
+
     this.position = position
 
     this.element = element
