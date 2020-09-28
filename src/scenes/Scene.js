@@ -10,12 +10,12 @@ class Scene extends Phaser.Scene {
     this.image = null
   }
 
-  see ({
+  see = ({
     name,
     origin = ORIGIN,
     position,
     size
-  }) {
+  }) => {
     const { x, y } = position
 
     const image = this.add.image(x, y, name)
