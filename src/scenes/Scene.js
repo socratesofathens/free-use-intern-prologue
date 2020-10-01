@@ -41,7 +41,17 @@ class Scene extends Phaser.Scene {
     }
   }
 
-  advance () {}
+  advance () {
+    if (this.fullscreen) {
+      this.fullscreen.destroy()
+
+      this.input.off(
+        'pointerup', this.advance
+      )
+
+      this.timer?.remove()
+    }
+  }
 
   setup () {}
 

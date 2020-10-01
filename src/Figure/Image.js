@@ -1,5 +1,7 @@
 import Phaser from 'phaser'
 
+import ORIGIN from '../lib/origin'
+
 import Figure from './index'
 
 export default class Image extends Figure {
@@ -7,11 +9,12 @@ export default class Image extends Figure {
     scene,
     name,
     origin,
-    position,
+    position = ORIGIN,
     size,
     to,
     time,
-    uses
+    uses,
+    depth
   }) {
     const { x, y } = position
 
@@ -29,6 +32,7 @@ export default class Image extends Figure {
     this.name = name
     this.size = size
     this.origin = origin
+    this.depth = depth
 
     if (this.origin) {
       const { x, y } = this.origin
@@ -51,26 +55,36 @@ export default class Image extends Figure {
         this.element, x, y, 0, time
       )
     }
+
+    if (this.depth) {
+      this.element.setDepth(this.depth)
+    }
+  }
+
+  destroy () {
+    super.destroy()
   }
 
   update () {
-    const { speed } = this.element.body
-    if (speed <= 0) return speed
+    if (this.element.body) {
+      const { speed } = this.element.body
+      if (speed <= 0) return speed
 
-    const towards = !this.to?.x || !this.to?.y
-    if (towards) return this.to
+      const towards = !this.to || !this.to.x || !this.to.y
+      if (towards) return this.to
 
-    const { x, y } = this.to
+      const { x, y } = this.to
 
-    const distance = Phaser
-      .Math
-      .Distance
-      .Between(
-        this.element.x, this.element.y, x, y
-      )
+      const distance = Phaser
+        .Math
+        .Distance
+        .Between(
+          this.element.x, this.element.y, x, y
+        )
 
-    if (distance > 5) return distance
+      if (distance > 5) return distance
 
-    this.element.body.reset(x, y)
+      this.element.body.reset(x, y)
+    }
   }
 }
