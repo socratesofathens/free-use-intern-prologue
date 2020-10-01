@@ -16,6 +16,10 @@ export default class Figure {
     this.uses = uses
   }
 
+  destroy () {
+    this.element.destroy()
+  }
+
   do ({ text, callback }) {
     if (text) this.scene.setText(text)
 

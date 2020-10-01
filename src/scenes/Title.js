@@ -15,6 +15,10 @@ class Title extends Scene {
     this.loadImage({
       image: 'interface-logo'
     })
+    this.loadImage({ image: 'logo-1' })
+    this.loadImage({ image: 'logo-2' })
+    this.loadImage({ image: 'logo-3' })
+
     this.loadImage({ image: 'phone' })
     this.loadImage({ image: 'emma' })
   }

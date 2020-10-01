@@ -1,6 +1,8 @@
 import Phaser from 'phaser'
 
-import { upY } from '../lib/game'
+import {
+  GAME_SIZE, upY
+} from '../lib/game'
 import lorem from '../lib/lorem'
 import ORIGIN from '../lib/origin'
 
@@ -15,12 +17,14 @@ class Room extends Scene {
     this.characterName = null
     this.content = null
     this.dialogue = null
+    this.fullscreen = null
     this.name = null
     this.sidebar = null
     this.tool = null
     this.save = 0
     this.interaction = null
     this.saves = []
+    this.timer = null
     this.OFFSET = 10
   }
 
@@ -156,6 +160,9 @@ class Room extends Scene {
   }
 
   advance = () => {
+    super.advance()
+
+    console.log('this.save test:', this.save)
     this.save = this.save + 1
 
     this.registry.set(this.save, this.save)
@@ -224,12 +231,45 @@ class Room extends Scene {
 
     const save = this.saves[this.save]
 
-    if (save) {
-      this.setText(
-        save.dialogue, save.speakerName
-      )
+    console.log('save test:', save)
 
-      return save.images?.map(this.see)
+    if (save) {
+      const {
+        dialogue,
+        speakerName,
+        images,
+        fullscreen
+      } = save
+
+      if (fullscreen) {
+        console.log(
+          'fullscreen test:', fullscreen
+        )
+
+        this.fullscreen = this.see({
+          ...fullscreen,
+          size: GAME_SIZE,
+          origin: ORIGIN,
+          depth: 2
+        })
+
+        this.input.on(
+          'pointerup', this.advance
+        )
+
+        if (fullscreen.time) {
+          this.timer = this
+            .time
+            .delayedCall(
+              fullscreen.time,
+              this.advance
+            )
+        }
+      }
+
+      this.setText(dialogue, speakerName)
+
+      images?.forEach(this.see)
     }
   }
 
