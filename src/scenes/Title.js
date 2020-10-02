@@ -1,6 +1,3 @@
-import GAME_SIZE from '../lib/game'
-import ORIGIN from '../lib/origin'
-
 import Scene from './Scene'
 
 class Title extends Scene {
@@ -24,22 +21,18 @@ class Title extends Scene {
   }
 
   setup = () => {
+    this.saves = [
+      {
+        fullscreen: {
+          name: 'panther-vn'
+        }
+      },
+      {
+        scene: 'introduction'
+      }
+    ]
+
     super.setup()
-
-    this.see({
-      name: 'panther-vn',
-      position: ORIGIN,
-      origin: ORIGIN,
-      size: GAME_SIZE
-    })
-
-    this
-      .input
-      .on('pointerup', this.advance)
-  }
-
-  advance = () => {
-    this.scene.start('introduction')
   }
 
   loadImage = ({
