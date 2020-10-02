@@ -1,5 +1,8 @@
 import Phaser from 'phaser'
 
+import { GAME_SIZE } from '../lib/game'
+import ORIGIN from '../lib/origin'
+
 import Image from '../Figure/Image'
 
 class Scene extends Phaser.Scene {
@@ -9,6 +12,17 @@ class Scene extends Phaser.Scene {
     this.color = color
     this.image = null
     this.figures = []
+    this.point = 0
+    this.save = null
+    this.saves = []
+    this.timer = null
+    this.fullscreen = null
+  }
+
+  advance () {
+    this.point = this.point + 1
+
+    this.read()
   }
 
   see = (options) => {
@@ -26,7 +40,7 @@ class Scene extends Phaser.Scene {
       .input
       .keyboard
       .addKey('SPACE')
-    space.on('down', this.advance)
+    space.on('down', this.advance, this)
 
     this.setup()
   }
@@ -41,7 +55,12 @@ class Scene extends Phaser.Scene {
     }
   }
 
-  advance () {
+  read () {
+    this.point = this.point || 0
+    this.save = this.saves[this.point]
+
+    if (!this.save) return this.save
+
     if (this.fullscreen) {
       this.fullscreen.destroy()
 
@@ -49,11 +68,43 @@ class Scene extends Phaser.Scene {
         'pointerup', this.advance
       )
 
-      this.timer?.remove()
+      this.timer = this.timer?.remove()
     }
+
+    const {
+      images, fullscreen
+    } = this.save
+
+    if (fullscreen) {
+      this.fullscreen = this.see({
+        ...fullscreen,
+        size: GAME_SIZE,
+        origin: ORIGIN,
+        depth: 2
+      })
+
+      this.input.on(
+        'pointerup', this.advance
+      )
+
+      if (fullscreen.time) {
+        this.timer = this
+          .time
+          .delayedCall(
+            fullscreen.time,
+            this.advance,
+            null,
+            this
+          )
+      }
+    }
+
+    return images?.map(this.see)
   }
 
-  setup () {}
+  setup () {
+    this.read()
+  }
 
   update () {
     this

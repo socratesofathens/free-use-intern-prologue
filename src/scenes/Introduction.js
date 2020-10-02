@@ -42,12 +42,12 @@ class Introduction extends Room {
       {
         dialogue: 'I’m sure they’ll find some way to keep her busy.'
       },
-      { 
+      {
         fullscreen: {
-          name: 'logo-1', time: 400 
+          name: 'logo-1', time: 400
         }
       },
-      { 
+      {
         fullscreen: {
           name: 'logo-2', time: 400
         }

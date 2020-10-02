@@ -33,7 +33,9 @@ class Title extends Scene {
       size: GAME_SIZE
     })
 
-    this.input.on('pointerup', this.advance)
+    this
+      .input
+      .on('pointerup', this.advance)
   }
 
   advance = () => {
