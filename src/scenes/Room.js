@@ -1,8 +1,6 @@
 import Phaser from 'phaser'
 
-import {
-  GAME_SIZE, upY
-} from '../lib/game'
+import { upY } from '../lib/game'
 import lorem from '../lib/lorem'
 import ORIGIN from '../lib/origin'
 
@@ -17,25 +15,19 @@ class Room extends Scene {
     this.characterName = null
     this.content = null
     this.dialogue = null
-    this.fullscreen = null
     this.name = null
     this.sidebar = null
     this.tool = null
-    this.save = 0
     this.interaction = null
-    this.saves = []
-    this.timer = null
     this.OFFSET = 10
   }
 
   setup () {
-    super.setup()
-
     this.addBook()
 
     this.sidebar = new Sidebar(this)
 
-    this.read()
+    super.setup()
   }
 
   addBook = () => {
@@ -125,7 +117,9 @@ class Room extends Scene {
     if (action) {
       rectangle.setInteractive()
 
-      rectangle.on('pointerdown', action)
+      rectangle.on(
+        'pointerdown', action, this
+      )
     }
 
     return rectangle
@@ -153,21 +147,10 @@ class Room extends Scene {
     text.setOrigin(origin.x, origin.y)
 
     if (action) {
-      text.on('pointerdown', action)
+      text.on('pointerdown', action, this)
     }
 
     return text
-  }
-
-  advance = () => {
-    super.advance()
-
-    console.log('this.save test:', this.save)
-    this.save = this.save + 1
-
-    this.registry.set(this.save, this.save)
-
-    this.read()
   }
 
   half = entity => {
@@ -222,54 +205,15 @@ class Room extends Scene {
   }
 
   read () {
-    const value = this.registry.get('save')
-    if (value) this.save = value
+    super.read()
 
-    this.interaction = this
-      .registry
-      .get('interaction')
-
-    const save = this.saves[this.save]
-
-    console.log('save test:', save)
-
-    if (save) {
+    if (this.save) {
       const {
         dialogue,
-        speakerName,
-        images,
-        fullscreen
-      } = save
-
-      if (fullscreen) {
-        console.log(
-          'fullscreen test:', fullscreen
-        )
-
-        this.fullscreen = this.see({
-          ...fullscreen,
-          size: GAME_SIZE,
-          origin: ORIGIN,
-          depth: 2
-        })
-
-        this.input.on(
-          'pointerup', this.advance
-        )
-
-        if (fullscreen.time) {
-          this.timer = this
-            .time
-            .delayedCall(
-              fullscreen.time,
-              this.advance
-            )
-        }
-      }
+        speakerName
+      } = this.save
 
       this.setText(dialogue, speakerName)
-
-      images?.forEach(this.see)
     }
   }
 
