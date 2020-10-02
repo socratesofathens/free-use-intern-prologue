@@ -61,6 +61,14 @@ class Scene extends Phaser.Scene {
 
     if (!this.save) return this.save
 
+    const {
+      images, fullscreen, scene
+    } = this.save
+
+    if (scene) {
+      this.scene.start(scene)
+    }
+
     if (this.fullscreen) {
       this.fullscreen.destroy()
 
@@ -71,10 +79,6 @@ class Scene extends Phaser.Scene {
       this.timer = this.timer?.remove()
     }
 
-    const {
-      images, fullscreen
-    } = this.save
-
     if (fullscreen) {
       this.fullscreen = this.see({
         ...fullscreen,
@@ -83,9 +87,11 @@ class Scene extends Phaser.Scene {
         depth: 2
       })
 
-      this.input.on(
-        'pointerup', this.advance
-      )
+      this
+        .input
+        .on(
+          'pointerup', this.advance, this
+        )
 
       if (fullscreen.time) {
         this.timer = this
