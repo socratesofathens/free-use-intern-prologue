@@ -1,8 +1,5 @@
 import { upY, GAME_WIDTH } from '../lib/game'
 
-import Inventory from './Inventory'
-import Phone from './Phone'
-
 export default class Sidebar {
   constructor (scene) {
     this.scene = scene
@@ -26,13 +23,6 @@ export default class Sidebar {
 
     this.addLogo()
     this.addMenu()
-
-    this.inventory = new Inventory(
-      this.scene, this
-    )
-    this.toolkit = this.inventory
-
-    this.phone = new Phone(this.scene)
   }
 
   addLogo () {
@@ -74,27 +64,5 @@ export default class Sidebar {
       position: { x: this.CENTER, y },
       origin: { x: 0.5, y: 0 }
     })
-  }
-
-  reset = () => {
-    this.phone.reset()
-
-    this.inventory.reset()
-  }
-
-  toggle = () => {
-    this.reset()
-
-    if (
-      this.toolkit === this.inventory
-    ) {
-      this.toolkit = this.phone
-    } else {
-      this.toolkit = this.inventory
-    }
-
-    this.inventory.toggle()
-
-    this.phone.toggle()
   }
 }

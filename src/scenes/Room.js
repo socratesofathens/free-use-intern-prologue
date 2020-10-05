@@ -1,8 +1,7 @@
-import Phaser from 'phaser'
-
-import { GAME_WIDTH, upY } from '../lib/game'
+import { upY } from '../lib/game'
 import lorem from '../lib/lorem'
 import ORIGIN from '../lib/origin'
+import Phone from '../ui/Phone'
 
 import Sidebar from '../ui/Sidebar'
 
@@ -20,13 +19,13 @@ class Room extends Scene {
     this.tool = null
     this.interaction = null
     this.OFFSET = 10
-    this.phone = null
   }
 
   setup () {
     this.addBook()
 
     this.sidebar = new Sidebar(this)
+    this.phone = new Phone(this)
 
     super.setup()
   }
@@ -73,9 +72,7 @@ class Room extends Scene {
   }
 
   addGroup = () => {
-    return this.add.group({
-      classType: Phaser.GameObjects.Image
-    })
+    return this.add.group()
   }
 
   addPaper () {
@@ -208,12 +205,7 @@ class Room extends Scene {
   openPhone () {
     this.setText('To celebrate the internship, I bought a brand new phone, an Acuity 556D.')
 
-    this.phone = this.see({
-      name: 'phone',
-      size: { height: 1300, width: 611 },
-      origin: { x: 1, y: 0 },
-      position: { x: GAME_WIDTH, y: 0 }
-    })
+    this.phone.open()
   }
 
   read () {
