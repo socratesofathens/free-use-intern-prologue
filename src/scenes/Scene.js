@@ -26,14 +26,6 @@ class Scene extends Phaser.Scene {
     this.read()
   }
 
-  see = (options) => {
-    const seen = { ...options, scene: this }
-
-    const image = new Image(seen)
-
-    return image
-  }
-
   create = () => {
     this.setBackground({
       color: this.color
@@ -70,7 +62,8 @@ class Scene extends Phaser.Scene {
       background,
       images,
       fullscreen,
-      scene
+      scene,
+      item
     } = this.save
 
     if (scene) this.scene.start(scene)
@@ -113,6 +106,19 @@ class Scene extends Phaser.Scene {
       })
     }
 
+    if (item) {
+      console.log('item test:', item)
+
+      const { name, position } = item
+      const image = `item-${name}`
+
+      this.see({
+        name: image,
+        position,
+        action: () => this.use(name)
+      })
+    }
+
     return images?.map(this.see)
   }
 
@@ -128,6 +134,16 @@ class Scene extends Phaser.Scene {
     }
   }
 
+  see = (options) => {
+    const seen = {
+      ...options, scene: this
+    }
+
+    const image = new Image(seen)
+
+    return image
+  }
+
   setup () {
     this.read()
   }
@@ -136,6 +152,10 @@ class Scene extends Phaser.Scene {
     this
       .figures
       .forEach(figure => figure.update())
+  }
+
+  use (name) {
+    console.log('used test:', name)
   }
 }
 
