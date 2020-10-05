@@ -18,6 +18,9 @@ class Title extends Scene {
     this.loadImage({ image: 'logo-3' })
     this.loadImage({ image: 'doors' })
     this.loadImage({ image: 'phone' })
+    this.loadImage({
+      image: 'item-phone'
+    })
   }
 
   setup = () => {

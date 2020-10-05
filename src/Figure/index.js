@@ -1,12 +1,17 @@
 export default class Figure {
   constructor ({
-    scene, position, element, uses = []
+    scene,
+    position,
+    element,
+    uses = [],
+    action
   }) {
     this.scene = scene
     this.scene.figures.push(this)
 
     this.position = position
 
+    this.action = action
     this.element = element
     this.element.setInteractive()
     this.element.on(
@@ -36,6 +41,10 @@ export default class Figure {
     this.reset()
 
     this.uses.forEach(this.use, this)
+
+    if (this.action) {
+      this.action()
+    }
   }
 
   reset () {}

@@ -14,7 +14,8 @@ export default class Image extends Figure {
     to,
     time,
     uses,
-    depth
+    depth,
+    action
   }) {
     const { x, y } = position
 
@@ -24,7 +25,11 @@ export default class Image extends Figure {
       .image(x, y, name)
 
     super({
-      scene, position, element: image, uses
+      scene,
+      position,
+      element: image,
+      uses,
+      action
     })
 
     this.to = to
