@@ -1,61 +1,55 @@
-import Toolkit from './Toolkit'
+import {
+  upY, GAME_WIDTH
+} from '../lib/game'
+import ORIGIN from '../lib/origin'
 
-export default class Phone extends Toolkit {
+export default class Phone {
   constructor (scene) {
-    super(scene)
-
     this.scene = scene
-    this.scene.sidebar.phone = this
 
-    this.background = this.scene.add.image(
-      1350, 531.595, 'phone'
-    )
-    this.background.setDisplaySize(
-      251.611, 531.595
-    )
-    this.background.setOrigin(0, 1)
-    this.elements.push(this.background)
+    console.log('this.scene test:', this.scene)
 
-    this.addItems()
+    this.group = this.scene.addGroup()
 
-    this.toggle()
-    this.virgin = true
-  }
-
-  addItems = () => {
-    const {
-      left: power, right: phone
-    } = this.addRow(this.TOP)
-
-    power.setToggler('X')
-
-    const chris = () => {
-      const message = 'Chris is not answering his phone for some reason...'
-
-      this.scene.setText(message)
-    }
-
-    phone.setup('P', chris)
-
-    const {
-      left: email
-    } = this.addRow(this.MIDDLE)
-
-    email.setTool({
-      key: 'E',
-      label: 'Your email app.'
+    this.background = this.see({
+      name: 'phone',
+      size: { height: 1300, width: 611 },
+      origin: { x: 1, y: 0 },
+      position: { x: GAME_WIDTH, y: 0 },
+      depth: 1.1
     })
 
-    this.addRow(this.BOTTOM)
+    this.LEFT = 3372.606
+    this.RIGHT = 3631.817
+    this.TOP = upY(1804.439)
+
+    this.camera = this.see({
+      name: 'icon-camera',
+      size: {
+        width: 207.309, height: 207.309
+      },
+      position: {
+        x: this.RIGHT, y: this.TOP
+      },
+      origin: { x: 0, y: 1 },
+      depth: 1.2,
+      action: () => this.scene.use('camera')
+    })
+
+    this.close()
   }
 
-  toggle () {
-    super.toggle()
+  close () {
+    this.group.setVisible(false)
+  }
 
-    if (this.virgin) {
-      this.scene.setText('Your phone is an Accuity 556D. It has all kinds of cool apps.')
+  open () {
+    this.group.setVisible(true)
+  }
 
-      this.virgin = false
-    }
+  see (image) {
+    const seen = this.scene.see(image)
+
+    this.group.add(seen.element)
   }
 }

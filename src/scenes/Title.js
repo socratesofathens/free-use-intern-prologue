@@ -5,22 +5,27 @@ class Title extends Scene {
     super('title')
 
     this.name = 'Title'
+
+    this.IMAGES = [
+      'panther-vn',
+      'interface-logo',
+      'emma',
+      'logo-1',
+      'logo-2',
+      'logo-3',
+      'doors',
+      'item-phone',
+      'phone',
+      'icon-camera'
+    ]
   }
 
   preload = () => {
-    this.loadImage({ image: 'panther-vn' })
-    this.loadImage({
-      image: 'interface-logo'
-    })
-    this.loadImage({ image: 'emma' })
-    this.loadImage({ image: 'logo-1' })
-    this.loadImage({ image: 'logo-2' })
-    this.loadImage({ image: 'logo-3' })
-    this.loadImage({ image: 'doors' })
-    this.loadImage({ image: 'phone' })
-    this.loadImage({
-      image: 'item-phone'
-    })
+    this
+      .IMAGES
+      .forEach(image => this
+        .loadImage({ image })
+      )
   }
 
   setup = () => {
