@@ -17,6 +17,7 @@ class Scene extends Phaser.Scene {
     this.saves = []
     this.timer = null
     this.fullscreen = null
+    this.background = null
   }
 
   advance () {
@@ -34,7 +35,9 @@ class Scene extends Phaser.Scene {
   }
 
   create = () => {
-    this.setBackground({ color: this.color })
+    this.setBackground({
+      color: this.color
+    })
 
     const space = this
       .input
@@ -61,23 +64,16 @@ class Scene extends Phaser.Scene {
 
     if (!this.save) return this.save
 
+    this.reset()
+
     const {
-      images, fullscreen, scene
+      background,
+      images,
+      fullscreen,
+      scene
     } = this.save
 
-    if (scene) {
-      this.scene.start(scene)
-    }
-
-    if (this.fullscreen) {
-      this.fullscreen.destroy()
-
-      this.input.off(
-        'pointerup', this.advance
-      )
-
-      this.timer = this.timer?.remove()
-    }
+    if (scene) this.scene.start(scene)
 
     if (fullscreen) {
       this.fullscreen = this.see({
@@ -105,7 +101,31 @@ class Scene extends Phaser.Scene {
       }
     }
 
+    if (background) {
+      console.log('background test:', background)
+      this.background = this
+        .background
+        ?.destroy()
+
+      this.background = this.see({
+        name: background,
+        origin: ORIGIN
+      })
+    }
+
     return images?.map(this.see)
+  }
+
+  reset () {
+    this.timer = this.timer?.remove()
+
+    if (this.fullscreen) {
+      this.fullscreen.destroy()
+
+      this.input.off(
+        'pointerup', this.advance
+      )
+    }
   }
 
   setup () {
