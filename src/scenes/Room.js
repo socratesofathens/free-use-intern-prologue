@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
 
-import { upY } from '../lib/game'
+import { GAME_WIDTH, upY } from '../lib/game'
 import lorem from '../lib/lorem'
 import ORIGIN from '../lib/origin'
 
@@ -20,6 +20,7 @@ class Room extends Scene {
     this.tool = null
     this.interaction = null
     this.OFFSET = 10
+    this.phone = null
   }
 
   setup () {
@@ -204,6 +205,17 @@ class Room extends Scene {
     }
   }
 
+  openPhone () {
+    this.setText('To celebrate the internship, I bought a brand new phone, an Acuity 556D.')
+
+    this.phone = this.see({
+      name: 'phone',
+      size: { height: 1300, width: 611 },
+      origin: { x: 1, y: 0 },
+      position: { x: GAME_WIDTH, y: 0 }
+    })
+  }
+
   read () {
     super.read()
 
@@ -221,6 +233,14 @@ class Room extends Scene {
     this.dialogue.setText(dialogue)
 
     this.characterName.setText(speakerName)
+  }
+
+  use (name) {
+    super.use(name)
+
+    switch (name) {
+      case 'phone': this.openPhone()
+    }
   }
 }
 
