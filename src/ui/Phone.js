@@ -16,7 +16,19 @@ export default class Phone {
       depth: 1.1
     })
 
-    this.icons = new Icons(this)
+    this.apps = new Icons([
+      'power',
+      'phone',
+      'email',
+      'web',
+      'camera',
+      'photos'
+    ], this)
+    this.photos = new Icons(
+      ['close', 'selfie', 'emma'], this
+    )
+
+    this.openApps()
 
     this.close()
   }
@@ -28,7 +40,17 @@ export default class Phone {
   open () {
     this.group.setVisible(true)
 
-    this.icons.reset()
+    this.openApps()
+  }
+
+  openApps () {
+    this.apps.open()
+    this.photos.close()
+  }
+
+  openPhotos () {
+    this.apps.close()
+    this.photos.open()
   }
 
   see (image) {

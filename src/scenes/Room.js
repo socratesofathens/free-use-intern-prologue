@@ -277,9 +277,13 @@ class Room extends Scene {
           'This phone has a great high-res camera. I can’t wait to take some photos with it.'
         )
       case 'icon-photos':
+        this.phone.openPhotos()
+
         return this.setText(
           'My old phone had thousands of pics, but I couldn’t work out how to transfer them over.'
         )
+      case 'icon-close':
+        return this.phone.openApps()
     }
   }
 }
