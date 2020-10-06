@@ -17,7 +17,7 @@ export default class Icon {
     this.selectedImage = `${this.image}-selected`
 
     this.selected = this
-      .see(this.selectedImage, false)
+      .see(this.selectedImage)
 
     this.addLabel()
   }
@@ -75,8 +75,6 @@ export default class Icon {
       depth: 1.1,
       action: this.select
     })
-
-    seen.element.visible = visible
 
     return seen
   }

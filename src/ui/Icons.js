@@ -3,8 +3,10 @@ import { upY } from '../lib/game'
 import Icon from './Icon'
 
 export default class Icons {
-  constructor (phone) {
+  constructor (names, phone) {
     this.phone = phone
+    this.names = names
+
     this.scene = this.phone.scene
 
     this.group = this.scene.addGroup()
@@ -18,56 +20,31 @@ export default class Icons {
 
     this.tools = []
 
-    this.icons = {}
-    this.icons.power = new Icon({
-      name: 'power',
-      position: {
-        x: this.LEFT, y: this.TOP
-      },
-      icons: this
-    })
-
-    this.icons.phone = new Icon({
-      name: 'phone',
-      position: {
-        x: this.RIGHT, y: this.TOP
-      },
-      icons: this
-    })
-
-    this.icons.email = new Icon({
-      name: 'email',
-      position: {
-        x: this.LEFT, y: this.MIDDLE
-      },
-      icons: this
-    })
-
-    this.icons.web = new Icon({
-      name: 'web',
-      position: {
-        x: this.RIGHT, y: this.MIDDLE
-      },
-      icons: this
-    })
-
-    this.icons.camera = new Icon({
-      name: 'camera',
-      position: {
-        x: this.LEFT, y: this.BOTTOM
-      },
-      icons: this
-    })
-
-    this.icons.photos = new Icon({
-      name: 'photos',
-      position: {
-        x: this.RIGHT, y: this.BOTTOM
-      },
-      icons: this
-    })
+    this.icons = this.addIcons()
 
     this.close()
+  }
+
+  addIcons (names) {
+    const positions = [
+      { x: this.LEFT, y: this.TOP },
+      { x: this.RIGHT, y: this.TOP },
+      { x: this.LEFT, y: this.MIDDLE },
+      { x: this.RIGHT, y: this.MIDDLE },
+      { x: this.LEFT, y: this.BOTTOM },
+      { x: this.RIGHT, y: this.BOTTOM }
+    ]
+
+    return this.names
+      .map((icon, index) => {
+        const position = positions[index]
+
+        return new Icon({
+          name: icon,
+          position: position,
+          icons: this
+        })
+      })
   }
 
   close () {

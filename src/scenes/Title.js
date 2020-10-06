@@ -27,7 +27,13 @@ class Title extends Scene {
       'icon-camera',
       'icon-camera-selected',
       'icon-photos',
-      'icon-photos-selected'
+      'icon-photos-selected',
+      'icon-close',
+      'icon-close-selected',
+      'icon-selfie',
+      'icon-selfie-selected',
+      'icon-emma',
+      'icon-emma-selected'
     ]
   }
 
