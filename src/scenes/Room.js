@@ -1,3 +1,5 @@
+import Phaser from 'phaser'
+
 import { upY } from '../lib/game'
 import lorem from '../lib/lorem'
 import ORIGIN from '../lib/origin'
@@ -144,6 +146,18 @@ class Room extends Scene {
     text.setOrigin(origin.x, origin.y)
 
     if (action) {
+      const rectangle = new Phaser
+        .Geom
+        .Rectangle(
+          0, 0, text.width, text.height
+        )
+
+      text
+        .setInteractive(
+          rectangle,
+          Phaser.Geom.Rectangle.Contains
+        )
+
       text.on('pointerdown', action, this)
     }
 
