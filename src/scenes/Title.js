@@ -18,8 +18,16 @@ class Title extends Scene {
       'phone',
       'icon-power',
       'icon-power-selected',
+      'icon-phone',
+      'icon-phone-selected',
+      'icon-email',
+      'icon-email-selected',
+      'icon-web',
+      'icon-web-selected',
       'icon-camera',
-      'icon-camera-selected'
+      'icon-camera-selected',
+      'icon-photos',
+      'icon-photos-selected'
     ]
   }
 

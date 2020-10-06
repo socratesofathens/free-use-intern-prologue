@@ -20,9 +20,12 @@ export default class Phone {
 
     this.LEFT = 3372.606
     this.RIGHT = 3631.817
-    this.TOP = upY(1804.439)
 
-    this.icons = []
+    this.TOP = upY(1804.439)
+    this.MIDDLE = upY(1467.024)
+    this.BOTTOM = upY(1129.709)
+
+    this.tools = []
 
     this.power = new Icon({
       name: 'power',
@@ -32,10 +35,42 @@ export default class Phone {
       phone: this
     })
 
+    this.phone = new Icon({
+      name: 'phone',
+      position: {
+        x: this.RIGHT, y: this.TOP
+      },
+      phone: this
+    })
+
+    this.email = new Icon({
+      name: 'email',
+      position: {
+        x: this.LEFT, y: this.MIDDLE
+      },
+      phone: this
+    })
+
+    this.web = new Icon({
+      name: 'web',
+      position: {
+        x: this.RIGHT, y: this.MIDDLE
+      },
+      phone: this
+    })
+
     this.camera = new Icon({
       name: 'camera',
       position: {
-        x: this.RIGHT, y: this.TOP
+        x: this.LEFT, y: this.BOTTOM
+      },
+      phone: this
+    })
+
+    this.photos = new Icon({
+      name: 'photos',
+      position: {
+        x: this.RIGHT, y: this.BOTTOM
       },
       phone: this
     })
@@ -50,8 +85,12 @@ export default class Phone {
   open () {
     this.group.setVisible(true)
 
+    this.reset()
+  }
+
+  reset () {
     this
-      .icons
+      .tools
       .forEach(icon => icon.deselect())
   }
 

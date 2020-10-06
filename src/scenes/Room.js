@@ -241,6 +241,26 @@ class Room extends Scene {
         return this.openPhone()
       case 'icon-power':
         return this.phone.close()
+      case 'icon-phone':
+        return this.setText(
+          'I only have one number in here, my friend Steve. I should call him.'
+        )
+      case 'icon-email':
+        return this.setText(
+          'To look more professional, I made a new email address for internship applications. Goodbye, kingpin_quinn@hottmail.'
+        )
+      case 'icon-web':
+        return this.setText(
+          'I can look up pretty much anything on Cloo. It’s great for when I’m not sure what to do next.'
+        )
+      case 'icon-camera':
+        return this.setText(
+          'This phone has a great high-res camera. I can’t wait to take some photos with it.'
+        )
+      case 'icon-photos':
+        return this.setText(
+          'My old phone had thousands of pics, but I couldn’t work out how to transfer them over.'
+        )
     }
   }
 }
