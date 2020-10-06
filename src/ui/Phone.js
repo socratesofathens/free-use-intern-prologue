@@ -31,8 +31,7 @@ export default class Phone {
         x: this.RIGHT, y: this.TOP
       },
       origin: { x: 0, y: 1 },
-      depth: 1.2,
-      action: () => this.scene.use('camera')
+      depth: 1.2
     })
 
     this.close()

@@ -4,7 +4,8 @@ export default class Figure {
     position,
     element,
     uses = [],
-    action
+    action,
+    name
   }) {
     this.scene = scene
     this.scene.figures.push(this)
@@ -17,6 +18,8 @@ export default class Figure {
     this.element.on(
       'pointerdown', this.onClick
     )
+
+    this.name = name
 
     this.uses = uses
   }
@@ -44,6 +47,10 @@ export default class Figure {
 
     if (this.action) {
       this.action()
+    }
+
+    if (this.name) {
+      this.scene.use(this.name)
     }
   }
 
