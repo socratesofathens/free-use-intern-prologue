@@ -29,7 +29,8 @@ export default class Image extends Figure {
       position,
       element: image,
       uses,
-      action
+      action,
+      name
     })
 
     this.to = to

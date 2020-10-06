@@ -231,7 +231,7 @@ class Room extends Scene {
     super.use(name)
 
     switch (name) {
-      case 'phone': this.openPhone()
+      case 'item-phone': this.openPhone()
     }
   }
 }

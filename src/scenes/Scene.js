@@ -108,16 +108,10 @@ class Scene extends Phaser.Scene {
     }
 
     if (item) {
-      console.log('item test:', item)
-
       const { name, position } = item
       const image = `item-${name}`
 
-      this.see({
-        name: image,
-        position,
-        action: () => this.use(name)
-      })
+      this.see({ name: image, position })
     }
 
     return images?.map(this.see)

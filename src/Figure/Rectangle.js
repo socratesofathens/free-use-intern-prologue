@@ -6,7 +6,8 @@ class Rectangle extends Figure {
     position,
     size,
     color = 0xFF0000,
-    uses
+    uses,
+    name
   }) {
     const { x, y } = position
     const { width, height } = size
@@ -15,7 +16,11 @@ class Rectangle extends Figure {
     )
 
     super({
-      scene, position, element, uses
+      scene,
+      position,
+      element,
+      uses,
+      name
     })
 
     this.color = color
