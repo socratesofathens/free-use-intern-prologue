@@ -16,6 +16,7 @@ class Title extends Scene {
       'doors',
       'item-phone',
       'phone',
+      'icon-power',
       'icon-camera'
     ]
   }
