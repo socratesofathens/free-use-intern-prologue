@@ -219,6 +219,12 @@ class Room extends Scene {
     }
   }
 
+  select (figure) {
+    this.selected = figure
+
+    return figure?.select()
+  }
+
   setText = (dialogue, speakerName) => {
     this.dialogue.setText(dialogue)
 

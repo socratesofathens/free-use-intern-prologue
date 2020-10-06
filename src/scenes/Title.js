@@ -17,7 +17,9 @@ class Title extends Scene {
       'item-phone',
       'phone',
       'icon-power',
-      'icon-camera'
+      'icon-power-selected',
+      'icon-camera',
+      'icon-camera-selected'
     ]
   }
 

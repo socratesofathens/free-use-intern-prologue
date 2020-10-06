@@ -2,6 +2,8 @@ import {
   upY, GAME_WIDTH
 } from '../lib/game'
 
+import Icon from './Icon'
+
 export default class Phone {
   constructor (scene) {
     this.scene = scene
@@ -20,30 +22,22 @@ export default class Phone {
     this.RIGHT = 3631.817
     this.TOP = upY(1804.439)
 
-    this.LENGTH = 207.309
-    this.SIZE = {
-      width: this.LENGTH,
-      height: this.LENGTH
-    }
+    this.icons = []
 
-    this.power = this.see({
-      name: 'icon-power',
-      size: this.SIZE,
+    this.power = new Icon({
+      name: 'power',
       position: {
         x: this.LEFT, y: this.TOP
       },
-      origin: { x: 0, y: 1 },
-      depth: 1.2
+      phone: this
     })
 
-    this.camera = this.see({
-      name: 'icon-camera',
-      size: this.SIZE,
+    this.camera = new Icon({
+      name: 'camera',
       position: {
         x: this.RIGHT, y: this.TOP
       },
-      origin: { x: 0, y: 1 },
-      depth: 1.2
+      phone: this
     })
 
     this.close()
@@ -55,11 +49,17 @@ export default class Phone {
 
   open () {
     this.group.setVisible(true)
+
+    this
+      .icons
+      .forEach(icon => icon.deselect())
   }
 
   see (image) {
     const seen = this.scene.see(image)
 
     this.group.add(seen.element)
+
+    return seen
   }
 }

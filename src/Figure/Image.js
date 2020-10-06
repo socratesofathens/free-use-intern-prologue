@@ -71,6 +71,14 @@ export default class Image extends Figure {
     super.destroy()
   }
 
+  hide () {
+    this.element.visible = false
+  }
+
+  show () {
+    this.element.visible = true
+  }
+
   update () {
     if (this.element.body) {
       const { speed } = this.element.body
