@@ -61,12 +61,8 @@ class Introduction extends Room {
           name: 'emma',
           scale: 0.7528,
           position: { x: 887, y: 1362 }
-        }]
-      },
-      {
-        dialogue: 'Somewhere in this huge building is Acuity, our workplace for the summer. The email said to be here by 9. We’re running a little early, so all we need to do is get inside.'
-      },
-      {
+        }],
+        dialogue: 'Somewhere in this huge building is Acuity, our workplace for the summer. The email said to be here by 9. We’re running a little early, so all we need to do is get inside.',
         item: {
           name: 'phone',
           position: { x: 3680, y: 311 }

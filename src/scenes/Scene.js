@@ -37,6 +37,12 @@ class Scene extends Phaser.Scene {
       .addKey('SPACE')
     space.on('down', this.advance, this)
 
+    this
+      .input
+      .on(
+        'pointerup', this.advance, this
+      )
+
     this.setup()
   }
 
@@ -63,7 +69,8 @@ class Scene extends Phaser.Scene {
       images,
       fullscreen,
       scene,
-      item
+      item,
+      interactions
     } = this.save
 
     if (scene) this.scene.start(scene)
@@ -75,12 +82,6 @@ class Scene extends Phaser.Scene {
         origin: ORIGIN,
         depth: 2
       })
-
-      this
-        .input
-        .on(
-          'pointerup', this.advance, this
-        )
 
       if (fullscreen.time) {
         this.timer = this
@@ -127,10 +128,6 @@ class Scene extends Phaser.Scene {
 
     if (this.fullscreen) {
       this.fullscreen.destroy()
-
-      this.input.off(
-        'pointerup', this.advance
-      )
     }
   }
 
