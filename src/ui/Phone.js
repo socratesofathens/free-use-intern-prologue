@@ -1,8 +1,6 @@
-import {
-  upY, GAME_WIDTH
-} from '../lib/game'
+import { GAME_WIDTH } from '../lib/game'
 
-import Icon from './Icon'
+import Icons from './Icons'
 
 export default class Phone {
   constructor (scene) {
@@ -18,62 +16,7 @@ export default class Phone {
       depth: 1.1
     })
 
-    this.LEFT = 3372.606
-    this.RIGHT = 3631.817
-
-    this.TOP = upY(1804.439)
-    this.MIDDLE = upY(1467.024)
-    this.BOTTOM = upY(1129.709)
-
-    this.tools = []
-
-    this.power = new Icon({
-      name: 'power',
-      position: {
-        x: this.LEFT, y: this.TOP
-      },
-      phone: this
-    })
-
-    this.phone = new Icon({
-      name: 'phone',
-      position: {
-        x: this.RIGHT, y: this.TOP
-      },
-      phone: this
-    })
-
-    this.email = new Icon({
-      name: 'email',
-      position: {
-        x: this.LEFT, y: this.MIDDLE
-      },
-      phone: this
-    })
-
-    this.web = new Icon({
-      name: 'web',
-      position: {
-        x: this.RIGHT, y: this.MIDDLE
-      },
-      phone: this
-    })
-
-    this.camera = new Icon({
-      name: 'camera',
-      position: {
-        x: this.LEFT, y: this.BOTTOM
-      },
-      phone: this
-    })
-
-    this.photos = new Icon({
-      name: 'photos',
-      position: {
-        x: this.RIGHT, y: this.BOTTOM
-      },
-      phone: this
-    })
+    this.icons = new Icons(this)
 
     this.close()
   }
@@ -85,13 +28,7 @@ export default class Phone {
   open () {
     this.group.setVisible(true)
 
-    this.reset()
-  }
-
-  reset () {
-    this
-      .tools
-      .forEach(icon => icon.deselect())
+    this.icons.reset()
   }
 
   see (image) {

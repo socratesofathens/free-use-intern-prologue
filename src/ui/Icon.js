@@ -1,12 +1,12 @@
 export default class Icon {
   constructor ({
-    name, position, phone
+    name, position, icons
   }) {
     this.name = name
     this.position = position
-    this.phone = phone
-    this.phone.tools.push(this)
-    this.scene = this.phone.scene
+    this.icons = icons
+    this.icons.tools.push(this)
+    this.scene = this.icons.scene
 
     this.LENGTH = 207.309
 
@@ -43,7 +43,12 @@ export default class Icon {
         action: this.select
       })
 
-    this.phone.group.add(this.label)
+    this.icons.group.add(this.label)
+    this
+      .icons
+      .phone
+      .group
+      .add(this.label)
   }
 
   deselect () {
@@ -51,7 +56,7 @@ export default class Icon {
   }
 
   select = () => {
-    this.phone.reset()
+    this.icons.reset()
 
     this.selected.show()
   }
@@ -62,7 +67,7 @@ export default class Icon {
       height: this.LENGTH
     }
 
-    const seen = this.phone.see({
+    const seen = this.icons.see({
       name,
       size: this.SIZE,
       origin: { x: 0, y: 1 },

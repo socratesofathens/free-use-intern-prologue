@@ -69,8 +69,7 @@ class Scene extends Phaser.Scene {
       images,
       fullscreen,
       scene,
-      item,
-      interactions
+      item
     } = this.save
 
     if (scene) this.scene.start(scene)
@@ -96,7 +95,6 @@ class Scene extends Phaser.Scene {
     }
 
     if (background) {
-      console.log('background test:', background)
       this.background = this
         .background
         ?.destroy()
