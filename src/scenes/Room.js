@@ -64,8 +64,7 @@ class Room extends Scene {
         wordWrap: { width: 3270 },
         color: 'white'
       },
-      origin: { x: 0, y: 0 },
-      action: this.advance
+      origin: { x: 0, y: 0 }
     })
 
     this.dialogue.setDepth(1)
@@ -84,8 +83,7 @@ class Room extends Scene {
     const paper = this.addRectangle({
       position,
       size,
-      color: 0x2b3043,
-      action: this.advance
+      color: 0x2b3043
     })
 
     paper.setDepth(1)
@@ -224,7 +222,9 @@ class Room extends Scene {
   setText = (dialogue, speakerName) => {
     this.dialogue.setText(dialogue)
 
-    this.characterName.setText(speakerName)
+    this
+      .characterName
+      .setText(speakerName)
   }
 
   use (name) {

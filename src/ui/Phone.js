@@ -1,7 +1,6 @@
 import {
   upY, GAME_WIDTH
 } from '../lib/game'
-import ORIGIN from '../lib/origin'
 
 export default class Phone {
   constructor (scene) {
