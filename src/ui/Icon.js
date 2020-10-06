@@ -8,6 +8,8 @@ export default class Icon {
     this.phone.tools.push(this)
     this.scene = this.phone.scene
 
+    this.LENGTH = 207.309
+
     this.image = `icon-${this.name}`
 
     this.icon = this.see(this.image)
@@ -16,6 +18,27 @@ export default class Icon {
 
     this.selected = this
       .see(this.selectedImage, false)
+
+    this.HALF_LENGTH = this.LENGTH / 2
+    const { x, y } = this.position
+    this.CENTER = x + this.HALF_LENGTH
+    this.BASELINE = y + 27
+
+    this.label = this
+      .scene
+      .addText({
+        position: {
+          x: this.CENTER, y: this.BASELINE
+        },
+        content: this.name,
+        options: {
+          fontSize: '30pt'
+        },
+        origin: { x: 0.5, y: 0 },
+        depth: 4
+      })
+
+    this.phone.group.add(this.label)
   }
 
   deselect () {
@@ -29,7 +52,6 @@ export default class Icon {
   }
 
   see (name, visible = true) {
-    this.LENGTH = 207.309
     this.SIZE = {
       width: this.LENGTH,
       height: this.LENGTH

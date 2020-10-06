@@ -126,7 +126,8 @@ class Room extends Scene {
     position = ORIGIN,
     origin = { x: 0, y: 1 },
     options = {},
-    action
+    action,
+    depth
   }) => {
     const base = {
       fontFamily: 'futura',
@@ -144,6 +145,10 @@ class Room extends Scene {
 
     if (action) {
       text.on('pointerdown', action, this)
+    }
+
+    if (depth) {
+      text.setDepth(depth)
     }
 
     return text
