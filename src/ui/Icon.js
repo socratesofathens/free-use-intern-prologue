@@ -1,7 +1,3 @@
-import {
-  upY, GAME_WIDTH
-} from '../lib/game'
-
 export default class Icon {
   constructor ({
     name, position, phone
@@ -9,8 +5,7 @@ export default class Icon {
     this.name = name
     this.position = position
     this.phone = phone
-    this.phone.icons.push(this)
-
+    this.phone.tools.push(this)
     this.scene = this.phone.scene
 
     this.image = `icon-${this.name}`
@@ -28,6 +23,8 @@ export default class Icon {
   }
 
   select = () => {
+    this.phone.reset()
+
     this.selected.show()
   }
 
