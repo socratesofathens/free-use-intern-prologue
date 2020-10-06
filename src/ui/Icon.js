@@ -19,6 +19,10 @@ export default class Icon {
     this.selected = this
       .see(this.selectedImage, false)
 
+    this.addLabel()
+  }
+
+  addLabel () {
     this.HALF_LENGTH = this.LENGTH / 2
     const { x, y } = this.position
     this.CENTER = x + this.HALF_LENGTH
@@ -35,7 +39,8 @@ export default class Icon {
           fontSize: '30pt'
         },
         origin: { x: 0.5, y: 0 },
-        depth: 4
+        depth: 4,
+        action: this.select
       })
 
     this.phone.group.add(this.label)
