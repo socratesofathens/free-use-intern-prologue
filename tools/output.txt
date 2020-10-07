@@ -1,5 +1,49 @@
 [
   {
-    dialogue: 'It rings out. Huh. For some reason, Steve isn’t answering. I should try him again later.'
+    speakerName: 'Quinn',
+    dialogue: 'Okay, slight problem…'
+  },
+  {
+    speakerName: 'Emma',
+    dialogue: 'Oh, no. '
+  },
+  {
+    speakerName: 'Quinn',
+    dialogue: 'Yeah, they were expecting a woman. Because of my name.'
+  },
+  {
+    speakerName: 'Emma',
+    dialogue: 'Oh no…'
+  },
+  {
+    speakerName: 'Quinn',
+    dialogue: 'So can you go talk to them? Show them that I’m not just some random guy?'
+  },
+  {
+    speakerName: 'Emma',
+    dialogue: 'I don’t know...I’m sort of freaking out.'
+  },
+  {
+    speakerName: 'Quinn',
+    dialogue: 'Emma, if you don’t help, they won’t let us in.'
+  },
+  {
+    speakerName: 'Emma',
+    dialogue: 'I’m sorry, Quinn, I can’t. I’m too nervous. Can you sort it out? Pretty please?'
+  },
+  {
+    speakerName: 'Quinn',
+    dialogue: '…'
+  },
+  {
+    speakerName: 'Emma',
+    dialogue: 'For me?'
+  },
+  {
+    speakerName: 'Quinn',
+    dialogue: '(sigh) I’ll see what I can do.'
+  },
+  {
+    dialogue: 'The things we do for hot best friends.'
   }
 ]

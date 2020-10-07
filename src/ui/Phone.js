@@ -58,6 +58,11 @@ export default class Phone {
     this.photos.open()
   }
 
+  reset () {
+    this.apps.reset()
+    this.photos.reset()
+  }
+
   see (image) {
     const seen = this.scene.see(image)
 

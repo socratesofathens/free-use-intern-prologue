@@ -33,7 +33,8 @@ class Title extends Scene {
       'icon-selfie',
       'icon-selfie-selected',
       'icon-emma',
-      'icon-emma-selected'
+      'icon-emma-selected',
+      'pic-emma'
     ]
   }
 

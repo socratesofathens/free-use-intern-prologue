@@ -9,7 +9,7 @@ export default class Image extends Figure {
     scene,
     name,
     origin,
-    position = ORIGIN,
+    position,
     size,
     to,
     time,
@@ -17,6 +17,11 @@ export default class Image extends Figure {
     depth,
     action
   }) {
+    if (!position) {
+      position = ORIGIN
+      origin = ORIGIN
+    }
+
     const { x, y } = position
 
     const image = scene
