@@ -18,7 +18,10 @@ class Scene extends Phaser.Scene {
     this.timer = null
     this.fullscreen = null
     this.background = null
-    this.initial = { point: 0 }
+    this.initial = {
+      point: 0,
+      photos: ['selfie']
+    }
     this.images = {}
   }
 
@@ -94,7 +97,8 @@ class Scene extends Phaser.Scene {
       fullscreen,
       scene,
       item,
-      state
+      state,
+      photo
     } = this.save
 
     if (scene) this.scene.start(scene)
@@ -155,6 +159,14 @@ class Scene extends Phaser.Scene {
       this.interaction = null
 
       state.point = this.saves.length
+    }
+
+    if (photo) {
+      console.log('photo test:', photo)
+      const { photos } = this.phone
+
+      const icon = photos.addIcon(photo)
+      photos[icon.lower] = icon
     }
 
     return images?.map(this.see)

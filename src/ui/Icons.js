@@ -32,17 +32,12 @@ export default class Icons {
 
     this.tools = []
 
-    this.lowers = this
+    this.icons = this
       .names
       .map(this.addIcon)
 
-    this.lowers.forEach(lower => {
-      const { icon } = this
-        .positions
-        .find(position => position
-          .icon
-          .lower === lower
-        )
+    this.icons.forEach(icon => {
+      const { lower } = icon
 
       this[lower] = icon
     })
@@ -62,9 +57,11 @@ export default class Icons {
         icons: this
       })
 
+      icon.icon.element.setVisible(false)
+
       position.icon = icon
 
-      return icon.lower
+      return icon
     }
 
     console.warn('No empty position left!', this.positions)

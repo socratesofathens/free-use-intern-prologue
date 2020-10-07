@@ -316,6 +316,8 @@ class Room extends Scene {
         return this.phone.openApps()
       case 'icon-selfie':
         return photos.selfie.select()
+      case 'icon-emma':
+        return photos.emma.select()
       case 'emma': {
         return this.interact({
           interaction: this.emma
