@@ -5,12 +5,15 @@ export default class Icon {
     this.name = name
     this.position = position
     this.icons = icons
+
+    this.lower = this.name.toLowerCase()
+
     this.icons.tools.push(this)
     this.scene = this.icons.scene
 
     this.LENGTH = 207.309
 
-    this.image = `icon-${this.name}`
+    this.image = `icon-${this.lower}`
 
     this.icon = this.see(this.image)
 
@@ -36,7 +39,8 @@ export default class Icon {
         },
         content: this.name,
         options: {
-          fontSize: '30pt'
+          fontSize: '30pt',
+          color: 'white'
         },
         origin: { x: 0.5, y: 0 },
         depth: 4,

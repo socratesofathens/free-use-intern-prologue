@@ -3,7 +3,10 @@ import { upY } from '../lib/game'
 import Icon from './Icon'
 
 export default class Icons {
-  constructor (names, phone) {
+  constructor ({
+    names,
+    phone
+  }) {
     this.phone = phone
     this.names = names
 
@@ -18,15 +21,7 @@ export default class Icons {
     this.MIDDLE = upY(1467.024)
     this.BOTTOM = upY(1129.709)
 
-    this.tools = []
-
-    this.icons = this.addIcons()
-
-    this.close()
-  }
-
-  addIcons (names) {
-    const positions = [
+    this.positions = [
       { x: this.LEFT, y: this.TOP },
       { x: this.RIGHT, y: this.TOP },
       { x: this.LEFT, y: this.MIDDLE },
@@ -35,16 +30,31 @@ export default class Icons {
       { x: this.RIGHT, y: this.BOTTOM }
     ]
 
-    return this.names
-      .map((icon, index) => {
-        const position = positions[index]
+    this.tools = []
 
-        return new Icon({
-          name: icon,
-          position: position,
-          icons: this
-        })
+    this.icons = this
+      .names
+      .forEach(this.addIcon)
+
+    this.close()
+  }
+
+  addIcon = (name) => {
+    const position = this
+      .positions
+      .find(position => !position.icon)
+
+    if (position) {
+      position.icon = new Icon({
+        name,
+        position: position,
+        icons: this
       })
+
+      return position
+    }
+
+    console.warn('No empty position left!', this.positions)
   }
 
   close () {

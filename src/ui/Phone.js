@@ -16,17 +16,22 @@ export default class Phone {
       depth: 1.1
     })
 
-    this.apps = new Icons([
-      'power',
-      'phone',
-      'email',
-      'web',
-      'camera',
-      'photos'
-    ], this)
-    this.photos = new Icons(
-      ['close', 'selfie', 'emma'], this
-    )
+    this.apps = new Icons({
+      names: [
+        'Power',
+        'Phone',
+        'Email',
+        'Web',
+        'Camera',
+        'Photos'
+      ],
+      phone: this
+    })
+
+    this.photos = new Icons({
+      names: ['Home', 'Selfie', 'Emma'],
+      phone: this
+    })
 
     this.openApps()
 
