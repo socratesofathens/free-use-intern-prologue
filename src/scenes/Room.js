@@ -5,6 +5,7 @@ import lorem from '../lib/lorem'
 import ORIGIN from '../lib/origin'
 
 import Steve from '../Interaction/Steve'
+import Emma from '../Interaction/Emma'
 
 import Phone from '../ui/Phone'
 import Sidebar from '../ui/Sidebar'
@@ -31,7 +32,12 @@ class Room extends Scene {
     this.sidebar = new Sidebar(this)
     this.phone = new Phone(this)
 
-    this.steve = new Steve(this)
+    this.steve = new Steve({
+      scene: this
+    })
+    this.emma = new Emma({
+      scene: this
+    })
 
     super.setup()
   }
@@ -252,7 +258,6 @@ class Room extends Scene {
   setText = (dialogue, speakerName) => {
     this.dialogue.setText(dialogue)
 
-    console.log('speakerName test:', speakerName)
     this
       .speakerName
       .setText(speakerName)
@@ -266,15 +271,15 @@ class Room extends Scene {
 
     const { apps, photos } = this.phone
 
+    const { state } = this.game
+
     switch (name) {
       case 'item-phone':
         return this.openPhone()
       case 'icon-power':
         return this.phone.close()
       case 'icon-phone': {
-        const { state } = this.game
-
-        console.log('state test:', state)
+        this.phone.reset()
 
         state.steve ??= -1
         state.steve = state.steve + 1
@@ -311,6 +316,11 @@ class Room extends Scene {
         return this.phone.openApps()
       case 'icon-selfie':
         return photos.selfie.select()
+      case 'emma': {
+        return this.interact({
+          interaction: this.emma
+        })
+      }
     }
   }
 }

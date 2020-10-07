@@ -62,6 +62,9 @@ export default class Icon {
     this.icons.reset()
 
     this.selected.show()
+
+    const { state } = this.scene.game
+    state.selected = this.lower
   }
 
   see (name, visible = true) {

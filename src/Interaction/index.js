@@ -6,6 +6,6 @@ export default class Interaction {
   }
 
   read (state) {
-    return this.points[state.point]
+    this.scene.phone.reset()
   }
 }

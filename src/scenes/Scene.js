@@ -19,6 +19,7 @@ class Scene extends Phaser.Scene {
     this.fullscreen = null
     this.background = null
     this.initial = { point: 0 }
+    this.images = {}
   }
 
   advance () {
@@ -145,6 +146,17 @@ class Scene extends Phaser.Scene {
       this.game.state = newState
     }
 
+    const next = this.extract(1)
+    if (!next) {
+      const { state } = this.game
+
+      state.selected = null
+
+      this.interaction = null
+
+      state.point = this.saves.length
+    }
+
     return images?.map(this.see)
   }
 
@@ -157,11 +169,24 @@ class Scene extends Phaser.Scene {
   }
 
   see = (options) => {
+    const { title, name } = options
+
+    options.title = title || name
+
+    if (options.remove) {
+      const image = this
+        .images[options.title]
+
+      return image.destroy()
+    }
+
     const seen = {
       ...options, scene: this
     }
 
     const image = new Image(seen)
+
+    this.images[seen.title] = image
 
     return image
   }

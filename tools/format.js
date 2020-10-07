@@ -6,8 +6,14 @@ const inpath = path.join(
   __dirname, 'input.txt'
 )
 
-const input = fs
+const file = fs
   .readFileSync(inpath, 'utf8')
+
+const clip = clipboardy.readSync()
+
+const input = clip && clip.length
+  ? clip
+  : file
 
 const lines = input.split(/\r?\n/)
 
@@ -17,7 +23,7 @@ function format (line) {
   const colon = line.indexOf(':')
 
   if (colon > -1) {
-    const speakerName = line
+    const characterName = line
       .slice(0, colon)
 
     const space = colon + 2
@@ -25,8 +31,7 @@ function format (line) {
     const dialogue = line.slice(space)
 
     return `{
-    speakerName: '${speakerName}',
-
+    speakerName: '${characterName}',
     dialogue: '${dialogue}'
   }`
   }
