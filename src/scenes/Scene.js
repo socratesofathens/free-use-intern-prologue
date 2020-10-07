@@ -66,11 +66,15 @@ class Scene extends Phaser.Scene {
     return this.saves[copy.point]
   }
 
-  interact ({ points }) {
+  interact ({ points, interaction }) {
     if (points) {
       this.interaction = new Interaction({
         scene: this, points
       })
+    }
+
+    if (interaction) {
+      this.interaction = interaction
     }
 
     this.game.state.point = -1
