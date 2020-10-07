@@ -4,6 +4,7 @@ import { GAME_SIZE } from '../lib/game'
 import ORIGIN from '../lib/origin'
 
 import Image from '../Figure/Image'
+import Interaction from '../Interaction'
 
 class Scene extends Phaser.Scene {
   constructor (key, color = '#FFFFFF') {
@@ -47,20 +48,36 @@ class Scene extends Phaser.Scene {
     this.setup()
   }
 
-  setBackground = ({ color, image }) => {
-    const { main } = this.cameras
+  extract (difference = 0) {
+    const { state } = this.game
+    const { point } = state || 0
+    state.point = point
 
-    main.setBackgroundColor(color)
+    const sum = state.point + difference
 
-    if (image) {
-      this.image = this.add.image(image)
+    const copy = { ...state, point: sum }
+
+    if (this.interaction) {
+      return this
+        .interaction
+        .read(copy)
     }
+
+    return this.saves[copy.point]
+  }
+
+  interact ({ points }) {
+    if (points) {
+      this.interaction = new Interaction({
+        scene: this, points
+      })
+    }
+
+    this.game.state.point = -1
   }
 
   read () {
-    const { point } = this.game.state || 0
-    this.game.state.point = point
-    this.save = this.saves[point]
+    this.save = this.extract()
 
     if (!this.save) return this.save
 
@@ -135,6 +152,16 @@ class Scene extends Phaser.Scene {
     return image
   }
 
+  setBackground = ({ color, image }) => {
+    const { main } = this.cameras
+
+    main.setBackgroundColor(color)
+
+    if (image) {
+      this.image = this.add.image(image)
+    }
+  }
+
   setup () {
     const { state } = this.game
     this
@@ -142,11 +169,6 @@ class Scene extends Phaser.Scene {
       .state = state || this.initial
 
     this.read()
-  }
-
-  inPoint (points) {
-    this.saves = points
-    this.game.state.point = -1
   }
 
   update () {

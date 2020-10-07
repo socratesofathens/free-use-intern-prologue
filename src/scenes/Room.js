@@ -257,9 +257,7 @@ class Room extends Scene {
 
     const { state } = this.game
 
-    const point = state.point || 0
-    const next = point + 1
-    const save = this.saves[next]
+    const save = this.extract(1)
     if (save) return save
 
     const { apps, photos } = this.phone
@@ -273,38 +271,39 @@ class Room extends Scene {
         switch (state.steve) {
           default:
             console.log('default test:')
-            return this.inPoint([
-              {
-                dialogue: 'I only have one number in here, my friend Steve. I should call him.'
-              },
-              {
-                characterName: 'Quinn',
-                dialogue: 'Hey Steve! It’s Quinn.'
-              },
-              {
-                characterName: 'Steve',
-                dialogue: 'Uh, hey dude. What’s up?'
-              },
-              {
-                characterName: 'Quinn',
-                dialogue: 'Just calling to say hi!'
-              },
-              {
-                characterName: 'Steve',
-                dialogue: 'Yeah, hi. I’m at work at the moment, so...let’s talk later?'
-              },
-              {
-                characterName: 'Quinn',
-                dialogue: 'Sure thing! I’ll call you again later.'
-              },
-              {
-                characterName: 'Steve',
-                dialogue: 'No, I didn’t mean…'
-              },
-              {
-                dialogue: 'I hang up on Steve. What a great guy.'
-              }
-            ])
+            return this.interact({
+              points: [
+                {
+                  dialogue: 'I only have one number in here, my friend Steve. I should call him.'
+                },
+                {
+                  characterName: 'Quinn',
+                  dialogue: 'Hey Steve! It’s Quinn.'
+                },
+                {
+                  characterName: 'Steve',
+                  dialogue: 'Uh, hey dude. What’s up?'
+                },
+                {
+                  characterName: 'Quinn',
+                  dialogue: 'Just calling to say hi!'
+                },
+                {
+                  characterName: 'Steve',
+                  dialogue: 'Yeah, hi. I’m at work at the moment, so...let’s talk later?'
+                },
+                {
+                  characterName: 'Quinn',
+                  dialogue: 'Sure thing! I’ll call you again later.'
+                },
+                {
+                  characterName: 'Steve',
+                  dialogue: 'No, I didn’t mean…'
+                },
+                {
+                  dialogue: 'I hang up on Steve. What a great guy.'
+                }]
+            })
         }
       case 'icon-email':
         apps.email.select()
