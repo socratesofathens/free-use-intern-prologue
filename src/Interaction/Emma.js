@@ -167,6 +167,8 @@ class Emma extends Interaction {
         return this.points.emma[point]
       case 'web':
         return this.points.web[point]
+      case 'email':
+        return this.points.email[point]
     }
 
     return this.points.base[point]
