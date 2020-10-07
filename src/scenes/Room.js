@@ -3,8 +3,10 @@ import Phaser from 'phaser'
 import { upY } from '../lib/game'
 import lorem from '../lib/lorem'
 import ORIGIN from '../lib/origin'
-import Phone from '../ui/Phone'
 
+import Steve from '../Interaction/Steve'
+
+import Phone from '../ui/Phone'
 import Sidebar from '../ui/Sidebar'
 
 import Scene from './Scene'
@@ -28,6 +30,8 @@ class Room extends Scene {
 
     this.sidebar = new Sidebar(this)
     this.phone = new Phone(this)
+
+    this.steve = new Steve(this)
 
     super.setup()
   }
@@ -268,43 +272,9 @@ class Room extends Scene {
       case 'icon-power':
         return this.phone.close()
       case 'icon-phone':
-        switch (state.steve) {
-          default:
-            console.log('default test:')
-            return this.interact({
-              points: [
-                {
-                  dialogue: 'I only have one number in here, my friend Steve. I should call him.'
-                },
-                {
-                  characterName: 'Quinn',
-                  dialogue: 'Hey Steve! It’s Quinn.'
-                },
-                {
-                  characterName: 'Steve',
-                  dialogue: 'Uh, hey dude. What’s up?'
-                },
-                {
-                  characterName: 'Quinn',
-                  dialogue: 'Just calling to say hi!'
-                },
-                {
-                  characterName: 'Steve',
-                  dialogue: 'Yeah, hi. I’m at work at the moment, so...let’s talk later?'
-                },
-                {
-                  characterName: 'Quinn',
-                  dialogue: 'Sure thing! I’ll call you again later.'
-                },
-                {
-                  characterName: 'Steve',
-                  dialogue: 'No, I didn’t mean…'
-                },
-                {
-                  dialogue: 'I hang up on Steve. What a great guy.'
-                }]
-            })
-        }
+        return this.interact({
+          interaction: this.steve
+        })
       case 'icon-email':
         apps.email.select()
 
