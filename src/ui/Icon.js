@@ -23,6 +23,7 @@ export default class Icon {
       .see(this.selectedImage)
 
     this.addLabel()
+    this.deselect()
   }
 
   addLabel () {

@@ -80,7 +80,8 @@ class Emma extends Interaction {
         images: [
           { name: 'pic-emma' }
         ],
-        dialogue: 'I pull out my phone and take a snap of Emma. God she’s a hottie. My old phone had a thousand photos of her...they’ve all been safely backed up on my computer. I use them a lot when I’m alone at night.'
+        dialogue: 'I pull out my phone and take a snap of Emma. God she’s a hottie. My old phone had a thousand photos of her...they’ve all been safely backed up on my computer. I use them a lot when I’m alone at night.',
+        photo: 'Emma'
       },
       {
         dialogue: 'Looks like this will be the first of my new collection.'
@@ -111,7 +112,7 @@ class Emma extends Interaction {
     }]
 
     const emma = [{
-      spakerName: 'Emma',
+      speakerName: 'Emma',
       dialogue: 'Nooooo...you should delete that! I look so gross.'
     }]
 
@@ -141,27 +142,31 @@ class Emma extends Interaction {
   read (state) {
     super.read(state)
 
-    console.trace()
-    console.log('state test:', state)
-
     const {
       intercom,
       taken,
       point,
-      selected,
-      using
+      selected
     } = state
 
     if (intercom) {
       return this.points.intercom[point]
     }
 
-    if (selected === 'camera') {
-      if (taken) {
-        return this.points.taken[point]
-      }
+    switch (selected) {
+      case 'camera': {
+        if (taken) {
+          return this.points.taken[point]
+        }
 
-      return this.points.untaken[point]
+        return this.points.untaken[point]
+      }
+      case 'selfie':
+        return this.points.selfie[point]
+      case 'emma':
+        return this.points.emma[point]
+      case 'web':
+        return this.points.web[point]
     }
 
     return this.points.base[point]
