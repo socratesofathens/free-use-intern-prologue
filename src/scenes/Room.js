@@ -255,24 +255,72 @@ class Room extends Scene {
   use (name) {
     super.use(name)
 
+    const { state } = this.game
+
+    const point = state.point || 0
+    const next = point + 1
+    const save = this.saves[next]
+    if (save) return save
+
+    const { apps, photos } = this.phone
+
     switch (name) {
       case 'item-phone':
         return this.openPhone()
       case 'icon-power':
         return this.phone.close()
       case 'icon-phone':
-        return this.setText(
-          'I only have one number in here, my friend Steve. I should call him.'
-        )
+        switch (state.steve) {
+          default:
+            console.log('default test:')
+            return this.inPoint([
+              {
+                dialogue: 'I only have one number in here, my friend Steve. I should call him.'
+              },
+              {
+                characterName: 'Quinn',
+                dialogue: 'Hey Steve! It’s Quinn.'
+              },
+              {
+                characterName: 'Steve',
+                dialogue: 'Uh, hey dude. What’s up?'
+              },
+              {
+                characterName: 'Quinn',
+                dialogue: 'Just calling to say hi!'
+              },
+              {
+                characterName: 'Steve',
+                dialogue: 'Yeah, hi. I’m at work at the moment, so...let’s talk later?'
+              },
+              {
+                characterName: 'Quinn',
+                dialogue: 'Sure thing! I’ll call you again later.'
+              },
+              {
+                characterName: 'Steve',
+                dialogue: 'No, I didn’t mean…'
+              },
+              {
+                dialogue: 'I hang up on Steve. What a great guy.'
+              }
+            ])
+        }
       case 'icon-email':
+        apps.email.select()
+
         return this.setText(
           'To look more professional, I made a new email address for internship applications. Goodbye, kingpin_quinn@hottmail.'
         )
       case 'icon-web':
+        apps.web.select()
+
         return this.setText(
           'I can look up pretty much anything on Cloo. It’s great for when I’m not sure what to do next.'
         )
       case 'icon-camera':
+        apps.camera.select()
+
         return this.setText(
           'This phone has a great high-res camera. I can’t wait to take some photos with it.'
         )
@@ -282,8 +330,10 @@ class Room extends Scene {
         return this.setText(
           'My old phone had thousands of pics, but I couldn’t work out how to transfer them over.'
         )
-      case 'icon-close':
+      case 'icon-home':
         return this.phone.openApps()
+      case 'icon-selfie':
+        return photos.selfie.select()
     }
   }
 }
