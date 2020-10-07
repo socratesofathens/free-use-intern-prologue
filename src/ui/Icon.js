@@ -43,8 +43,7 @@ export default class Icon {
           color: 'white'
         },
         origin: { x: 0.5, y: 0 },
-        depth: 4,
-        action: this.select
+        depth: 4
       })
 
     this.icons.group.add(this.label)
@@ -76,8 +75,7 @@ export default class Icon {
       size: this.SIZE,
       origin: { x: 0, y: 1 },
       position: this.position,
-      depth: 1.1,
-      action: this.select
+      depth: 1.1
     })
 
     return seen

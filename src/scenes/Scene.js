@@ -12,16 +12,17 @@ class Scene extends Phaser.Scene {
     this.color = color
     this.image = null
     this.figures = []
-    this.point = 0
     this.save = null
     this.saves = []
     this.timer = null
     this.fullscreen = null
     this.background = null
+    this.initial = { point: 0 }
   }
 
   advance () {
-    this.point = this.point + 1
+    const { point } = this.game.state
+    this.game.state.point = point + 1
 
     this.read()
   }
@@ -57,8 +58,9 @@ class Scene extends Phaser.Scene {
   }
 
   read () {
-    this.point = this.point || 0
-    this.save = this.saves[this.point]
+    const { point } = this.game.state || 0
+    this.game.state.point = point
+    this.save = this.saves[point]
 
     if (!this.save) return this.save
 
@@ -134,7 +136,17 @@ class Scene extends Phaser.Scene {
   }
 
   setup () {
+    const { state } = this.game
+    this
+      .game
+      .state = state || this.initial
+
     this.read()
+  }
+
+  inPoint (points) {
+    this.saves = points
+    this.game.state.point = -1
   }
 
   update () {
