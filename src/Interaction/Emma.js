@@ -1,8 +1,58 @@
 import Interaction from './index'
 
+function addImages (point, images) {
+  const oldImages = point.images || []
+
+  const newImages = [
+    ...oldImages, ...images
+  ]
+
+  point.images = newImages
+}
+
+function setup (points) {
+  const [first] = points
+
+  addImages(
+    first,
+    [
+      {
+        title: 'emma-back', remove: true
+      },
+      {
+        name: 'emma',
+        position: { x: 1845, y: 1514 },
+        title: 'emma-front'
+      }
+    ]
+  )
+
+  const last = points[
+    points.length - 1
+  ]
+
+  addImages(
+    last,
+    [
+      {
+        name: 'emma',
+        scale: 0.7528,
+        position: { x: 887, y: 1362 },
+        title: 'emma-back'
+      },
+      {
+        title: 'emma-front',
+        remove: true
+      }
+    ]
+  )
+
+  return points
+}
+
 class Emma extends Interaction {
   constructor ({ scene }) {
-    const base = [
+    const base = setup([
       {
         speakerName: 'Quinn',
         dialogue: 'Man, can you believe we’re here?'
@@ -23,9 +73,9 @@ class Emma extends Interaction {
         speakerName: 'Quinn',
         dialogue: 'Yeah, I’m sure I can figure it out.'
       }
-    ]
+    ])
 
-    const intercom = [
+    const intercom = setup([
       {
         speakerName: 'Quinn',
         dialogue: 'Okay, slight problem…'
@@ -73,12 +123,12 @@ class Emma extends Interaction {
       {
         dialogue: 'The things we do for hot best friends.'
       }
-    ]
+    ])
 
-    const untaken = [
+    const untaken = setup([
       {
         images: [
-          { name: 'pic-emma' }
+          { name: 'pic-emma', depth: 2 }
         ],
         dialogue: 'I pull out my phone and take a snap of Emma. God she’s a hottie. My old phone had a thousand photos of her...they’ve all been safely backed up on my computer. I use them a lot when I’m alone at night.',
         photo: 'Emma'
@@ -94,9 +144,9 @@ class Emma extends Interaction {
           name: 'pic-emma', remove: true
         }]
       }
-    ]
+    ])
 
-    const taken = [
+    const taken = setup([
       {
         dialogue: 'Noooo! Seriously, I’m already freaking out enough today. Don’t take my picture again. Please?',
         speakerName: 'Emma'
@@ -104,26 +154,26 @@ class Emma extends Interaction {
       {
         dialogue: 'I put my phone away. I just can’t say no to that face. To those lips...'
       }
-    ]
+    ])
 
-    const selfie = [{
+    const selfie = setup([{
       speakerName: 'Emma',
       dialogue: 'Oh hey, that’s a great pic of you! You’re such a cutie - you’re going to make some woman very happy someday.'
-    }]
+    }])
 
-    const emma = [{
+    const emma = setup([{
       speakerName: 'Emma',
       dialogue: 'Nooooo...you should delete that! I look so gross.'
-    }]
+    }])
 
-    const email = [{
+    const email = setup([{
       speakerName: 'Emma',
       dialogue: 'Yeah, this is definitely the right place. I’m so nervous!'
-    }]
+    }])
 
-    const web = [{
+    const web = setup([{
       dialogue: 'Looking Emma up on Cloo doesn’t yield much. She prefers to stay out of the limelight.'
-    }]
+    }])
 
     const points = {
       base,
@@ -142,36 +192,41 @@ class Emma extends Interaction {
   read (state) {
     super.read(state)
 
+    const selected = this.select(state)
+
+    return selected[state.point]
+  }
+
+  select (state) {
     const {
       intercom,
       taken,
-      point,
       selected
     } = state
 
     if (intercom) {
-      return this.points.intercom[point]
+      return this.points.intercom
     }
 
     switch (selected) {
       case 'camera': {
         if (taken) {
-          return this.points.taken[point]
+          return this.points.taken
         }
 
-        return this.points.untaken[point]
+        return this.points.untaken
       }
       case 'selfie':
-        return this.points.selfie[point]
+        return this.points.selfie
       case 'emma':
-        return this.points.emma[point]
+        return this.points.emma
       case 'web':
-        return this.points.web[point]
+        return this.points.web
       case 'email':
-        return this.points.email[point]
+        return this.points.email
     }
 
-    return this.points.base[point]
+    return this.points.base
   }
 }
 
