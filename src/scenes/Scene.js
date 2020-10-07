@@ -92,7 +92,8 @@ class Scene extends Phaser.Scene {
       images,
       fullscreen,
       scene,
-      item
+      item,
+      state
     } = this.save
 
     if (scene) this.scene.start(scene)
@@ -133,6 +134,15 @@ class Scene extends Phaser.Scene {
       const image = `item-${name}`
 
       this.see({ name: image, position })
+    }
+
+    if (state) {
+      const newState = {
+        ...this.game.state,
+        ...state
+      }
+
+      this.game.state = newState
     }
 
     return images?.map(this.see)

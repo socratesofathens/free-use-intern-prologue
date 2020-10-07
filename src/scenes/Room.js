@@ -15,7 +15,7 @@ class Room extends Scene {
   constructor (key, color) {
     super(key, color)
 
-    this.characterName = null
+    this.speakerName = null
     this.content = null
     this.dialogue = null
     this.name = null
@@ -43,17 +43,18 @@ class Room extends Scene {
 
     this.addPaper()
 
-    this.addCharacterName()
+    this.addSpeakerName()
 
     this.addDialogue()
   }
 
-  addCharacterName () {
+  addSpeakerName () {
     const y = upY(443.481)
-    this.characterName = this.addText({
+    this.speakerName = this.addText({
       position: { x: this.MARGIN, y },
       content: 'Emma',
-      origin: { x: 0, y: 0 }
+      origin: { x: 0, y: 0 },
+      depth: 2
     })
   }
 
@@ -251,15 +252,14 @@ class Room extends Scene {
   setText = (dialogue, speakerName) => {
     this.dialogue.setText(dialogue)
 
+    console.log('speakerName test:', speakerName)
     this
-      .characterName
+      .speakerName
       .setText(speakerName)
   }
 
   use (name) {
     super.use(name)
-
-    const { state } = this.game
 
     const save = this.extract(1)
     if (save) return save
@@ -271,10 +271,18 @@ class Room extends Scene {
         return this.openPhone()
       case 'icon-power':
         return this.phone.close()
-      case 'icon-phone':
+      case 'icon-phone': {
+        const { state } = this.game
+
+        console.log('state test:', state)
+
+        state.steve ??= -1
+        state.steve = state.steve + 1
+
         return this.interact({
           interaction: this.steve
         })
+      }
       case 'icon-email':
         apps.email.select()
 
