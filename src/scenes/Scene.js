@@ -34,6 +34,7 @@ class Scene extends Phaser.Scene {
   }
 
   advance () {
+    console.log('advance test:')
     const { point } = this.game.state
     this.game.state.point = point + 1
 
@@ -112,9 +113,13 @@ class Scene extends Phaser.Scene {
   }
 
   read () {
+    console.log('read test:')
     this.save = this.extract()
 
     if (!this.save) return this.save
+
+    console
+      .log('this.save test:', this.save)
 
     this.reset()
 
@@ -186,6 +191,7 @@ class Scene extends Phaser.Scene {
     }
 
     const next = this.extract(1)
+    console.log('next test:', next)
     if (!next) {
       this.reload()
     }

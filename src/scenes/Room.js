@@ -333,6 +333,12 @@ class Room extends Scene {
         })
       }
     }
+
+    if (name.includes('-selected')) {
+      this.game.state.selected = null
+
+      this.phone.reset()
+    }
   }
 }
 
