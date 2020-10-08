@@ -20,9 +20,17 @@ class Scene extends Phaser.Scene {
     this.background = null
     this.initial = {
       point: 0,
-      photos: ['selfie']
+      photos: ['selfie'],
+      items: []
     }
     this.images = {}
+  }
+
+  addItem = ({ name, position }) => {
+    const image = `item-${name}`
+
+    return this
+      .see({ name: image, position })
   }
 
   advance () {
@@ -30,6 +38,26 @@ class Scene extends Phaser.Scene {
     this.game.state.point = point + 1
 
     this.read()
+  }
+
+  animate = (animation) => {
+    const {
+      key, duration, keys, position
+    } = animation
+
+    const frames = keys
+      .map(key => ({ key, duration }))
+
+    this.anims.create({
+      key,
+      frames,
+      repeat: -1
+    })
+
+    const { x, y } = position
+    const name = keys[0]
+
+    this.add.sprite(x, y, name).play(key)
   }
 
   create = () => {
@@ -48,7 +76,6 @@ class Scene extends Phaser.Scene {
       .on(
         'pointerup', this.advance, this
       )
-
     this.setup()
   }
 
@@ -98,7 +125,8 @@ class Scene extends Phaser.Scene {
       scene,
       item,
       state,
-      photo
+      photo,
+      animations
     } = this.save
 
     if (scene) this.scene.start(scene)
@@ -135,10 +163,9 @@ class Scene extends Phaser.Scene {
     }
 
     if (item) {
-      const { name, position } = item
-      const image = `item-${name}`
+      this.game.state.items.push(item)
 
-      this.see({ name: image, position })
+      this.addItem(item)
     }
 
     if (state) {
@@ -161,6 +188,11 @@ class Scene extends Phaser.Scene {
     const next = this.extract(1)
     if (!next) {
       this.reload()
+    }
+
+    if (animations) {
+      animations
+        .forEach(this.animate)
     }
 
     return images?.map(this.see)
@@ -219,10 +251,15 @@ class Scene extends Phaser.Scene {
   }
 
   setup () {
-    const { state } = this.game
     this
       .game
-      .state = state || this.initial
+      .state = this
+        .game
+        .state || this.initial
+
+    const { state } = this.game
+    state.point = 0
+    state.items.forEach(this.addItem)
 
     this.read()
   }

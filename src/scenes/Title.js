@@ -35,7 +35,11 @@ class Title extends Scene {
       'icon-emma',
       'icon-emma-selected',
       'pic-emma',
-      'intercom'
+      'intercom',
+      'office',
+      'boss',
+      'bosssex1',
+      'bosssex2'
     ]
   }
 
