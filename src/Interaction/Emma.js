@@ -1,21 +1,8 @@
 import Interaction from './index'
 
-function addImages (point, images) {
-  const oldImages = point.images || []
-
-  const newImages = [
-    ...oldImages, ...images
-  ]
-
-  point.images = newImages
-}
-
-function setup (points) {
-  const [first] = points
-
-  addImages(
-    first,
-    [
+class Emma extends Interaction {
+  constructor ({ scene }) {
+    const first = [
       {
         title: 'emma-back', remove: true
       },
@@ -25,15 +12,8 @@ function setup (points) {
         title: 'emma-front'
       }
     ]
-  )
 
-  const last = points[
-    points.length - 1
-  ]
-
-  addImages(
-    last,
-    [
+    const last = [
       {
         name: 'emma',
         scale: 0.7528,
@@ -45,14 +25,10 @@ function setup (points) {
         remove: true
       }
     ]
-  )
 
-  return points
-}
+    super({ scene, first, last })
 
-class Emma extends Interaction {
-  constructor ({ scene }) {
-    const base = setup([
+    const base = this.setup([
       {
         speakerName: 'Quinn',
         dialogue: 'Man, can you believe we’re here?'
@@ -75,7 +51,7 @@ class Emma extends Interaction {
       }
     ])
 
-    const intercom = setup([
+    const intercom = this.setup([
       {
         speakerName: 'Quinn',
         dialogue: 'Okay, slight problem…'
@@ -125,7 +101,7 @@ class Emma extends Interaction {
       }
     ])
 
-    const untaken = setup([
+    const untaken = this.setup([
       {
         images: [
           { name: 'pic-emma', depth: 2 }
@@ -146,7 +122,7 @@ class Emma extends Interaction {
       }
     ])
 
-    const taken = setup([
+    const taken = this.setup([
       {
         dialogue: 'Noooo! Seriously, I’m already freaking out enough today. Don’t take my picture again. Please?',
         speakerName: 'Emma'
@@ -156,26 +132,26 @@ class Emma extends Interaction {
       }
     ])
 
-    const selfie = setup([{
+    const selfie = this.setup([{
       speakerName: 'Emma',
       dialogue: 'Oh hey, that’s a great pic of you! You’re such a cutie - you’re going to make some woman very happy someday.'
     }])
 
-    const emma = setup([{
+    const emma = this.setup([{
       speakerName: 'Emma',
       dialogue: 'Nooooo...you should delete that! I look so gross.'
     }])
 
-    const email = setup([{
+    const email = this.setup([{
       speakerName: 'Emma',
       dialogue: 'Yeah, this is definitely the right place. I’m so nervous!'
     }])
 
-    const web = setup([{
+    const web = this.setup([{
       dialogue: 'Looking Emma up on Cloo doesn’t yield much. She prefers to stay out of the limelight.'
     }])
 
-    const points = {
+    this.points = {
       base,
       intercom,
       untaken,
@@ -185,8 +161,6 @@ class Emma extends Interaction {
       email,
       web
     }
-
-    super({ scene, points })
   }
 
   read (state) {
@@ -204,10 +178,6 @@ class Emma extends Interaction {
       selected
     } = state
 
-    if (intercom) {
-      return this.points.intercom
-    }
-
     switch (selected) {
       case 'camera': {
         if (taken) {
@@ -224,6 +194,10 @@ class Emma extends Interaction {
         return this.points.web
       case 'email':
         return this.points.email
+    }
+
+    if (intercom) {
+      return this.points.intercom
     }
 
     return this.points.base

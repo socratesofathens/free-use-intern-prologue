@@ -2,6 +2,8 @@ import Interaction from './index'
 
 class Steve extends Interaction {
   constructor ({ scene }) {
+    super({ scene })
+
     const first = [
       {
         speakerName: 'Quinn',
@@ -256,15 +258,13 @@ class Steve extends Interaction {
       }
     ]
 
-    const points = [
+    this.points = [
       first,
       second,
       third,
       fourth,
       fifth
     ]
-
-    super({ scene, points })
   }
 
   read (state) {
