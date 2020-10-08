@@ -150,17 +150,6 @@ class Scene extends Phaser.Scene {
       this.game.state = newState
     }
 
-    const next = this.extract(1)
-    if (!next) {
-      const { state } = this.game
-
-      state.selected = null
-
-      this.interaction = null
-
-      state.point = this.saves.length
-    }
-
     if (photo) {
       console.log('photo test:', photo)
       const { photos } = this.phone
@@ -169,7 +158,23 @@ class Scene extends Phaser.Scene {
       photos[icon.lower] = icon
     }
 
+    const next = this.extract(1)
+    if (!next) {
+      this.reload()
+    }
+
     return images?.map(this.see)
+  }
+
+  reload () {
+    console.log('reload test')
+    const { state } = this.game
+
+    state.selected = null
+
+    this.interaction = null
+
+    state.point = this.saves.length
   }
 
   reset () {

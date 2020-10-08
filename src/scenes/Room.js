@@ -6,6 +6,7 @@ import ORIGIN from '../lib/origin'
 
 import Steve from '../Interaction/Steve'
 import Emma from '../Interaction/Emma'
+import Intercom from '../Interaction/Intercom'
 
 import Phone from '../ui/Phone'
 import Sidebar from '../ui/Sidebar'
@@ -36,6 +37,9 @@ class Room extends Scene {
       scene: this
     })
     this.emma = new Emma({
+      scene: this
+    })
+    this.intercom = new Intercom({
       scene: this
     })
 
@@ -321,6 +325,11 @@ class Room extends Scene {
       case 'emma': {
         return this.interact({
           interaction: this.emma
+        })
+      }
+      case 'intercom': {
+        return this.interact({
+          interaction: this.intercom
         })
       }
     }

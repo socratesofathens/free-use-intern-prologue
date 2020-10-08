@@ -1,49 +1,42 @@
 [
   {
+    dialogue: 'I hold up the photo of Emma to the intercom, trying to fool it into thinking she’s standing in front of the camera.'
+  },
+  {
+    speakerName: 'Intercom',
+    dialogue: 'Wow! Hallo, gorgeous. You must be one of the new Acuity interns! I’ll buzz you right up.'
+  },
+  {
+    dialogue: 'There’s a loud buzzing sound, and the door opens.'
+  },
+  {
     speakerName: 'Quinn',
-    dialogue: 'Okay, slight problem…'
+    dialogue: 'Emma, I got us inside!'
   },
   {
     speakerName: 'Emma',
-    dialogue: 'Oh, no. '
-  },
-  {
-    speakerName: 'Quinn',
-    dialogue: 'Yeah, they were expecting a woman. Because of my name.'
+    dialogue: 'Great work, Quinn! Let’s go up and…'
   },
   {
     speakerName: 'Emma',
-    dialogue: 'Oh no…'
-  },
-  {
-    speakerName: 'Quinn',
-    dialogue: 'So can you go talk to them? Show them that I’m not just some random guy?'
+    dialogue: '-gulp-'
   },
   {
     speakerName: 'Emma',
-    dialogue: 'I don’t know...I’m sort of freaking out.'
+    dialogue: '...meet our new workmates! Does my hair look okay?'
   },
   {
     speakerName: 'Quinn',
-    dialogue: 'Emma, if you don’t help, they won’t let us in.'
+    dialogue: 'You look great, Emma. Like always.'
   },
   {
     speakerName: 'Emma',
-    dialogue: 'I’m sorry, Quinn, I can’t. I’m too nervous. Can you sort it out? Pretty please?'
+    dialogue: 'Oh, Quinn. You’re so sweet.'
   },
   {
-    speakerName: 'Quinn',
-    dialogue: '…'
+    dialogue: 'Sweet. Great. Is she ever going to see me as anything more than that?'
   },
   {
-    speakerName: 'Emma',
-    dialogue: 'For me?'
-  },
-  {
-    speakerName: 'Quinn',
-    dialogue: '(sigh) I’ll see what I can do.'
-  },
-  {
-    dialogue: 'The things we do for hot best friends.'
+    dialogue: 'GOTO Office'
   }
 ]
