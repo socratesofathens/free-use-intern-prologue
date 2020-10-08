@@ -24,6 +24,7 @@ class Scene extends Phaser.Scene {
       items: []
     }
     this.images = {}
+    this.selecting = false
   }
 
   addItem = ({ name, position }) => {
@@ -34,7 +35,10 @@ class Scene extends Phaser.Scene {
   }
 
   advance () {
-    console.log('advance test:')
+    if (this.selecting) {
+      return this.selecting
+    }
+
     const { point } = this.game.state
     this.game.state.point = point + 1
 
@@ -99,6 +103,8 @@ class Scene extends Phaser.Scene {
   }
 
   interact ({ points, interaction }) {
+    this.selecting = false
+
     if (points) {
       this.interaction = new Interaction({
         scene: this, points
@@ -112,14 +118,18 @@ class Scene extends Phaser.Scene {
     this.game.state.point = -1
   }
 
+  loadState () {
+    this
+      .game
+      .state
+      .items
+      .forEach(this.addItem)
+  }
+
   read () {
-    console.log('read test:')
     this.save = this.extract()
 
     if (!this.save) return this.save
-
-    console
-      .log('this.save test:', this.save)
 
     this.reset()
 
@@ -182,16 +192,7 @@ class Scene extends Phaser.Scene {
       this.game.state = newState
     }
 
-    if (photo) {
-      console.log('photo test:', photo)
-      const { photos } = this.phone
-
-      const icon = photos.addIcon(photo)
-      photos[icon.lower] = icon
-    }
-
     const next = this.extract(1)
-    console.log('next test:', next)
     if (!next) {
       this.reload()
     }
@@ -205,7 +206,6 @@ class Scene extends Phaser.Scene {
   }
 
   reload () {
-    console.log('reload test')
     const { state } = this.game
 
     state.selected = null
@@ -265,7 +265,8 @@ class Scene extends Phaser.Scene {
 
     const { state } = this.game
     state.point = 0
-    state.items.forEach(this.addItem)
+
+    this.loadState()
 
     this.read()
   }
@@ -276,9 +277,7 @@ class Scene extends Phaser.Scene {
       .forEach(figure => figure.update())
   }
 
-  use (name) {
-    console.log('used test:', name)
-  }
+  use (name) {}
 }
 
 export default Scene

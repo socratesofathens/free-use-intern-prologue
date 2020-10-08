@@ -27,25 +27,6 @@ class Room extends Scene {
     this.OFFSET = 10
   }
 
-  setup () {
-    this.addBook()
-
-    this.sidebar = new Sidebar(this)
-    this.phone = new Phone(this)
-
-    this.steve = new Steve({
-      scene: this
-    })
-    this.emma = new Emma({
-      scene: this
-    })
-    this.intercom = new Intercom({
-      scene: this
-    })
-
-    super.setup()
-  }
-
   addBook = () => {
     this.HEIGHT = 339
     this.TOP = upY(this.HEIGHT)
@@ -56,16 +37,6 @@ class Room extends Scene {
     this.addSpeakerName()
 
     this.addDialogue()
-  }
-
-  addSpeakerName () {
-    const y = upY(443.481)
-    this.speakerName = this.addText({
-      position: { x: this.MARGIN, y },
-      content: 'Emma',
-      origin: { x: 0, y: 0 },
-      depth: 2
-    })
   }
 
   addDialogue () {
@@ -108,6 +79,15 @@ class Room extends Scene {
     return paper
   }
 
+  addPhoto = (name) => {
+    const { photos } = this.phone
+
+    const icon = photos.addIcon(name)
+    photos[icon.lower] = icon
+
+    return icon
+  }
+
   addRectangle ({
     size,
     position,
@@ -136,6 +116,16 @@ class Room extends Scene {
     }
 
     return rectangle
+  }
+
+  addSpeakerName () {
+    const y = upY(443.481)
+    this.speakerName = this.addText({
+      position: { x: this.MARGIN, y },
+      content: 'Emma',
+      origin: { x: 0, y: 0 },
+      depth: 2
+    })
   }
 
   addText = ({
@@ -234,6 +224,14 @@ class Room extends Scene {
     }
   }
 
+  loadState () {
+    super.loadState()
+
+    const { photos } = this.game.state
+    photos
+      .forEach(this.addPhoto)
+  }
+
   openPhone () {
     this.setText('To celebrate the internship, I bought a brand new phone, an Acuity 556D.')
 
@@ -246,10 +244,21 @@ class Room extends Scene {
     if (this.save) {
       const {
         dialogue,
-        speakerName
+        speakerName,
+        photo
       } = this.save
 
       this.setText(dialogue, speakerName)
+
+      if (photo) {
+        const icon = this.addPhoto(photo)
+
+        this
+          .game
+          .state
+          .photos
+          .push(icon.lower)
+      }
     }
   }
 
@@ -265,6 +274,25 @@ class Room extends Scene {
     this
       .speakerName
       .setText(speakerName)
+  }
+
+  setup () {
+    this.addBook()
+
+    this.sidebar = new Sidebar(this)
+    this.phone = new Phone(this)
+
+    this.steve = new Steve({
+      scene: this
+    })
+    this.emma = new Emma({
+      scene: this
+    })
+    this.intercom = new Intercom({
+      scene: this
+    })
+
+    super.setup()
   }
 
   use (name) {

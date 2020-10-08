@@ -29,7 +29,7 @@ export default class Phone {
     })
 
     this.photos = new Icons({
-      names: ['Home', 'Selfie'],
+      names: ['Home'],
       phone: this
     })
 
