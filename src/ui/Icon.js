@@ -56,7 +56,6 @@ export default class Icon {
   }
 
   deselect () {
-    console.log('deselect test')
     this.selected.hide()
   }
 
@@ -67,7 +66,7 @@ export default class Icon {
 
     const { state } = this.scene.game
     state.selected = this.lower
-    console.log('state test:', state)
+    this.scene.selecting = true
   }
 
   see (name, visible = true) {
