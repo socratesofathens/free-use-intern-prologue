@@ -1,52 +1,11 @@
 [
   {
-    speakerName: 'Boss',
-    dialogue: 'Ah, yes. Exactly what I was hoping. Yes, Emma, we’re going to enjoy you.'
+    dialogue: 'I decide to see if Cloo can help me work out what to do next. “How to get past idiot security guard” doesn’t yield any results. '
   },
   {
-    speakerName: 'Emma',
-    dialogue: 'T-thank you, sir.'
+    dialogue: '“How to trick intercom” leads to an interesting forum discussion - apparently the camera on this particular model has a pretty low resolution. '
   },
   {
-    speakerName: 'Boss',
-    dialogue: 'Now, Quinn...I’m not sure if there’s really going to be much for you to do. I’ll tell you what, why don’t you run along and get me a coffee?'
-  },
-  {
-    speakerName: 'Quinn',
-    dialogue: 'Uh, yes sir.'
-  },
-  {
-    speakerName: 'Boss',
-    dialogue: 'See if anyone else wants anything, too. And hey - once you’re done with your tasks, you can have a turn with Emma here.'
-  },
-  {
-    speakerName: 'Quinn',
-    dialogue: 'Really, sir?'
-  },
-  {
-    speakerName: 'Boss',
-    dialogue: 'Of course, lad! After all, you work here too.'
-  },
-  {
-    speakerName: 'Quinn',
-    dialogue: 'Thank you, sir. I’ll be back with your coffee shortly.'
-  },
-  {
-    speakerName: 'Boss',
-    dialogue: 'No need to rush. Isn’t that right, Emma?'
-  },
-  {
-    speakerName: 'Emma',
-    dialogue: 'Y-yes, sir…'
-  },
-  {
-    speakerName: 'Free Use Intern will continue in Chapter 1',
-    dialogue: 'Hot Coffee.'
-  },
-  {
-    dialogue: 'To show your support, help us, get the next chapter out as quickly as possible, and let Quinn start using his friend, visit patreon.com/pan '
-  },
-  {
-    dialogue: 'Patrons get previews of upcoming art, early access to new releases, and votes on what content is included in the game.'
+    dialogue: 'I don’t need to get Emma to the intercom...I just have to trick the camera into thinking that she’s there.'
   }
 ]

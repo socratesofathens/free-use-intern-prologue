@@ -167,7 +167,13 @@ class Intercom extends Interaction {
 
     const webbed = this.setup([
       {
-        dialogue: 'I decide to see if Cloo can help me work out what to do next. “How to get past idiot security guard” doesn’t yield any results. “How to trick intercom” leads to an interesting forum discussion - apparently the camera on this particular model has a pretty low resolution. I don’t need to get Emma to the intercom...I just have to trick the camera into thinking that she’s there.'
+        dialogue: 'I decide to see if Cloo can help me work out what to do next. “How to get past idiot security guard” doesn’t yield any results. '
+      },
+      {
+        dialogue: '“How to trick intercom” leads to an interesting forum discussion - apparently the camera on this particular model has a pretty low resolution. '
+      },
+      {
+        dialogue: 'I don’t need to get Emma to the intercom...I just have to trick the camera into thinking that she’s there.'
       }
     ])
 
