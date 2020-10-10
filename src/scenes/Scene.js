@@ -140,7 +140,6 @@ class Scene extends Phaser.Scene {
       scene,
       item,
       state,
-      photo,
       animations
     } = this.save
 

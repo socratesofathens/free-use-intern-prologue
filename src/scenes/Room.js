@@ -299,7 +299,7 @@ class Room extends Scene {
     super.use(name)
 
     const save = this.extract(1)
-    if (save) return save
+    if (save && !this.selecting) return save
 
     const { apps, photos } = this.phone
 

@@ -46,6 +46,7 @@ export default class Icon {
         origin: { x: 0.5, y: 0 },
         depth: 4
       })
+    this.label.setVisible(false)
 
     this.icons.group.add(this.label)
     this
