@@ -78,19 +78,23 @@ class Room extends Scene {
   }
 
   addPhoto = (name) => {
-    console.log('addPhoto name test:', name)
     const { photos } = this.phone
+    const lower = name.toLowerCase()
 
-    const icon = photos.addIcon(name)
-    photos[icon.lower] = icon
+    if (!photos[lower]) {
+      const icon = photos.addIcon(name)
+      photos[icon.lower] = icon
 
-    this
-      .game
-      .state
-      .photos
-      .push(name)
+      this
+        .game
+        .state
+        .photos
+        .push(name)
 
-    return icon
+      return icon
+    } else {
+      console.warn('Photo already added:', name)
+    }
   }
 
   addRectangle ({
