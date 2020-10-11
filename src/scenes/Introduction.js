@@ -3,14 +3,13 @@ import Room from './Room'
 class Introduction extends Room {
   constructor () {
     super('introduction', 0x000000)
-
-    this.name = 'introduction'
   }
 
   setup = () => {
     this.saves = [
       {
-        dialogue: 'So here’s the thing.'
+        dialogue: 'So here’s the thing.',
+        photo: 'Selfie'
       },
       {
         dialogue: 'Emma has been my best friend for as long as I can remember. We’ve known each other our whole lives - she’s the literal girl next door, and the kindest person I’ve ever met. You could mix sugar and honey together and pour it into a can of coke, and Emma would still be sweeter.'
@@ -20,7 +19,8 @@ class Introduction extends Room {
           name: 'emma',
           position: { x: 1763, y: 510 },
           to: { x: 1773, y: 1626 },
-          time: 5000
+          time: 5000,
+          title: 'emma-animation'
         }],
         dialogue: 'She’s funny, and smart, and hot as hell. Everyone who meets her falls in love with her...including me.'
       },
@@ -66,7 +66,14 @@ class Introduction extends Room {
           },
           {
             name: 'intercom',
-            position: { x: 2000, y: 1000 }
+            position: {
+              x: 2000, y: 1000
+            },
+            title: 'intercom-back'
+          },
+          {
+            title: 'emma-animation',
+            remove: true
           }
         ],
         dialogue: 'Somewhere in this huge building is Acuity, our workplace for the summer. The email said to be here by 9. We’re running a little early, so all we need to do is get inside.',

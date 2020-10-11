@@ -60,6 +60,15 @@ export default class Icon {
     this.selected.hide()
   }
 
+  destroy () {
+    console.log('this.lower test:', this.lower)
+    this.icon.destroy()
+
+    this.selected.destroy()
+
+    this.label.destroy()
+  }
+
   select = () => {
     this.icons.reset()
 

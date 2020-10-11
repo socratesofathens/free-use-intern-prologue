@@ -3,8 +3,6 @@ import Room from './Room'
 class Office extends Room {
   constructor () {
     super('office', 0x000000)
-
-    this.name = 'office'
   }
 
   setup = () => {

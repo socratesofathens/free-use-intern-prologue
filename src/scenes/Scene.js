@@ -1,4 +1,4 @@
-import Phaser from 'phaser'
+import Phaser, { Renderer } from 'phaser'
 
 import { GAME_SIZE } from '../lib/game'
 import ORIGIN from '../lib/origin'
@@ -7,9 +7,10 @@ import Image from '../Figure/Image'
 import Interaction from '../Interaction'
 
 class Scene extends Phaser.Scene {
-  constructor (key, color = '#FFFFFF') {
-    super(key)
+  constructor (name, color = '#FFFFFF') {
+    super(name)
 
+    this.name = name
     this.color = color
     this.image = null
     this.figures = []
@@ -20,32 +21,52 @@ class Scene extends Phaser.Scene {
     this.background = null
     this.initial = {
       point: 0,
-      photos: ['selfie'],
-      items: []
+      photos: [],
+      items: [],
+      images: [],
+      animations: [],
+      open: false
     }
     this.images = {}
     this.selecting = false
+    this.sprites = []
   }
 
-  addItem = ({ name, position }) => {
+  addItem = (options) => {
+    const { name, position } = options
     const image = `item-${name}`
 
-    return this
+    const item = this
       .see({ name: image, position })
+
+    console.log('item test:', item)
+
+    this.game.state.items.push(options)
+
+    return item
   }
 
   advance () {
+    console
+      .log('advance test:')
     if (this.selecting) {
       return this.selecting
     }
 
     const { point } = this.game.state
+    console.log('advance point test:', point)
     this.game.state.point = point + 1
 
     this.read()
   }
 
   animate = (animation) => {
+    this
+      .game
+      .state
+      .animations
+      .push(animation)
+
     const {
       key, duration, keys, position
     } = animation
@@ -62,7 +83,11 @@ class Scene extends Phaser.Scene {
     const { x, y } = position
     const name = keys[0]
 
-    this.add.sprite(x, y, name).play(key)
+    const sprite = this
+      .add
+      .sprite(x, y, name)
+    sprite.play(key)
+    this.sprites.push(sprite)
   }
 
   create = () => {
@@ -79,19 +104,22 @@ class Scene extends Phaser.Scene {
     this
       .input
       .on(
-        'pointerup', this.advance, this
+        'pointerdown', this.advance, this
       )
     this.setup()
   }
 
   extract (difference = 0) {
+    console.log('difference test:', difference)
     const { state } = this.game
+    console.log('extract state test:', state)
     const { point } = state || 0
     state.point = point
 
     const sum = state.point + difference
 
     const copy = { ...state, point: sum }
+    console.log('copy test:', copy)
 
     if (this.interaction) {
       return this
@@ -102,7 +130,31 @@ class Scene extends Phaser.Scene {
     return this.saves[copy.point]
   }
 
-  interact ({ points, interaction }) {
+  init (data) {
+    console.log('data test:', data)
+    const names = Object
+      .getOwnPropertyNames(data)
+
+    const empty = names.length === 0
+
+    if (!empty) {
+      this.save = data
+      this
+        .game
+        .state
+        .point = this.save.point
+
+      this.game.state.intercom = this.save.intercom
+      this.game.state.taken = this.save.emma
+      this.game.state.steve = this.save.steve
+    }
+  }
+
+  interact ({
+    points,
+    interaction,
+    point
+  }) {
     this.selecting = false
 
     if (points) {
@@ -115,7 +167,11 @@ class Scene extends Phaser.Scene {
       this.interaction = interaction
     }
 
-    this.game.state.point = -1
+    this
+      .game
+      .state
+      .interaction = this.interaction.name
+    this.game.state.point = point || -1
   }
 
   loadState () {
@@ -131,6 +187,10 @@ class Scene extends Phaser.Scene {
 
     if (!this.save) return this.save
 
+    this.render()
+  }
+
+  render () {
     this.reset()
 
     const {
@@ -139,11 +199,18 @@ class Scene extends Phaser.Scene {
       fullscreen,
       scene,
       item,
+      items,
       state,
       animations
     } = this.save
 
-    if (scene) this.scene.start(scene)
+    console.log('render this.save test:', this.save)
+
+    if (scene) {
+      this.save = null
+
+      this.scene.start(scene)
+    }
 
     if (fullscreen) {
       this.fullscreen = this.see({
@@ -174,12 +241,49 @@ class Scene extends Phaser.Scene {
         name: background,
         origin: ORIGIN
       })
+
+      this
+        .game
+        .state
+        .background = background
     }
 
     if (item) {
-      this.game.state.items.push(item)
-
       this.addItem(item)
+    }
+
+    if (items) {
+      console.log('items test:', items)
+      items.forEach(this.addItem)
+    }
+
+    if (animations) {
+      animations.forEach(this.animate)
+    }
+
+    if (images) {
+      images.forEach(image => {
+        const seen = this.see(image)
+
+        if (!image.remove) {
+          const copy = { ...image }
+
+          if (copy.to) {
+            copy.position = copy.to
+
+            copy.to = null
+            copy.time = null
+          }
+
+          copy.figure = seen
+
+          this
+            .game
+            .state
+            .images
+            .push(copy)
+        }
+      })
     }
 
     if (state) {
@@ -195,13 +299,6 @@ class Scene extends Phaser.Scene {
     if (!next) {
       this.reload()
     }
-
-    if (animations) {
-      animations
-        .forEach(this.animate)
-    }
-
-    return images?.map(this.see)
   }
 
   reload () {
@@ -210,6 +307,7 @@ class Scene extends Phaser.Scene {
     state.selected = null
 
     this.interaction = null
+    state.interaction = null
 
     state.point = this.saves.length
   }
@@ -223,13 +321,26 @@ class Scene extends Phaser.Scene {
   }
 
   see = (options) => {
-    const { title, name } = options
+    const {
+      title, name, remove
+    } = options
 
     options.title = title || name
 
-    if (options.remove) {
+    if (remove) {
       const image = this
         .images[options.title]
+
+      const { images } = this.game.state
+      const removed = images
+        .filter(image => {
+          const match = image.title !== options.title
+
+          return match
+        })
+
+      console.log('removed test:', removed)
+      this.game.state.images = removed
 
       return image.destroy()
     }
@@ -258,16 +369,18 @@ class Scene extends Phaser.Scene {
   setup () {
     this
       .game
-      .state = this
-        .game
-        .state || this.initial
+      .state ??= { ...this.initial }
 
-    const { state } = this.game
-    state.point = 0
+    if (this.save) {
+      this.render()
+    } else {
+      const { state } = this.game
+      state.point = 0
 
-    this.loadState()
+      this.loadState()
 
-    this.read()
+      this.read()
+    }
   }
 
   update () {

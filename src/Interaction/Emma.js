@@ -26,7 +26,12 @@ class Emma extends Interaction {
       }
     ]
 
-    super({ scene, first, last })
+    super({
+      scene,
+      first,
+      last,
+      name: 'emma'
+    })
 
     const base = this.setup([
       {
