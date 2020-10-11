@@ -145,7 +145,7 @@ class Scene extends Phaser.Scene {
         .point = this.save.point
 
       this.game.state.intercom = this.save.intercom
-      this.game.state.taken = this.save.emma
+      this.game.state.taken = this.save.taken
       this.game.state.steve = this.save.steve
     }
   }
