@@ -40,12 +40,16 @@ export default class Phone {
 
   close () {
     this.group.setVisible(false)
+
+    this.scene.game.state.open = false
   }
 
   open () {
     this.group.setVisible(true)
 
     this.openApps()
+
+    this.scene.game.state.open = true
   }
 
   openApps () {

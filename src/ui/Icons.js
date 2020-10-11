@@ -21,7 +21,7 @@ export default class Icons {
     this.MIDDLE = upY(1467.024)
     this.BOTTOM = upY(1129.709)
 
-    this.positions = [
+    this.initial = [
       { x: this.LEFT, y: this.TOP },
       { x: this.RIGHT, y: this.TOP },
       { x: this.LEFT, y: this.MIDDLE },
@@ -29,6 +29,7 @@ export default class Icons {
       { x: this.LEFT, y: this.BOTTOM },
       { x: this.RIGHT, y: this.BOTTOM }
     ]
+    this.positions = [...this.initial]
 
     this.tools = []
 
@@ -64,11 +65,23 @@ export default class Icons {
       return icon
     }
 
-    console.warn('No empty position left!', this.positions)
+    console.warn(
+      'No empty position left!',
+      this.positions
+    )
   }
 
   close () {
     this.group.setVisible(false)
+  }
+
+  destroy () {
+    this
+      .positions
+      .forEach(position => position
+        .icon
+        ?.destroy()
+      )
   }
 
   open () {

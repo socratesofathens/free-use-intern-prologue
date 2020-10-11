@@ -1,8 +1,15 @@
 export default class Interaction {
-  constructor ({ scene, first, last }) {
+  constructor ({
+    scene, first, last, name
+  }) {
     this.scene = scene
     this.first = first
     this.last = last
+    this.name = name
+
+    this
+      .scene
+      .interactions[this.name] = this
   }
 
   addImages (point, images) {

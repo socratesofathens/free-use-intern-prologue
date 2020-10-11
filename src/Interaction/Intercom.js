@@ -16,7 +16,12 @@ class Intercom extends Interaction {
       }
     ]
 
-    super({ scene, first, last })
+    super({
+      scene,
+      first,
+      last,
+      name: 'intercom'
+    })
 
     const base = this.setup([
       {
@@ -243,6 +248,9 @@ class Intercom extends Interaction {
     super.read(state)
 
     const selected = this.select(state)
+    console.log('selected test:', selected)
+
+    console.log('state.point test:', state.point)
 
     return selected[state.point]
   }

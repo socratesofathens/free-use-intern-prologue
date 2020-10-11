@@ -17,7 +17,9 @@ export default class Sidebar {
       .scene
       .addRectangle({
         position: { x: this.X, y: 0 },
-        size: { width: 611, height: 2200 },
+        size: {
+          width: 611, height: 2200
+        },
         color: 0xffffff
       })
 
@@ -44,13 +46,82 @@ export default class Sidebar {
     this.scene.addText({
       content: 'Save',
       position: { x: this.LEFT, y },
-      origin: { x: 0, y: 0 }
+      origin: { x: 0, y: 0 },
+      action: (pointer, x, y, event) => {
+        event.stopPropagation()
+
+        console.log('save this.scene.game.state test:', this.scene.game.state)
+        const { state } = this.scene.game
+
+        const copy = { ...state }
+        copy.images = copy
+          .images
+          .map(image => ({
+            ...image,
+            figure: null,
+            photo: null
+          }))
+
+        const json = JSON.stringify(copy)
+
+        this
+          .scene
+          .registry
+          .set('state', json)
+      }
     })
 
     this.scene.addText({
       content: 'Load',
       position: { x: this.RIGHT, y },
-      origin: { x: 1, y: 0 }
+      origin: { x: 1, y: 0 },
+      action: (pointer, x, y, event) => {
+        event.stopPropagation()
+
+        const json = this
+          .scene
+          .registry
+          .get('state')
+
+        if (!json) return json
+
+        const state = JSON.parse(json)
+
+        console.log('load state test:', state)
+
+        this.scene.phone.photos.destroy()
+        this
+          .scene
+          .game
+          .state
+          .images
+          .forEach(image => {
+            console.log('image test:', image)
+            image.figure.destroy()
+          })
+        this
+          .scene
+          .sprites
+          .forEach(sprite => sprite
+            .destroy()
+          )
+
+        const { scene } = state
+        state.scene = null
+
+        this
+          .scene
+          .game
+          .state = {
+            ...this.scene.initial
+          }
+
+        this.scene.interaction = null
+
+        this.scene.scene.start(
+          scene, state
+        )
+      }
     })
 
     this.addPanther()

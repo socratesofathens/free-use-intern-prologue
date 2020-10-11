@@ -1,5 +1,3 @@
-import Phaser from 'phaser'
-
 import { upY } from '../lib/game'
 import lorem from '../lib/lorem'
 import ORIGIN from '../lib/origin'
@@ -14,16 +12,16 @@ import Sidebar from '../ui/Sidebar'
 import Scene from './Scene'
 
 class Room extends Scene {
-  constructor (key, color) {
-    super(key, color)
+  constructor (name, color) {
+    super(name, color)
 
     this.speakerName = null
     this.content = null
     this.dialogue = null
-    this.name = null
     this.sidebar = null
     this.tool = null
     this.interaction = null
+    this.interactions = {}
     this.OFFSET = 10
   }
 
@@ -80,10 +78,17 @@ class Room extends Scene {
   }
 
   addPhoto = (name) => {
+    console.log('addPhoto name test:', name)
     const { photos } = this.phone
 
     const icon = photos.addIcon(name)
     photos[icon.lower] = icon
+
+    this
+      .game
+      .state
+      .photos
+      .push(name)
 
     return icon
   }
@@ -151,17 +156,7 @@ class Room extends Scene {
     text.setOrigin(origin.x, origin.y)
 
     if (action) {
-      const rectangle = new Phaser
-        .Geom
-        .Rectangle(
-          0, 0, text.width, text.height
-        )
-
-      text
-        .setInteractive(
-          rectangle,
-          Phaser.Geom.Rectangle.Contains
-        )
+      text.setInteractive()
 
       text.on('pointerdown', action, this)
     }
@@ -186,44 +181,6 @@ class Room extends Scene {
     return Object.fromEntries(halved)
   }
 
-  figure = ({
-    key,
-    Figure,
-    position,
-    text,
-    label
-  }) => {
-    key = key || text[0]
-
-    const done = this.registry.get(key)
-
-    if (!done) {
-      const lower = label.toLowerCase()
-
-      const callback = (scene, element) => {
-        const text = `You picked up ${lower}.`
-        scene.setText(text)
-
-        this.registry.set(key, true)
-
-        this
-          .sidebar
-          .inventory
-          .setItem({ key, label })
-
-        element.destroy()
-      }
-
-      return new Figure({
-        scene: this,
-        position,
-        text,
-        options: { fontSize: '40px' },
-        uses: [{ text, callback }]
-      })
-    }
-  }
-
   loadState () {
     super.loadState()
 
@@ -238,26 +195,52 @@ class Room extends Scene {
     this.phone.open()
   }
 
-  read () {
-    super.read()
+  render () {
+    super.render()
 
     if (this.save) {
+      console.log('this.save test:', this.save)
       const {
         dialogue,
         speakerName,
-        photo
+        photo,
+        photos,
+        open,
+        apps,
+        interaction,
+        point
       } = this.save
 
-      this.setText(dialogue, speakerName)
+      if (interaction) {
+        console.log('this.interactions test:', this.interactions)
+        const i = this
+          .interactions[interaction]
+
+        this.interact({
+          interaction: i,
+          point: point
+        })
+      }
+
+      if (open) {
+        this.phone.open()
+      }
+
+      if (dialogue || speakerName) {
+        this
+          .setText(dialogue, speakerName)
+      }
 
       if (photo) {
-        const icon = this.addPhoto(photo)
+        this.addPhoto(photo)
+      }
 
-        this
-          .game
-          .state
-          .photos
-          .push(icon.lower)
+      if (photos) {
+        photos.forEach(this.addPhoto)
+      }
+
+      if (apps === false) {
+        this.phone.openPhotos()
       }
     }
   }
@@ -274,9 +257,21 @@ class Room extends Scene {
     this
       .speakerName
       .setText(speakerName)
+
+    this
+      .game
+      .state
+      .dialogue = dialogue
+
+    this
+      .game
+      .state
+      .speakerName = speakerName
   }
 
   setup () {
+    this.game.state.scene = this.name
+
     this.addBook()
 
     this.sidebar = new Sidebar(this)
@@ -341,10 +336,14 @@ class Room extends Scene {
       case 'icon-photos':
         this.phone.openPhotos()
 
+        this.game.state.apps = false
+
         return this.setText(
           'My old phone had thousands of pics, but I couldn’t work out how to transfer them over.'
         )
       case 'icon-home':
+        this.game.state.apps = true
+
         return this.phone.openApps()
       case 'icon-selfie':
         return photos.selfie.select()

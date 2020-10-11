@@ -2,7 +2,7 @@ import Interaction from './index'
 
 class Steve extends Interaction {
   constructor ({ scene }) {
-    super({ scene })
+    super({ scene, name: 'steve' })
 
     const first = [
       {
