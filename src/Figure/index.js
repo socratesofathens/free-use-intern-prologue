@@ -5,11 +5,13 @@ export default class Figure {
     element,
     uses = [],
     action,
-    name
+    name,
+    title
   }) {
     this.scene = scene
     this.scene.figures.push(this)
 
+    this.title = title
     this.position = position
 
     this.action = action
@@ -50,7 +52,7 @@ export default class Figure {
     }
 
     if (this.name) {
-      this.scene.use(this.name)
+      this.scene.use(this)
     }
   }
 

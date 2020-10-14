@@ -294,7 +294,9 @@ class Room extends Scene {
     super.setup()
   }
 
-  use (name) {
+  use (figure) {
+    const { name, title } = figure
+    console.log('name test:', name)
     super.use(name)
 
     const save = this.extract(1)
@@ -350,11 +352,22 @@ class Room extends Scene {
 
         return this.phone.openApps()
       case 'icon-selfie':
-        return photos.selfie.select()
+        photos.selfie.select()
+
+        return this.setText(
+          'It’s-a me! I took a selfie to test my new camera.'
+        )
       case 'icon-emma':
-        return photos.emma.select()
+        photos.emma.select()
+
+        return this.setText(
+          'My best friend, Emma. God she’s a hottie....'
+        )
       case 'emma': {
-        return this.interact({
+        console.log('title test:', title)
+        const back = title === 'emma-back'
+
+        return back && this.interact({
           interaction: this.emma
         })
       }

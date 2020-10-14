@@ -22,7 +22,7 @@ export default class Interaction {
     point.images = newImages
   }
 
-  read (state) {
+  read (/* state */) {
     this.scene.phone.reset()
   }
 
