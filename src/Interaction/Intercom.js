@@ -114,9 +114,9 @@ class Intercom extends Interaction {
       },
       {
         speakerName: 'Intercom',
-        dialogue: 'No problem.',
-        state: { intercom: true }
-      }
+        dialogue: 'No problem.'
+      },
+      { state: { intercom: true } }
     ])
 
     const camera = this.setup([
@@ -248,9 +248,6 @@ class Intercom extends Interaction {
     super.read(state)
 
     const selected = this.select(state)
-    console.log('selected test:', selected)
-
-    console.log('state.point test:', state.point)
 
     return selected[state.point]
   }

@@ -1,4 +1,4 @@
-import Phaser, { Renderer } from 'phaser'
+import Phaser from 'phaser'
 
 import { GAME_SIZE } from '../lib/game'
 import ORIGIN from '../lib/origin'
@@ -39,16 +39,12 @@ class Scene extends Phaser.Scene {
     const item = this
       .see({ name: image, position })
 
-    console.log('item test:', item)
-
     this.game.state.items.push(options)
 
     return item
   }
 
   advance () {
-    console
-      .log('advance test:')
     if (this.selecting) {
       return this.selecting
     }
@@ -110,16 +106,13 @@ class Scene extends Phaser.Scene {
   }
 
   extract (difference = 0) {
-    console.log('difference test:', difference)
     const { state } = this.game
-    console.log('extract state test:', state)
     const { point } = state || 0
     state.point = point
 
     const sum = state.point + difference
 
     const copy = { ...state, point: sum }
-    console.log('copy test:', copy)
 
     if (this.interaction) {
       return this
@@ -131,7 +124,6 @@ class Scene extends Phaser.Scene {
   }
 
   init (data) {
-    console.log('data test:', data)
     const names = Object
       .getOwnPropertyNames(data)
 
@@ -255,7 +247,6 @@ class Scene extends Phaser.Scene {
     }
 
     if (items) {
-      console.log('items test:', items)
       items.forEach(this.addItem)
     }
 
@@ -297,7 +288,9 @@ class Scene extends Phaser.Scene {
       this.game.state = newState
     }
 
+    console.log('render state test:', this.game.state)
     const next = this.extract(1)
+    console.log('render next test:', next)
     if (!next) {
       this.reload()
     }
@@ -332,6 +325,8 @@ class Scene extends Phaser.Scene {
     if (remove) {
       const image = this
         .images[options.title]
+
+      console.log('remove image test:', image)
 
       const { images } = this.game.state
       const removed = images
@@ -391,7 +386,7 @@ class Scene extends Phaser.Scene {
       .forEach(figure => figure.update())
   }
 
-  use (name) {}
+  use (/* name */) {}
 }
 
 export default Scene

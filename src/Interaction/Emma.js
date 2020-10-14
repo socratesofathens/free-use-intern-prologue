@@ -120,11 +120,11 @@ class Emma extends Interaction {
       {
         dialogue: 'Quinn, stop it! You know how much I hate having my photo taken. Ugh, I bet I look like a total mess.',
         speakerName: 'Emma',
-        state: { taken: true },
         images: [{
           name: 'pic-emma', remove: true
         }]
-      }
+      },
+      { state: { taken: true } }
     ])
 
     const taken = this.setup([

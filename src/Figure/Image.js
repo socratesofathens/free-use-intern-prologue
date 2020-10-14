@@ -15,7 +15,8 @@ export default class Image extends Figure {
     time,
     uses,
     depth,
-    action
+    action,
+    title
   }) {
     if (!position) {
       position = ORIGIN
@@ -35,7 +36,8 @@ export default class Image extends Figure {
       element: image,
       uses,
       action,
-      name
+      name,
+      title
     })
 
     this.to = to
