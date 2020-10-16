@@ -6,7 +6,8 @@ export default class Figure {
     uses = [],
     action,
     name,
-    title
+    title,
+    hover
   }) {
     this.scene = scene
     this.scene.figures.push(this)
@@ -16,10 +17,21 @@ export default class Figure {
 
     this.action = action
     this.element = element
+
+    this.hover = hover
+
     this.element.setInteractive()
     this.element.on(
       'pointerdown', this.onClick
     )
+
+    this.element.on('pointerover', this.inRoom(() => {
+      this.scene.setText(this.hover)
+    }))
+
+    this.element.on('pointerout', this.inRoom(() => {
+      this.scene.setText('')
+    }))
 
     this.name = name
 
@@ -39,6 +51,18 @@ export default class Figure {
       }
 
       onClick()
+    }
+  }
+
+  inRoom (callback) {
+    return () => {
+      if (this.scene.validate) {
+        const valid = this.scene.validate()
+
+        if (this.scene.dialogue && valid && this.hover) {
+          callback()
+        }
+      }
     }
   }
 

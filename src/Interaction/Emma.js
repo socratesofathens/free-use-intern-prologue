@@ -112,7 +112,10 @@ class Emma extends Interaction {
           { name: 'pic-emma', depth: 2 }
         ],
         dialogue: 'I pull out my phone and take a snap of Emma. God she’s a hottie. My old phone had a thousand photos of her...they’ve all been safely backed up on my computer. I use them a lot when I’m alone at night.',
-        photo: 'Emma'
+        photo: {
+          name: 'Emma',
+          hover: 'To look more professional, I made a new email address for internship applications. Goodbye, kingpin_quinn@hottmail.'
+        }
       },
       {
         dialogue: 'Looks like this will be the first of my new collection.'

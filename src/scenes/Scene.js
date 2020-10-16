@@ -33,11 +33,11 @@ class Scene extends Phaser.Scene {
   }
 
   addItem = (options) => {
-    const { name, position } = options
+    const { name, position, hover } = options
     const image = `item-${name}`
 
     const item = this
-      .see({ name: image, position })
+      .see({ name: image, position, hover })
 
     this.game.state.items.push(options)
 
@@ -120,7 +120,11 @@ class Scene extends Phaser.Scene {
         .read(copy)
     }
 
-    return this.saves[copy.point]
+    console.log('this.saves test:', this.saves)
+
+    const save = this.saves[copy.point]
+
+    return save
   }
 
   init (data) {
@@ -179,6 +183,8 @@ class Scene extends Phaser.Scene {
 
   read () {
     this.save = this.extract()
+
+    console.log('read this.save test:', this.save)
 
     if (!this.save) return this.save
 

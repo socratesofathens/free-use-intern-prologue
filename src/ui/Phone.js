@@ -18,18 +18,30 @@ export default class Phone {
 
     this.apps = new Icons({
       names: [
-        'Power',
-        'Phone',
-        'Email',
-        'Web',
-        'Camera',
-        'Photos'
+        { name: 'Power' },
+        { name: 'Phone', hover: 'Make call' },
+        {
+          name: 'Email',
+          hover: 'Use Email app'
+        },
+        {
+          name: 'Web',
+          hover: 'Use Cloo'
+        },
+        {
+          name: 'Camera',
+          hover: 'Use Camera app'
+        },
+        {
+          name: 'Photos',
+          hover: 'Make call'
+        }
       ],
       phone: this
     })
 
     this.photos = new Icons({
-      names: ['Home'],
+      names: [{ name: 'Home' }],
       phone: this
     })
 

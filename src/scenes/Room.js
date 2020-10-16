@@ -77,23 +77,25 @@ class Room extends Scene {
     return paper
   }
 
-  addPhoto = (name) => {
-    const { photos } = this.phone
+  addPhoto = (photo) => {
+    const { name } = photo
     const lower = name.toLowerCase()
 
+    const { photos } = this.phone
     if (!photos[lower]) {
-      const icon = photos.addIcon(name)
+      const icon = photos.addIcon(photo)
       photos[icon.lower] = icon
 
       this
         .game
         .state
         .photos
-        .push(name)
+        .push(photo)
 
       return icon
     } else {
-      console.warn('Photo already added:', name)
+      console
+        .warn('Photo already added:', photo)
     }
   }
 
@@ -371,7 +373,7 @@ class Room extends Scene {
           interaction: this.emma
         })
       }
-      case 'intercom': {
+      case 'blank': {
         return this.interact({
           interaction: this.intercom
         })
@@ -383,6 +385,14 @@ class Room extends Scene {
 
       this.phone.reset()
     }
+  }
+
+  validate () {
+    const next = this.extract(1)
+
+    const free = !this.selecting
+
+    return !next && free
   }
 }
 
