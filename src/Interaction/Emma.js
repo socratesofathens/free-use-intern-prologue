@@ -18,7 +18,8 @@ class Emma extends Interaction {
         name: 'emma',
         scale: 0.7528,
         position: { x: 887, y: 1362 },
-        title: 'emma-back'
+        title: 'emma-back',
+        hover: 'Talk to Emma'
       },
       {
         title: 'emma-front',
@@ -114,7 +115,7 @@ class Emma extends Interaction {
         dialogue: 'I pull out my phone and take a snap of Emma. God she’s a hottie. My old phone had a thousand photos of her...they’ve all been safely backed up on my computer. I use them a lot when I’m alone at night.',
         photo: {
           name: 'Emma',
-          hover: 'To look more professional, I made a new email address for internship applications. Goodbye, kingpin_quinn@hottmail.'
+          hover: 'Select photo of Emma'
         }
       },
       {

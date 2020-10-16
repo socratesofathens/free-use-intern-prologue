@@ -25,9 +25,14 @@ export default class Figure {
       'pointerdown', this.onClick
     )
 
-    this.element.on('pointerover', this.inRoom(() => {
-      this.scene.setText(this.hover)
-    }))
+    this
+      .element
+      .on(
+        'pointerover',
+        this.inRoom(() => {
+          this.scene.setText(this.hover)
+        })
+      )
 
     this.element.on('pointerout', this.inRoom(() => {
       this.scene.setText('')
@@ -58,6 +63,9 @@ export default class Figure {
     return () => {
       if (this.scene.validate) {
         const valid = this.scene.validate()
+        console.log('this.name test:', this.name)
+        console.log('this.hover test:', this.hover)
+        console.log('valid test:', valid)
 
         if (this.scene.dialogue && valid && this.hover) {
           callback()

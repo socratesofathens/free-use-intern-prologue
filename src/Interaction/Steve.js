@@ -4,7 +4,7 @@ class Steve extends Interaction {
   constructor ({ scene }) {
     super({ scene, name: 'steve' })
 
-    const first = [
+    const first = this.setup([
       {
         speakerName: 'Quinn',
         dialogue: 'Hey Steve! It’s Quinn.'
@@ -32,9 +32,9 @@ class Steve extends Interaction {
       {
         dialogue: 'I hang up on Steve. What a great guy.'
       }
-    ]
+    ])
 
-    const second = [
+    const second = this.setup([
       {
         speakerName: 'Quinn',
         dialogue: 'Hey Steve! It’s me again. Quinn!'
@@ -62,9 +62,9 @@ class Steve extends Interaction {
       {
         dialogue: 'I hang up on Steve. Love talking to that dude.'
       }
-    ]
+    ])
 
-    const third = [
+    const third = this.setup([
       {
         speakerName: 'Quinn:',
         dialogue: 'Steve, guess who it is!'
@@ -108,9 +108,9 @@ class Steve extends Interaction {
       {
         dialogue: 'I hang up on my friend. I should call him again if I can think of something urgent to talk about.'
       }
-    ]
+    ])
 
-    const fourth = [
+    const fourth = this.setup([
       {
         speakerName: 'Quinn',
         dialogue: 'Steve, I came up with an emergency!'
@@ -194,9 +194,9 @@ class Steve extends Interaction {
       {
         dialogue: 'I hang up. Steve’s such a smart guy. I can’t wait to overthrow the system with him.'
       }
-    ]
+    ])
 
-    const fifth = [
+    const fifth = this.setup([
       {
         speakerName: 'Quinn',
         dialogue: 'Yo yo yo, how’s my main man?'
@@ -256,7 +256,7 @@ class Steve extends Interaction {
       {
         dialogue: 'I hang up. Hopefully his boss appreciates the importance of friendship.'
       }
-    ]
+    ])
 
     this.points = [
       first,
