@@ -19,7 +19,10 @@ export default class Phone {
     this.apps = new Icons({
       names: [
         { name: 'Power' },
-        { name: 'Phone', hover: 'Make call' },
+        {
+          name: 'Phone',
+          hover: 'Make call'
+        },
         {
           name: 'Email',
           hover: 'Use Email app'
@@ -34,7 +37,7 @@ export default class Phone {
         },
         {
           name: 'Photos',
-          hover: 'Make call'
+          hover: 'View Photos'
         }
       ],
       phone: this
@@ -51,6 +54,8 @@ export default class Phone {
   }
 
   close () {
+    this.deselect()
+
     this.group.setVisible(false)
 
     this.scene.game.state.open = false
@@ -65,13 +70,23 @@ export default class Phone {
   }
 
   openApps () {
+    this.deselect()
+
     this.apps.open()
     this.photos.close()
   }
 
   openPhotos () {
+    this.deselect()
+
     this.apps.close()
     this.photos.open()
+  }
+
+  deselect () {
+    this.scene.selecting = false
+    this.scene.selected = null
+    this.scene.game.state.selected = null
   }
 
   reset () {

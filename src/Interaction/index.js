@@ -1,6 +1,6 @@
 export default class Interaction {
   constructor ({
-    scene, first, last, name
+    scene, first = [], last = [], name
   }) {
     this.scene = scene
     this.first = first
@@ -13,6 +13,7 @@ export default class Interaction {
   }
 
   addImages (point, images) {
+    console.log('point test:', point)
     const oldImages = point.images || []
 
     const newImages = [

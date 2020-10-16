@@ -6,13 +6,21 @@ class Intercom extends Interaction {
       {
         name: 'intercom',
         position: { x: 1763, y: 993 }
-      }
+      },
+      { name: 'emma-back', remove: true }
     ]
 
     const last = [
       {
         title: 'intercom',
         remove: true
+      },
+      {
+        name: 'emma',
+        scale: 0.7528,
+        position: { x: 887, y: 1362 },
+        title: 'emma-back',
+        hover: 'Talk to Emma'
       }
     ]
 
