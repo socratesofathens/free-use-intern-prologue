@@ -49,12 +49,12 @@ class Introduction extends Room {
       },
       {
         fullscreen: {
-          name: 'logo-1', time: 400
+          name: 'logo-1', time: 800
         }
       },
       {
         fullscreen: {
-          name: 'logo-2', time: 400
+          name: 'logo-2', time: 800
         }
       },
       {
