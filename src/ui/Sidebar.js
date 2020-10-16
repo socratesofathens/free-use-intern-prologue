@@ -27,6 +27,36 @@ export default class Sidebar {
     this.addMenu()
   }
 
+  addButton (options) {
+    const { action } = options
+    options.action = null
+
+    const button = this.scene.addText(options)
+
+    const use = (pointer, x, y, event) => {
+      button.setColor('red')
+
+      this
+        .scene
+        .time
+        .delayedCall(
+          100,
+          () => {
+            button.setColor('black')
+          },
+          null,
+          this
+        )
+
+      action(pointer, x, y, event)
+    }
+
+    button.setInteractive()
+    button.on('pointerdown', use, this)
+
+    return button
+  }
+
   addLogo () {
     const y = upY(302.625)
 
@@ -43,7 +73,7 @@ export default class Sidebar {
   addMenu () {
     const y = upY(251.799)
 
-    this.scene.addText({
+    this.addButton({
       content: 'Save',
       position: { x: this.LEFT, y },
       origin: { x: 0, y: 0 },
@@ -71,7 +101,7 @@ export default class Sidebar {
       }
     })
 
-    this.scene.addText({
+    const loader = this.addButton({
       content: 'Load',
       position: { x: this.RIGHT, y },
       origin: { x: 1, y: 0 },
@@ -86,6 +116,7 @@ export default class Sidebar {
         if (!json) return json
 
         const state = JSON.parse(json)
+        state.loaded = true
 
         console.log('load state test:', state)
 
@@ -124,16 +155,39 @@ export default class Sidebar {
       }
     })
 
+    if (this.scene.game.state.loaded) {
+      this.flash(loader)
+    }
+
     this.addPanther()
   }
 
   addPanther () {
     const y = upY(125.879)
 
-    this.scene.addText({
+    return this.addButton({
       content: 'Panther VN',
       position: { x: this.CENTER, y },
-      origin: { x: 0.5, y: 0 }
+      origin: { x: 0.5, y: 0 },
+      action: () => window
+        .open('https://www.patreon.com/pan', '_blank')
     })
+  }
+
+  flash (button) {
+    console.log('buton test:', button)
+    button.setColor('red')
+
+    this
+      .scene
+      .time
+      .delayedCall(
+        100,
+        () => {
+          button.setColor('black')
+        },
+        null,
+        this
+      )
   }
 }
