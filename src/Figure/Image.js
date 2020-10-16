@@ -16,7 +16,8 @@ export default class Image extends Figure {
     uses,
     depth,
     action,
-    title
+    title,
+    hover
   }) {
     if (!position) {
       position = ORIGIN
@@ -37,7 +38,8 @@ export default class Image extends Figure {
       uses,
       action,
       name,
-      title
+      title,
+      hover
     })
 
     this.to = to

@@ -39,7 +39,8 @@ class Title extends Scene {
       'office',
       'boss',
       'bosssex1',
-      'bosssex2'
+      'bosssex2',
+      'blank'
     ]
   }
 

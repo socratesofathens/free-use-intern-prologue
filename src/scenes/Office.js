@@ -157,7 +157,8 @@ class Office extends Room {
       },
       {
         dialogue: 'Patrons get previews of upcoming art, early access to new releases, and votes on what content is included in the game.'
-      }
+      },
+      { dialogue: ' ' }
     ]
 
     super.setup()

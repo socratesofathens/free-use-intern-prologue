@@ -249,7 +249,15 @@ class Intercom extends Interaction {
 
     const selected = this.select(state)
 
-    return selected[state.point]
+    console.log('selected test:', selected)
+
+    console.log('state.point test:', state.point)
+
+    const selection = selected[state.point]
+
+    console.log('selection test:', selection)
+
+    return selection
   }
 
   select (state) {

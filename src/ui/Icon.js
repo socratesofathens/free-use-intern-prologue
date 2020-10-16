@@ -1,10 +1,11 @@
 export default class Icon {
   constructor ({
-    name, position, icons
+    name, position, icons, hover
   }) {
     this.name = name
     this.position = position
     this.icons = icons
+    this.hover = hover
 
     this.lower = this.name.toLowerCase()
 
@@ -79,7 +80,7 @@ export default class Icon {
     this.scene.selecting = true
   }
 
-  see (name, visible = true) {
+  see (name) {
     this.SIZE = {
       width: this.LENGTH,
       height: this.LENGTH
@@ -90,7 +91,8 @@ export default class Icon {
       size: this.SIZE,
       origin: { x: 0, y: 1 },
       position: this.position,
-      depth: 1.1
+      depth: 1.1,
+      hover: this.hover
     })
 
     return seen

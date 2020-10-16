@@ -46,7 +46,7 @@ export default class Icons {
     this.close()
   }
 
-  addIcon = (name) => {
+  addIcon = ({ name, hover }) => {
     const position = this
       .positions
       .find(position => !position.icon)
@@ -55,7 +55,8 @@ export default class Icons {
       const icon = new Icon({
         name,
         position: position,
-        icons: this
+        icons: this,
+        hover
       })
 
       icon.icon.element.setVisible(false)
