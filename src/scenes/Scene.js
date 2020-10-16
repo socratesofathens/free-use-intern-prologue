@@ -139,6 +139,7 @@ class Scene extends Phaser.Scene {
       this.game.state.intercom = this.save.intercom
       this.game.state.taken = this.save.taken
       this.game.state.steve = this.save.steve
+      this.game.state.loaded = this.save.loaded
     } else {
       this.save = null
     }
@@ -326,8 +327,6 @@ class Scene extends Phaser.Scene {
       const image = this
         .images[options.title]
 
-      console.log('remove image test:', image)
-
       const { images } = this.game.state
       const removed = images
         .filter(image => {
@@ -336,7 +335,6 @@ class Scene extends Phaser.Scene {
           return match
         })
 
-      console.log('removed test:', removed)
       this.game.state.images = removed
 
       return image.destroy()
