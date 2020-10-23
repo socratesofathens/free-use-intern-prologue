@@ -120,7 +120,9 @@ class Scene extends Phaser.Scene {
         .read(copy)
     }
 
-    console.log('this.saves test:', this.saves)
+    if (!difference) {
+      console.log('extract this.saves test:', this.saves)
+    }
 
     const save = this.saves[copy.point]
 
@@ -134,6 +136,20 @@ class Scene extends Phaser.Scene {
     const empty = names.length === 0
 
     if (!empty) {
+      console.log('first this.images test:', this.images)
+      console.log('init data test:', data)
+
+      for (const name in this.images) {
+        console.log('name test:', name)
+        const image = this.images[name]
+
+        image.destroy()
+
+        delete this.images[name]
+      }
+
+      console.log('second this.images test:', this.images)
+
       this.save = data
       this
         .game
@@ -262,7 +278,14 @@ class Scene extends Phaser.Scene {
     }
 
     if (images) {
+      console.log('images test:', images)
+      const keys = Object.keys(this.images)
+      console.log('render before this.images test:', keys)
+      window.renderimages = this.images
+      console.log('window.renderimages test:', window.renderimages)
       images.forEach(image => {
+        image.title ??= image.name
+
         const seen = this.see(image)
 
         if (!image.remove) {
@@ -284,6 +307,8 @@ class Scene extends Phaser.Scene {
             .push(copy)
         }
       })
+
+      console.log('render this.images test:', this.images)
     }
 
     if (state) {
@@ -295,9 +320,7 @@ class Scene extends Phaser.Scene {
       this.game.state = newState
     }
 
-    console.log('render state test:', this.game.state)
     const next = this.extract(1)
-    console.log('render next test:', next)
     if (!next) {
       this.reload()
     }
@@ -323,13 +346,10 @@ class Scene extends Phaser.Scene {
   }
 
   see = (options) => {
-    const {
-      title, name, remove
-    } = options
+    options.title ??= options.name
 
-    options.title = title || name
-
-    if (remove) {
+    if (options.remove) {
+      console.log('see remove options.title test:', options.title)
       const image = this
         .images[options.title]
 
@@ -343,11 +363,25 @@ class Scene extends Phaser.Scene {
 
       this.game.state.images = removed
 
-      return image.destroy()
+      if (image) {
+        image.destroy()
+      }
+
+      delete this.images[options.title]
+
+      return image
     }
 
     const seen = {
       ...options, scene: this
+    }
+
+    const exists = this.images[seen.title]
+    if (exists) {
+      console
+        .warn('Image already exists:', exists)
+
+      return exists
     }
 
     const image = new Image(seen)

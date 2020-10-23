@@ -88,7 +88,6 @@ export default class Phone {
     this.scene.selected = null
     this.scene.game.state.selected = null
 
-    console.log('deselect test')
     this.scene.setText(' ')
   }
 
