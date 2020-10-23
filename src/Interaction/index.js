@@ -13,7 +13,6 @@ export default class Interaction {
   }
 
   addImages (point, images) {
-    console.log('point test:', point)
     const oldImages = point.images || []
 
     const newImages = [

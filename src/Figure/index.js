@@ -25,18 +25,19 @@ export default class Figure {
       'pointerdown', this.onClick
     )
 
+    const pointerover = this.inRoom(() => {
+      this.scene.setText(this.hover)
+    })
     this
       .element
-      .on(
-        'pointerover',
-        this.inRoom(() => {
-          this.scene.setText(this.hover)
-        })
-      )
+      .on('pointerover', pointerover)
 
-    this.element.on('pointerout', this.inRoom(() => {
+    const pointerout = this.inRoom(() => {
       this.scene.setText('')
-    }))
+    })
+    this
+      .element
+      .on('pointerout', pointerout)
 
     this.name = name
 
@@ -44,7 +45,10 @@ export default class Figure {
   }
 
   destroy () {
+    console.log('destroy name test:', this.name)
+    console.log('destroy title test:', this.title)
     this.element.destroy()
+    console.log('this.element test:', this.element)
   }
 
   do ({ text, callback }) {
@@ -63,11 +67,12 @@ export default class Figure {
     return () => {
       if (this.scene.validate) {
         const valid = this.scene.validate()
-        console.log('this.name test:', this.name)
-        console.log('this.hover test:', this.hover)
-        console.log('valid test:', valid)
 
-        if (this.scene.dialogue && valid && this.hover) {
+        if (
+          this.scene.dialogue &&
+          valid &&
+          this.hover
+        ) {
           callback()
         }
       }
