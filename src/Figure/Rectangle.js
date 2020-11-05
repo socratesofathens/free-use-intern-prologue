@@ -1,5 +1,7 @@
 import Figure from './index'
 
+import { realPosition } from '../lib/game'
+
 class Rectangle extends Figure {
   constructor ({
     scene,
@@ -9,7 +11,7 @@ class Rectangle extends Figure {
     uses,
     name
   }) {
-    const { x, y } = position
+    const { x, y } = realPosition(position)
     const { width, height } = size
     const element = scene.add.rectangle(
       x, y, width, height, color

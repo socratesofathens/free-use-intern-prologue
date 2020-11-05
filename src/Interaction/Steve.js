@@ -7,11 +7,11 @@ class Steve extends Interaction {
     const first = this.setup([
       {
         speakerName: 'Quinn',
-        dialogue: 'Hey Steve! It’s Quinn.'
+        dialogue: 'Hey Steve! It\'s Quinn.'
       },
       {
         speakerName: 'Steve',
-        dialogue: 'Uh, hey dude. What’s up?'
+        dialogue: 'Uh, hey dude. What\'s up?'
       },
       {
         speakerName: 'Quinn',
@@ -19,15 +19,15 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'Yeah, hi. I’m at work at the moment, so...let’s talk later?'
+        dialogue: 'Yeah, hi. I\'m at work at the moment, so...let\'s talk later?'
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Sure thing! I’ll call you again later.'
+        dialogue: 'Sure thing! I\'ll call you again later.'
       },
       {
         speakerName: 'Steve',
-        dialogue: 'No, I didn’t mean…'
+        dialogue: 'No, I didn\'t mean…'
       },
       {
         dialogue: 'I hang up on Steve. What a great guy.'
@@ -37,7 +37,7 @@ class Steve extends Interaction {
     const second = this.setup([
       {
         speakerName: 'Quinn',
-        dialogue: 'Hey Steve! It’s me again. Quinn!'
+        dialogue: 'Hey Steve! It\'s me again. Quinn!'
       },
       {
         speakerName: 'Steve',
@@ -45,19 +45,19 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Oh, great! How’s work treating you?'
+        dialogue: 'Oh, great! How\'s work treating you?'
       },
       {
         speakerName: 'Steve',
-        dialogue: 'I mean, it’s fine. I really shouldn’t be taking calls though. My boss is a bit of a dick, and he...oh, hi sir! No, I didn’t mean you. No, I didn’t call you a dick. No sir, I swear, I can explain...just give me a second. Quinn, I’ve got to go. Can we talk later?'
+        dialogue: 'I mean, it\'s fine. I really shouldn\'t be taking calls though. My boss is a bit of a dick, and he...oh, hi sir! No, I didn\'t mean you. No, I didn\'t call you a dick. No sir, I swear, I can explain...just give me a second. Quinn, I\'ve got to go. Can we talk later?'
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Sure thing! I’ll call you in a bit.'
+        dialogue: 'Sure thing! I\'ll call you in a bit.'
       },
       {
         speakerName: 'Steve',
-        dialogue: 'No, that’s not what I…-'
+        dialogue: 'No, that\'s not what I…-'
       },
       {
         dialogue: 'I hang up on Steve. Love talking to that dude.'
@@ -71,7 +71,7 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'Quinn, why are you still calling me? You know I can’t talk right now.'
+        dialogue: 'Quinn, why are you still calling me? You know I can\'t talk right now.'
       },
       {
         speakerName: 'Quinn',
@@ -79,11 +79,11 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'Because I figured you’d know I’m at work, and only call if it was urgent!'
+        dialogue: 'Because I figured you\'d know I\'m at work, and only call if it was urgent!'
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Oh, so friendship isn’t urgent?'
+        dialogue: 'Oh, so friendship isn\'t urgent?'
       },
       {
         speakerName: 'Steve',
@@ -95,11 +95,11 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'I gotta get back to work. Please, only call if it’s an emergency.'
+        dialogue: 'I gotta get back to work. Please, only call if it\'s an emergency.'
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Okay dude. I’ll try to think of an emergency to call you about.'
+        dialogue: 'Okay dude. I\'ll try to think of an emergency to call you about.'
       },
       {
         speakerName: 'Steve',
@@ -117,7 +117,7 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'Quinn, you shouldn’t have to “come up with” an emergency. An emergency is something out of your control.'
+        dialogue: 'Quinn, you shouldn\'t have to “come up with” an emergency. An emergency is something out of your control.'
       },
       {
         speakerName: 'Quinn',
@@ -149,15 +149,15 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'Quinn, I told you, I’m at work. If my boss catches me talking…-'
+        dialogue: 'Quinn, I told you, I\'m at work. If my boss catches me talking…-'
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'But it’s an emergency.'
+        dialogue: 'But it\'s an emergency.'
       },
       {
         speakerName: 'Steve',
-        dialogue: 'Technically. Sort of. But there’s nothing we can do about it.'
+        dialogue: 'Technically. Sort of. But there\'s nothing we can do about it.'
       },
       {
         speakerName: 'Quinn',
@@ -165,7 +165,7 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'I mean, it’s a systemic issue. One person can’t really change the system, no matter what Hollywood tells you. You have to address the root causes.'
+        dialogue: 'I mean, it\'s a systemic issue. One person can\'t really change the system, no matter what Hollywood tells you. You have to address the root causes.'
       },
       {
         speakerName: 'Quinn',
@@ -181,25 +181,25 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'Quinn, I gotta go. We’ll fix democracy later, okay?'
+        dialogue: 'Quinn, I gotta go. We\'ll fix democracy later, okay?'
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Okay, cool. I’ll call you back when I have a plan.'
+        dialogue: 'Okay, cool. I\'ll call you back when I have a plan.'
       },
       {
         speakerName: 'Steve',
-        dialogue: 'No! Please don’t call me ba-...'
+        dialogue: 'No! Please don\'t call me ba-...'
       },
       {
-        dialogue: 'I hang up. Steve’s such a smart guy. I can’t wait to overthrow the system with him.'
+        dialogue: 'I hang up. Steve\'s such a smart guy. I can\'t wait to overthrow the system with him.'
       }
     ])
 
     const fifth = this.setup([
       {
         speakerName: 'Quinn',
-        dialogue: 'Yo yo yo, how’s my main man?'
+        dialogue: 'Yo yo yo, how\'s my main man?'
       },
       {
         speakerName: 'rSteve',
@@ -219,7 +219,7 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'Yeah, I didn’t take this job for the thrills.'
+        dialogue: 'Yeah, I didn\'t take this job for the thrills.'
       },
       {
         speakerName: 'Quinn',
@@ -227,15 +227,15 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'Well, because...Quinn, I can’t really talk about this right now.'
+        dialogue: 'Well, because...Quinn, I can\'t really talk about this right now.'
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'But it’s work-related!'
+        dialogue: 'But it\'s work-related!'
       },
       {
         speakerName: 'Steve',
-        dialogue: 'Yet somehow I don’t think my boss will see it that way.'
+        dialogue: 'Yet somehow I don\'t think my boss will see it that way.'
       },
       {
         speakerName: 'Quinn',
@@ -243,11 +243,11 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'I’m hanging up now.'
+        dialogue: 'I\'m hanging up now.'
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Okay, great! I’ll call back later to hear what he said.'
+        dialogue: 'Okay, great! I\'ll call back later to hear what he said.'
       },
       {
         speakerName: 'Steve',
@@ -274,7 +274,7 @@ class Steve extends Interaction {
     const indexed = this.points[index]
     const sixth = [
       {
-        dialogue: 'It rings out. Huh. For some reason, Steve isn’t answering. I should try him again later.'
+        dialogue: 'It rings out. Huh. For some reason, Steve isn\'t answering. I should try him again later.'
       }
     ]
     const points = indexed || sixth

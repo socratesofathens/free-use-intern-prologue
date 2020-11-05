@@ -1,4 +1,4 @@
-import { upY } from '../lib/game'
+import { upY, realPosition, realSize, scaleX } from '../lib/game'
 import lorem from '../lib/lorem'
 import ORIGIN from '../lib/origin'
 
@@ -15,6 +15,8 @@ class Room extends Scene {
   constructor (name, color) {
     super(name, color)
 
+    console.log('room name test:', name)
+
     this.speakerName = null
     this.content = null
     this.dialogue = null
@@ -22,13 +24,13 @@ class Room extends Scene {
     this.tool = null
     this.interaction = null
     this.interactions = {}
-    this.OFFSET = 10
+    this.OFFSET = 0.004545454545
   }
 
   addBook = () => {
-    this.HEIGHT = 339
+    this.HEIGHT = 0.1540909091
     this.TOP = upY(this.HEIGHT)
-    this.MARGIN = 35
+    this.MARGIN = 0.01590909091
 
     this.addPaper()
 
@@ -41,13 +43,16 @@ class Room extends Scene {
     const topline = this.TOP + this.MARGIN
     const y = topline - this.OFFSET
 
+    const WIDTH = 0.8361032984
+    const width = scaleX(WIDTH)
+
     this.dialogue = this.addText({
       position: { x: this.MARGIN, y },
       content: lorem,
       options: {
         fontSize: '56.25247765pt',
         lineSpacing: 5,
-        wordWrap: { width: 3270 },
+        wordWrap: { width },
         color: 'white'
       },
       origin: { x: 0, y: 0 }
@@ -61,10 +66,10 @@ class Room extends Scene {
   }
 
   addPaper () {
-    const height = 339
+    const height = 0.1540909091
     const y = upY(height)
     const position = { x: 0, y }
-    const size = { width: 3300, height }
+    const size = { width: 0.8437739709, height }
 
     const paper = this.addRectangle({
       position,
@@ -106,8 +111,8 @@ class Room extends Scene {
     origin = ORIGIN,
     action
   }) {
-    const { x, y } = position
-    const { width, height } = size
+    const { x, y } = realPosition(position)
+    const { width, height } = realSize(size)
     const rectangle = this
       .add
       .rectangle(x, y, width, height, color)
@@ -147,6 +152,7 @@ class Room extends Scene {
     action,
     depth
   }) => {
+    console.log('content test:', content)
     const base = {
       fontFamily: 'futura',
       fontSize: '67.50299835pt',
@@ -154,8 +160,10 @@ class Room extends Scene {
     }
     const merged = { ...base, ...options }
 
-    const { x, y } = position
+    const { x, y } = realPosition(position)
+    console.log('y test:', y)
     const offset = y - this.OFFSET
+    console.log('offeset test:', offset)
     const text = this.add.text(
       x, offset, content, merged
     )

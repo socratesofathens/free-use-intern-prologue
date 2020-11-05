@@ -12,7 +12,8 @@ export default class Icon {
     this.icons.tools.push(this)
     this.scene = this.icons.scene
 
-    this.LENGTH = 207.309
+    this.WIDTH = 0.05300664792
+    this.HEIGHT = 0.09423136364
 
     this.image = `icon-${this.lower}`
 
@@ -28,10 +29,10 @@ export default class Icon {
   }
 
   addLabel () {
-    this.HALF_LENGTH = this.LENGTH / 2
+    this.HALF_WIDTH = this.WIDTH / 2
     const { x, y } = this.position
-    this.CENTER = x + this.HALF_LENGTH
-    this.BASELINE = y + 27
+    this.CENTER = x + this.HALF_WIDTH
+    this.BASELINE = y + 0.01227272727
 
     this.label = this
       .scene
@@ -62,7 +63,6 @@ export default class Icon {
   }
 
   destroy () {
-    console.log('this.lower test:', this.lower)
     this.icon.destroy()
 
     this.selected.destroy()
@@ -82,8 +82,8 @@ export default class Icon {
 
   see (name) {
     this.SIZE = {
-      width: this.LENGTH,
-      height: this.LENGTH
+      width: this.WIDTH,
+      height: this.HEIGHT
     }
 
     const seen = this.icons.see({

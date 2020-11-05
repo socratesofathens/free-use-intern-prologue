@@ -45,10 +45,7 @@ export default class Figure {
   }
 
   destroy () {
-    console.log('destroy name test:', this.name)
-    console.log('destroy title test:', this.title)
     this.element.destroy()
-    console.log('this.element test:', this.element)
   }
 
   do ({ text, callback }) {

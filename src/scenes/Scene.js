@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
 
-import { GAME_SIZE } from '../lib/game'
+import { realPosition } from '../lib/game'
 import ORIGIN from '../lib/origin'
 
 import Image from '../Figure/Image'
@@ -50,7 +50,6 @@ class Scene extends Phaser.Scene {
     }
 
     const { point } = this.game.state
-    console.log('advance point test:', point)
     this.game.state.point = point + 1
 
     this.read()
@@ -76,7 +75,7 @@ class Scene extends Phaser.Scene {
       repeat: -1
     })
 
-    const { x, y } = position
+    const { x, y } = realPosition(position)
     const name = keys[0]
 
     const sprite = this
@@ -136,19 +135,13 @@ class Scene extends Phaser.Scene {
     const empty = names.length === 0
 
     if (!empty) {
-      console.log('first this.images test:', this.images)
-      console.log('init data test:', data)
-
       for (const name in this.images) {
-        console.log('name test:', name)
         const image = this.images[name]
 
         image.destroy()
 
         delete this.images[name]
       }
-
-      console.log('second this.images test:', this.images)
 
       this.save = data
       this
@@ -200,8 +193,6 @@ class Scene extends Phaser.Scene {
   read () {
     this.save = this.extract()
 
-    console.log('read this.save test:', this.save)
-
     if (!this.save) return this.save
 
     this.render()
@@ -221,8 +212,6 @@ class Scene extends Phaser.Scene {
       animations
     } = this.save
 
-    console.log('render this.save test:', this.save)
-
     if (scene) {
       this.save = null
 
@@ -232,7 +221,7 @@ class Scene extends Phaser.Scene {
     if (fullscreen) {
       this.fullscreen = this.see({
         ...fullscreen,
-        size: GAME_SIZE,
+        size: { width: 1, height: 1 },
         origin: ORIGIN,
         depth: 2
       })
@@ -278,11 +267,6 @@ class Scene extends Phaser.Scene {
     }
 
     if (images) {
-      console.log('images test:', images)
-      const keys = Object.keys(this.images)
-      console.log('render before this.images test:', keys)
-      window.renderimages = this.images
-      console.log('window.renderimages test:', window.renderimages)
       images.forEach(image => {
         image.title ??= image.name
 
@@ -307,8 +291,6 @@ class Scene extends Phaser.Scene {
             .push(copy)
         }
       })
-
-      console.log('render this.images test:', this.images)
     }
 
     if (state) {
@@ -349,7 +331,6 @@ class Scene extends Phaser.Scene {
     options.title ??= options.name
 
     if (options.remove) {
-      console.log('see remove options.title test:', options.title)
       const image = this
         .images[options.title]
 

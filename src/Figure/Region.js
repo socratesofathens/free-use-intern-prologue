@@ -1,5 +1,7 @@
 import Figure from './index'
 
+import realPosition from '../lib/game'
+
 export default class Region extends Figure {
   constructor ({
     scene,
@@ -8,15 +10,17 @@ export default class Region extends Figure {
     bottomRight,
     hover
   }) {
+    const realTopLeft = realPosition(topLeft)
     const region = scene
       .game
       .add
-      .graphics(topLeft.x, topLeft.y)
+      .graphics(realTopLeft.x, realTopLeft.y)
 
     console.log('region constructor test:', region)
 
+    const realBottomRight = realPosition(bottomRight)
     region
-      .drawRect(bottomRight.x, bottomRight.y)
+      .drawRect(realBottomRight.x, realBottomRight.y)
 
     super({
       scene,

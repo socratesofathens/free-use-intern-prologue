@@ -12,10 +12,10 @@ class Office extends Room {
         images: [
           {
             name: 'boss',
-            position: { x: 1763, y: 1129 }
+            position: { x: 0.4507798517, y: 0.5131818182 }
           }
         ],
-        dialogue: 'Once we got inside the building, it wasn’t hard to find our new workplace. We were told to go find the boss, who looked pretty pleased to see Emma...and surprised to see me.'
+        dialogue: 'Once we got inside the building, it wasn\'t hard to find our new workplace. We were told to go find the boss, who looked pretty pleased to see Emma...and surprised to see me.'
       },
       {
         speakerName: 'Boss',
@@ -23,15 +23,15 @@ class Office extends Room {
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Uh, hi. My name’s Quinn, and this is…-'
+        dialogue: 'Uh, hi. My name\'s Quinn, and this is…-'
       },
       {
         speakerName: 'Boss',
-        dialogue: 'Wait. You’re Quinn?'
+        dialogue: 'Wait. You\'re Quinn?'
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'That’s right.'
+        dialogue: 'That\'s right.'
       },
       {
         speakerName: 'Boss',
@@ -63,7 +63,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'That’s right, young lady. You must be Emma.'
+        dialogue: 'That\'s right, young lady. You must be Emma.'
       },
       {
         speakerName: 'Emma',
@@ -79,7 +79,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'That’s right. Female employees are able to be freely used for sexual relief by the rest of the staff. That’s why we normally take on female interns.'
+        dialogue: 'That\'s right. Female employees are able to be freely used for sexual relief by the rest of the staff. That\'s why we normally take on female interns.'
       },
       {
         speakerName: 'Quinn',
@@ -87,7 +87,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'Emma, why don’t you come over here and we’ll demonstrate.'
+        dialogue: 'Emma, why don\'t you come over here and we\'ll demonstrate.'
       },
       {
         speakerName: 'Emma',
@@ -98,7 +98,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'Ah, yes. Exactly what I was hoping. Yes, Emma, we’re going to enjoy you.',
+        dialogue: 'Ah, yes. Exactly what I was hoping. Yes, Emma, we\'re going to enjoy you.',
         images: [
           { title: 'boss', remove: true }
         ],
@@ -107,7 +107,7 @@ class Office extends Room {
             key: 'bosssex',
             duration: 650,
             position: {
-              x: 1763, y: 1063
+              x: 0.4507798517, y: 0.4831818182
             },
             keys: ['bosssex1', 'bosssex2']
           }
@@ -119,7 +119,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'Now, Quinn...I’m not sure if there’s really going to be much for you to do. I’ll tell you what, why don’t you run along and get me a coffee?'
+        dialogue: 'Now, Quinn...I\'m not sure if there\'s really going to be much for you to do. I\'ll tell you what, why don\'t you run along and get me a coffee?'
       },
       {
         speakerName: 'Quinn',
@@ -127,7 +127,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'See if anyone else wants anything, too. And hey - once you’re done with your tasks, you can have a turn with Emma here.'
+        dialogue: 'See if anyone else wants anything, too. And hey - once you\'re done with your tasks, you can have a turn with Emma here.'
       },
       {
         speakerName: 'Quinn',
@@ -139,11 +139,11 @@ class Office extends Room {
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Thank you, sir. I’ll be back with your coffee shortly.'
+        dialogue: 'Thank you, sir. I\'ll be back with your coffee shortly.'
       },
       {
         speakerName: 'Boss',
-        dialogue: 'No need to rush. Isn’t that right, Emma?'
+        dialogue: 'No need to rush. Isn\'t that right, Emma?'
       },
       {
         speakerName: 'Emma',

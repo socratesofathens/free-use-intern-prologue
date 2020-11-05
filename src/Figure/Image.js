@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 
+import { realPosition, realSize } from '../lib/game'
 import ORIGIN from '../lib/origin'
 
 import Figure from './index'
@@ -24,7 +25,8 @@ export default class Image extends Figure {
       origin = ORIGIN
     }
 
-    const { x, y } = position
+    const realized = realPosition(position)
+    const { x, y } = realized
 
     const image = scene
       .physics
@@ -56,7 +58,8 @@ export default class Image extends Figure {
     }
 
     if (this.size) {
-      const { width, height } = this.size
+      this.realSize = realSize(this.size)
+      const { width, height } = this.realSize
 
       this.element.setDisplaySize(
         width, height
@@ -64,7 +67,8 @@ export default class Image extends Figure {
     }
 
     if (this.to) {
-      const { x, y } = this.to
+      this.realTo = realPosition(this.to)
+      const { x, y } = realPosition(this.to)
 
       this.scene.physics.moveTo(
         this.element, x, y, 0, time
@@ -96,7 +100,7 @@ export default class Image extends Figure {
       const towards = !this.to || !this.to.x || !this.to.y
       if (towards) return this.to
 
-      const { x, y } = this.to
+      const { x, y } = this.realTo
 
       const distance = Phaser
         .Math

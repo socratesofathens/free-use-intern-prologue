@@ -2,23 +2,32 @@ export const GAME_WIDTH = 3911
 
 export const GAME_HEIGHT = 2200
 
-export function realWidth (scalar) {
+export function scaleX (scalar) {
   return scalar * GAME_WIDTH
 }
 
-export function realHeight (scalar) {
+export function scaleY (scalar) {
   return scalar * GAME_HEIGHT
+}
+
+export function realPosition (position) {
+  const { x, y } = position
+
+  const realX = scaleX(x)
+  const realY = scaleY(y)
+
+  return { x: realX, y: realY }
 }
 
 export function realSize (size) {
   const { width, height } = size
 
-  const realizedWidth = realWidth(width)
-  const realizedHeight = realHeight(height)
+  const realWidth = scaleX(width)
+  const realHeight = scaleY(height)
 
   return {
-    width: realizedWidth,
-    height: realizedHeight
+    width: realWidth,
+    height: realHeight
   }
 }
 
@@ -28,7 +37,7 @@ export const GAME_SIZE = {
 }
 
 export function upY (height) {
-  return GAME_HEIGHT - height
+  return 1.0 - height
 }
 
 export default GAME_SIZE

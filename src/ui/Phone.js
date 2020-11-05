@@ -1,5 +1,3 @@
-import { GAME_WIDTH } from '../lib/game'
-
 import Icons from './Icons'
 
 export default class Phone {
@@ -10,9 +8,9 @@ export default class Phone {
 
     this.background = this.see({
       name: 'phone',
-      size: { height: 1300, width: 611 },
+      size: { width: 0.1562260291, height: 0.5909090909 },
       origin: { x: 1, y: 0 },
-      position: { x: GAME_WIDTH, y: 0 },
+      position: { x: 1, y: 0 },
       depth: 1.1
     })
 

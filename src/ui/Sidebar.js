@@ -1,15 +1,15 @@
-import { upY, GAME_WIDTH } from '../lib/game'
+import { upY } from '../lib/game'
 
 export default class Sidebar {
   constructor (scene) {
     this.scene = scene
     this.scene.sidebar = this
 
-    this.X = 3300
-    this.MARGIN = 40
+    this.X = 0.8437739709
+    this.MARGIN = 0.01022756328
     this.LEFT = this.X + this.MARGIN
-    this.RIGHT = GAME_WIDTH - this.MARGIN
-    this.WIDTH = GAME_WIDTH - this.X
+    this.RIGHT = 1.0 - this.MARGIN
+    this.WIDTH = 1.0 - this.X
     this.HALF_WIDTH = this.WIDTH / 2
     this.CENTER = this.X + this.HALF_WIDTH
 
@@ -18,7 +18,7 @@ export default class Sidebar {
       .addRectangle({
         position: { x: this.X, y: 0 },
         size: {
-          width: 611, height: 2200
+          width: 0.1562260291, height: 1
         },
         color: 0xffffff
       })
@@ -58,20 +58,26 @@ export default class Sidebar {
   }
 
   addLogo () {
-    const y = upY(302.625)
+    const y = upY(0.1375568182)
 
-    this.scene.see({
+    const options = {
       name: 'interface-logo',
       position: { x: this.LEFT, y },
       size: {
-        width: 436.499, height: 559.026
+        width: 0.1116080286, height: 0.2541027273
       },
       origin: { x: 0, y: 1 }
-    })
+    }
+
+    console.log('addLogo options test:', options)
+
+    return this.scene.see(options)
   }
 
   addMenu () {
-    const y = upY(251.799)
+    const y = upY(0.1144540909)
+
+    console.log('menuY test:', y)
 
     this.addButton({
       content: 'Save',
@@ -80,7 +86,6 @@ export default class Sidebar {
       action: (pointer, x, y, event) => {
         event.stopPropagation()
 
-        console.log('save this.scene.game.state test:', this.scene.game.state)
         const { state } = this.scene.game
 
         const copy = { ...state }
@@ -118,8 +123,6 @@ export default class Sidebar {
         const state = JSON.parse(json)
         state.loaded = true
 
-        console.log('load state test:', state)
-
         this.scene.phone.photos.destroy()
         this
           .scene
@@ -127,7 +130,6 @@ export default class Sidebar {
           .state
           .images
           .forEach(image => {
-            console.log('image test:', image)
             image.figure.destroy()
           })
         this
@@ -163,7 +165,7 @@ export default class Sidebar {
   }
 
   addPanther () {
-    const y = upY(125.879)
+    const y = upY(0.05721772727)
 
     return this.addButton({
       content: 'Panther VN',
@@ -175,7 +177,6 @@ export default class Sidebar {
   }
 
   flash (button) {
-    console.log('buton test:', button)
     button.setColor('red')
 
     this

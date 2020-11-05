@@ -14,12 +14,12 @@ export default class Icons {
 
     this.group = this.scene.addGroup()
 
-    this.LEFT = 3372.606
-    this.RIGHT = 3631.817
+    this.LEFT = 0.8623385323
+    this.RIGHT = 0.928615955
 
-    this.TOP = upY(1804.439)
-    this.MIDDLE = upY(1467.024)
-    this.BOTTOM = upY(1129.709)
+    this.TOP = upY(0.8201995455)
+    this.MIDDLE = upY(0.6668290909)
+    this.BOTTOM = upY(0.5135040909)
 
     this.initial = [
       { x: this.LEFT, y: this.TOP },

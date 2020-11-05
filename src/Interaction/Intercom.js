@@ -5,7 +5,7 @@ class Intercom extends Interaction {
     const first = [
       {
         name: 'intercom',
-        position: { x: 1763, y: 993 },
+        position: { x: 0.4507798517, y: 0.4513636364 },
         title: 'intercom-front'
       },
       { name: 'emma-back', remove: true }
@@ -19,7 +19,7 @@ class Intercom extends Interaction {
       {
         name: 'emma',
         scale: 0.7528,
-        position: { x: 887, y: 1362 },
+        position: { x: 0.2267962158, y: 0.6190909091 },
         title: 'emma-back',
         hover: 'Talk to Emma'
       }
@@ -39,11 +39,11 @@ class Intercom extends Interaction {
       },
       {
         speakerName: 'Intercom',
-        dialogue: 'Who’re you here to see?'
+        dialogue: "Who're you here to see?"
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Acuity. We’re the new interns.'
+        dialogue: "Acuity. We're the new interns."
       },
       {
         speakerName: 'Intercom',
@@ -55,7 +55,7 @@ class Intercom extends Interaction {
       },
       {
         speakerName: 'Intercom',
-        dialogue: 'I don’t see no friend.'
+        dialogue: "I don't see no friend."
       },
       {
         speakerName: 'Quinn',
@@ -79,23 +79,23 @@ class Intercom extends Interaction {
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'No, this happens a lot. I’m Quinn. It’s a guy’s name too.'
+        dialogue: "No, this happens a lot. I'm Quinn. It's a guy's name too."
       },
       {
         speakerName: 'Intercom',
-        dialogue: 'Doesn’t say it’s a guy’s name.'
+        dialogue: "Doesn't say it's a guy's name."
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Yeah, but it’s my name. And I’m a guy.'
+        dialogue: "Yeah, but it's my name. And I'm a guy."
       },
       {
         speakerName: 'Intercom',
-        dialogue: 'They don’t pay me to trust random guys.'
+        dialogue: "They don't pay me to trust random guys."
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Please, believe me. I’m here with my friend Emma...'
+        dialogue: "Please, believe me. I'm here with my friend Emma..."
       },
       {
         speakerName: 'Intercom',
@@ -103,11 +103,11 @@ class Intercom extends Interaction {
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'She’s not a dude! Can I speak to your boss? I’m sure we can get this cleared up.'
+        dialogue: "She's not a dude! Can I speak to your boss? I'm sure we can get this cleared up."
       },
       {
         speakerName: 'Intercom',
-        dialogue: 'Look, I’m paid to make sure the right people get into this building. List says two chicks, and you’re one dude. Whaddya want me to do?'
+        dialogue: "Look, I'm paid to make sure the right people get into this building. List says two chicks, and you're one dude. Whaddya want me to do?"
       },
       {
         speakerName: 'Quinn',
@@ -130,34 +130,34 @@ class Intercom extends Interaction {
 
     const camera = this.setup([
       {
-        dialogue: 'The intercom has a camera to show the security guard who they’re talking to. Using my camera on the intercom won’t show me who I’m talking to. It doesn’t work like that.'
+        dialogue: "The intercom has a camera to show the security guard who they're talking to. Using my camera on the intercom won't show me who I'm talking to. It doesn't work like that."
       }
     ])
 
     const selfie = this.setup([
       {
-        dialogue: 'I don’t need to show the intercom a photo of myself. It can see me through the camera.'
+        dialogue: "I don't need to show the intercom a photo of myself. It can see me through the camera."
       }
     ])
 
     const email = this.setup([
       {
-        dialogue: 'You hold the email up to the camera, so they can see that you’re meant to be here, but the doors don’t open. Maybe you should try using the intercom.'
+        dialogue: "You hold the email up to the camera, so they can see that you're meant to be here, but the doors don't open. Maybe you should try using the intercom."
       }
     ])
 
     const emailed = this.setup([
       {
         speakerName: 'Quinn',
-        dialogue: 'See! I’m meant to be here. I have the email and everything.'
+        dialogue: "See! I'm meant to be here. I have the email and everything."
       },
       {
         speakerName: 'Intercom',
-        dialogue: 'How do I know that you didn’t steal that email from the real girls? Maybe you’re one of them cyber hackers.'
+        dialogue: "How do I know that you didn't steal that email from the real girls? Maybe you're one of them cyber hackers."
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'You think I hacked into someone’s email account...so I could get into an unpaid internship?'
+        dialogue: "You think I hacked into someone's email account...so I could get into an unpaid internship?"
       },
       {
         speakerName: 'Intercom',
@@ -165,29 +165,29 @@ class Intercom extends Interaction {
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Well, I didn’t!'
+        dialogue: "Well, I didn't!"
       },
       {
         speakerName: 'Intercom',
-        dialogue: 'Well, I ain’t letting you in. Not until you prove to me that you’ve got a chick with you.'
+        dialogue: "Well, I ain't letting you in. Not until you prove to me that you've got a chick with you."
       }
     ])
 
     const web = this.setup([
       {
-        dialogue: 'I quickly find the intercom’s serial number and search for it on Cloo. It’s an LT22-151212 model. Downloading a PDF version of the manual shows that it’s fairly easy to use. All I have to do is press the button. Y’know, much like every other intercom ever.'
+        dialogue: "I quickly find the intercom's serial number and search for it on Cloo. It's an LT22-151212 model. Downloading a PDF version of the manual shows that it's fairly easy to use. All I have to do is press the button. Y'know, much like every other intercom ever."
       }
     ])
 
     const webbed = this.setup([
       {
-        dialogue: 'I decide to see if Cloo can help me work out what to do next. “How to get past idiot security guard” doesn’t yield any results. '
+        dialogue: 'I decide to see if Cloo can help me work out what to do next. "How to get past idiot security guard" doesn\'t yield any results.'
       },
       {
-        dialogue: '“How to trick intercom” leads to an interesting forum discussion - apparently the camera on this particular model has a pretty low resolution. '
+        dialogue: '"How to trick intercom" leads to an interesting forum discussion - apparently the camera on this particular model has a pretty low resolution.'
       },
       {
-        dialogue: 'I don’t need to get Emma to the intercom...I just have to trick the camera into thinking that she’s there.'
+        dialogue: "I don't need to get Emma to the intercom...I just have to trick the camera into thinking that she's there."
       }
     ])
 
@@ -199,14 +199,14 @@ class Intercom extends Interaction {
 
     const emmaed = this.setup([
       {
-        dialogue: 'I hold up the photo of Emma to the intercom, trying to fool it into thinking she’s standing in front of the camera.'
+        dialogue: "I hold up the photo of Emma to the intercom, trying to fool it into thinking she's standing in front of the camera."
       },
       {
         speakerName: 'Intercom',
-        dialogue: 'Wow! Hallo, gorgeous. You must be one of the new Acuity interns! I’ll buzz you right up.'
+        dialogue: "Wow! Hallo, gorgeous. You must be one of the new Acuity interns! I'll buzz you right up."
       },
       {
-        dialogue: 'There’s a loud buzzing sound, and the door opens.'
+        dialogue: "There's a loud buzzing sound, and the door opens."
       },
       {
         speakerName: 'Quinn',
@@ -214,7 +214,7 @@ class Intercom extends Interaction {
       },
       {
         speakerName: 'Emma',
-        dialogue: 'Great work, Quinn! Let’s go up and…'
+        dialogue: "Great work, Quinn! Let's go up and…"
       },
       {
         speakerName: 'Emma',
@@ -230,7 +230,7 @@ class Intercom extends Interaction {
       },
       {
         speakerName: 'Emma',
-        dialogue: 'Oh, Quinn. You’re so sweet.'
+        dialogue: "Oh, Quinn. You're so sweet."
       },
       {
         dialogue: 'Sweet. Great. Is she ever going to see me as anything more than that?'
@@ -258,13 +258,7 @@ class Intercom extends Interaction {
 
     const selected = this.select(state)
 
-    console.log('selected test:', selected)
-
-    console.log('state.point test:', state.point)
-
     const selection = selected[state.point]
-
-    console.log('selection test:', selection)
 
     return selection
   }
