@@ -63,7 +63,7 @@ class Intercom extends Interaction {
       },
       {
         speakerName: 'Intercom',
-        dialogue: '…'
+        dialogue: '...'
       },
       {
         speakerName: 'Intercom',
