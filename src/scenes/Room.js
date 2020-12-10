@@ -43,7 +43,7 @@ class Room extends Scene {
     const topline = this.TOP + this.MARGIN
     const y = topline - this.OFFSET
 
-    const WIDTH = 0.8361032984
+    const WIDTH = 0.8361032984 - this.OFFSET
     const width = scaleX(WIDTH)
 
     this.dialogue = this.addText({
@@ -152,7 +152,6 @@ class Room extends Scene {
     action,
     depth
   }) => {
-    console.log('content test:', content)
     const base = {
       fontFamily: 'futura',
       fontSize: '67.50299835pt',
@@ -161,9 +160,7 @@ class Room extends Scene {
     const merged = { ...base, ...options }
 
     const { x, y } = realPosition(position)
-    console.log('y test:', y)
     const offset = y - this.OFFSET
-    console.log('offeset test:', offset)
     const text = this.add.text(
       x, offset, content, merged
     )
@@ -204,7 +201,7 @@ class Room extends Scene {
   }
 
   openPhone () {
-    this.setText('To celebrate the internship, I bought a brand new phone, an Acuity 556D.')
+    this.saveText('To celebrate the internship, I bought a brand new phone, an Acuity 556D.')
 
     this.phone.open()
   }
@@ -265,7 +262,13 @@ class Room extends Scene {
     return figure?.select()
   }
 
-  setText = (dialogue, speakerName) => {
+  saveText (dialogue) {
+    this.setText(dialogue)
+
+    this.was = dialogue
+  }
+
+  setText = (dialogue, speakerName, save) => {
     this.dialogue.setText(dialogue)
 
     this
@@ -276,6 +279,10 @@ class Room extends Scene {
       .game
       .state
       .dialogue = dialogue
+
+    if (save) {
+      this.was = dialogue
+    }
 
     this
       .game
@@ -318,9 +325,9 @@ class Room extends Scene {
 
     switch (name) {
       case 'item-phone':
-        return wet && this.openPhone()
+        return wet ? this.openPhone() : 'dry'
       case 'icon-power':
-        return wet && this.phone.close()
+        return wet ? this.phone.close() : 'dry'
       case 'icon-phone': {
         if (wet) {
           this.phone.reset()
@@ -337,58 +344,72 @@ class Room extends Scene {
         if (wet) {
           apps.email.select()
 
-          return this.setText(
+          return this.saveText(
             'To look more professional, I made a new email address for internship applications. Goodbye, kingpin_quinn@hottmail.'
           )
         }
+
+        return 'dry'
       case 'icon-web':
         if (wet) {
           apps.web.select()
 
-          return this.setText(
+          return this.saveText(
             'I can look up pretty much anything on Cloo. It’s great for when I’m not sure what to do next.'
           )
         }
+
+        return 'dry'
       case 'icon-camera':
         if (wet) {
           apps.camera.select()
 
-          return this.setText(
+          return this.saveText(
             'This phone has a great high-res camera. I can’t wait to take some photos with it.'
           )
         }
+
+        return 'dry'
       case 'icon-photos':
         if (wet) {
           this.phone.openPhotos()
 
           this.game.state.apps = false
 
-          return this.setText(
+          return this.saveText(
             'My old phone had thousands of pics, but I couldn’t work out how to transfer them over.'
           )
         }
+
+        return 'dry'
       case 'icon-home':
         if (wet) {
           this.game.state.apps = true
 
           return this.phone.openApps()
         }
+
+        return 'dry'
       case 'icon-selfie':
         if (wet) {
           photos.selfie.select()
 
-          return this.setText(
+          return this.saveText(
             'It’s-a me! I took a selfie to test my new camera.'
           )
         }
+
+        return 'dry'
       case 'icon-emma':
         if (wet) {
           photos.emma.select()
 
-          return this.setText(
+          return this.saveText(
             'My best friend, Emma. God she’s a hottie....'
           )
         }
+
+        return 'dry'
       case 'emma': {
         console.log('title test:', title)
         const back = title === 'emma-back'
@@ -405,7 +426,7 @@ class Room extends Scene {
       }
     }
 
-    if (name.includes('-selected')) {
+    if (wet && name.includes('-selected')) {
       this.game.state.selected = null
 
       this.phone.reset()

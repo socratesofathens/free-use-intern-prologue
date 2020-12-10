@@ -106,16 +106,22 @@ class Scene extends Phaser.Scene {
     this.setup()
   }
 
-  extract (difference = 0) {
+  extract (difference = 0, override) {
     const { state } = this.game
     const { point } = state || 0
     state.point = point
 
-    const sum = state.point + difference
+    console.log('override test:', override)
+
+    const sum = override ?? state.point + difference
+
+    console.log('sum test:', sum)
 
     const copy = { ...state, point: sum }
 
     if (this.interaction) {
+      console.log('Scene extract this.interaction test:', this.interaction)
+      console.log('copy test:', copy)
       return this
         .interaction
         .read(copy)
@@ -186,6 +192,8 @@ class Scene extends Phaser.Scene {
         .state
         .interaction = this.interaction.name
       this.game.state.point = point || -1
+    } else {
+      return 'interact'
     }
   }
 
