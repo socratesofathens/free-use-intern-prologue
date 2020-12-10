@@ -304,7 +304,7 @@ class Room extends Scene {
     super.setup()
   }
 
-  use (figure) {
+  use (figure, wet = true) {
     const { name, title } = figure
     console.log('name test:', name)
     super.use(name)
@@ -318,72 +318,89 @@ class Room extends Scene {
 
     switch (name) {
       case 'item-phone':
-        return this.openPhone()
+        return wet && this.openPhone()
       case 'icon-power':
-        return this.phone.close()
+        return wet && this.phone.close()
       case 'icon-phone': {
-        this.phone.reset()
+        if (wet) {
+          this.phone.reset()
 
-        state.steve ??= -1
-        state.steve = state.steve + 1
+          state.steve ??= -1
+          state.steve = state.steve + 1
+        }
 
         return this.interact({
-          interaction: this.steve
+          interaction: this.steve, dry: !wet
         })
       }
       case 'icon-email':
-        apps.email.select()
+        if (wet) {
+          apps.email.select()
 
-        return this.setText(
-          'To look more professional, I made a new email address for internship applications. Goodbye, kingpin_quinn@hottmail.'
-        )
+          return this.setText(
+            'To look more professional, I made a new email address for internship applications. Goodbye, kingpin_quinn@hottmail.'
+          )
+        }
       case 'icon-web':
-        apps.web.select()
+        if (wet) {
+          apps.web.select()
 
-        return this.setText(
-          'I can look up pretty much anything on Cloo. It’s great for when I’m not sure what to do next.'
-        )
+          return this.setText(
+            'I can look up pretty much anything on Cloo. It’s great for when I’m not sure what to do next.'
+          )
+        }
       case 'icon-camera':
-        apps.camera.select()
+        if (wet) {
+          apps.camera.select()
 
-        return this.setText(
-          'This phone has a great high-res camera. I can’t wait to take some photos with it.'
-        )
+          return this.setText(
+            'This phone has a great high-res camera. I can’t wait to take some photos with it.'
+          )
+        }
       case 'icon-photos':
-        this.phone.openPhotos()
+        if (wet) {
+          this.phone.openPhotos()
 
-        this.game.state.apps = false
+          this.game.state.apps = false
 
-        return this.setText(
-          'My old phone had thousands of pics, but I couldn’t work out how to transfer them over.'
-        )
+          return this.setText(
+            'My old phone had thousands of pics, but I couldn’t work out how to transfer them over.'
+          )
+        }
       case 'icon-home':
-        this.game.state.apps = true
+        if (wet) {
+          this.game.state.apps = true
 
-        return this.phone.openApps()
+          return this.phone.openApps()
+        }
       case 'icon-selfie':
-        photos.selfie.select()
+        if (wet) {
+          photos.selfie.select()
 
-        return this.setText(
-          'It’s-a me! I took a selfie to test my new camera.'
-        )
+          return this.setText(
+            'It’s-a me! I took a selfie to test my new camera.'
+          )
+        }
       case 'icon-emma':
-        photos.emma.select()
+        if (wet) {
+          photos.emma.select()
 
-        return this.setText(
-          'My best friend, Emma. God she’s a hottie....'
-        )
+          return this.setText(
+            'My best friend, Emma. God she’s a hottie....'
+          )
+        }
       case 'emma': {
         console.log('title test:', title)
         const back = title === 'emma-back'
 
         return back && this.interact({
-          interaction: this.emma
+          interaction: this.emma, dry: !wet
         })
       }
       case 'blank': {
+        console.log('blank test')
         return this.interact({
-          interaction: this.intercom
+          interaction: this.intercom, dry: !wet
         })
       }
     }
@@ -397,8 +414,10 @@ class Room extends Scene {
 
   validate () {
     const next = this.extract(1)
+    console.log('validate next test:', next)
 
     const free = !this.selecting
+    console.log('validate free test:', free)
 
     return !next && free
   }

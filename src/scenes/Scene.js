@@ -52,6 +52,8 @@ class Scene extends Phaser.Scene {
     const { point } = this.game.state
     this.game.state.point = point + 1
 
+    console.log('Scene advance this.game.state.point test:', this.game.state.point)
+
     this.read()
   }
 
@@ -161,7 +163,8 @@ class Scene extends Phaser.Scene {
   interact ({
     points,
     interaction,
-    point
+    point,
+    dry
   }) {
     this.selecting = false
 
@@ -172,14 +175,18 @@ class Scene extends Phaser.Scene {
     }
 
     if (interaction) {
+      console.log('interaction test:', interaction)
       this.interaction = interaction
     }
 
-    this
-      .game
-      .state
-      .interaction = this.interaction.name
-    this.game.state.point = point || -1
+    if (!dry) {
+      console.log('wet test')
+      this
+        .game
+        .state
+        .interaction = this.interaction.name
+      this.game.state.point = point || -1
+    }
   }
 
   loadState () {
@@ -192,6 +199,7 @@ class Scene extends Phaser.Scene {
 
   read () {
     this.save = this.extract()
+    console.log('Scene read this.save test')
 
     if (!this.save) return this.save
 

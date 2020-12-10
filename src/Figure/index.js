@@ -25,19 +25,24 @@ export default class Figure {
       'pointerdown', this.onClick
     )
 
-    const pointerover = this.inRoom(() => {
+    const inPointerover = () => {
+      console.log('inPointerover name test:', name)
       this.scene.setText(this.hover)
-    })
-    this
-      .element
-      .on('pointerover', pointerover)
+    }
 
-    const pointerout = this.inRoom(() => {
-      this.scene.setText('')
-    })
+    const onPointerover = this.inRoom(inPointerover)
     this
       .element
-      .on('pointerout', pointerout)
+      .on('pointerover', onPointerover)
+
+    const inPointerout = () => {
+      console.log('inPointerout name test:', name)
+      this.scene.setText('')
+    }
+    const onPointerout = this.inRoom(inPointerout)
+    this
+      .element
+      .on('pointerout', onPointerout)
 
     this.name = name
 
@@ -64,12 +69,19 @@ export default class Figure {
     return () => {
       if (this.scene.validate) {
         const valid = this.scene.validate()
+        console.log('inRoom valid test:', valid)
+        console.log('inRoom this.hover test:', this.hover)
 
         if (
           this.scene.dialogue &&
           valid &&
           this.hover
         ) {
+          // const used = this.scene.use(this, false)
+          // console.log('used test:', used)
+
+          this.scene.interaction = null
+
           callback()
         }
       }
