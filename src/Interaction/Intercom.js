@@ -214,7 +214,7 @@ class Intercom extends Interaction {
       },
       {
         speakerName: 'Emma',
-        dialogue: "Great work, Quinn! Let's go up and…"
+        dialogue: "Great work, Quinn! Let's go up and..."
       },
       {
         speakerName: 'Emma',

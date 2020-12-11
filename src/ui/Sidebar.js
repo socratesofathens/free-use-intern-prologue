@@ -69,15 +69,11 @@ export default class Sidebar {
       origin: { x: 0, y: 1 }
     }
 
-    console.log('addLogo options test:', options)
-
     return this.scene.see(options)
   }
 
   addMenu () {
     const y = upY(0.1144540909)
-
-    console.log('menuY test:', y)
 
     this.addButton({
       content: 'Save',

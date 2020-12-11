@@ -15,8 +15,6 @@ class Room extends Scene {
   constructor (name, color) {
     super(name, color)
 
-    console.log('room name test:', name)
-
     this.speakerName = null
     this.content = null
     this.dialogue = null
@@ -43,7 +41,7 @@ class Room extends Scene {
     const topline = this.TOP + this.MARGIN
     const y = topline - this.OFFSET
 
-    const WIDTH = 0.8361032984
+    const WIDTH = 0.8361032984 - this.OFFSET
     const width = scaleX(WIDTH)
 
     this.dialogue = this.addText({
@@ -152,7 +150,6 @@ class Room extends Scene {
     action,
     depth
   }) => {
-    console.log('content test:', content)
     const base = {
       fontFamily: 'futura',
       fontSize: '67.50299835pt',
@@ -161,9 +158,7 @@ class Room extends Scene {
     const merged = { ...base, ...options }
 
     const { x, y } = realPosition(position)
-    console.log('y test:', y)
     const offset = y - this.OFFSET
-    console.log('offeset test:', offset)
     const text = this.add.text(
       x, offset, content, merged
     )
@@ -204,7 +199,7 @@ class Room extends Scene {
   }
 
   openPhone () {
-    this.setText('To celebrate the internship, I bought a brand new phone, an Acuity 556D.')
+    this.saveText('To celebrate the internship, I bought a brand new phone, an Acuity 556D.')
 
     this.phone.open()
   }
@@ -213,7 +208,6 @@ class Room extends Scene {
     super.render()
 
     if (this.save) {
-      console.log('this.save test:', this.save)
       const {
         dialogue,
         speakerName,
@@ -226,7 +220,6 @@ class Room extends Scene {
       } = this.save
 
       if (interaction) {
-        console.log('this.interactions test:', this.interactions)
         const i = this
           .interactions[interaction]
 
@@ -263,6 +256,12 @@ class Room extends Scene {
     this.selected = figure
 
     return figure?.select()
+  }
+
+  saveText (dialogue) {
+    this.setText(dialogue)
+
+    this.was = dialogue
   }
 
   setText = (dialogue, speakerName) => {
@@ -304,9 +303,8 @@ class Room extends Scene {
     super.setup()
   }
 
-  use (figure) {
+  use (figure, wet = true) {
     const { name, title } = figure
-    console.log('name test:', name)
     super.use(name)
 
     const save = this.extract(1)
@@ -318,89 +316,125 @@ class Room extends Scene {
 
     switch (name) {
       case 'item-phone':
-        return this.openPhone()
+        return wet ? this.openPhone() : 'dry'
       case 'icon-power':
-        return this.phone.close()
+        return wet ? this.phone.close() : 'dry'
       case 'icon-phone': {
-        this.phone.reset()
+        if (wet) {
+          this.phone.reset()
 
-        state.steve ??= -1
-        state.steve = state.steve + 1
+          state.steve ??= -1
+          state.steve = state.steve + 1
+        }
 
         return this.interact({
-          interaction: this.steve
+          interaction: this.steve, dry: !wet
         })
       }
       case 'icon-email':
-        apps.email.select()
+        if (wet) {
+          apps.email.select()
 
-        return this.setText(
-          'To look more professional, I made a new email address for internship applications. Goodbye, kingpin_quinn@hottmail.'
-        )
+          return this.saveText(
+            'To look more professional, I made a new email address for internship applications. Goodbye, kingpin_quinn@hottmail.'
+          )
+        }
+
+        return 'dry'
       case 'icon-web':
-        apps.web.select()
+        if (wet) {
+          apps.web.select()
 
-        return this.setText(
-          'I can look up pretty much anything on Cloo. It’s great for when I’m not sure what to do next.'
-        )
+          return this.saveText(
+            "I can look up pretty much anything on Cloo. It's great for when I’m not sure what to do next."
+          )
+        }
+
+        return 'dry'
       case 'icon-camera':
-        apps.camera.select()
+        if (wet) {
+          apps.camera.select()
 
-        return this.setText(
-          'This phone has a great high-res camera. I can’t wait to take some photos with it.'
-        )
+          return this.saveText(
+            "This phone has a great high-res camera. I can't wait to take some photos with it."
+          )
+        }
+
+        return 'dry'
       case 'icon-photos':
-        this.phone.openPhotos()
+        if (wet) {
+          this.phone.openPhotos()
 
-        this.game.state.apps = false
+          this.game.state.apps = false
 
-        return this.setText(
-          'My old phone had thousands of pics, but I couldn’t work out how to transfer them over.'
-        )
+          return this.saveText(
+            "My old phone had thousands of pics, but I couldn't work out how to transfer them over."
+          )
+        }
+
+        return 'dry'
       case 'icon-home':
-        this.game.state.apps = true
+        if (wet) {
+          this.game.state.apps = true
 
-        return this.phone.openApps()
+          return this.phone.openApps()
+        }
+
+        return 'dry'
       case 'icon-selfie':
-        photos.selfie.select()
+        if (wet) {
+          photos.selfie.select()
 
-        return this.setText(
-          'It’s-a me! I took a selfie to test my new camera.'
-        )
+          return this.saveText(
+            "It's-a me! I took a selfie to test my new camera."
+          )
+        }
+
+        return 'dry'
       case 'icon-emma':
-        photos.emma.select()
+        if (wet) {
+          photos.emma.select()
 
-        return this.setText(
-          'My best friend, Emma. God she’s a hottie....'
-        )
+          return this.saveText(
+            "My best friend, Emma. God she's a hottie...."
+          )
+        }
+
+        return 'dry'
       case 'emma': {
-        console.log('title test:', title)
         const back = title === 'emma-back'
 
         return back && this.interact({
-          interaction: this.emma
+          interaction: this.emma, dry: !wet
         })
       }
       case 'blank': {
         return this.interact({
-          interaction: this.intercom
+          interaction: this.intercom, dry: !wet
         })
       }
     }
 
-    if (name.includes('-selected')) {
+    if (wet && name.includes('-selected')) {
       this.game.state.selected = null
 
       this.phone.reset()
     }
   }
 
-  validate () {
+  validate (pass) {
     const next = this.extract(1)
+    // console.log('validate next test:', next)
+    const not = !next
+    // console.log('validate not test:', not)
 
-    const free = !this.selecting
+    const free = pass || !this.selecting
+    // console.log('validate free test:', free)
 
-    return !next && free
+    const valid = not && free
+    // console.log('validate valid test:', valid)
+
+    return valid
   }
 }
 
