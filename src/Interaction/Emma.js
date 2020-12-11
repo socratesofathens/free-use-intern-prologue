@@ -60,7 +60,7 @@ class Emma extends Interaction {
     const intercom = this.setup([
       {
         speakerName: 'Quinn',
-        dialogue: 'Okay, slight problem…'
+        dialogue: 'Okay, slight problem...'
       },
       {
         speakerName: 'Emma',
@@ -92,7 +92,7 @@ class Emma extends Interaction {
       },
       {
         speakerName: 'Quinn',
-        dialogue: '…'
+        dialogue: '...'
       },
       {
         speakerName: 'Emma',

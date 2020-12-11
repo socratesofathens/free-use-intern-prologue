@@ -52,7 +52,7 @@ class Scene extends Phaser.Scene {
     const { point } = this.game.state
     this.game.state.point = point + 1
 
-    console.log('Scene advance this.game.state.point test:', this.game.state.point)
+    // console.log('Scene advance this.game.state.point test:', this.game.state.point)
 
     this.read()
   }
@@ -111,24 +111,18 @@ class Scene extends Phaser.Scene {
     const { point } = state || 0
     state.point = point
 
-    console.log('override test:', override)
-
     const sum = override ?? state.point + difference
-
-    console.log('sum test:', sum)
 
     const copy = { ...state, point: sum }
 
     if (this.interaction) {
-      console.log('Scene extract this.interaction test:', this.interaction)
-      console.log('copy test:', copy)
       return this
         .interaction
         .read(copy)
     }
 
     if (!difference) {
-      console.log('extract this.saves test:', this.saves)
+      // console.log('extract this.saves test:', this.saves)
     }
 
     const save = this.saves[copy.point]
@@ -181,12 +175,14 @@ class Scene extends Phaser.Scene {
     }
 
     if (interaction) {
-      console.log('interaction test:', interaction)
       this.interaction = interaction
+
+      if (!dry) {
+        this.interacting = true
+      }
     }
 
     if (!dry) {
-      console.log('wet test')
       this
         .game
         .state
@@ -207,7 +203,6 @@ class Scene extends Phaser.Scene {
 
   read () {
     this.save = this.extract()
-    console.log('Scene read this.save test')
 
     if (!this.save) return this.save
 

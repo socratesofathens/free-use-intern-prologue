@@ -26,9 +26,9 @@ export default class Figure {
     )
 
     const inPointerover = () => {
-      console.log('inPointerover name test:', name)
+      // console.log('inPointerover name test:', name)
       this.scene.was = this.scene.game.state.dialogue
-      console.log('inPointerover this.scene.was test:', this.scene.was)
+      // console.log('inPointerover this.scene.was test:', this.scene.was)
 
       this.scene.setText(this.hover)
     }
@@ -39,8 +39,8 @@ export default class Figure {
       .on('pointerover', onPointerover)
 
     const inPointerout = () => {
-      console.log('inPointerout name test:', name)
-      console.log('inPointerout this.scene.was test:', this.scene.was)
+      // console.log('inPointerout name test:', name)
+      // console.log('inPointerout this.scene.was test:', this.scene.was)
       this.scene.setText(this.scene.was)
     }
     const onPointerout = this.inRoom(inPointerout)
@@ -72,14 +72,15 @@ export default class Figure {
   inRoom (callback) {
     return () => {
       if (this.scene.validate) {
-        console.log('inRoom this.name test:', this.name)
+        // console.log('inRoom this.name test:', this.name)
         const icon = this.name.includes('icon-')
         const selected = this.name.includes('-selected')
-        console.log('icon test:', icon)
+        // console.log('icon test:', icon)
         const pass = icon && !selected
-        const valid = this.scene.validate() || pass
-        console.log('inRoom valid test:', valid)
-        console.log('inRoom this.hover test:', this.hover)
+        // console.log('inRoom pass test')
+        const valid = this.scene.validate(pass)
+        // console.log('inRoom valid test:', valid)
+        // console.log('inRoom this.hover test:', this.hover)
 
         if (
           this.scene.dialogue &&
@@ -89,11 +90,11 @@ export default class Figure {
           const { interaction } = this.scene
 
           const used = this.scene.use(this, false)
-          console.log('used test:', used)
+          // console.log('used test:', used)
           const dry = used === 'dry'
 
           const next = this.scene.extract(null, 0)
-          console.log('next test:', next)
+          // console.log('next test:', next)
 
           this.scene.interaction = interaction
 

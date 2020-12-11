@@ -16,8 +16,6 @@ export default class Region extends Figure {
       .add
       .graphics(realTopLeft.x, realTopLeft.y)
 
-    console.log('region constructor test:', region)
-
     const realBottomRight = realPosition(bottomRight)
     region
       .drawRect(realBottomRight.x, realBottomRight.y)

@@ -27,7 +27,7 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'No, I didn\'t mean…'
+        dialogue: 'No, I didn\'t mean...'
       },
       {
         dialogue: 'I hang up on Steve. What a great guy.'
@@ -57,7 +57,7 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'No, that\'s not what I…-'
+        dialogue: 'No, that\'s not what I...-'
       },
       {
         dialogue: 'I hang up on Steve. Love talking to that dude.'
@@ -103,7 +103,7 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'No! Only call if…-'
+        dialogue: 'No! Only call if...-'
       },
       {
         dialogue: 'I hang up on my friend. I should call him again if I can think of something urgent to talk about.'
@@ -117,7 +117,7 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'Quinn, you shouldn\'t have to “come up with” an emergency. An emergency is something out of your control.'
+        dialogue: 'Quinn, you shouldn\'t have to "come up with" an emergency. An emergency is something out of your control.'
       },
       {
         speakerName: 'Quinn',
@@ -141,7 +141,7 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'I mean, I guess….'
+        dialogue: 'I mean, I guess....'
       },
       {
         speakerName: 'Quinn',
@@ -149,7 +149,7 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'Quinn, I told you, I\'m at work. If my boss catches me talking…-'
+        dialogue: 'Quinn, I told you, I\'m at work. If my boss catches me talking...-'
       },
       {
         speakerName: 'Quinn',
@@ -173,7 +173,7 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
-        dialogue: 'No, Quinn, I…-'
+        dialogue: 'No, Quinn, I...-'
       },
       {
         speakerName: 'Quinn',

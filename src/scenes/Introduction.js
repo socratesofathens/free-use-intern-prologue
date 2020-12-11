@@ -4,7 +4,6 @@ import Room from './Room'
 
 class Introduction extends Room {
   constructor () {
-    console.log('introduction test')
     super('introduction', 0x000000)
   }
 

@@ -15,8 +15,6 @@ class Room extends Scene {
   constructor (name, color) {
     super(name, color)
 
-    console.log('room name test:', name)
-
     this.speakerName = null
     this.content = null
     this.dialogue = null
@@ -210,7 +208,6 @@ class Room extends Scene {
     super.render()
 
     if (this.save) {
-      console.log('this.save test:', this.save)
       const {
         dialogue,
         speakerName,
@@ -223,7 +220,6 @@ class Room extends Scene {
       } = this.save
 
       if (interaction) {
-        console.log('this.interactions test:', this.interactions)
         const i = this
           .interactions[interaction]
 
@@ -268,7 +264,7 @@ class Room extends Scene {
     this.was = dialogue
   }
 
-  setText = (dialogue, speakerName, save) => {
+  setText = (dialogue, speakerName) => {
     this.dialogue.setText(dialogue)
 
     this
@@ -279,10 +275,6 @@ class Room extends Scene {
       .game
       .state
       .dialogue = dialogue
-
-    if (save) {
-      this.was = dialogue
-    }
 
     this
       .game
@@ -313,7 +305,6 @@ class Room extends Scene {
 
   use (figure, wet = true) {
     const { name, title } = figure
-    console.log('name test:', name)
     super.use(name)
 
     const save = this.extract(1)
@@ -355,7 +346,7 @@ class Room extends Scene {
           apps.web.select()
 
           return this.saveText(
-            'I can look up pretty much anything on Cloo. It’s great for when I’m not sure what to do next.'
+            "I can look up pretty much anything on Cloo. It's great for when I’m not sure what to do next."
           )
         }
 
@@ -365,7 +356,7 @@ class Room extends Scene {
           apps.camera.select()
 
           return this.saveText(
-            'This phone has a great high-res camera. I can’t wait to take some photos with it.'
+            "This phone has a great high-res camera. I can't wait to take some photos with it."
           )
         }
 
@@ -377,7 +368,7 @@ class Room extends Scene {
           this.game.state.apps = false
 
           return this.saveText(
-            'My old phone had thousands of pics, but I couldn’t work out how to transfer them over.'
+            "My old phone had thousands of pics, but I couldn't work out how to transfer them over."
           )
         }
 
@@ -395,7 +386,7 @@ class Room extends Scene {
           photos.selfie.select()
 
           return this.saveText(
-            'It’s-a me! I took a selfie to test my new camera.'
+            "It's-a me! I took a selfie to test my new camera."
           )
         }
 
@@ -405,13 +396,12 @@ class Room extends Scene {
           photos.emma.select()
 
           return this.saveText(
-            'My best friend, Emma. God she’s a hottie....'
+            "My best friend, Emma. God she's a hottie...."
           )
         }
 
         return 'dry'
       case 'emma': {
-        console.log('title test:', title)
         const back = title === 'emma-back'
 
         return back && this.interact({
@@ -419,7 +409,6 @@ class Room extends Scene {
         })
       }
       case 'blank': {
-        console.log('blank test')
         return this.interact({
           interaction: this.intercom, dry: !wet
         })
@@ -433,14 +422,19 @@ class Room extends Scene {
     }
   }
 
-  validate () {
+  validate (pass) {
     const next = this.extract(1)
-    console.log('validate next test:', next)
+    // console.log('validate next test:', next)
+    const not = !next
+    // console.log('validate not test:', not)
 
-    const free = !this.selecting
-    console.log('validate free test:', free)
+    const free = pass || !this.selecting
+    // console.log('validate free test:', free)
 
-    return !next && free
+    const valid = not && free
+    // console.log('validate valid test:', valid)
+
+    return valid
   }
 }
 

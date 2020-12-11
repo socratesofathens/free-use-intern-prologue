@@ -23,7 +23,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Uh, hi. My name\'s Quinn, and this is…-'
+        dialogue: 'Uh, hi. My name\'s Quinn, and this is...-'
       },
       {
         speakerName: 'Boss',
@@ -55,7 +55,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Uh…'
+        dialogue: 'Uh...'
       },
       {
         speakerName: 'Emma',
@@ -91,7 +91,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Emma',
-        dialogue: 'Uh…'
+        dialogue: 'Uh...'
       },
       {
         dialogue: 'Emma looked at me, unsure what to do, and I just shrugged. Our new boss was looking at her expectantly, so she slowly made her way behind his desk.'
@@ -147,7 +147,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Emma',
-        dialogue: 'Y-yes, sir…'
+        dialogue: 'Y-yes, sir...'
       },
       {
         dialogue: 'Free Use Intern will continue in Chapter 1: Hot Coffee.'

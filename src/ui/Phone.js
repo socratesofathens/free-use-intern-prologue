@@ -86,7 +86,7 @@ export default class Phone {
     this.scene.selected = null
     this.scene.game.state.selected = null
 
-    this.scene.setText(' ')
+    this.scene.saveText(' ')
   }
 
   reset () {
