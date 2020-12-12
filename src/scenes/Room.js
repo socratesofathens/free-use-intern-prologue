@@ -196,6 +196,8 @@ class Room extends Scene {
     const { photos } = this.game.state
     photos
       .forEach(this.addPhoto)
+
+    this.sidebar.panther.setColor('black')
   }
 
   openPhone () {
@@ -216,7 +218,8 @@ class Room extends Scene {
         open,
         apps,
         interaction,
-        point
+        point,
+        final
       } = this.save
 
       if (interaction) {
@@ -248,6 +251,10 @@ class Room extends Scene {
 
       if (apps === false) {
         this.phone.openPhotos()
+      }
+
+      if (final) {
+        this.sidebar.panther.setColor('red')
       }
     }
   }

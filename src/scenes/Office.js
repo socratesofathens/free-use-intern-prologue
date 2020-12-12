@@ -153,7 +153,8 @@ class Office extends Room {
         dialogue: 'Free Use Intern will continue in Chapter 1: Hot Coffee.'
       },
       {
-        dialogue: 'To show your support, help us, get the next chapter out as quickly as possible, and let Quinn start using his friend, visit patreon.com/pan '
+        dialogue: 'To show your support, help us, get the next chapter out as quickly as possible, and let Quinn start using his friend, visit patreon.com/pan ',
+        final: true
       },
       {
         dialogue: 'Patrons get previews of upcoming art, early access to new releases, and votes on what content is included in the game.'

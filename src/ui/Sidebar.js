@@ -157,7 +157,7 @@ export default class Sidebar {
       this.flash(loader)
     }
 
-    this.addPanther()
+    this.panther = this.addPanther()
   }
 
   addPanther () {
