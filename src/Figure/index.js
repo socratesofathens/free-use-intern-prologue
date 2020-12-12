@@ -25,15 +25,17 @@ export default class Figure {
       'pointerdown', this.onClick
     )
 
-    const inPointerover = () => {
+    const inPointerover = (message) => {
       // console.log('inPointerover name test:', name)
       this.scene.was = this.scene.game.state.dialogue
       // console.log('inPointerover this.scene.was test:', this.scene.was)
 
-      this.scene.setText(this.hover)
+      const text = message || this.hover
+
+      this.scene.setText(text)
     }
 
-    const onPointerover = this.inRoom(inPointerover)
+    const onPointerover = this.inRoom(inPointerover, true)
     this
       .element
       .on('pointerover', onPointerover)
@@ -69,8 +71,58 @@ export default class Figure {
     }
   }
 
-  inRoom (callback) {
+  inRoom (callback, pointerIn) {
     return () => {
+      if (this.scene.selecting) {
+        if (!pointerIn) {
+          return callback()
+        }
+
+        console.log(
+          'this.scene.selected test:',
+          this.scene.game.state.selected
+        )
+
+        const { selected } = this.scene.game.state
+
+        console.log('this.name test:', this.name)
+        const emma = this.name === 'emma' && 'Emma'
+        const intercom = this.name === 'blank' && 'Intercom'
+        const name = emma || intercom
+
+        if (name) {
+          const messagers = {
+            email (name) {
+              return `Show email to ${name}`
+            },
+
+            web (name) {
+              return `Research ${name}`
+            },
+
+            camera (name) {
+              return `Take photo of ${name}`
+            },
+
+            selfie (name) {
+              return `Show selfie to ${name}`
+            },
+
+            emma (name) {
+              return `Show photo of Emma to ${name}`
+            }
+          }
+
+          const messager = messagers[selected]
+
+          if (messager) {
+            const message = messager(name)
+
+            return callback(message)
+          }
+        }
+      }
+
       if (this.scene.validate) {
         // console.log('inRoom this.name test:', this.name)
         const icon = this.name.includes('icon-')

@@ -133,7 +133,7 @@ class Room extends Scene {
   }
 
   addSpeakerName () {
-    const y = upY(443.481)
+    const y = this.TOP - 0.055
     this.speakerName = this.addText({
       position: { x: this.MARGIN, y },
       content: 'Emma',
