@@ -1,19 +1,19 @@
 {
-  "name": "phaser3-parcel-template",
-  "version": "1.0.0",
-  "description": "A template project for Phaser3 using Parceljs",
+  "name": "free-use-intern-prologue",
+  "version": "0.0.0a",
+  "description": "A game about having sex with Emma, your long-time crush, in your first attempt at real life together",
   "scripts": {
     "start": "parcel src/index.html -p 8000",
     "build": "parcel build src/index.html --out-dir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "David Y. Stephenson",
-  "license": "MIT",
+  "author": "Socrates of Athens",
+  "license": "All rights reserved",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ourcade/phaser3-parcel-template.git"
+    "url": "https://github.com/socratesofathens/free-use-intern-prologue.git"
   },
-  "homepage": "https://github.com/ourcade/phaser3-parcel-template",
+  "homepage": "https://github.com/socratesofathens/free-use-intern-prologue",
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/plugin-proposal-class-properties": "^7.10.4",

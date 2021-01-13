@@ -353,7 +353,7 @@ class Room extends Scene {
           apps.web.select()
 
           return this.saveText(
-            "I can look up pretty much anything on Cloo. It's great for when I’m not sure what to do next."
+            "I can look up pretty much anything on Cloo. It's great for when I'm not sure what to do next."
           )
         }
 
