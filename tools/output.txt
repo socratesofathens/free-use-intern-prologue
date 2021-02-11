@@ -1,11 +1,50 @@
 [
   {
-    dialogue: 'I decide to see if Cloo can help me work out what to do next. “How to get past idiot security guard” doesn’t yield any results. '
+    speakerName: 'Boss',
+    dialogue: 'Now, Quinn...I\'m sorry to say, we don\'t really have much use for a male intern.'
   },
   {
-    dialogue: '“How to trick intercom” leads to an interesting forum discussion - apparently the camera on this particular model has a pretty low resolution. '
+    speakerName: 'Quinn',
+    dialogue: 'But...sir...'
   },
   {
-    dialogue: 'I don’t need to get Emma to the intercom...I just have to trick the camera into thinking that she’s there.'
+    speakerName: 'Boss',
+    dialogue: 'You can stick around for the rest of the day, but there\'s no need to come back tomorrow.'
+  },
+  {
+    dialogue: 'Oh, no. All of a sudden, I could see my summer with Emma slipping away.'
+  },
+  {
+    dialogue: 'I\'d be at home alone, while she was in the office...being used by all the Acuity employees.'
+  },
+  {
+    speakerName: 'Boss',
+    dialogue: 'See if anyone else wants anything, too. And hey - if you finish your tasks before the end of the day, you can have a turn with Emma as well.'
+  },
+  {
+    dialogue: 'My eyes widened, and other parts of my body stood to attention as well.'
+  },
+  {
+    speakerName: 'Quinn',
+    dialogue: 'R-Really, sir?'
+  },
+  {
+    speakerName: 'Boss',
+    dialogue: 'Of course, lad! After all, you work here too. Until the end of the workday, that is.'
+  },
+  {
+    speakerName: 'Quinn',
+    dialogue: 'Thank you, sir. I\'ll be back with your coffee ASAP.'
+  },
+  {
+    speakerName: 'Boss',
+    dialogue: 'No need to rush. Isn\'t that right, Emma?'
+  },
+  {
+    speakerName: 'Emma',
+    dialogue: 'Y-yes, sir...'
+  },
+  {
+    dialogue: 'I couldn\'t do anything but stare as my best friend got nailed by our new boss. And from what he\'d said...I could be the next to take her like that.'
   }
 ]

@@ -203,7 +203,7 @@ class Room extends Scene {
   openPhone () {
     this.saveText('To celebrate the internship, I bought a brand new phone, an Acuity 556D.')
 
-    this.phone.open()
+    this.phone.open(true)
   }
 
   render () {
@@ -222,7 +222,13 @@ class Room extends Scene {
         final
       } = this.save
 
-      if (interaction) {
+      const isZero = interaction === 0
+      console.log('isZero test:', isZero)
+
+      if (isZero) {
+        console.log('zero interaction test:', interaction)
+        this.reset()
+      } else if (interaction) {
         const i = this
           .interactions[interaction]
 
@@ -323,7 +329,13 @@ class Room extends Scene {
 
     switch (name) {
       case 'item-phone':
-        return wet ? this.openPhone() : 'dry'
+        if (wet) {
+          this.saveText('To celebrate the internship, I bought a brand new phone, an Acuity 556D.')
+
+          return this.openPhone()
+        }
+
+        return 'dry'
       case 'icon-power':
         return wet ? this.phone.close() : 'dry'
       case 'icon-phone': {
@@ -431,15 +443,11 @@ class Room extends Scene {
 
   validate (pass) {
     const next = this.extract(1)
-    // console.log('validate next test:', next)
     const not = !next
-    // console.log('validate not test:', not)
 
     const free = pass || !this.selecting
-    // console.log('validate free test:', free)
 
     const valid = not && free
-    // console.log('validate valid test:', valid)
 
     return valid
   }

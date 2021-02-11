@@ -49,11 +49,143 @@ class Emma extends Interaction {
       },
       {
         speakerName: 'Emma',
-        dialogue: "Can you work out how to get into the office? I'm sure I'll feel better once I'm upstairs."
+        dialogue: 'I\'m sure I\'ll feel better once I\'m upstairs.'
       },
       {
         speakerName: 'Quinn',
-        dialogue: "Yeah, I'm sure I can figure it out."
+        dialogue: 'Let me figure out how to get in.'
+      }
+    ])
+
+    function addEmma (state) {
+      state.emma = state.emma + 1
+
+      return state
+    }
+
+    const emma1 = this.setup([
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Emma, I\'m not having any luck. Please, can you just talk to them?'
+      },
+      {
+        speakerName: 'Emma',
+        dialogue: 'Quinn, I really can\'t. I\'m too nervous.'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Emma, c\'mon. C\'mon...'
+      },
+      {
+        speakerName: 'Emma',
+        dialogue: 'I\'m sorry, Quinn.'
+      },
+      { state: addEmma }
+    ])
+
+    const emma5 = this.setup([
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Emma, I\'m not having any luck. Please, can you just talk to them?'
+      },
+      {
+        speakerName: 'Emma',
+        dialogue: 'You really aren\'t getting anywhere?'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'I can\'t work out what to do.'
+      },
+      {
+        speakerName: 'Emma',
+        dialogue: 'Did you try using Cloo? I find it helps me out whenever I get stuck.'
+      },
+      { state: addEmma }
+    ])
+
+    const emma6 = this.setup([
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Emma, I\'m not having any luck. Please, can you just talk to them?'
+      },
+      {
+        speakerName: 'Emma',
+        dialogue: 'You really aren\'t getting anywhere?'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Please, Emma. I need your help.'
+      },
+      {
+        speakerName: 'Emma',
+        dialogue: '...okay.'
+      },
+      {
+        dialogue: 'That\'s the thing about my best friend: she really has a hard time saying no.'
+      },
+      {
+        dialogue: 'To anyone.'
+      },
+      {
+        speakerName: 'Emma',
+        dialogue: 'Uh, hello?'
+      },
+      {
+        speakerName: 'Intercom',
+        dialogue: 'Hubba hubba! Are you one of the new interns?'
+      },
+      {
+        speakerName: 'Emma',
+        dialogue: 'Yeah...'
+      },
+      {
+        speakerName: 'Intercom',
+        dialogue: 'If you\'re gonna be coming by every day, we might need to upgrade the camera gear. Didja come alone?'
+      },
+      {
+        speakerName: 'Emma',
+        dialogue: 'I\'m here with my best friend, Quinn.'
+      },
+      {
+        dialogue: 'Is that all I\'ll ever be to her? Just a friend?'
+      },
+      {
+        speakerName: 'Intercom',
+        dialogue: 'And just to be clear: Quinn ain\'t a chick?'
+      },
+      {
+        speakerName: 'Emma',
+        dialogue: 'That\'s right.'
+      },
+      {
+        speakerName: 'Intercom',
+        dialogue: 'Cos my list says two chicks.'
+      },
+      {
+        speakerName: 'Emma',
+        dialogue: 'I promise, he\'s not a chick.'
+      },
+      {
+        dialogue: 'Oh, good. So she HAS noticed.'
+      },
+      {
+        speakerName: 'Intercom',
+        dialogue: 'Mmmm, well. I\'m going to let you up. But only cos you\'re hot enough for two.'
+      },
+      {
+        speakerName: 'Emma',
+        dialogue: 'Oh! Um...thanks?'
+      },
+      {
+        speakerName: 'Intercom',
+        dialogue: 'Come on up.'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Thanks, Emma.'
+      },
+      {
+        scene: 'office'
       }
     ])
 
@@ -100,11 +232,12 @@ class Emma extends Interaction {
       },
       {
         speakerName: 'Quinn',
-        dialogue: "(sigh) I'll see what I can do."
+        dialogue: '-sigh- I\'ll see what I can do.'
       },
       {
         dialogue: 'The things we do for hot best friends.'
-      }
+      },
+      { state: { emma: 1 } }
     ])
 
     const untaken = this.setup([
@@ -168,23 +301,33 @@ class Emma extends Interaction {
       selfie,
       emma,
       email,
-      web
+      web,
+      emma1,
+      emma5,
+      emma6
     }
   }
 
   read (state) {
     super.read(state)
 
-    const selected = this.select(state)
+    console.log('Emma read state.point test:', state.point)
 
-    return selected[state.point]
+    const selected = this.select(state)
+    console.log('selected test:', selected)
+
+    const chosen = selected[state.point]
+    console.log('chosen test:', chosen)
+
+    return chosen
   }
 
   select (state) {
     const {
       intercom,
       taken,
-      selected
+      selected,
+      emma
     } = state
 
     switch (selected) {
@@ -205,7 +348,19 @@ class Emma extends Interaction {
         return this.points.email
     }
 
-    if (intercom) {
+    if (emma > 0 && emma < 5) {
+      return this.points.emma1
+    }
+
+    if (emma === 5) {
+      return this.points.emma5
+    }
+
+    if (emma === 6) {
+      return this.points.emma6
+    }
+
+    if (intercom === 1) {
       return this.points.intercom
     }
 

@@ -20,6 +20,8 @@ const lines = input.split(/\r?\n/)
 function format (line) {
   if (!line.length) return null
 
+  line = line.replace('’', '\'')
+
   const colon = line.indexOf(':')
 
   if (colon > -1) {

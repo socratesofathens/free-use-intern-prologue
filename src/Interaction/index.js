@@ -33,7 +33,7 @@ export default class Interaction {
     const last = points[points.length - 1]
 
     if (last.dialogue) {
-      const reset = { dialogue: ' ' }
+      const reset = { dialogue: ' ', interaction: 0 }
       this.addImages(reset, this.last)
 
       points.push(reset)
@@ -41,6 +41,7 @@ export default class Interaction {
       this.addImages(last, this.last)
 
       last.dialogue = ' '
+      last.interaction = 0
     }
 
     return points

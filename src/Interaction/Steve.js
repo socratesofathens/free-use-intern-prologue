@@ -181,6 +181,14 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Steve',
+        dialogue: 'Quinn...'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Two BEST buds!'
+      },
+      {
+        speakerName: 'Steve',
         dialogue: 'Quinn, I gotta go. We\'ll fix democracy later, okay?'
       },
       {
@@ -202,7 +210,7 @@ class Steve extends Interaction {
         dialogue: 'Yo yo yo, how\'s my main man?'
       },
       {
-        speakerName: 'rSteve',
+        speakerName: 'Steve',
         dialogue: 'At work, Quinn. At my job. Where I am not allowed to take personal calls.'
       },
       {
@@ -258,12 +266,345 @@ class Steve extends Interaction {
       }
     ])
 
+    const sixth = this.setup([
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Steve! I was worried you wouldn\'t answer.'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'I probably shouldn\'t! What are you calling about?'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'That!'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'What?'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'I was worried you wouldn\'t answer. I figured calling you was the only way to know for sure.'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Quinn, I\'ve told you, only call me if it\'s urgent.'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'I was REALLY worried!'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Well, I answered. Are you satisfied?'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Yeah! It\'s really good to know that you\'ll answer every time I call.'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'No, Quinn. Not every time.'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: '...what?'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'I\'m at work! I can\'t pick up every single time you call.'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Well that\'s terrifying. I guess I\'ll have to keep on testing.'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Quinn, no! Don\'t...-'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Talk to you soon!'
+      },
+      {
+        dialogue: 'I hang up, wondering if this is just Steve\'s way of keeping me calling. He must get really lonely at work.'
+      }
+    ])
+
+    const seventh = this.setup([
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Hey buddy!'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Quinn! Dude! You have to stop calling me!'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Wait...are you breaking up with me!?'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'What? No!'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Are we no longer best friends?'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Dude, calm down. We\'re still best friends. Just quit calling me while I\'m at work!'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'So...we\'re still besties? BFFs? Heterosexual life partners?'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: '-sigh- Yes.'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'And you\'ll always come through for me, right? That\'s what friendship is all about!'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'I mean...yeah. I\'ll always be there for you. You\'re my best friend.'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Awesome! I\'ll call you again in a bit!'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'No! You have to sto-....'
+      },
+      {
+        dialogue: 'I hang up. What a pal, hey?'
+      }
+    ])
+
+    const eighth = this.setup([
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Yo, Steve!'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'What. '
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Do. '
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'You. '
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Want!?!'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'I just had a quick question for you. Do you have a henweigh I can borrow?'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'What?'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Hmm?'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'What are you talking about?'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'What are YOU talking about?'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'What\'s a henweigh?'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'About 5 pounds!'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Oh, for fuck\'s sa-...'
+      },
+      {
+        dialogue: 'I hang up, cackling as I do. Pretty good one, hey?'
+      }
+    ])
+
+    const ninth = this.setup([
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Hey best friend o\' mine.'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Quinn, if this is another stupid prank call...'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Aw, c\'mon. Have a sense of humor. It was just a pun. It wasn\'t like I used a hammerfore.'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'What\'s a hammerfore?'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Getting nails into walls.'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Oh, fuck off!'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'C\'mon man, you walked right into that one.'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'We are not friends any more.'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Steve, don\'t be like that.'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'I mean it. I\'m so sick of this shit. We\'re done.'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Seriously!?'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Yes! Friendship ended with Quinn. Now Dahman is my best friend.'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'What? Who\'s Dahman??'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'I\'M DA MAN, BITCH!'
+      },
+      {
+        dialogue: 'Steve hangs up.'
+      },
+      {
+        dialogue: '...'
+      },
+      {
+        dialogue: 'Okay, yeah, I gotta give him that one.'
+      }
+    ])
+
+    const tenth = this.setup([
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Hey Steve McSteve.'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Hey man, what\'s up? I can\'t talk for long.'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Wait, you\'re not mad that I\'m calling?'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Nah. My boss has stepped out. I seriously only have a minute though. What did you want to talk about?'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Oh, shit. Um. Um.'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Quinn, why did you call me?'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'I need to come up with something better.'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'What?'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'If we don\'t have much time, I don\'t want to waste it on what I was originally calling you about! What can we talk about in just a minute?? God, that\'s so little time.'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Why did you call me??'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'No, Steve! Let it go! We can do so much better!'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'What the hell is wrong with you?'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Okay, I\'ve got it! The perfect topic. It\'ll take exactly a minute to discuss, and we\'ll get so much out of it. '
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Cool. What is it?'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'It\'ll be so good for us, both individually AND together. This could be a true moment of personal growth for each of us, as well as strengthening our friendship.'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Uh, okay. Sounds great. Hit me.'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Okay! So, Steve, tell me – in your own words – exactly what you think about...-'
+      },
+      {
+        speakerName: 'Steve',
+        dialogue: 'Ah, shit. My boss is back. Gotta go! Talk to you later.'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Steve, no! We could have...we were going to...'
+      },
+      {
+        dialogue: 'He hangs up. Damn it! I guess I\'ll never know which is his favorite Crash Bandicoot boss fight.'
+      }
+    ])
+
     this.points = [
       first,
       second,
       third,
       fourth,
-      fifth
+      fifth,
+      sixth,
+      seventh,
+      eighth,
+      ninth,
+      tenth
     ]
   }
 
@@ -272,7 +613,7 @@ class Steve extends Interaction {
 
     const index = steve || 0
     const indexed = this.points[index]
-    const sixth = [
+    const last = [
       {
         dialogue: 'It rings out. Huh. For some reason, Steve isn\'t answering. I should try him again later.'
       },
@@ -280,7 +621,7 @@ class Steve extends Interaction {
         dialogue: ' '
       }
     ]
-    const points = indexed || sixth
+    const points = indexed || last
 
     const introduction = {
       dialogue: 'I only have one number in here, my friend Steve. I should call him.'

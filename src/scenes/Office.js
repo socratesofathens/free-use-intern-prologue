@@ -15,7 +15,7 @@ class Office extends Room {
             position: { x: 0.4507798517, y: 0.5131818182 }
           }
         ],
-        dialogue: 'Once we got inside the building, it wasn\'t hard to find our new workplace. We were told to go find the boss, who looked pretty pleased to see Emma...and surprised to see me.'
+        dialogue: 'Once we got inside the building, it wasn\'t hard to find our new workplace. We were told to go find the boss, who looked pleased to see Emma...and surprised to see me.'
       },
       {
         speakerName: 'Boss',
@@ -35,7 +35,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'I was expecting a woman. Like your friend here.'
+        dialogue: 'I was expecting a woman.'
       },
       {
         speakerName: 'Quinn',
@@ -43,7 +43,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'Huh. A male intern.'
+        dialogue: 'Huh. A male intern. How intersting.'
       },
       {
         speakerName: 'Quinn',
@@ -51,7 +51,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'No, no. What do you know about Acuity?'
+        dialogue: 'Hmm. What do you know about Acuity?'
       },
       {
         speakerName: 'Quinn',
@@ -59,7 +59,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Emma',
-        dialogue: 'Originally a Japanese company, Acuity quickly made its mark on the international market with its wide range of electronic products.'
+        dialogue: 'Originally a Japanese company, Acuity quickly made its mark on the international market with a wide range of electronic products.'
       },
       {
         speakerName: 'Boss',
@@ -71,7 +71,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'And do you know about our free use policy?'
+        dialogue: 'And what do you know about our free use policy?'
       },
       {
         speakerName: 'Quinn',
@@ -79,22 +79,29 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'That\'s right. Female employees are able to be freely used for sexual relief by the rest of the staff. That\'s why we normally take on female interns.'
+        dialogue: 'At Acuity, female employees are able to be freely used for sexual relief by the rest of the staff. That\'s why we normally take on female interns.'
       },
+      {
+        dialogue: 'Wait, what?'
+      },
+      { dialogue: 'I can\'t have heard that right.' },
+      { dialogue: 'That would mean that Emma...' },
+      { dialogue: 'My eyes widened at the thought. My best friend, being freely used by the company’s entire staff.' },
+      { dialogue: 'Why did I find that idea so...exciting?' },
       {
         speakerName: 'Quinn',
         dialogue: 'Really?'
       },
       {
         speakerName: 'Boss',
-        dialogue: 'Emma, why don\'t you come over here and we\'ll demonstrate.'
+        dialogue: 'It\'s really very simple. Emma, why don\'t you come over here and we\'ll demonstrate.'
       },
       {
         speakerName: 'Emma',
         dialogue: 'Uh...'
       },
       {
-        dialogue: 'Emma looked at me, unsure what to do, and I just shrugged. Our new boss was looking at her expectantly, so she slowly made her way behind his desk.'
+        dialogue: 'Emma looked at me, unsure what to do. But I...I had no idea what I wanted. So I just shrugged. Our new boss was looking at Emma expectantly, so she slowly made her way behind his desk.'
       },
       {
         speakerName: 'Boss',
@@ -119,27 +126,40 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'Now, Quinn...I\'m not sure if there\'s really going to be much for you to do. I\'ll tell you what, why don\'t you run along and get me a coffee?'
+        dialogue: 'Now, Quinn...I\'m sorry to say, we don\'t really have much use for a male intern.'
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Uh, yes sir.'
+        dialogue: 'But...sir...'
       },
       {
         speakerName: 'Boss',
-        dialogue: 'See if anyone else wants anything, too. And hey - once you\'re done with your tasks, you can have a turn with Emma here.'
+        dialogue: 'You can stick around for the rest of the day, but there\'s no need to come back tomorrow.'
       },
       {
-        speakerName: 'Quinn',
-        dialogue: 'Really, sir?'
+        dialogue: 'Oh, no. All of a sudden, I could see my summer with Emma slipping away.'
+      },
+      {
+        dialogue: 'I\'d be at home alone, while she was in the office...being used by all the Acuity employees.'
       },
       {
         speakerName: 'Boss',
-        dialogue: 'Of course, lad! After all, you work here too.'
+        dialogue: 'See if anyone else wants anything, too. And hey - if you finish your tasks before the end of the day, you can have a turn with Emma as well.'
+      },
+      {
+        dialogue: 'My eyes widened, and other parts of my body stood to attention as well.'
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Thank you, sir. I\'ll be back with your coffee shortly.'
+        dialogue: 'R-Really, sir?'
+      },
+      {
+        speakerName: 'Boss',
+        dialogue: 'Of course, lad! After all, you work here too. Until the end of the workday, that is.'
+      },
+      {
+        speakerName: 'Quinn',
+        dialogue: 'Thank you, sir. I\'ll be back with your coffee ASAP.'
       },
       {
         speakerName: 'Boss',
@@ -150,14 +170,20 @@ class Office extends Room {
         dialogue: 'Y-yes, sir...'
       },
       {
+        dialogue: 'I couldn\'t do anything but stare as my best friend got nailed by our new boss. And from what he\'d said...I could be the next to take her like that.'
+      },
+      {
+        dialogue: "This might just be the best job I've ever had."
+      },
+      {
         dialogue: 'Free Use Intern will continue in Chapter 1: Hot Coffee.'
       },
       {
-        dialogue: 'To show your support, help us, get the next chapter out as quickly as possible, and let Quinn start using his friend, visit patreon.com/pan ',
-        final: true
+        dialogue: 'To show your support, help us, get the next chapter out as quickly as possible, and let Quinn start using his friend, visit patreon.com/pan or or subscribestar.adult/pan'
       },
       {
-        dialogue: 'Patrons get previews of upcoming art, early access to new releases, and votes on what content is included in the game.'
+        dialogue: 'Our supporters get previews of upcoming art, early access to new releases, and votes on which content is included in the game.',
+        final: true
       },
       { dialogue: ' ' }
     ]

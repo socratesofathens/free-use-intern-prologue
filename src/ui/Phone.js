@@ -46,7 +46,7 @@ export default class Phone {
       phone: this
     })
 
-    this.openApps()
+    this.openApps(true)
 
     this.close()
   }
@@ -59,34 +59,36 @@ export default class Phone {
     this.scene.game.state.open = false
   }
 
-  open () {
+  open (opening) {
     this.group.setVisible(true)
 
-    this.openApps()
+    this.openApps(opening)
 
     this.scene.game.state.open = true
   }
 
-  openApps () {
-    this.deselect()
+  openApps (opening) {
+    this.deselect(opening)
 
     this.apps.open()
     this.photos.close()
   }
 
-  openPhotos () {
-    this.deselect()
+  openPhotos (opening) {
+    this.deselect(opening)
 
     this.apps.close()
     this.photos.open()
   }
 
-  deselect () {
+  deselect (opening) {
     this.scene.selecting = false
     this.scene.selected = null
     this.scene.game.state.selected = null
 
-    this.scene.saveText(' ')
+    if (!opening) {
+      this.scene.saveText(' ')
+    }
   }
 
   reset () {
