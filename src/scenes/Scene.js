@@ -49,16 +49,12 @@ class Scene extends Phaser.Scene {
   }
 
   advance () {
-    console.log('this.selecting test:', this.selecting)
     if (this.selecting) {
       return this.selecting
     }
 
     const { point } = this.game.state
-    console.log('point test:', point)
     this.game.state.point = point + 1
-
-    console.log('new point test:', this.game.state.point)
 
     this.read()
   }
@@ -121,7 +117,6 @@ class Scene extends Phaser.Scene {
 
     const copy = { ...state, point: sum }
 
-    console.log('extract this.interaction test:', this.interaction)
     if (this.interaction) {
       return this
         .interaction
@@ -173,8 +168,6 @@ class Scene extends Phaser.Scene {
     point,
     dry
   }) {
-    console.log('interact points test:', points)
-    console.log('interact interaction test:', interaction)
     this.selecting = false
 
     if (points) {
@@ -213,18 +206,15 @@ class Scene extends Phaser.Scene {
   read () {
     this.save = this.extract()
 
-    console.log('this.save test:', this.save)
-
     if (!this.save) return this.save
-
-    console.log('after test')
 
     this.render()
 
-    if (this.save && this.save.interaction === 0) {
+    if (
+      this.save && this.save.interaction === 0
+    ) {
       this.reload()
     }
-    console.log('post render test:', this.interaction)
   }
 
   render () {
@@ -338,7 +328,6 @@ class Scene extends Phaser.Scene {
     }
 
     const next = this.extract(1)
-    console.log('next test:', next)
     if (!next) {
       this.reload()
     }
@@ -422,6 +411,7 @@ class Scene extends Phaser.Scene {
     this
       .game
       .state ??= { ...this.initial }
+    this.game.state.images = []
 
     if (this.save) {
       this.render()

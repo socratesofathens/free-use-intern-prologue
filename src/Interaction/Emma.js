@@ -311,13 +311,9 @@ class Emma extends Interaction {
   read (state) {
     super.read(state)
 
-    console.log('Emma read state.point test:', state.point)
-
     const selected = this.select(state)
-    console.log('selected test:', selected)
 
     const chosen = selected[state.point]
-    console.log('chosen test:', chosen)
 
     return chosen
   }

@@ -197,6 +197,10 @@ class Room extends Scene {
     photos
       .forEach(this.addPhoto)
 
+    if (!this.game.state.open) {
+      this.phone.close()
+    }
+
     this.sidebar.panther.setColor('black')
   }
 
@@ -223,10 +227,8 @@ class Room extends Scene {
       } = this.save
 
       const isZero = interaction === 0
-      console.log('isZero test:', isZero)
 
       if (isZero) {
-        console.log('zero interaction test:', interaction)
         this.reset()
       } else if (interaction) {
         const i = this
@@ -255,7 +257,7 @@ class Room extends Scene {
         photos.forEach(this.addPhoto)
       }
 
-      if (apps === false) {
+      if (apps === false && open) {
         this.phone.openPhotos()
       }
 

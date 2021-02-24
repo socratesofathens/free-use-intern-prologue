@@ -12,7 +12,7 @@ class Office extends Room {
         images: [
           {
             name: 'boss',
-            position: { x: 0.4507798517, y: 0.5131818182 }
+            position: { x: 0.4507798517, y: 0.48318181818 }
           }
         ],
         dialogue: 'Once we got inside the building, it wasn\'t hard to find our new workplace. We were told to go find the boss, who looked pleased to see Emma...and surprised to see me.'
@@ -43,7 +43,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'Huh. A male intern. How intersting.'
+        dialogue: 'Huh. A male intern. How interesting.'
       },
       {
         speakerName: 'Quinn',

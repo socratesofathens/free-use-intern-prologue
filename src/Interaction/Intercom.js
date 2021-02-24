@@ -157,7 +157,10 @@ class Intercom extends Interaction {
 
     const camera = this.setup([
       {
-        dialogue: "The intercom has a camera to show the security guard who they're talking to. Using my camera on the intercom won't show me who I'm talking to. It doesn't work like that."
+        dialogue: 'Maybe if I take a photo of the intercom, I can show it TO the intercom, and convince it that I\'m also an intercom. It\'s sure to let me in then, right?'
+      },
+      {
+        dialogue: 'Wait, no. That\'s stupid. Never mind.'
       }
     ])
 
@@ -341,10 +344,8 @@ class Intercom extends Interaction {
     super.read(state)
 
     const selected = this.select(state)
-    console.log('Intercom selected test:', selected)
 
     const selection = selected[state.point]
-    console.log('Intercom selection test:', selection)
 
     return selection
   }
