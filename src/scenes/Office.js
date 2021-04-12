@@ -86,7 +86,7 @@ class Office extends Room {
       },
       { dialogue: 'I can\'t have heard that right.' },
       { dialogue: 'That would mean that Emma...' },
-      { dialogue: 'My eyes widened at the thought. My best friend, being freely used by the company’s entire staff.' },
+      { dialogue: 'My eyes widened at the thought. My best friend, being freely used by the company\'s entire staff.' },
       { dialogue: 'Why did I find that idea so...exciting?' },
       {
         speakerName: 'Quinn',

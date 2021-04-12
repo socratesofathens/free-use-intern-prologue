@@ -579,7 +579,7 @@ class Steve extends Interaction {
       },
       {
         speakerName: 'Quinn',
-        dialogue: 'Okay! So, Steve, tell me – in your own words – exactly what you think about...-'
+        dialogue: 'Okay! So, Steve, tell me - in your own words - exactly what you think about...-'
       },
       {
         speakerName: 'Steve',
