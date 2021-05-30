@@ -12,6 +12,7 @@ class Scene extends Phaser.Scene {
   constructor (name, color = '#FFFFFF') {
     super(name)
 
+    this.assets = []
     this.name = name
     this.color = color
     this.image = null
@@ -201,6 +202,27 @@ class Scene extends Phaser.Scene {
       .state
       .items
       .forEach(this.addItem)
+  }
+
+  loadPngs (pngs) {
+    const assets = pngs.map(png => {
+      return { name: png, type: 'png' }
+    })
+
+    this.assets = this.assets.concat(assets)
+  }
+
+  preload () {
+    console.log('this.assets test:', this.assets)
+    this
+      .assets
+      .forEach(asset => {
+        const { name, type } = asset
+
+        const path = `${name}.${type}`
+
+        return this.load.image(name, path)
+      })
   }
 
   read () {

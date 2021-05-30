@@ -5,6 +5,38 @@ import Room from './Room'
 class Introduction extends Room {
   constructor () {
     super('introduction', 0x000000)
+
+    this.loadPngs([
+      'blank',
+      'doors',
+      'emma',
+      'icon-power',
+      'icon-power-selected',
+      'icon-phone',
+      'icon-phone-selected',
+      'icon-email',
+      'icon-email-selected',
+      'icon-web',
+      'icon-web-selected',
+      'icon-camera',
+      'icon-camera-selected',
+      'icon-photos',
+      'icon-photos-selected',
+      'icon-home',
+      'icon-home-selected',
+      'icon-selfie',
+      'icon-selfie-selected',
+      'icon-emma',
+      'icon-emma-selected',
+      'intercom',
+      'interface-logo',
+      'item-phone',
+      'logo-1',
+      'logo-2',
+      'logo-3',
+      'phone',
+      'pic-emma'
+    ])
   }
 
   setup = () => {

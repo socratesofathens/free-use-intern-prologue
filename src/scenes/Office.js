@@ -3,6 +3,14 @@ import Room from './Room'
 class Office extends Room {
   constructor () {
     super('office', 0x000000)
+
+    this.loadPngs([
+      'boss',
+      'bosssex1',
+      'bosssex2'
+    ])
+
+    this.assets.push({ name: 'office', type: 'jpg' })
   }
 
   setup = () => {
@@ -144,7 +152,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'See if anyone else wants anything, too. And hey - if you finish your tasks before the end of the day, you can have a turn with Emma as well.'
+        dialogue: 'But while you\'re here, grab me a coffee. See if anyone else wants anything, too. And hey - if you finish your tasks before the end of the day, you can have a turn with Emma as well.'
       },
       {
         dialogue: 'My eyes widened, and other parts of my body stood to attention as well.'
