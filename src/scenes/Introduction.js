@@ -1,5 +1,8 @@
 import ORIGIN from '../lib/origin'
 
+import Emma from '../Interaction/Emma'
+import Intercom from '../Interaction/Intercom'
+
 import Room from './Room'
 
 class Introduction extends Room {
@@ -40,6 +43,13 @@ class Introduction extends Room {
   }
 
   setup = () => {
+    this.emma = new Emma({
+      scene: this
+    })
+    this.intercom = new Intercom({
+      scene: this
+    })
+
     this.saves = [
       {
         dialogue: 'So here\'s the thing.',

@@ -1,3 +1,4 @@
 --ignore-dir=.cache
 --ignore-dir=.firebase
 --ignore-dir=dist
+--ignore-dir=electron

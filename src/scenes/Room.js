@@ -1,10 +1,10 @@
-import { upY, realPosition, realSize, scaleX } from '../lib/game'
+import {
+  upY, realPosition, realSize, scaleX
+} from '../lib/game'
 import lorem from '../lib/lorem'
 import ORIGIN from '../lib/origin'
 
 import Steve from '../Interaction/Steve'
-import Emma from '../Interaction/Emma'
-import Intercom from '../Interaction/Intercom'
 
 import Phone from '../ui/Phone'
 import Sidebar from '../ui/Sidebar'
@@ -304,14 +304,7 @@ class Room extends Scene {
 
     this.sidebar = new Sidebar(this)
     this.phone = new Phone(this)
-
     this.steve = new Steve({
-      scene: this
-    })
-    this.emma = new Emma({
-      scene: this
-    })
-    this.intercom = new Intercom({
       scene: this
     })
 
