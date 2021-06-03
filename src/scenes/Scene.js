@@ -30,7 +30,8 @@ class Scene extends Phaser.Scene {
       animations: [],
       open: false,
       emma: 0,
-      intercom: 0
+      intercom: 0,
+      steve: 0
     }
     this.images = {}
     this.selecting = false
@@ -213,7 +214,6 @@ class Scene extends Phaser.Scene {
   }
 
   preload () {
-    console.log('this.assets test:', this.assets)
     this
       .assets
       .forEach(asset => {
@@ -250,7 +250,8 @@ class Scene extends Phaser.Scene {
       item,
       items,
       state,
-      animations
+      animations,
+      last
     } = this.save
 
     if (scene) {
@@ -347,6 +348,10 @@ class Scene extends Phaser.Scene {
 
         this.game.state = newState
       }
+    }
+
+    if (last) {
+      this.reload()
     }
 
     const next = this.extract(1)

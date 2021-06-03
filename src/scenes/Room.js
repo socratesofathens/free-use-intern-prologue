@@ -177,6 +177,12 @@ class Room extends Scene {
     return text
   }
 
+  advance () {
+    this.setText(' ')
+
+    super.advance()
+  }
+
   half = entity => {
     function halfEntry (entry) {
       const [key, value] = entry
@@ -320,8 +326,6 @@ class Room extends Scene {
 
     const { apps, photos } = this.phone
 
-    const { state } = this.game
-
     switch (name) {
       case 'item-phone':
         if (wet) {
@@ -336,9 +340,6 @@ class Room extends Scene {
       case 'icon-phone': {
         if (wet) {
           this.phone.reset()
-
-          state.steve ??= -1
-          state.steve = state.steve + 1
         }
 
         return this.interact({

@@ -59,7 +59,7 @@ class Introduction extends Room {
         }
       },
       {
-        dialogue: 'Emma has been my best friend for as long as I can remember. We\'ve known each other our whole lives - she\'s the literal girl next door, and the kindest person I\'ve ever met. If you mixed sugar and honey together and poured it into a can of coke, Emma would still be sweeter.'
+        dialogue: 'Emma has been my best friend for as long as I can remember. We\'ve known each other our whole lives - she\'s the literal girl next door, and the kindest person I\'ve ever met. If you poured sugar and honey into a can of coke, Emma would still be sweeter.'
       },
       {
         images: [{
@@ -69,7 +69,7 @@ class Introduction extends Room {
           time: 5000,
           title: 'emma-animation'
         }],
-        dialogue: 'She\'s funny, and smart, and hot as hell. Everyone who meets her falls in love...including me.'
+        dialogue: 'She\'s funny, smart, and hot as hell. Everyone who meets her falls in love...including me.'
       },
       {
         dialogue: 'Not that she\'d ever notice. As far as she\'s concerned, I\'m just...Quinn. Her best friend. Not boyfriend material.'

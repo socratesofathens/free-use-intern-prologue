@@ -30,7 +30,8 @@ class Steve extends Interaction {
         dialogue: 'No, I didn\'t mean...'
       },
       {
-        dialogue: 'I hang up on Steve. What a great guy.'
+        dialogue: 'I hang up on Steve. What a great guy.',
+        state: { steve: 1 }
       }
     ])
 
@@ -60,7 +61,8 @@ class Steve extends Interaction {
         dialogue: 'No, that\'s not what I...-'
       },
       {
-        dialogue: 'I hang up on Steve. Love talking to that dude.'
+        dialogue: 'I hang up on Steve. Love talking to that dude.',
+        state: { steve: 2 }
       }
     ])
 
@@ -106,7 +108,8 @@ class Steve extends Interaction {
         dialogue: 'No! Only call if...-'
       },
       {
-        dialogue: 'I hang up on my friend. I should call him again if I can think of something urgent to talk about.'
+        dialogue: 'I hang up on my friend. I should call him again if I can think of something urgent to talk about.',
+        state: { steve: 3 }
       }
     ])
 
@@ -201,7 +204,8 @@ class Steve extends Interaction {
       },
       {
         dialogue: 'I hang up. Steve\'s such a smart guy. I can\'t wait to overthrow the system with him.'
-      }
+      },
+      { state: { steve: 4 } }
     ])
 
     const fifth = this.setup([
@@ -262,7 +266,8 @@ class Steve extends Interaction {
         dialogue: 'No! Fucking hell man, please stop call-...'
       },
       {
-        dialogue: 'I hang up. Hopefully his boss appreciates the importance of friendship.'
+        dialogue: 'I hang up. Hopefully his boss appreciates the importance of friendship.',
+        state: { steve: 5 }
       }
     ])
 
@@ -328,7 +333,8 @@ class Steve extends Interaction {
         dialogue: 'Talk to you soon!'
       },
       {
-        dialogue: 'I hang up, wondering if this is just Steve\'s way of keeping me calling. He must get really lonely at work.'
+        dialogue: 'I hang up, wondering if this is just Steve\'s way of keeping me calling. He must get really lonely at work.',
+        state: { steve: 6 }
       }
     ])
 
@@ -382,7 +388,8 @@ class Steve extends Interaction {
         dialogue: 'No! You have to sto-....'
       },
       {
-        dialogue: 'I hang up. What a pal, hey?'
+        dialogue: 'I hang up. What a pal, hey?',
+        state: { steve: 7 }
       }
     ])
 
@@ -440,7 +447,8 @@ class Steve extends Interaction {
         dialogue: 'Oh, for fuck\'s sa-...'
       },
       {
-        dialogue: 'I hang up, cackling as I do. Pretty good one, hey?'
+        dialogue: 'I hang up, cackling as I do. Pretty good one, hey?',
+        state: { steve: 8 }
       }
     ])
 
@@ -508,7 +516,8 @@ class Steve extends Interaction {
         dialogue: '...'
       },
       {
-        dialogue: 'Okay, yeah, I gotta give him that one.'
+        dialogue: 'Okay, yeah, I gotta give him that one.',
+        state: { steve: 9 }
       }
     ])
 
@@ -590,7 +599,8 @@ class Steve extends Interaction {
         dialogue: 'Steve, no! We could have...we were going to...'
       },
       {
-        dialogue: 'He hangs up. Damn it! I guess I\'ll never know which is his favorite Crash Bandicoot boss fight.'
+        dialogue: 'He hangs up. Damn it! I guess I\'ll never know which is his favorite Crash Bandicoot boss fight.',
+        state: { steve: 10 }
       }
     ])
 
