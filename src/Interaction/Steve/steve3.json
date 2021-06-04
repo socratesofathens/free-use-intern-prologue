@@ -1,0 +1,98 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Steve, I came up with an emergency!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn, you shouldn't have to \"come up with\" an emergency. An emergency is something out of your control."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Oh yeah, this is definitely out of my control."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "-sigh- What is it?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I think our democracy is collapsing."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "...okay, sure."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Does that qualify as urgent?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "I mean, I guess...."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Great! So what do you want to chat about? I saw a great movie last night."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn, I told you, I'm at work. If my boss catches me talking...-"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "But it's an emergency."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Technically. Sort of. But there's nothing we can do about it."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "What do you mean?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "I mean, it's a systemic issue. One person can't really change the system, no matter what Hollywood tells you. You have to address the root causes."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Well, what about two people?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "No, Quinn, I...-"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "What about two BUDS?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn..."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Two BEST buds!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn, I gotta go. We'll fix democracy later, okay?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Okay, cool. I'll call you back when I have a plan."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "No! Please don't call me ba-..."
+  },
+  {
+    "dialogue": "I hang up. Steve's such a smart guy. I can't wait to overthrow the system with him."
+  },
+  {
+    "state": {
+      "steve": 4
+    }
+  }
+]

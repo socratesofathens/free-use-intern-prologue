@@ -1,0 +1,64 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yo yo yo, how's my main man?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "At work, Quinn. At my job. Where I am not allowed to take personal calls."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I mean, does this count as personal?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Unless it has to do with the distribution of lactose-free milk throughout the tri-county area: yes. Yes, this counts as personal."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "That sounds boring."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Yeah, I didn't take this job for the thrills."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Then why did you take it?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Well, because...Quinn, I can't really talk about this right now."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "But it's work-related!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Yet somehow I don't think my boss will see it that way."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "You should ask him."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "I'm hanging up now."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Okay, great! I'll call back later to hear what he said."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "No! Fucking hell man, please stop call-..."
+  },
+  {
+    "dialogue": "I hang up. Hopefully his boss appreciates the importance of friendship.",
+    "state": {
+      "steve": 5
+    }
+  }
+]

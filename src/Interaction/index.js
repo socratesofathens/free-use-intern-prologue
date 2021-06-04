@@ -26,7 +26,7 @@ export default class Interaction {
     this.scene.phone.reset()
   }
 
-  setup (points) {
+  setup = (points) => {
     const [first] = points
     this.addImages(first, this.first)
 

@@ -1,0 +1,84 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Hello, son."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "-sigh- You're not my mother, Quinn."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yeah, I was just trying it on. Now that I've said it, I think you’re right."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Good! That was starting to get a little weird, man."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I definitely feel like a man. How about you?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Yes, Quinn. I also feel like a man."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "If you want to, you can call me Dad."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Not gonna do that."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Right, right. I like to think of myself more as a the kind of cool Dad whose kids call him by his first name."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "No! You're not my Dad!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yet."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "...what do you mean “yet”??"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Well, your mother always liked me."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn, you can't date my Mom."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "It's okay, Steve. It’s always difficult when a parent remarries. I just hope that in time, we can build a strong father-son relationship."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "My mother is still married! To my Dad!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "So you'll have two Dads! And best of all: one of them will be me!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "I'm gonna go."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Goodbye, son."
+  },
+  {
+    "dialogue": "Hmm, nope. Still feels weird. Maybe I won't marry Steve’s mom after all.",
+    "state": {
+      "steve": " 14"
+    }
+  }
+]

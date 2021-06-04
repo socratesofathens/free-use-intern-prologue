@@ -1,0 +1,56 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Hey, Steve. I'm just calling to let you know...I’m ready."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Ready for what?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "For your apology."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "-sigh- And what am I supposed to be apologizing for?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "You called me just to troll me, dude. It really hurt my feelings."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "YOU called ME!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Let's not get caught up on who trolled who. Are you going to apologize?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Uh huh. Sure. I'm sooooo sorry that on your millionth annoying, pointless call, I took the outrageous step of saying your name, which was apparently enough to make you turn into a little baby."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Thanks, Steve. That really means a lot to me."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What? But...-"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "You're forgiven."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "No! That wasn't a real...–"
+  },
+  {
+    "dialogue": "I hang up. What a class act. Sure, sometimes he screws up, but he always knows exactly what to say to make it right.",
+    "state": {
+      "steve": " 12"
+    }
+  }
+]

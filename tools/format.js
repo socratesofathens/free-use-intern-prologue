@@ -20,37 +20,53 @@ const lines = input.split(/\r?\n/)
 function format (line) {
   if (!line.length) return null
 
-  line = line.replace('’', '\'')
+  line = line.replace('’', "'")
+  line = line.replace('"', '\\"')
+  line = line.replace('…', '...')
 
-  const colon = line.indexOf(':')
+  const point = {}
 
-  if (colon > -1) {
-    const characterName = line
-      .slice(0, colon)
+  const split = line.indexOf(':')
+  const colon = split > -1
+  if (colon) {
+    const speakerName = line
+      .slice(0, split)
 
-    const space = colon + 2
+    const space = split + 2
 
     const dialogue = line.slice(space)
 
-    return `{
-    speakerName: '${characterName}',
-    dialogue: '${dialogue}'
-  }`
+    point.speakerName = speakerName
+    point.dialogue = dialogue
   }
 
-  return `{
-    dialogue: '${line}'
-  }`
+  const set = line.includes('SET')
+  if (set) {
+    const left = line.indexOf('<')
+    const right = line.indexOf('>')
+
+    const start = left + 1
+    const key = line.slice(start, right)
+
+    const space = right + 1
+    const value = line.slice(space)
+
+    point.state = { [key]: value }
+  }
+
+  if (!colon && !set) {
+    point.dialogue = line
+  }
+
+  return point
 }
 
 const formatted = lines
   .map(format)
   .filter(x => x)
 
-const joined = formatted.join(',\n  ')
-const output = `[
-  ${joined}
-]`
+const output = JSON.stringify(formatted, null, 2)
+console.log(output)
 const outpath = path.join(
   __dirname, 'output.txt'
 )

@@ -1,0 +1,32 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Hey Steve! It's me again. Quinn!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Yeah, I know who it is. Your name comes up on my phone."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Oh, great! How's work treating you?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "I mean, it's fine. I really shouldn't be taking calls though. My boss is a bit of a dick, and he...oh, hi sir! No, I didn't mean you. No, I didn't call you a dick. No sir, I swear, I can explain...just give me a second. Quinn, I've got to go. Can we talk later?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Sure thing! I'll call you in a bit."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "No, that's not what I...-"
+  },
+  {
+    "dialogue": "I hang up on Steve. Love talking to that dude.",
+    "state": {
+      "steve": 2
+    }
+  }
+]

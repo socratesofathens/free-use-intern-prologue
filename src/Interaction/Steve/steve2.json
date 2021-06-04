@@ -1,0 +1,48 @@
+[
+  {
+    "speakerName": "Quinn:",
+    "dialogue": "Steve, guess who it is!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn, why are you still calling me? You know I can't talk right now."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Then why are you still picking up?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Because I figured you'd know I'm at work, and only call if it was urgent!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Oh, so friendship isn't urgent?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "No! It definitionally is not!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Wow. Harsh."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "I gotta get back to work. Please, only call if it's an emergency."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Okay dude. I'll try to think of an emergency to call you about."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "No! Only call if...-"
+  },
+  {
+    "dialogue": "I hang up on my friend. I should call him again if I can think of something urgent to talk about.",
+    "state": {
+      "steve": 3
+    }
+  }
+]

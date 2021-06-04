@@ -1,0 +1,32 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Hey Steve! It's Quinn."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Uh, hey dude. What's up?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Just calling to say hi!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Yeah, hi. I'm at work at the moment, so...let's talk later?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Sure thing! I'll call you again later."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "No, I didn't mean..."
+  },
+  {
+    "dialogue": "I hang up on Steve. What a great guy.",
+    "state": {
+      "steve": 1
+    }
+  }
+]

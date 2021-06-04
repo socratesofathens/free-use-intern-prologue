@@ -1,0 +1,56 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Hey best bud!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Hey, Quinn. What's up?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "You gotta say it, man! Like we rehearsed!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What? We never rehearsed anything."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Well, I rehearsed."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn, when you rehearse something alone, it's not reasonable to expect me to...–"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Let's take it from the top. Hey best bud!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "-sigh- Hey best bud."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "You nailed it! Just like we rehearsed."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "You calling for anything in particular?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Just that!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn, you–"
+  },
+  {
+    "dialogue": "I hang up. Despite missing every rehearsal, Steve nailed it on the second try. He must just be a natural performer.",
+    "state": {
+      "steve": " 16"
+    }
+  }
+]

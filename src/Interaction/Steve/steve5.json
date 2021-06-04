@@ -1,0 +1,68 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Steve! I was worried you wouldn't answer."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "I probably shouldn't! What are you calling about?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "That!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I was worried you wouldn't answer. I figured calling you was the only way to know for sure."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn, I've told you, only call me if it's urgent."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I was REALLY worried!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Well, I answered. Are you satisfied?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yeah! It's really good to know that you'll answer every time I call."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "No, Quinn. Not every time."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "...what?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "I'm at work! I can't pick up every single time you call."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Well that's terrifying. I guess I'll have to keep on testing."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn, no! Don't...-"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Talk to you soon!"
+  },
+  {
+    "dialogue": "I hang up, wondering if this is just Steve's way of keeping me calling. He must get really lonely at work.",
+    "state": {
+      "steve": 6
+    }
+  }
+]

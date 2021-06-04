@@ -1,0 +1,84 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Hey Steve McSteve."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Hey man, what's up? I can't talk for long."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Wait, you're not mad that I'm calling?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Nah. My boss has stepped out. I seriously only have a minute though. What did you want to talk about?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Oh, shit. Um. Um."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn, why did you call me?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I need to come up with something better."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "If we don't have much time, I don't want to waste it on what I was originally calling you about! What can we talk about in just a minute?? God, that's so little time."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Why did you call me??"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "No, Steve! Let it go! We can do so much better!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What the hell is wrong with you?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Okay, I've got it! The perfect topic. It'll take exactly a minute to discuss, and we'll get so much out of it. "
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Cool. What is it?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "It'll be so good for us, both individually AND together. This could be a true moment of personal growth for each of us, as well as strengthening our friendship."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Uh, okay. Sounds great. Hit me."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Okay! So, Steve, tell me - in your own words - exactly what you think about...-"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Ah, shit. My boss is back. Gotta go! Talk to you later."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Steve, no! We could have...we were going to..."
+  },
+  {
+    "dialogue": "He hangs up. Damn it! I guess I'll never know which is his favorite Crash Bandicoot boss fight.",
+    "state": {
+      "steve": 10
+    }
+  }
+]

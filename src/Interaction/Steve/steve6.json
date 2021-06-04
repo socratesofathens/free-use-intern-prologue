@@ -1,0 +1,56 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Hey buddy!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn! Dude! You have to stop calling me!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Wait...are you breaking up with me!?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What? No!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Are we no longer best friends?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Dude, calm down. We're still best friends. Just quit calling me while I'm at work!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "So...we're still besties? BFFs? Heterosexual life partners?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "-sigh- Yes."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "And you'll always come through for me, right? That's what friendship is all about!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "I mean...yeah. I'll always be there for you. You're my best friend."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Awesome! I'll call you again in a bit!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "No! You have to sto-...."
+  },
+  {
+    "dialogue": "I hang up. What a pal, hey?",
+    "state": {
+      "steve": 7
+    }
+  }
+]

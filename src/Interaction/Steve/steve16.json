@@ -68,9 +68,7 @@
     "dialogue": "I'll give you some space."
   },
   {
-    "dialogue": "I hang up. Rejection is hard; Steve will need some time to deal with that."
-  },
-  {
+    "dialogue": "I hang up. Rejection is hard; Steve will need some time to deal with that.",
     "state": {
       "steve": " 17"
     }

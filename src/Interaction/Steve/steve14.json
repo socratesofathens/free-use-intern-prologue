@@ -1,0 +1,111 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Hey hey hey!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "How dare you."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "...what?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "You've got some nerve, calling me like nothing’s wrong."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "What are you talking about?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "You know what you did!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Oh, god...I never thought you'd find out."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Wait. What?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "About the turtle."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "The...turtle?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yeah. Remember in second grade when you brought your pet turtle to school, and he went missing? That was because of me. I was convinced he was secretly one of the ninja turtles, so I sneaked him into the bathroom and...I flushed him."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "You flushed Ralphie??"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I thought I was sending him home! I never told you, because I thought you wouldn't understand. It wasn't until years later that I realized what I’d done. I don’t know how you found out, but...I’m so sorry, Steve."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "I had no idea! You...you flushed my turtle down the toilet??"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "What? Then what were you mad at me for?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "I was just messing with you."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Oh! Ohhhhhhh. Oh. "
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "That's really fucked up, dude. You killed my turtle, and you’ve been hiding it from me for all these years??"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Uh, no. I was just...I was just messing with you too!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yeah, I was just going along with the joke. Ha! Ha, ha. Gotcha!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Seriously?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Uh huh! Yeah. Good one, right?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Yeah, I, uh... I guess."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Anyway, I gotta go! Will talk to you later."
+  },
+  {
+    "dialogue": "I hang up. Whoops. "
+  },
+  {
+    "dialogue": "Part of me still wonders if Ralphie ever made it back to the other ninja turtles. He's probably not even a teenager any more.",
+    "state": {
+      "steve": " 15"
+    }
+  }
+]

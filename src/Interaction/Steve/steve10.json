@@ -1,0 +1,64 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Steve!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yeah?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "You sounded like you wanted something."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What? No, I was just saying your name."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Uh, yeah. People normally only say that when they want to get your attention for something."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "You said my name!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Right. Because I wanted to talk to you. What did YOU want?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Nothing."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Oh, so you were just trolling me?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "No, I was...-"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Dick move, Steve. Really rude."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn, I...-"
+  },
+  {
+    "dialogue": "I hang up. That guy can be a real jerk sometimes.",
+    "state": {
+      "steve": " 11"
+    }
+  }
+]

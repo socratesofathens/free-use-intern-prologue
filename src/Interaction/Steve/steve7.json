@@ -1,0 +1,60 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yo, Steve!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What. "
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Do. "
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "You. "
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Want!?!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I just had a quick question for you. Do you have a henweigh I can borrow?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Hmm?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What are you talking about?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "What are YOU talking about?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What's a henweigh?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "About 5 pounds!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Oh, for fuck's sa-..."
+  },
+  {
+    "dialogue": "I hang up, cackling as I do. Pretty good one, hey?",
+    "state": {
+      "steve": 8
+    }
+  }
+]

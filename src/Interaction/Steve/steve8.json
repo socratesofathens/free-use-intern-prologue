@@ -1,0 +1,70 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Hey best friend o' mine."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Quinn, if this is another stupid prank call..."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Aw, c'mon. Have a sense of humor. It was just a pun. It wasn't like I used a hammerfore."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What's a hammerfore?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Getting nails into walls."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Oh, fuck off!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "C'mon man, you walked right into that one."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "We are not friends any more."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Steve, don't be like that."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "I mean it. I'm so sick of this shit. We're done."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Seriously!?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Yes! Friendship ended with Quinn. Now Dahman is my best friend."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "What? Who's Dahman??"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "I'M DA MAN, BITCH!"
+  },
+  {
+    "dialogue": "Steve hangs up."
+  },
+  {
+    "dialogue": "..."
+  },
+  {
+    "dialogue": "Okay, yeah, I gotta give him that one.",
+    "state": {
+      "steve": 9
+    }
+  }
+]

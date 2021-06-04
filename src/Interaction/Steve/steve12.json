@@ -1,0 +1,80 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Hey Steve!"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Oh, hey Mom."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "What? I'm not your...wait. Am I your Mom? No. No, that doesn’t make sense. We’re the same age. I’m not a woman. Am I? I’ve always been so confident in my masculinity, but now..."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "What's the emergency?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Well to begin with, you've got me questioning my entire gender identity. Is gender even real? Are we all, in a sense, each other’s mothers? Am I a woman? Did I metaphorically give birth to you?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Oh, no! That sounds awful."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Wow. I'd thought this was a beautiful moment of connection, a transformation of our best buddyhood into more of a nurturing, maternal relationship. But now it’s awful? Or...is that just another part of the metaphor?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Well, I appreciate you letting me know. Please, keep me posted."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Thanks, man. That means a lot to me. I'm going to keep exploring these new feelings that you’ve awoken; I’ll make sure to let you know if...-"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Okay, he's gone. My boss was hovering, and - as I believe I’ve mentioned - we’re not meant to take personal calls at work unless it’s an emergency."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Oh. So...I'm not your mother?"
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "No, Quinn. You're not my mother. We’re the same age."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Well, yeah, I know that, but I thought...maybe metaphorically..."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "Do you want to be my mother, or my best friend?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I thought I knew the answer to that, but now...now I'm not so sure."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "-sigh- Okay, Quinn. You think on that and let me know where you land."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Thanks! I'll call you back when I’ve got a better idea."
+  },
+  {
+    "speakerName": "Steve",
+    "dialogue": "No! Stop calling me at...-"
+  },
+  {
+    "dialogue": "I hang up. That's what I love about Steve; he always gets me to think about the big issues in life. He’s definitely my favorite son.",
+    "state": {
+      "steve": " 13"
+    }
+  }
+]
