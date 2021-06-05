@@ -20,10 +20,10 @@ class Office extends Room {
         images: [
           {
             name: 'boss',
-            position: { x: 0.4507798517, y: 0.48318181818 }
+            real: { x: 1585, y: 1082 }
           }
         ],
-        dialogue: 'Once we got inside the building, it wasn\'t hard to find our new workplace. We were told to go find the boss, who looked pleased to see Emma...and surprised to see me.'
+        dialogue: 'Once we got inside the building, it wasn\'t hard to find our new workplace. We were told to go find the boss. He looked pleased to see Emma...and surprised to see me.'
       },
       {
         speakerName: 'Boss',
@@ -112,6 +112,12 @@ class Office extends Room {
         dialogue: 'Emma looked at me, unsure what to do. But I...I had no idea what I wanted. So I just shrugged. Our new boss was looking at Emma expectantly, so she slowly made her way behind his desk.'
       },
       {
+        dialogue: 'Why was she agreeing to this? She’s always been a people-pleaser, but...'
+      },
+      {
+        dialogue: 'Oh, god. All these years I\'d been lusting after Emma; maybe all I\'d needed to do was...ask.'
+      },
+      {
         speakerName: 'Boss',
         dialogue: 'Ah, yes. Exactly what I was hoping. Yes, Emma, we\'re going to enjoy you.',
         images: [
@@ -121,8 +127,8 @@ class Office extends Room {
           {
             key: 'bosssex',
             duration: 650,
-            position: {
-              x: 0.4507798517, y: 0.4831818182
+            real: {
+              x: 1585, y: 1082
             },
             keys: ['bosssex1', 'bosssex2']
           }
@@ -134,7 +140,7 @@ class Office extends Room {
       },
       {
         speakerName: 'Boss',
-        dialogue: 'Now, Quinn...I\'m sorry to say, we don\'t really have much use for a male intern.'
+        dialogue: 'Now, Quintin...I\'m sorry to say, we don\'t really have much use for a male intern.'
       },
       {
         speakerName: 'Quinn',
@@ -182,18 +188,7 @@ class Office extends Room {
       },
       {
         dialogue: "This might just be the best job I've ever had."
-      },
-      {
-        dialogue: 'Free Use Intern will continue in Chapter 1: Hot Coffee.'
-      },
-      {
-        dialogue: 'To show your support, help us, get the next chapter out as quickly as possible, and let Quinn start using his friend, visit patreon.com/pan or or subscribestar.adult/pan'
-      },
-      {
-        dialogue: 'Our supporters get previews of upcoming art, early access to new releases, and votes on which content is included in the game.',
-        final: true
-      },
-      { dialogue: ' ' }
+      }
     ]
 
     super.setup()

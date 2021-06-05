@@ -91,7 +91,7 @@ class Intercom extends Interaction {
       },
       {
         speakerName: 'Intercom',
-        dialogue: "They don't pay me to trust random guys."
+        dialogue: "They don't pay me to let random guys into the building."
       },
       {
         speakerName: 'Quinn',
@@ -272,7 +272,7 @@ class Intercom extends Interaction {
         dialogue: '"How to trick intercom" leads to an interesting forum discussion - apparently the camera on this particular model has a pretty low resolution.'
       },
       {
-        dialogue: "I don't need to get Emma to the intercom...I just have to trick the camera into thinking that she's there."
+        dialogue: "I don't actually need to get Emma to the intercom...I just have to trick the camera into thinking that she's there."
       }
     ])
 

@@ -69,7 +69,7 @@ class Scene extends Phaser.Scene {
       .push(animation)
 
     const {
-      key, duration, keys, position
+      key, duration, keys, position, real
     } = animation
 
     const frames = keys
@@ -81,7 +81,9 @@ class Scene extends Phaser.Scene {
       repeat: -1
     })
 
-    const { x, y } = realPosition(position)
+    const location = real ?? realPosition(position)
+
+    const { x, y } = location
     const name = keys[0]
 
     const sprite = this

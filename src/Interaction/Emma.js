@@ -121,7 +121,7 @@ class Emma extends Interaction {
         dialogue: '...okay.'
       },
       {
-        dialogue: 'That\'s the thing about my best friend: she really has a hard time saying no.'
+        dialogue: 'That\'s the thing about my best friend: she can\'t say no.'
       },
       {
         dialogue: 'To anyone.'
@@ -266,7 +266,7 @@ class Emma extends Interaction {
 
     const taken = this.setup([
       {
-        dialogue: "Noooo! Seriously, I'm already freaking out enough today. Don't take my picture again. Please?",
+        dialogue: "Noooo! Seriously, I'm already freaking out enough today. Please?",
         speakerName: 'Emma'
       },
       {
@@ -286,7 +286,7 @@ class Emma extends Interaction {
 
     const email = this.setup([{
       speakerName: 'Emma',
-      dialogue: "Yeah, this is definitely the right place. I'm so nervous!"
+      dialogue: "Looks like this is definitely the right place. I'm so nervous!"
     }])
 
     const web = this.setup([{

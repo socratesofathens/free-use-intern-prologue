@@ -7,25 +7,26 @@ import Figure from './index'
 
 export default class Image extends Figure {
   constructor ({
-    scene,
+    action,
+    depth,
+    hover,
     name,
     origin,
     position,
+    real,
+    scene,
     size,
     to,
     time,
-    uses,
-    depth,
-    action,
     title,
-    hover
+    uses
   }) {
     if (!position) {
       position = ORIGIN
       origin = ORIGIN
     }
 
-    const realized = realPosition(position)
+    const realized = real ?? realPosition(position)
     const { x, y } = realized
 
     const image = scene
