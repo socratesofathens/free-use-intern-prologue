@@ -7,6 +7,7 @@ import {
 import Introduction from './scenes/Introduction'
 import Office from './scenes/Office'
 import Title from './scenes/Title'
+import Prologue from './scenes/Prologue'
 
 const config = {
   type: Phaser.AUTO,
@@ -17,7 +18,7 @@ const config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH
   },
-  scene: [Title, Introduction, Office]
+  scene: [Title, Introduction, Prologue, Office]
 }
 
 export default new Phaser.Game(config)
