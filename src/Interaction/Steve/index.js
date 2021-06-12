@@ -18,11 +18,8 @@ class Steve extends Interaction {
     const { steve, point } = state
 
     const index = steve || 0
-    console.log('index test:', index)
-    console.log('this.points test:', this.points)
     const integer = parseInt(index)
     const indexed = this.points[integer]
-    console.log('indexed test:', indexed)
     const last = [
       {
         dialogue: 'It rings out. Huh. For some reason, Steve isn\'t answering. I should try him again later.'

@@ -11,3 +11,6 @@
 
 /.firebase
 /electron
+
+/tools/input.txt
+/tools/output.txt

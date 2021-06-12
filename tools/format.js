@@ -17,14 +17,101 @@ const input = clip && clip.length
 
 const lines = input.split(/\r?\n/)
 
+let point
+const points = []
+
+function getTitle (name) {
+  const period = name.indexOf('.')
+  const title = name.slice(0, period)
+
+  return title
+}
+
 function format (line) {
+  console.log('line test:', line)
   if (!line.length) return null
 
   line = line.replace('’', "'")
   line = line.replace('"', '\\"')
   line = line.replace('…', '...')
 
-  const point = {}
+  const tokens = line.split(' ')
+  const first = tokens[0]
+  const three = first.length === 3
+  if (three) {
+    console.log('three test:', three)
+    const plus = first === '+++'
+    const minus = first === '---'
+    const animation = first === '>>>'
+    const image = plus || minus || animation
+    if (image) {
+      const entity = { }
+      const name = tokens[1]
+      const title = getTitle(name)
+      entity.title = title
+
+      if (plus || animation) {
+        entity.x = tokens[2]
+        entity.y = tokens[3]
+
+        // TODO naive fullscreen
+      }
+
+      if (minus) {
+        entity.remove = true
+      }
+
+      if (plus || minus) {
+        point.images ??= []
+        points.images.push(entity)
+      }
+
+      if (animation) {
+        const name2 = tokens[4]
+        const title2 = getTitle(name2)
+        entity.name2 = title2
+        entity.duration = tokens[5]
+        entity.key = tokens[6]
+
+        point.animations ??= []
+        point.animations.push(entity)
+      }
+
+      return entity
+    }
+
+    const set = first === 'SET'
+    const add = first === 'ADD'
+    const state = set || add
+    if (state) {
+      const [, key, value] = tokens
+
+      if (set) {
+        point.state ??= {}
+        point.state[key] = value
+      }
+
+      if (add) {
+        point.add ??= {}
+        point.add[key] = value
+      }
+
+      return point
+    }
+  }
+
+  console.log('point test:', point)
+  if (point) {
+    console.log('pushing test:')
+    points.push(point)
+  }
+  console.log('points test:', points)
+  point = {}
+
+  const goto = first === 'GOTO'
+  if (goto) {
+    point.scene = tokens[1]
+  }
 
   const split = line.indexOf(':')
   const colon = split > -1
@@ -38,34 +125,17 @@ function format (line) {
 
     point.speakerName = speakerName
     point.dialogue = dialogue
+
+    return point
   }
 
-  const set = line.includes('SET')
-  if (set) {
-    const left = line.indexOf('<')
-    const right = line.indexOf('>')
-
-    const start = left + 1
-    const key = line.slice(start, right)
-
-    const space = right + 1
-    const value = line.slice(space)
-
-    point.state = { [key]: value }
-  }
-
-  if (!colon && !set) {
-    point.dialogue = line
-  }
-
-  return point
+  point.dialogue = line
 }
 
-const formatted = lines
-  .map(format)
-  .filter(x => x)
+lines.forEach(format)
+points.push(point)
 
-const output = JSON.stringify(formatted, null, 2)
+const output = JSON.stringify(points, null, 2)
 console.log(output)
 const outpath = path.join(
   __dirname, 'output.txt'

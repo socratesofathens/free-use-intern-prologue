@@ -21,7 +21,7 @@ export default class Image extends Figure {
     title,
     uses
   }) {
-    if (!position) {
+    if (!position && !real) {
       position = ORIGIN
       origin = ORIGIN
     }
