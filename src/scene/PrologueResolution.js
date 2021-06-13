@@ -126,9 +126,6 @@ class Office extends Room {
           {
             key: 'bosssex',
             duration: 650,
-            real: {
-              x: 1585, y: 1082
-            },
             keys: ['bosssex1', 'bosssex2']
           }
         ]

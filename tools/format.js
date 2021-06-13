@@ -19,6 +19,7 @@ const lines = input.split(/\r?\n/)
 
 let point = {}
 const points = []
+let subbed
 
 function getTitle (name) {
   const period = name.indexOf('.')
@@ -29,6 +30,8 @@ function getTitle (name) {
 
 function push () {
   points.push(point)
+
+  subbed = false
 
   point = {}
 }
@@ -55,32 +58,30 @@ function format (line) {
 
   const sub = image || state
   if (sub) {
+    subbed = true
+
     if (image) {
       const entity = { }
       const name = tokens[1]
       const title = getTitle(name)
-      entity.title = title
 
-      if (plus || animation) {
-        entity.x = tokens[2]
-        entity.y = tokens[3]
+      if (plus || minus) {
+        entity.title = title
+        point.images ??= []
+        point.images.push(entity)
       }
 
       if (minus) {
         entity.remove = true
       }
 
-      if (plus || minus) {
-        point.images ??= []
-        points.images.push(entity)
-      }
-
       if (animation) {
-        const name2 = tokens[4]
+        const name2 = tokens[2]
         const title2 = getTitle(name2)
-        entity.name2 = title2
-        entity.duration = tokens[5]
-        entity.key = tokens[6]
+        entity.keys = [title, title2]
+
+        entity.duration = tokens[3]
+        entity.key = tokens[4]
 
         point.animations ??= []
         point.animations.push(entity)
@@ -140,10 +141,14 @@ function format (line) {
 
   point.dialogue = line
 
-  push(point)
+  push()
 }
 
 lines.forEach(format)
+
+if (subbed) {
+  push()
+}
 
 const output = JSON.stringify(points, null, 2)
 console.log(output)

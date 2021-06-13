@@ -1,0 +1,25 @@
+[
+  {
+    "images": [
+      {
+        "name": "office"
+      },
+      {
+        "title": "office-arrow"
+      }
+    ],
+    "animations": [
+      {
+        "keys": [
+          "bosssex1",
+          "bosssex2"
+        ],
+        "duration": "650",
+        "key": "bosssex"
+      }
+    ]
+  },
+  {
+    "dialogue": " "
+  }
+]

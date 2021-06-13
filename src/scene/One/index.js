@@ -14,6 +14,11 @@ class One extends Room {
   setup = () => {
     this.saves = points
 
+    const random = Math.random()
+    const mugGoal = Math.ceil(random * 9)
+
+    this.game.state['mug-goal'] = mugGoal
+
     super.setup()
   }
 }

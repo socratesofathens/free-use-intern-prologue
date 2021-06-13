@@ -19,5 +19,8 @@
     "fullscreen": {
       "name": "chapter1"
     }
+  },
+  {
+    "scene": "office"
   }
 ]

@@ -9,16 +9,14 @@ export default class Figure {
     title
   }) {
     this.scene = scene
-    this.scene.figures.push(this)
-
-    this.title = title
-    this.position = position
-
     this.action = action
     this.element = element
-
     this.hover = hover
-    this.name = name
+    this.name = name || title
+    this.position = position
+    this.title = title || name
+
+    this.scene.figures.push(this)
 
     const interactive = action || hover
 

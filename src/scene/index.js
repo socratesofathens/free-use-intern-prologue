@@ -2,7 +2,6 @@ import Phaser from 'phaser'
 
 import isthisa from 'isthisa'
 
-import { realPosition } from '../lib/game'
 import ORIGIN from '../lib/origin'
 
 import Image from '../Figure/Image'
@@ -13,6 +12,7 @@ class Scene extends Phaser.Scene {
   constructor (name, color = '#FFFFFF') {
     super(name)
 
+    this.auto = true
     this.debug = true
     this.assets = []
     this.name = name
@@ -71,7 +71,7 @@ class Scene extends Phaser.Scene {
       .push(animation)
 
     const {
-      key, duration, keys, position, real
+      key, duration, keys
     } = animation
 
     const frames = keys
@@ -83,14 +83,13 @@ class Scene extends Phaser.Scene {
       repeat: -1
     })
 
-    const location = real ?? realPosition(position)
-
-    const { x, y } = location
+    const { x, y } = ORIGIN
     const name = keys[0]
 
     const sprite = this
       .add
       .sprite(x, y, name)
+    sprite.setOrigin(x, y)
     sprite.play(key)
     this.sprites.push(sprite)
   }
@@ -308,10 +307,6 @@ class Scene extends Phaser.Scene {
       items.forEach(this.addItem)
     }
 
-    if (animations) {
-      animations.forEach(this.animate)
-    }
-
     if (images) {
       images.forEach(image => {
         image.title ??= image.name
@@ -337,6 +332,10 @@ class Scene extends Phaser.Scene {
             .push(copy)
         }
       })
+    }
+
+    if (animations) {
+      animations.forEach(this.animate)
     }
 
     if (state) {
@@ -468,6 +467,20 @@ class Scene extends Phaser.Scene {
     this
       .figures
       .forEach(figure => figure.update())
+
+    const pageUp = this.input.keyboard.addKey('PAGE_UP')
+    if (pageUp.isDown) {
+      this.auto = false
+    }
+
+    const pageDown = this
+      .input
+      .keyboard
+      .addKey('PAGE_DOWN')
+
+    if (pageDown.isDown || this.auto) {
+      this.advance()
+    }
   }
 
   use (/* name */) {}

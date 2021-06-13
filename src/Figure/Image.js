@@ -20,6 +20,8 @@ export default class Image extends Figure {
     time,
     title
   }) {
+    name ??= title
+
     if (!position && !real) {
       position = ORIGIN
       origin = ORIGIN
@@ -45,7 +47,6 @@ export default class Image extends Figure {
 
     this.to = to
     this.time = time
-    this.name = name
     this.size = size
     this.origin = origin
     this.depth = depth

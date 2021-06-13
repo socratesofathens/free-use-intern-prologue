@@ -293,7 +293,25 @@ class Room extends Scene {
   }
 
   setText = (dialogue, speakerName) => {
-    this.dialogue.setText(dialogue)
+    const name = '[name]'
+    const names = [
+      name,
+      'Quib',
+      'Queasy',
+      'Quesadilla',
+      'Quasimodo',
+      'Quidditch',
+      'Qwerty',
+      'Queen’s Gambit',
+      'Quarantine Daze',
+      'Quest For Glory V: Dragon Fire'
+    ]
+    const bossChat = this.game.state['boss-chat']
+    const nameValue = names[bossChat]
+
+    const named = dialogue.replaceAll(name, nameValue)
+
+    this.dialogue.setText(named)
 
     this
       .speakerName
@@ -302,7 +320,7 @@ class Room extends Scene {
     this
       .game
       .state
-      .dialogue = dialogue
+      .dialogue = named
 
     this
       .game
