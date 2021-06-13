@@ -246,6 +246,7 @@ class Scene extends Phaser.Scene {
     this.reset()
 
     const {
+      add,
       background,
       images,
       fullscreen,
@@ -351,6 +352,24 @@ class Scene extends Phaser.Scene {
 
         this.game.state = newState
       }
+    }
+
+    if (add) {
+      const newState = { ...this.game.state }
+
+      const keys = Object.keys(add)
+      keys.forEach(key => {
+        const value = newState[key]
+        const integer = parseInt(value)
+
+        const newValue = add[key]
+        const parsed = parseInt(newValue)
+        const sum = integer + parsed
+
+        newState[key] = sum
+      })
+
+      this.game.state = newState
     }
 
     if (last) {

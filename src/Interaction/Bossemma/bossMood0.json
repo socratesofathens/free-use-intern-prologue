@@ -1,0 +1,38 @@
+[
+  {
+    "speakerName": "Boss",
+    "dialogue": "This had better be important, [name]. "
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "It's Quinn, sir."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Is that what you're interrupting me about?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "No, sir. I was just wondering– "
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Quinn, I don't pay you to wonder."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "You don't pay me at all, sir. It’s an unpaid internship."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Correct. I don't pay you to wonder, nor for anything else. Now, the next time I see you, you’d better have a cup of hot coffee for me."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yes, sir.",
+    "add": {
+      "boss-mood": "1",
+      "boss-chat": "1"
+    }
+  }
+]

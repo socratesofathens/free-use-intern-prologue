@@ -1,0 +1,18 @@
+[
+  {
+    "speakerName": "Boss",
+    "dialogue": "What do you WANT, [name]?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Sir, my name is Quinn."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Does it look like I care? You're interrupting my morning sex! Get out of here, and don’t come back until you have my damn coffee!",
+    "add": {
+      "boss-mood": "1",
+      "boss-chat": "1"
+    }
+  }
+]
