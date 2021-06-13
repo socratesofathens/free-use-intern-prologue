@@ -272,7 +272,6 @@ class Room extends Scene {
 
       if (zones) {
         zones.forEach(zone => {
-          console.log('zone test:', zone)
           this.spot(zone)
         })
       }
@@ -353,8 +352,6 @@ class Room extends Scene {
     if (save && !this.selecting) return save
 
     const { apps, photos } = this.phone
-
-    console.log('name test:', name)
 
     switch (name) {
       case 'fridge': {

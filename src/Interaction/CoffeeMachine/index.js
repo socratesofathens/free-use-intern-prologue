@@ -16,8 +16,6 @@ class CoffeeMachine extends Interaction {
       'mug-full': mugFull
     } = state
 
-    console.log('state test:', state)
-
     switch (selected) {
       case 'mug': {
         if (coffeeMachine) {

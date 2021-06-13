@@ -54,8 +54,8 @@ export default class Kitchenette extends Room {
         },
         {
           name: 'it-guy',
-          left: { x: 1000, y: 2000 },
-          right: { x: 2000, y: 0 },
+          left: { x: 1000, y: 100 },
+          right: { x: 2000, y: 2000 },
           hover: 'Talk to IT Guy'
         },
         {
