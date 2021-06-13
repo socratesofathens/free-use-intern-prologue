@@ -1,0 +1,11 @@
+[
+  {
+    "dialogue": "You know that cool moment in a movie where the hero moves in slow motion, so elegantly you'd think he was a dancer? He does something so incredibly cool, you just stare at the screen in awe, happy to just be witness to such incredible grace and beauty."
+  },
+  {
+    "dialogue": "Well, when I add sugar to the mug, it's just like that.",
+    "state": {
+      "sugar-mug": true
+    }
+  }
+]

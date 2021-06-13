@@ -1,0 +1,44 @@
+[
+  {
+    "dialogue": "I open the fridge. It's completely empty."
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Oh, yeah, I threw everything out. The rats had gotten to it."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "The rats got in the fridge?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "These rats get into everything, man."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Where's the trash can?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "-laughs- You think we still have trash cans? This is Acuity! When we're done with something, we get a robot to vaporize it."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "But I need milk..."
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "I don't know what to say. It's now vaporized milk. Except, not that kind of vaporized milk. Not the type you can add water to and get milk out of...I'm trying to say it's gone."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Any idea where else I can get some milk?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Unless you've got a cow with you, you're not getting any. And it seems unlikely that you'd have a cow with you. Because I neither see, hear, nor smell a cow."
+  },
+  {
+    "dialogue": "He's right. I left my cow at home today. I've gotten in trouble for bringing Buttercup into work before."
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Suh-weet! I feel better than Daenerys Targaryen on prom night!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "What? Daenerys never went to prom..."
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Oh, sure, if you only follow the show's canon."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "She went to prom in the books?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "In the expanded fan-canon, yeah. Specifically, the fan-fiction I wrote. About taking Daenerys to prom. And before you ask: yes, I was crowned Prom Khal."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "..."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "So...will you fix the coffee machine for me now?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Oh, sure. No problem.",
+    "state": {
+      "it-guy": "5",
+      "coffee-machine": true
+    }
+  }
+]

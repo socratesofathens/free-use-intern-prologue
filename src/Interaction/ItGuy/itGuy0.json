@@ -1,0 +1,65 @@
+[
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Hey, you must be the rat guy!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "The rat...guy?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Yeah."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "You think I'm half-man, half-rat? Like Master Splinter?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Well actually, in the original comics, Splinter was just a mutated rat. But no: aren't you here to take care of the rats?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "No, I'm one of the new interns."
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Uh, no you're not."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I promise, I am."
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "No, you're not. We always have female interns over the summer."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yeah, there was a bit of a mixup this year. It's okay, I'm only here for the day."
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "But who are you really?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I told you – I'm one of the new interns."
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Uh huh. Sure. And I'm Tim Berners-Lee."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Good to meet you, Tim!"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "I'm not Tim Berners-Lee! And I don't believe you're one of the new interns! Now either take care of the damn rats, or get out of here!",
+    "state": {
+      "it-guy": "1"
+    }
+  }
+]

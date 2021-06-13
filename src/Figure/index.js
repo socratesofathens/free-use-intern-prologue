@@ -16,9 +16,12 @@ export default class Figure {
     this.position = position
     this.title = title || name
 
+    console.log('name test:', this.name)
+
     this.scene.figures.push(this)
 
     const interactive = action || hover
+    console.log('interactive test:', interactive)
 
     if (interactive) {
       this.element.setInteractive()
@@ -30,6 +33,7 @@ export default class Figure {
         this.scene.was = this.scene.game.state.dialogue
 
         const text = message || this.hover
+        console.log('text test:', text)
 
         this.scene.setText(text)
       }

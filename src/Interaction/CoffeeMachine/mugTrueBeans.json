@@ -1,0 +1,8 @@
+[
+  {
+    "dialogue": "I use the coffee machine to fill the mug with coffee, and feel oh-so-very smart as I do. This must be how Magellan felt when he invented Magnetic Jelly.",
+    "state": {
+      "mug-full": "COFFEE"
+    }
+  }
+]

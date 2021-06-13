@@ -47,7 +47,7 @@ class Hallway extends Room {
           name: 'office-door',
           left: { x: 1792, y: 699 },
           right: { x: 2065, y: 1069 },
-          hover: "Go to Boss's offie"
+          hover: "Go to Boss's office"
         },
         {
           name: 'kitchenette-door',
@@ -56,7 +56,7 @@ class Hallway extends Room {
           hover: 'Go to kitchenette'
         },
         {
-          name: 'supply-closet-doot',
+          name: 'supply-closet-door',
           left: { x: 2219, y: 86 },
           right: { x: 2410, y: 1499 },
           hover: 'Go to supply closet'

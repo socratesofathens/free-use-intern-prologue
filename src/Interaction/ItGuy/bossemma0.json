@@ -1,0 +1,49 @@
+[
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Oh, wow! The interns really are in – and they're hotter than ever! But hang on, how did we end up with you?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "-sigh- I'm only here for the day. The boss has asked me to get his coffee."
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Well, that's going to be a challenge. Coffee machine is busted."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Can you fix it for me?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Sure...for a price."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "What?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Every summer, there's a bit of a competition among the staff, to see who can collect the intern's underpants."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "You...want my underpants?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Ew. No. No, the chick from the photo."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Emma?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Right. I'm more of a tit guy, but I can't lose three summers in a row. I want her panties! Bring me those, I'll fix the coffee machine for you.",
+    "state": {
+      "it-guy": "4"
+    }
+  }
+]

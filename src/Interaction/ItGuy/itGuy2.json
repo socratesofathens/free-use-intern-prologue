@@ -1,0 +1,13 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "What secrets would I even be able to find in the kitchen?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Well, there's our proprietary new coffee-maker, there's the...hey! Nice try, spy. Almost got me talking. ",
+    "state": {
+      "it-guy": "3"
+    }
+  }
+]

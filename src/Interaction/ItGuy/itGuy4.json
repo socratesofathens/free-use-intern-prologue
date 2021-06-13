@@ -1,0 +1,21 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I–..."
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "SPY!!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "With my little eye?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "No!",
+    "state": {
+      "it-guy": "5"
+    }
+  }
+]

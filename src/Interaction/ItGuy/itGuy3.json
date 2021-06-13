@@ -1,0 +1,13 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Seriously. Emma is in the boss's office right now. She's getting nailed by him. I swear."
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Mmm-hmm. Sure. Like I'm going to take your word for it. Spy!!",
+    "state": {
+      "it-guy": "4"
+    }
+  }
+]

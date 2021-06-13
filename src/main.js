@@ -12,6 +12,7 @@ import One from './Scene/One'
 import Office from './Scene/Office'
 import UnderDesk from './Scene/UnderDesk'
 import Hallway from './Scene/Hallway'
+import Kitchenette from './Scene/Kitchenette'
 
 const config = {
   type: Phaser.AUTO,
@@ -22,7 +23,7 @@ const config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH
   },
-  scene: [Title, Introduction, Prologue, PrologueResolution, One, Office, UnderDesk, Hallway]
+  scene: [Title, Introduction, Prologue, PrologueResolution, One, Office, UnderDesk, Hallway, Kitchenette]
 }
 
 export default new Phaser.Game(config)

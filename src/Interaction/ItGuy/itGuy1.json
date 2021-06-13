@@ -1,0 +1,53 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I really am an intern. I'm here with my friend Emma, and–"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "You can't fool me that easily, spy."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Spy?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Yeah. I worked it out. You're here to work out all the company secrets, aren't you? Why else would you be pretending to be an intern?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I promise, I'm an intern!"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "That's where your research has failed you, spy. Acuity only ever hires female interns."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Right. So my friend Emma is in with the boss, and–"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Prove it."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "What?"
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "If we really do have a female intern in with the boss, that should be pretty easy to prove."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I mean, you could just go...check."
+  },
+  {
+    "speakerName": "IT Guy",
+    "dialogue": "Oh yeah, you'd like that, wouldn't you...SPY? Then, while I'm gone, you could steal all our kitchen secrets!",
+    "state": {
+      "it-guy": "2"
+    }
+  }
+]

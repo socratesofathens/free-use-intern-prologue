@@ -134,11 +134,13 @@ class Room extends Scene {
 
   addSpeakerName () {
     const y = this.TOP - 0.055
+    const color = this.contrast ? 'white' : 'black'
     this.speakerName = this.addText({
       position: { x: this.MARGIN, y },
       content: 'Emma',
       origin: { x: 0, y: 0 },
-      depth: 2
+      depth: 2,
+      options: { color }
     })
   }
 
@@ -270,6 +272,7 @@ class Room extends Scene {
 
       if (zones) {
         zones.forEach(zone => {
+          console.log('zone test:', zone)
           this.spot(zone)
         })
       }
@@ -351,7 +354,39 @@ class Room extends Scene {
 
     const { apps, photos } = this.phone
 
+    console.log('name test:', name)
+
     switch (name) {
+      case 'fridge': {
+        return this.interact({
+          interaction: this.fridge, dry: !wet
+        })
+      }
+      case 'sugar': {
+        return this.interact({
+          interaction: this.sugar, dry: !wet
+        })
+      }
+      case 'coffee-machine': {
+        return this.interact({
+          interaction: this.coffeeMachine, dry: !wet
+        })
+      }
+      case 'mugs': {
+        return this.interact({
+          interaction: this.mugs, dry: !wet
+        })
+      }
+      case 'it-guy': {
+        return this.interact({
+          interaction: this.itGuy, dry: !wet
+        })
+      }
+      case 'leave-kitchenette': {
+        return this.interact({
+          interaction: this.leaveKitchenette, dry: !wet
+        })
+      }
       case 'picture': {
         return this.interact({
           interaction: this.picture, dry: !wet
