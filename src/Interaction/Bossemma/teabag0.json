@@ -1,0 +1,17 @@
+[
+  {
+    "speakerName": "Boss",
+    "dialogue": "What the devil do you want, kiddo? I'm in the middle of–...oh, wow. That’s exactly what I need right now. Cancel the coffee order, bring me a tea! No milk or sugar."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yes, sir."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Thank you, Quinn.",
+    "state": {
+      "boss-teabag": "1"
+    }
+  }
+]

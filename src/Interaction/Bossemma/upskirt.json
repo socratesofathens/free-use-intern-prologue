@@ -1,0 +1,46 @@
+[
+  {
+    "speakerName": "Boss",
+    "dialogue": "Interesting angle. I've never seen myself like that before. It’s almost...artsy. What do you think, Emma?"
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "Um, um, oh! Yes, sir. Yess..."
+  },
+  {
+    "dialogue": "She sounds distracted, for some reason."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Where are your panties, Emma?"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "I had her take them off! They were chafing."
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "They're – oh! – in my pocket, Quinn."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Why don't you take them, lad?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yes, sir! Thank you, sir."
+  },
+  {
+    "dialogue": "Success! I'm holding Emma’s still-warm panties in my hand."
+  },
+  {
+    "dialogue": "If I didn't only have the day, I’d have taken them into the bathroom, and used them while looking at the photo I just showed my boss..",
+    "state": {
+      "panties": "1"
+    },
+    "item": {
+      "name": "panties",
+      "hover": "Use panties"
+    }
+  }
+]

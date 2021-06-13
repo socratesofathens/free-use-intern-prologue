@@ -54,7 +54,9 @@ function format (line) {
   const add = first === 'ADD'
   const state = set || add
 
-  const sub = image || state
+  const item = first === 'ITEM'
+
+  const sub = image || state || item
   if (sub) {
     if (image) {
       const entity = { }
@@ -82,8 +84,6 @@ function format (line) {
         point.animations ??= []
         point.animations.push(entity)
       }
-
-      return entity
     }
 
     if (state) {
@@ -98,9 +98,17 @@ function format (line) {
         point.add ??= {}
         point.add[key] = value
       }
-
-      return point
     }
+
+    if (item) {
+      const name = tokens[1]
+      const title = getTitle(name)
+      const hover = `Use ${title}`
+
+      point.item = { name: title, hover }
+    }
+
+    return
   }
 
   if (touched) {

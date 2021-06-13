@@ -3,6 +3,7 @@ import Phaser from 'phaser'
 import isthisa from 'isthisa'
 
 import ORIGIN from '../lib/origin'
+import { upY } from '../lib/game'
 
 import Image from '../Figure/Image'
 import Zone from '../Figure/Zone'
@@ -41,15 +42,22 @@ class Scene extends Phaser.Scene {
   }
 
   addItem = (options) => {
-    const { name, position, hover } = options
-    const image = `item-${name}`
+    const already = this
+      .game
+      .state
+      .items
+      .find(item => item.name === options.name)
 
-    const item = this
-      .see({ name: image, position, hover })
+    if (already) {
+      return already
+    } else {
+      const item = this.renderItem(
+        options, this.game.state.items.length
+      )
+      this.game.state.items.push(options)
 
-    this.game.state.items.push(options)
-
-    return item
+      return item
+    }
   }
 
   advance () {
@@ -205,7 +213,7 @@ class Scene extends Phaser.Scene {
       .game
       .state
       .items
-      .forEach(this.addItem)
+      .forEach(this.renderItem)
   }
 
   loadPngs (pngs) {
@@ -380,6 +388,40 @@ class Scene extends Phaser.Scene {
     if (!next) {
       this.reload()
     }
+  }
+
+  renderItem = (options, index) => {
+    const { name, hover } = options
+
+    const image = `item-${name}`
+
+    const WIDTH = 0.05300664792
+    const HEIGHT = 0.09423136364
+    const HALF_WIDTH = WIDTH / 2
+    const HALF_HEIGHT = HEIGHT / 2
+
+    const LEFT = 0.8623385323 + HALF_WIDTH
+    const RIGHT = 0.928615955 + HALF_WIDTH
+
+    const TOP = upY(0.8201995455) - HALF_HEIGHT
+    const MIDDLE = upY(0.6668290909) - HALF_HEIGHT
+    const BOTTOM = upY(0.5135040909) - HALF_HEIGHT
+
+    const positions = [
+      { x: LEFT, y: TOP },
+      { x: RIGHT, y: TOP },
+      { x: LEFT, y: MIDDLE },
+      { x: RIGHT, y: MIDDLE },
+      { x: LEFT, y: BOTTOM },
+      { x: RIGHT, y: BOTTOM }
+    ]
+
+    const position = positions[index]
+
+    const item = this
+      .see({ name: image, position, hover })
+
+    return item
   }
 
   reload () {

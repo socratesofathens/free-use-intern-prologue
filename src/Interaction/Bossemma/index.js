@@ -14,10 +14,12 @@ class Bossemma extends Interaction {
       'boss-chat': bossChat,
       'boss-mood': bossMood,
       'boss-selfie': bossSelfie,
+      'boss-teabag': bossTeabag,
       selected
     } = state
 
     const selfie = parseInt(bossSelfie)
+    const teabag = parseInt(bossTeabag)
 
     switch (selected) {
       case 'camera': {
@@ -29,6 +31,31 @@ class Bossemma extends Interaction {
         }
 
         return this.points.selfie1
+      }
+      case 'emma': {
+        return this.points.emma
+      }
+      case 'fucking': {
+        return this.points.fucking
+      }
+      case 'upskirt': {
+        return this.points.upskirt
+      }
+      case 'web': {
+        return this.points.web
+      }
+      case 'teabag': {
+        if (teabag) {
+          return this.points.teabag1
+        }
+
+        return this.points.teabag0
+      }
+      case 'panties': {
+        return this.points.panties
+      }
+      case 'email': {
+        return this.points.email
       }
     }
 
