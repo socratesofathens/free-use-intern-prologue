@@ -3,7 +3,7 @@ import Phaser from 'phaser'
 import isthisa from 'isthisa'
 
 import ORIGIN from '../lib/origin'
-import { upY } from '../lib/game'
+import { upY, GAME_SIZE } from '../lib/game'
 
 import Image from '../Figure/Image'
 import Zone from '../Figure/Zone'
@@ -68,6 +68,10 @@ class Scene extends Phaser.Scene {
     const { point } = this.game.state
     this.game.state.point = point + 1
 
+    if (this.fullscreen) {
+      this.reset()
+    }
+
     this.read()
   }
 
@@ -91,8 +95,8 @@ class Scene extends Phaser.Scene {
       repeat: -1
     })
 
-    const { x, y } = ORIGIN
     const name = keys[0]
+    const { x, y } = ORIGIN
 
     const sprite = this
       .add
@@ -100,6 +104,12 @@ class Scene extends Phaser.Scene {
     sprite.setOrigin(x, y)
     sprite.play(key)
     this.sprites.push(sprite)
+
+    if (animation.fullscreen) {
+      this.fullscreen = sprite
+      sprite.setDisplaySize(GAME_SIZE.width, GAME_SIZE.height)
+      sprite.setDepth(2)
+    }
   }
 
   create = () => {
@@ -269,7 +279,12 @@ class Scene extends Phaser.Scene {
     if (scene) {
       this.save = null
 
-      this.scene.start(scene)
+      const lower = scene.toLowerCase()
+
+      this.game.state.images = []
+      this.images = {}
+
+      this.scene.start(lower)
     }
 
     if (fullscreen) {
@@ -277,7 +292,7 @@ class Scene extends Phaser.Scene {
         ...fullscreen,
         size: { width: 1, height: 1 },
         origin: ORIGIN,
-        depth: 2
+        depth: 5
       })
 
       if (fullscreen.time) {
@@ -440,6 +455,8 @@ class Scene extends Phaser.Scene {
 
     if (this.fullscreen) {
       this.fullscreen.destroy()
+
+      this.images[this.fullscreen.name] = null
     }
   }
 

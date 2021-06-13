@@ -352,6 +352,47 @@ class Room extends Scene {
     const { apps, photos } = this.phone
 
     switch (name) {
+      case 'picture': {
+        return this.interact({
+          interaction: this.picture, dry: !wet
+        })
+      }
+      case 'supply-closet-door': {
+        return this.interact({
+          interaction: this.supplyClosetDoor, dry: !wet
+        })
+      }
+      case 'kitchenette-door': {
+        return this.interact({
+          interaction: this.kitchenetteDoor, dry: !wet
+        })
+      }
+      case 'office-door': {
+        return this.interact({
+          interaction: this.officeDoor, dry: !wet
+        })
+      }
+
+      case 'cradle-under': {
+        return this.interact({
+          interaction: this.cradleUnder, dry: !wet
+        })
+      }
+      case 'upskirt': {
+        return this.interact({
+          interaction: this.upskirt, dry: !wet
+        })
+      }
+      case 'leave-office': {
+        return this.interact({
+          interaction: this.leaveOffice, dry: !wet
+        })
+      }
+      case 'cradle': {
+        return this.interact({
+          interaction: this.cradle, dry: !wet
+        })
+      }
       case 'bossemma':
         return this.interact({
           interaction: this.bossemma, dry: !wet

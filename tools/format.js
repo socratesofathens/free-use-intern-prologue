@@ -38,9 +38,11 @@ function push () {
 function format (line) {
   if (!line.length) return null
 
-  line = line.replace('’', "'")
-  line = line.replace('"', '\\"')
-  line = line.replace('…', '...')
+  line = line.replaceAll('’', "'")
+  line = line.replaceAll('“', '"')
+  line = line.replaceAll('”', '"')
+  line = line.replaceAll('"', `"${''}`)
+  line = line.replaceAll('…', '...')
 
   const tokens = line.split(' ')
   const first = tokens[0]
@@ -55,8 +57,9 @@ function format (line) {
   const state = set || add
 
   const item = first === 'ITEM'
+  const photo = first === 'PHOTO'
 
-  const sub = image || state || item
+  const sub = image || state || item || photo
   if (sub) {
     if (image) {
       const entity = { }
@@ -106,6 +109,15 @@ function format (line) {
       const hover = `Use ${title}`
 
       point.item = { name: title, hover }
+    }
+
+    if (photo) {
+      const name = tokens[1]
+      const title = getTitle(name)
+      const short = title.replace('pic-', '')
+      const hover = `Select ${short}`
+
+      point.photo = { name: short, hover }
     }
 
     return

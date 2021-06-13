@@ -1,0 +1,15 @@
+[
+  {
+    "dialogue": "I \"accidentally\" knock it to the ground."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "\"Whoops!\""
+  },
+  {
+    "dialogue": "I crawl under the desk to retrieve it."
+  },
+  {
+    "scene": "Under-desk"
+  }
+]

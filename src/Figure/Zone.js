@@ -1,3 +1,5 @@
+import Phaser from 'phaser'
+
 import parse from '../lib/parse'
 
 import Figure from './index'
@@ -41,8 +43,10 @@ export default class Zone extends Figure {
     this.right = right
 
     if (scene.debug) {
+      const color = new Phaser.Display.Color().random()
+
       this.rectangle = this.scene.add.rectangle(
-        x, y, width, height, 0xFF0000
+        x, y, width, height, color.color
       )
     }
   }

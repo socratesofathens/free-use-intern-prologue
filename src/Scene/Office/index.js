@@ -1,4 +1,6 @@
 import Bossemma from '../../Interaction/Bossemma'
+import Cradle from '../../Interaction/Cradle'
+import LeaveOffice from '../../Interaction/LeaveOffice'
 
 import Room from '../Room'
 
@@ -22,6 +24,10 @@ class Office extends Room {
     this.bossemma = new Bossemma({
       scene: this
     })
+
+    this.cradle = new Cradle({ scene: this })
+
+    this.leaveOffice = new LeaveOffice({ scene: this })
 
     this.saves = points
 
