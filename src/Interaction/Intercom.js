@@ -335,16 +335,6 @@ class Intercom extends Interaction {
     }
   }
 
-  read (state) {
-    super.read(state)
-
-    const selected = this.select(state)
-
-    const selection = selected[state.point]
-
-    return selection
-  }
-
   select (state) {
     const { intercom, selected } = state
 

@@ -269,7 +269,6 @@ class Room extends Scene {
       }
 
       if (zones) {
-        console.log('zones test:', zones)
         zones.forEach(zone => {
           this.spot(zone)
         })
@@ -353,6 +352,10 @@ class Room extends Scene {
     const { apps, photos } = this.phone
 
     switch (name) {
+      case 'bossemma':
+        return this.interact({
+          interaction: this.bossemma, dry: !wet
+        })
       case 'item-phone':
         if (wet) {
           this.saveText('To celebrate the internship, I bought a brand new phone, an Acuity 556D.')

@@ -14,8 +14,8 @@ class Steve extends Interaction {
     this.points = values.map(this.setup)
   }
 
-  read (state) {
-    const { steve, point } = state
+  select (state) {
+    const { steve } = state
 
     const index = steve || 0
     const integer = parseInt(index)
@@ -34,11 +34,9 @@ class Steve extends Interaction {
       dialogue: 'I only have one number in here, my friend Steve. I should call him.'
     }
 
-    const introduced = [
-      introduction, ...points
-    ]
+    const introduced = [introduction, ...points]
 
-    return introduced[point]
+    return introduced
   }
 }
 

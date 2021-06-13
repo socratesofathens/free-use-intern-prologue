@@ -1,0 +1,25 @@
+[
+  {
+    "speakerName": "Boss",
+    "dialogue": "Mmm? What do you want? I'm sort of busy."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Just wanted to check how you like your coffee, sir."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "The same way I like my interns: hot, sweet, and milky-white. Uh, don't mention that last part to HR. I got in trouble for putting that in last year’s ad."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yes, sir. Understood."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Oh, and make sure you use my favorite mug. I've used the same mug for twenty years, and I have no interest in using a new one.",
+    "state": {
+      "boss-chat": "1"
+    }
+  }
+]

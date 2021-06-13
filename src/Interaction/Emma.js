@@ -310,16 +310,6 @@ class Emma extends Interaction {
     }
   }
 
-  read (state) {
-    super.read(state)
-
-    const selected = this.select(state)
-
-    const chosen = selected[state.point]
-
-    return chosen
-  }
-
   select (state) {
     const {
       intercom,

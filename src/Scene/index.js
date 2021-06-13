@@ -12,7 +12,7 @@ class Scene extends Phaser.Scene {
   constructor (name, color = '#FFFFFF') {
     super(name)
 
-    this.auto = true
+    this.auto = false
     this.debug = true
     this.assets = []
     this.name = name
@@ -470,7 +470,7 @@ class Scene extends Phaser.Scene {
 
     const pageUp = this.input.keyboard.addKey('PAGE_UP')
     if (pageUp.isDown) {
-      this.auto = false
+      this.auto = !this.auto
     }
 
     const pageDown = this

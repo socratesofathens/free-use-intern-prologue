@@ -17,9 +17,9 @@ const input = clip && clip.length
 
 const lines = input.split(/\r?\n/)
 
-let point = {}
 const points = []
-let subbed
+let point = {}
+let touched = false
 
 function getTitle (name) {
   const period = name.indexOf('.')
@@ -31,13 +31,11 @@ function getTitle (name) {
 function push () {
   points.push(point)
 
-  subbed = false
-
   point = {}
+  touched = false
 }
 
 function format (line) {
-  console.log('line test:', line)
   if (!line.length) return null
 
   line = line.replace('’', "'")
@@ -58,8 +56,6 @@ function format (line) {
 
   const sub = image || state
   if (sub) {
-    subbed = true
-
     if (image) {
       const entity = { }
       const name = tokens[1]
@@ -107,20 +103,26 @@ function format (line) {
     }
   }
 
+  if (touched) {
+    push()
+  }
+
+  touched = true
+
   const fullscreen = first === '!!!'
   if (fullscreen) {
     const file = tokens[1]
     const name = getTitle(file)
     point.fullscreen = { name }
 
-    return push()
+    return
   }
 
   const goto = first === 'GOTO'
   if (goto) {
     point.scene = tokens[1]
 
-    return push()
+    return
   }
 
   const split = line.indexOf(':')
@@ -136,19 +138,15 @@ function format (line) {
     point.speakerName = speakerName
     point.dialogue = dialogue
 
-    return push()
+    return
   }
 
   point.dialogue = line
-
-  push()
 }
 
 lines.forEach(format)
 
-if (subbed) {
-  push()
-}
+push()
 
 const output = JSON.stringify(points, null, 2)
 console.log(output)

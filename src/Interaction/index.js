@@ -22,23 +22,33 @@ export default class Interaction {
     point.images = newImages
   }
 
-  read (/* state */) {
+  read (state) {
     this.scene.phone.reset()
+
+    const selected = this.select(state) || []
+
+    const selection = selected[state.point]
+
+    return selection
   }
 
   setup = (points) => {
-    const [first] = points
-    this.addImages(first, this.first)
-
-    const last = points[points.length - 1]
-
-    if (!last.dialogue) {
-      last.dialogue = ' '
-      last.interaction = 0
+    if (this.first) {
+      const [first] = points
+      this.addImages(first, this.first)
     }
 
-    this.addImages(last, this.last)
-    last.last = true
+    if (this.last) {
+      const last = points[points.length - 1]
+
+      if (!last.dialogue) {
+        last.dialogue = ' '
+        last.interaction = 0
+      }
+
+      this.addImages(last, this.last)
+      last.last = true
+    }
 
     return points
   }

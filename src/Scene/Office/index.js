@@ -1,3 +1,5 @@
+import Bossemma from '../../Interaction/Bossemma'
+
 import Room from '../Room'
 
 import points from './points'
@@ -16,9 +18,9 @@ class Office extends Room {
   }
 
   setup = () => {
-    // this.emma = new Emma({
-    //   scene: this
-    // })
+    this.bossemma = new Bossemma({
+      scene: this
+    })
 
     this.saves = points
 
