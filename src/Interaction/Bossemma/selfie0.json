@@ -1,0 +1,30 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Boss, I really think you're going to want to see this."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Hmm? Kid, this is...this is just a photo of you."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I know, sir. Isn't it a great pic? I’m really proud of it."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "What the hell made you think that I'd want to see a photo of your face – which, by the way, is already right in front of me – while I’m in the middle of having sex."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Like I said, sir: it's just a really great pic!"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Get out!!",
+    "add": {
+      "boss-mood": "3",
+      "boss-selfie": "1"
+    }
+  }
+]

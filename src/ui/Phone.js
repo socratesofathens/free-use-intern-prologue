@@ -16,7 +16,7 @@ export default class Phone {
 
     this.apps = new Icons({
       names: [
-        { name: 'Power' },
+        { name: 'Power', hover: 'Close phone' },
         {
           name: 'Phone',
           hover: 'Make call'
@@ -42,7 +42,7 @@ export default class Phone {
     })
 
     this.photos = new Icons({
-      names: [{ name: 'Home' }],
+      names: [{ name: 'Home', hover: 'Close photos' }],
       phone: this
     })
 

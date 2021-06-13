@@ -12,8 +12,25 @@ class Bossemma extends Interaction {
   select (state) {
     const {
       'boss-chat': bossChat,
-      'boss-mood': bossMood
+      'boss-mood': bossMood,
+      'boss-selfie': bossSelfie,
+      selected
     } = state
+
+    const selfie = parseInt(bossSelfie)
+
+    switch (selected) {
+      case 'camera': {
+        return this.points.camera
+      }
+      case 'selfie': {
+        if (selfie === 0) {
+          return this.points.selfie0
+        }
+
+        return this.points.selfie1
+      }
+    }
 
     const chat = parseInt(bossChat)
     const mood = parseInt(bossMood)

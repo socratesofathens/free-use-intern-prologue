@@ -11,7 +11,8 @@ class Office extends Room {
     this.loadPngs([
       'bosssex1',
       'bosssex2',
-      'office-arrow'
+      'office-arrow',
+      'pic-fucking'
     ])
 
     this.assets.push({ name: 'office', type: 'jpg' })
