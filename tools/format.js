@@ -94,7 +94,14 @@ function format (line) {
 
       if (set) {
         point.state ??= {}
-        point.state[key] = value
+
+        if (value === 'TRUE') {
+          point.state[key] = true
+        } else if (value === 'FALSE') {
+          point.state[key] = false
+        } else {
+          point.state[key] = value
+        }
       }
 
       if (add) {
