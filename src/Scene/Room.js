@@ -269,6 +269,7 @@ class Room extends Scene {
       }
 
       if (zones) {
+        console.log('zones test:', zones)
         zones.forEach(zone => {
           this.spot(zone)
         })

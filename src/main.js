@@ -4,12 +4,12 @@ import {
   GAME_WIDTH, GAME_HEIGHT
 } from './lib/game'
 
-import Introduction from './scene/Introduction'
-import Title from './scene/Title'
-import Prologue from './scene/Prologue'
-import PrologueResolution from './scene/PrologueResolution'
-import One from './scene/One'
-import Office from './scene/Office'
+import Introduction from './Scene/Introduction'
+import Title from './Scene/Title'
+import Prologue from './Scene/Prologue'
+import PrologueResolution from './Scene/PrologueResolution'
+import One from './Scene/One'
+import Office from './Scene/Office'
 
 const config = {
   type: Phaser.AUTO,

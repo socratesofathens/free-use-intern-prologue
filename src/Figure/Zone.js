@@ -1,3 +1,5 @@
+import parse from '../lib/parse'
+
 import Figure from './index'
 
 export default class Zone extends Figure {
@@ -9,6 +11,9 @@ export default class Zone extends Figure {
     name,
     right
   }) {
+    left = parse(left)
+    right = parse(right)
+
     const width = right.x - left.x
     const height = right.y - left.y
 

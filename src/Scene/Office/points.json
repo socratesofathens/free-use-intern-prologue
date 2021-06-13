@@ -17,6 +17,20 @@
         "duration": "650",
         "key": "bosssex"
       }
+    ],
+    "zones": [
+      {
+        "name": "bossemma",
+        "left": {
+          "x": "735",
+          "y": "342"
+        },
+        "right": {
+          "x": 2691,
+          "y": 1885
+        },
+        "hover": "Talk to Boss"
+      }
     ]
   },
   {
