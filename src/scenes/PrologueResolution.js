@@ -2,7 +2,7 @@ import Room from './Room'
 
 class Office extends Room {
   constructor () {
-    super('office', 0x000000)
+    super('prologue-resolution', 0x000000)
 
     this.loadPngs([
       'boss',
@@ -19,8 +19,7 @@ class Office extends Room {
         background: 'office',
         images: [
           {
-            name: 'boss',
-            real: { x: 1585, y: 1082 }
+            name: 'boss'
           }
         ],
         dialogue: 'Once we got inside the building, it wasn\'t hard to find our new workplace. We were told to go find the boss. He looked pleased to see Emma...and surprised to see me.'
@@ -188,6 +187,9 @@ class Office extends Room {
       },
       {
         dialogue: "This might just be the best job I've ever had."
+      },
+      {
+        scene: 'one'
       }
     ]
 

@@ -1,5 +1,3 @@
-import ORIGIN from '../lib/origin'
-
 import Emma from '../Interaction/Emma'
 import Intercom from '../Interaction/Intercom'
 
@@ -12,7 +10,9 @@ class Prologue extends Room {
     this.loadPngs([
       'blank',
       'doors',
-      'emma',
+      'emma-side',
+      'emma-study',
+      'emma-talk',
       'icon-power',
       'icon-power-selected',
       'icon-phone',
@@ -50,21 +50,23 @@ class Prologue extends Room {
     this.saves = [
       {
         background: 'doors',
-        images: [
+        zones: [
           {
-            name: 'blank',
-            position: { x: 0.5786243927, y: 0.4318181818 },
-            size: { width: 0.08616722066, height: 0.1227272727 },
-            origin: ORIGIN,
-            hover: 'Talk to Intercom',
-            title: 'intercom-back'
+            name: 'intercom',
+            left: { x: 2263, y: 950 },
+            right: { x: 2600, y: 1220 },
+            hover: 'Talk to Intercom'
           },
           {
-            name: 'emma',
-            scale: 0.7528,
-            position: { x: 0.2267962158, y: 0.6190909091 },
-            title: 'emma-back',
+            name: 'emmaction',
+            left: { x: 534, y: 58 },
+            right: { x: 1189, y: 1806 },
             hover: 'Talk to Emma'
+          }
+        ],
+        images: [
+          {
+            name: 'emma-side'
           },
           {
             title: 'emma-animation',

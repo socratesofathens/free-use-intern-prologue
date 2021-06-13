@@ -5,10 +5,9 @@ class Intercom extends Interaction {
     const first = [
       {
         name: 'intercom',
-        position: { x: 0.4507798517, y: 0.4513636364 },
         title: 'intercom-front'
       },
-      { name: 'emma-back', remove: true }
+      { name: 'emma-side', remove: true }
     ]
 
     const last = [
@@ -17,11 +16,7 @@ class Intercom extends Interaction {
         remove: true
       },
       {
-        name: 'emma',
-        scale: 0.7528,
-        position: { x: 0.2267962158, y: 0.6190909091 },
-        title: 'emma-back',
-        hover: 'Talk to Emma'
+        name: 'emma-side'
       }
     ]
 

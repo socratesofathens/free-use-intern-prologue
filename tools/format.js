@@ -17,7 +17,7 @@ const input = clip && clip.length
 
 const lines = input.split(/\r?\n/)
 
-let point
+let point = {}
 const points = []
 
 function getTitle (name) {
@@ -25,6 +25,12 @@ function getTitle (name) {
   const title = name.slice(0, period)
 
   return title
+}
+
+function push () {
+  points.push(point)
+
+  point = {}
 }
 
 function format (line) {
@@ -37,13 +43,18 @@ function format (line) {
 
   const tokens = line.split(' ')
   const first = tokens[0]
-  const three = first.length === 3
-  if (three) {
-    console.log('three test:', three)
-    const plus = first === '+++'
-    const minus = first === '---'
-    const animation = first === '>>>'
-    const image = plus || minus || animation
+
+  const plus = first === '+++'
+  const minus = first === '---'
+  const animation = first === '>>>'
+  const image = plus || minus || animation
+
+  const set = first === 'SET'
+  const add = first === 'ADD'
+  const state = set || add
+
+  const sub = image || state
+  if (sub) {
     if (image) {
       const entity = { }
       const name = tokens[1]
@@ -53,8 +64,6 @@ function format (line) {
       if (plus || animation) {
         entity.x = tokens[2]
         entity.y = tokens[3]
-
-        // TODO naive fullscreen
       }
 
       if (minus) {
@@ -80,9 +89,6 @@ function format (line) {
       return entity
     }
 
-    const set = first === 'SET'
-    const add = first === 'ADD'
-    const state = set || add
     if (state) {
       const [, key, value] = tokens
 
@@ -100,17 +106,20 @@ function format (line) {
     }
   }
 
-  console.log('point test:', point)
-  if (point) {
-    console.log('pushing test:')
-    points.push(point)
+  const fullscreen = first === '!!!'
+  if (fullscreen) {
+    const file = tokens[1]
+    const name = getTitle(file)
+    point.fullscreen = { name }
+
+    return push()
   }
-  console.log('points test:', points)
-  point = {}
 
   const goto = first === 'GOTO'
   if (goto) {
     point.scene = tokens[1]
+
+    return push()
   }
 
   const split = line.indexOf(':')
@@ -126,14 +135,15 @@ function format (line) {
     point.speakerName = speakerName
     point.dialogue = dialogue
 
-    return point
+    return push()
   }
 
   point.dialogue = line
+
+  push(point)
 }
 
 lines.forEach(format)
-points.push(point)
 
 const output = JSON.stringify(points, null, 2)
 console.log(output)

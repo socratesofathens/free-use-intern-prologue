@@ -4,25 +4,19 @@ class Emma extends Interaction {
   constructor ({ scene }) {
     const first = [
       {
-        title: 'emma-back', remove: true
+        title: 'emma-side', remove: true
       },
       {
-        name: 'emma',
-        position: { x: 0.4717463564, y: 0.6881818182 },
-        title: 'emma-front'
+        name: 'emma-talk'
       }
     ]
 
     const last = [
       {
-        name: 'emma',
-        scale: 0.7528,
-        position: { x: 0.2267962158, y: 0.6190909091 },
-        title: 'emma-back',
-        hover: 'Talk to Emma'
+        name: 'emma-side'
       },
       {
-        title: 'emma-front',
+        title: 'emma-talk',
         remove: true
       }
     ]
@@ -185,7 +179,7 @@ class Emma extends Interaction {
         dialogue: 'Thanks, Emma.'
       },
       {
-        scene: 'office'
+        scene: 'prologue-resolution'
       }
     ])
 
@@ -289,9 +283,17 @@ class Emma extends Interaction {
       dialogue: "Looks like this is definitely the right place. I'm so nervous!"
     }])
 
-    const web = this.setup([{
-      dialogue: "Looking Emma up on Cloo doesn't yield much. She prefers to stay out of the limelight."
-    }])
+    const web = this.setup([
+      {
+        dialogue: 'I look Emma up on Cloo, as I\'ve done so many times before. One of her ex-boyfriends leaked a photo he took of her studying in her bedroom. I check all the time, in the hope he’ll share more.'
+      },
+      {
+        fullscreen: {
+          name: 'emma-study'
+        }
+      },
+      { dialogue: ' ' }
+    ])
 
     this.points = {
       base,

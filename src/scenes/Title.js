@@ -1,4 +1,4 @@
-import Scene from './Scene'
+import Scene from './index'
 
 class Title extends Scene {
   constructor () {

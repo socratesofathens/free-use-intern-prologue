@@ -18,8 +18,7 @@ export default class Image extends Figure {
     size,
     to,
     time,
-    title,
-    uses
+    title
   }) {
     if (!position && !real) {
       position = ORIGIN
@@ -36,13 +35,12 @@ export default class Image extends Figure {
 
     super({
       scene,
-      position,
-      element: image,
-      uses,
       action,
+      element: image,
+      hover,
       name,
-      title,
-      hover
+      position,
+      title
     })
 
     this.to = to
@@ -114,5 +112,7 @@ export default class Image extends Figure {
 
       this.element.body.reset(x, y)
     }
+
+    super.update()
   }
 }

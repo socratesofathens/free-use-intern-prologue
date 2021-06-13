@@ -1,13 +1,12 @@
 export default class Figure {
   constructor ({
     scene,
-    position,
-    element,
-    uses = [],
     action,
+    element,
+    hover,
     name,
-    title,
-    hover
+    position,
+    title
   }) {
     this.scene = scene
     this.scene.figures.push(this)
@@ -19,36 +18,37 @@ export default class Figure {
     this.element = element
 
     this.hover = hover
-
-    this.element.setInteractive()
-    this.element.on(
-      'pointerdown', this.onClick
-    )
-
-    const inPointerover = (message) => {
-      this.scene.was = this.scene.game.state.dialogue
-
-      const text = message || this.hover
-
-      this.scene.setText(text)
-    }
-
-    const onPointerover = this.inRoom(inPointerover, true)
-    this
-      .element
-      .on('pointerover', onPointerover)
-
-    const inPointerout = () => {
-      this.scene.setText(this.scene.was)
-    }
-    const onPointerout = this.inRoom(inPointerout)
-    this
-      .element
-      .on('pointerout', onPointerout)
-
     this.name = name
 
-    this.uses = uses
+    const interactive = action || hover
+
+    if (interactive) {
+      this.element.setInteractive()
+      this.element.on(
+        'pointerdown', this.onClick
+      )
+
+      const inPointerover = (message) => {
+        this.scene.was = this.scene.game.state.dialogue
+
+        const text = message || this.hover
+
+        this.scene.setText(text)
+      }
+
+      const onPointerover = this.inRoom(inPointerover, true)
+      this
+        .element
+        .on('pointerover', onPointerover)
+
+      const inPointerout = () => {
+        this.scene.setText(this.scene.was)
+      }
+      const onPointerout = this.inRoom(inPointerout)
+      this
+        .element
+        .on('pointerout', onPointerout)
+    }
   }
 
   destroy () {
@@ -144,8 +144,6 @@ export default class Figure {
   onClick = () => {
     this.reset()
 
-    this.uses.forEach(this.use, this)
-
     if (this.action) {
       this.action()
     }
@@ -156,6 +154,8 @@ export default class Figure {
   }
 
   reset () {}
+
+  update () {}
 
   use ({ key, text, color, callback }) {
     const { tool } = this.scene

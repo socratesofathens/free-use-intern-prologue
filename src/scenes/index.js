@@ -6,12 +6,14 @@ import { realPosition } from '../lib/game'
 import ORIGIN from '../lib/origin'
 
 import Image from '../Figure/Image'
+import Zone from '../Figure/Zone'
 import Interaction from '../Interaction'
 
 class Scene extends Phaser.Scene {
   constructor (name, color = '#FFFFFF') {
     super(name)
 
+    this.debug = true
     this.assets = []
     this.name = name
     this.color = color
@@ -452,6 +454,14 @@ class Scene extends Phaser.Scene {
 
       this.read()
     }
+  }
+
+  spot (options) {
+    const spotted = { ...options, scene: this }
+
+    const zone = new Zone(spotted)
+
+    return zone
   }
 
   update () {

@@ -9,7 +9,7 @@ import Steve from '../Interaction/Steve'
 import Phone from '../ui/Phone'
 import Sidebar from '../ui/Sidebar'
 
-import Scene from './Scene'
+import Scene from './index'
 
 class Room extends Scene {
   constructor (name, color) {
@@ -229,7 +229,8 @@ class Room extends Scene {
         apps,
         interaction,
         point,
-        final
+        final,
+        zones
       } = this.save
 
       const isZero = interaction === 0
@@ -265,6 +266,12 @@ class Room extends Scene {
 
       if (apps === false && open) {
         this.phone.openPhotos()
+      }
+
+      if (zones) {
+        zones.forEach(zone => {
+          this.spot(zone)
+        })
       }
 
       if (final) {
@@ -318,7 +325,7 @@ class Room extends Scene {
   }
 
   use (figure, wet = true) {
-    const { name, title } = figure
+    const { name } = figure
     super.use(name)
 
     const save = this.extract(1)
@@ -416,14 +423,12 @@ class Room extends Scene {
         }
 
         return 'dry'
-      case 'emma': {
-        const back = title === 'emma-back'
-
-        return back && this.interact({
+      case 'emmaction': {
+        return this.interact({
           interaction: this.emma, dry: !wet
         })
       }
-      case 'blank': {
+      case 'intercom': {
         return this.interact({
           interaction: this.intercom, dry: !wet
         })

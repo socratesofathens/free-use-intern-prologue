@@ -1,0 +1,23 @@
+[
+  {
+    "state": {
+      "boss-mood": "0",
+      "boss-chat": "0",
+      "mug-full": "EMPTY",
+      "mug": "0",
+      "correct-mug": "FALSE",
+      "boss-selfie": "0",
+      "boss-teabag": "0",
+      "it-guy": "0",
+      "salesman": "0",
+      "boss-mug": "0",
+      "coffee-machine": "FALSE",
+      "sugar-mug": "FALSE",
+      "panties": "0",
+      "resolution": "0"
+    },
+    "fullscreen": {
+      "name": "chapter1"
+    }
+  }
+]
