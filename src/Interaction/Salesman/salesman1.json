@@ -1,0 +1,25 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "How can I prove to you that I really am one of the interns."
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "My lad, just the idea is preposterous! Acuity only ever takes female interns. Everyone knows that!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yeah, my name is Quinn, and...-"
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "Quinn? But that's a WOMAN's name! What a brouhaha!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "So people keep telling me.",
+    "state": {
+      "salesman": "2"
+    }
+  }
+]

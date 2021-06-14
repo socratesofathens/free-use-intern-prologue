@@ -1,0 +1,18 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Please, I-..."
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "Good day, sir!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "But I..."
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "I said good day!"
+  }
+]

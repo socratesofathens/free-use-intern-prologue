@@ -354,6 +354,21 @@ class Room extends Scene {
     const { apps, photos } = this.phone
 
     switch (name) {
+      case 'leave-mugs': {
+        return this.interact({
+          interaction: this.leaveMugs, dry: !wet
+        })
+      }
+      case 'salesman': {
+        return this.interact({
+          interaction: this.salesman, dry: !wet
+        })
+      }
+      case 'leave-supply-closet': {
+        return this.interact({
+          interaction: this.leaveSupplyCloset, dry: !wet
+        })
+      }
       case 'fridge': {
         return this.interact({
           interaction: this.fridge, dry: !wet
@@ -528,6 +543,14 @@ class Room extends Scene {
           interaction: this.intercom, dry: !wet
         })
       }
+    }
+
+    if (name.includes('mug')) {
+      const mug = this.mugs[name]
+
+      return this.interact({
+        interaction: mug, dry: !wet
+      })
     }
 
     if (wet && name.includes('-selected')) {

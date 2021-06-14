@@ -1,0 +1,32 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I really am a man named Quinn. I'm here with my best friend Emma, and...-"
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "And pray tell, is this \"Emma\" a gentleman as well?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "No. She's a woman."
+  },
+  {
+    "dialogue": "And what a woman."
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "If I may be perfectly honest, good sir, this all sounds like balderdash! Unless you can provide some proof that there truly is a female intern, I must request that you scram."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "How can I-..."
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "Scram!!",
+    "state": {
+      "salesman": "3"
+    }
+  }
+]

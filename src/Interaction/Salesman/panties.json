@@ -1,0 +1,47 @@
+[
+  {
+    "speakerName": "Salesman",
+    "dialogue": "Suffering succotash! Could it really be? Oh, Heavens to Betsy: you've brought me the finest pair of contrapunctum-coverers I've ever borne witness to. I'm truly in your debt; tell me, young Quinn, what's your nickel?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "What?"
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "How can I repay you for this kind gift?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Well, you said you had something better than coffee..."
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "Of course! Though to be fair, most anything is better than that pigeon sweat. Here you go, my friend.",
+    "item": {
+      "name": "icon-teabag",
+      "hover": "Use icon-teabag"
+    },
+    "remove": "panties"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "A teabag?"
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "Quite right! "
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "But the boss asked for coffee."
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "Fiddlesticks! No man on God's green earth can lay eyes on that without desperately craving a cuppa. Trust me on this."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Uh huh. Sure. Thanks."
+  }
+]

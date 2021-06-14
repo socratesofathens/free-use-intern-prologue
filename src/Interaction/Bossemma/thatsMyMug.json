@@ -1,0 +1,9 @@
+[
+  {
+    "speakerName": "Boss",
+    "dialogue": "That's my mug, but what on earth have you done to it??",
+    "add": {
+      "boss-mood": "1"
+    }
+  }
+]

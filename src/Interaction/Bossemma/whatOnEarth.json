@@ -1,0 +1,23 @@
+[
+  {
+    "speakerName": "Boss",
+    "dialogue": "What on earth do you want, [name]?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Sir, I just wanted to check that this is the mug you like."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "That's it! [boss-description] Been using it since the day I started here."
+  },
+  {
+    "dialogue": "Well, that's one mystery solved.",
+    "state": {
+      "boss-mug": "1"
+    },
+    "add": {
+      "boss-chat": "1"
+    }
+  }
+]

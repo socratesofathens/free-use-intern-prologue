@@ -1,0 +1,22 @@
+[
+  {
+    "speakerName": "Boss",
+    "dialogue": "What is it, [name]?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I just watched to check if this was your mug?"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "No! That's not it! How are you so bad at this??"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Sorry, sir. I'll keep looking.",
+    "add": {
+      "boss-mood": "2",
+      "boss-chat": "1"
+    }
+  }
+]

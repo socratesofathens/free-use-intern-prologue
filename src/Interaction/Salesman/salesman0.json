@@ -1,0 +1,29 @@
+[
+  {
+    "speakerName": "Salesman",
+    "dialogue": "Gee whillikers, who are you?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Uh, hi. I'm Quinn, one of the new interns."
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "Don't be yanking my chain now."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I'm serious. There was a misunderstanding; I'm only here for the day. I'm here with my best friend Emma, and...-"
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "Pish posh! I can't go believing these claims without some kind of proof."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "-sigh- I'll see what I can find.",
+    "state": {
+      "salesman": "1"
+    }
+  }
+]

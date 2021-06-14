@@ -1,0 +1,18 @@
+[
+  {
+    "speakerName": "Boss",
+    "dialogue": "Damn it, [name], you're here to make our lives easier, not destroy the crockery!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Is this your mug, sir?"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "No! Thank heavens. I don't know what I'd do if my favorite mug were to be broken...well, now I'm sad. Nice work, [name].",
+    "add": {
+      "boss-mood": "1",
+      "boss-chat": "1"
+    }
+  }
+]

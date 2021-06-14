@@ -1,0 +1,21 @@
+[
+  {
+    "speakerName": "Salesman",
+    "dialogue": "Jumping Jehoshaphat! What a beautiful sight. Thank you kindly for sharing this with me, young Quinn. Is there anything I can do for you in return?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Do you mind grabbing that coffee for me? I can't reach it."
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "By gum, it would be an honor! Thanks to you, I'll be in fine fettle for the rest of the day.",
+    "item": {
+      "name": "icon-coffee",
+      "hover": "Use icon-coffee"
+    },
+    "state": {
+      "salesman": "5"
+    }
+  }
+]
