@@ -4,7 +4,7 @@ import jsons from './*.json'
 
 export default class Mug extends Interaction {
   constructor ({ scene, number }) {
-    const name = `mug${number}`
+    const name = `mug-${number}`
     super({ scene, name })
 
     this.points = jsons
@@ -52,7 +52,6 @@ export default class Mug extends Interaction {
         return this.points.repaired
       } else {
         if (mug) {
-          console.log('this.points test:', this.points)
           const points = mug
             ? this.points.emptyfalse0
             : this.points.emptyfalse1
@@ -74,8 +73,6 @@ export default class Mug extends Interaction {
 
           const description = descriptions[this.number]
 
-          console.log('points test:', points)
-
           const replaced = points.map(point => {
             const dialogue = point
               .dialogue
@@ -90,6 +87,10 @@ export default class Mug extends Interaction {
           point.state = {
             mug: this.number,
             'correct-mug': mug === mugGoal
+          }
+          point.item = {
+            name: `mug-${this.number}`,
+            hover: 'Use mug'
           }
 
           return replaced

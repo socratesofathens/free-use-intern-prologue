@@ -19,8 +19,8 @@
     "speakerName": "Salesman",
     "dialogue": "Of course! Though to be fair, most anything is better than that pigeon sweat. Here you go, my friend.",
     "item": {
-      "name": "icon-teabag",
-      "hover": "Use icon-teabag"
+      "name": "teabag",
+      "hover": "Use teabag"
     },
     "remove": "panties"
   },

@@ -316,7 +316,7 @@ class Intercom extends Interaction {
         dialogue: 'Sweet. Great. Is she ever going to see me as anything more than that?'
       },
       {
-        scene: 'office'
+        scene: 'prologue-resolution'
       }
     ])
 

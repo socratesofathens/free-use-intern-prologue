@@ -13,7 +13,9 @@ class UnderDesk extends Room {
       'under-desk',
       'upskirt1',
       'upskirt2',
-      'pic-upskirt'
+      'pic-upskirt',
+      'icon-upskirt',
+      'icon-upskirt-selected'
     ])
   }
 

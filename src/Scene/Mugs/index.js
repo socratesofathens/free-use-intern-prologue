@@ -8,7 +8,18 @@ export default class Mugs extends Room {
     super('mugs', 0x000000)
 
     this.loadPngs([
-      'mugs'
+      'mugs',
+      'item-mug-1',
+      'item-mug-2',
+      'item-mug-3',
+      'item-mug-4',
+      'item-mug-5',
+      'item-mug-6',
+      'item-mug-7',
+      'item-mug-8',
+      'item-mug-9',
+      'item-mug-10',
+      'item-mug-11'
     ])
   }
 
@@ -88,13 +99,13 @@ export default class Mugs extends Room {
     ]
     this.mugs = {}
     bits.forEach(bit => {
-      const name = `mug${bit.number}`
+      const name = `mug-${bit.number}`
 
       point.zones.push({
         name,
         left: bit.left,
         right: bit.right,
-        hover: 'Use mug'
+        hover: 'Take mug'
       })
 
       this.mugs[name] = new Mug({

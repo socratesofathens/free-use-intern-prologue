@@ -313,7 +313,46 @@ class Room extends Scene {
 
     const named = dialogue.replaceAll(name, nameValue)
 
-    this.dialogue.setText(named)
+    const description = '[description]'
+    const descriptions = [
+      description,
+      'It has a drawing of what looks like two lions fighting over a shield.',
+      'It looks like it has that guy from The Hangover on it. Not that guy, the other one. No, the other other one.',
+      'It has a piece of art on it: it looks like someone tried to draw a dog’s face but got lost along the way.',
+      'It has a dude on it. Looks like a grizzled French war veteran.',
+      'It has blue cotton candy on it. Weird.',
+      'It looks like it has some kind of robot donut on it. Electro-yum.',
+      'It’s got a kid on it.',
+      'It has a flea on it, for some reason.',
+      'It looks like it’s gone through the dishwasher too many times and the smiley face on it melted.',
+      'It has a logo on it, looks like it’s from a kid’s film.',
+      'It looks like a promotional mug from a tropical resort.'
+    ]
+    const bossDescription = '[boss-description]'
+    const bossDescriptions = [
+      bossDescription,
+      'the Amsterdam one',
+      'With my old acapella buddy’s face on it.',
+      'With the beautiful foreign land. I’d love to visit someday.',
+      'The Metal Gear Solid one.',
+      'With the beard.',
+      'The Halo one.',
+      'The Limbo one.',
+      'With the silt strider!',
+      'The Oddworld one.',
+      'The Snow Daze one. Such a well-written game.',
+      'The Summertime Saga one. Don’t tell anyone, but Roz is my favorite.'
+    ]
+
+    const { mug } = this.game.state
+    const descriptionValue = descriptions[mug]
+    const bossDescriptionValue = bossDescriptions[mug]
+    const described = named
+      .replaceAll(description, descriptionValue)
+    const bossDescribed = described
+      .replaceAll(bossDescription, bossDescriptionValue)
+
+    this.dialogue.setText(bossDescribed)
 
     this
       .speakerName
@@ -444,10 +483,22 @@ class Room extends Scene {
         return this.interact({
           interaction: this.bossemma, dry: !wet
         })
+      case 'item-teabag':
+        if (wet) {
+          this.game.state.selected = 'teabag'
+          this.game.state.selecting = true
+          return this.saveText('Tea contains several stimulants including caffeine, theobromine, theophylline and L-theanine.')
+        }
+        return 'dry'
+      case 'item-panties':
+        if (wet) {
+          this.game.state.selected = 'panties'
+          this.game.state.selecting = true
+          return this.saveText('Still warm.')
+        }
+        return 'dry'
       case 'item-phone':
         if (wet) {
-          this.saveText('To celebrate the internship, I bought a brand new phone, an Acuity 556D.')
-
           return this.openPhone()
         }
 
@@ -521,6 +572,14 @@ class Room extends Scene {
         }
 
         return 'dry'
+      case 'icon-upskirt':
+        if (wet) {
+          photos.upskirt.select()
+
+          return this.saveText('Those stockings are going right in the trash.')
+        }
+
+        return 'dry'
       case 'icon-selfie':
         if (wet) {
           photos.selfie.select()
@@ -554,6 +613,17 @@ class Room extends Scene {
     }
 
     if (name.includes('mug')) {
+      if (name.includes('item')) {
+        if (wet) {
+          this.game.state.selected = 'mug'
+          this.game.state.selecting = true
+
+          return this.saveText('[description]')
+        }
+
+        return 'dry'
+      }
+
       const mug = this.mugs[name]
 
       return this.interact({

@@ -123,6 +123,12 @@ class Scene extends Phaser.Scene {
       .addKey('SPACE')
     space.on('down', this.advance, this)
 
+    const pageUp = this.input.keyboard.addKey('PAGE_UP')
+    const auto = () => {
+      this.auto = !this.auto
+    }
+    pageUp.on('down', auto, this)
+
     this
       .input
       .on(
@@ -545,11 +551,6 @@ class Scene extends Phaser.Scene {
     this
       .figures
       .forEach(figure => figure.update())
-
-    const pageUp = this.input.keyboard.addKey('PAGE_UP')
-    if (pageUp.isDown) {
-      this.auto = !this.auto
-    }
 
     const pageDown = this
       .input
