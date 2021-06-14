@@ -1,6 +1,5 @@
-import { GAME_SIZE } from '../../lib/game'
-
 import Mug from '../../Interaction/Mug'
+import LeaveMugs from '../../Interaction/LeaveMugs'
 
 import Room from '../Room'
 
@@ -14,12 +13,18 @@ export default class Mugs extends Room {
   }
 
   setup = () => {
+    this.leaveMugs = new LeaveMugs({
+      scene: this
+    })
+
     const point = {
       images: [{ name: 'mugs' }],
       zones: [{
         name: 'leave-mugs',
         left: { x: 0, y: 0 },
-        right: GAME_SIZE,
+        right: {
+          x: 3300, y: 1900
+        },
         hover: 'Return to Kitchenette'
       }]
     }
