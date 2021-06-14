@@ -39,25 +39,59 @@ class Scene extends Phaser.Scene {
     this.images = {}
     this.selecting = false
     this.sprites = []
+
+    const WIDTH = 0.05300664792
+    const HEIGHT = 0.09423136364
+    const HALF_WIDTH = WIDTH / 2
+    const HALF_HEIGHT = HEIGHT / 2
+
+    const LEFT = 0.8623385323 + HALF_WIDTH
+    const RIGHT = 0.928615955 + HALF_WIDTH
+
+    const TOP = upY(0.8201995455) - HALF_HEIGHT
+    const MIDDLE = upY(0.6668290909) - HALF_HEIGHT
+    const BOTTOM = upY(0.5135040909) - HALF_HEIGHT
+
+    this.itemPositions = [
+      { x: LEFT, y: TOP },
+      { x: RIGHT, y: TOP },
+      { x: LEFT, y: MIDDLE },
+      { x: RIGHT, y: MIDDLE },
+      { x: LEFT, y: BOTTOM },
+      { x: RIGHT, y: BOTTOM }
+    ]
   }
 
   addItem = (options) => {
+    this.game.state.items.forEach((item, index) => {
+      item.item.destroy()
+    })
+
     const already = this
       .game
       .state
       .items
       .find(item => item.name === options.name)
 
-    if (already) {
-      return already
+    if (options.remove) {
+      if (!already) {
+        console.warn('Item does not exist:', options.name)
+      } else {
+        this.game.state.items = this
+          .game
+          .state
+          .items
+          .filter(item => item.name !== options.name)
+      }
     } else {
-      const item = this.renderItem(
-        options, this.game.state.items.length
-      )
-      this.game.state.items.push(options)
-
-      return item
+      if (already) {
+        console.warn('Item already exists:', options.name)
+      } else {
+        this.game.state.items.push(options)
+      }
     }
+
+    this.loadState()
   }
 
   advance () {
@@ -416,31 +450,11 @@ class Scene extends Phaser.Scene {
 
     const image = `item-${name}`
 
-    const WIDTH = 0.05300664792
-    const HEIGHT = 0.09423136364
-    const HALF_WIDTH = WIDTH / 2
-    const HALF_HEIGHT = HEIGHT / 2
-
-    const LEFT = 0.8623385323 + HALF_WIDTH
-    const RIGHT = 0.928615955 + HALF_WIDTH
-
-    const TOP = upY(0.8201995455) - HALF_HEIGHT
-    const MIDDLE = upY(0.6668290909) - HALF_HEIGHT
-    const BOTTOM = upY(0.5135040909) - HALF_HEIGHT
-
-    const positions = [
-      { x: LEFT, y: TOP },
-      { x: RIGHT, y: TOP },
-      { x: LEFT, y: MIDDLE },
-      { x: RIGHT, y: MIDDLE },
-      { x: LEFT, y: BOTTOM },
-      { x: RIGHT, y: BOTTOM }
-    ]
-
-    const position = positions[index]
+    const position = this.itemPositions[index]
 
     const item = this
       .see({ name: image, position, hover })
+    options.item = item
 
     return item
   }

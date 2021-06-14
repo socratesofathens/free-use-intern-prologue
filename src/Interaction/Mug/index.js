@@ -88,10 +88,15 @@ export default class Mug extends Interaction {
             mug: this.number,
             'correct-mug': mug === mugGoal
           }
-          point.item = {
+          const remove = {
+            name: `mug-${mug}`,
+            remove: true
+          }
+          const add = {
             name: `mug-${this.number}`,
             hover: 'Use mug'
           }
+          point.items = [remove, add]
 
           return replaced
         }

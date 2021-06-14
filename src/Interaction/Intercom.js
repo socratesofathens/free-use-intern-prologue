@@ -249,7 +249,7 @@ class Intercom extends Interaction {
         dialogue: 'Fine, master hacker. You win this round. Buzzing you up now.'
       },
       {
-        scene: 'office'
+        scene: 'prologue-resolution'
       }
     ])
 

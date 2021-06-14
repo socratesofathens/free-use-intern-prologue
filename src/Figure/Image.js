@@ -81,6 +81,8 @@ export default class Image extends Figure {
   }
 
   destroy () {
+    this.scene.images[this.name] = null
+
     super.destroy()
   }
 

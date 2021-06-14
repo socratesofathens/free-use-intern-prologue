@@ -18,11 +18,16 @@
   {
     "speakerName": "Salesman",
     "dialogue": "Of course! Though to be fair, most anything is better than that pigeon sweat. Here you go, my friend.",
-    "item": {
-      "name": "teabag",
-      "hover": "Use teabag"
-    },
-    "remove": "panties"
+    "items": [
+      {
+        "name": "teabag",
+        "hover": "Use teabag"
+      },
+      {
+        "name": "panties",
+        "remove": true
+      }
+    ]
   },
   {
     "speakerName": "Quinn",
