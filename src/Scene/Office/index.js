@@ -14,7 +14,9 @@ class Office extends Room {
       'bosssex1',
       'bosssex2',
       'office-arrow',
-      'pic-fucking'
+      'pic-fucking',
+      'icon-fucking',
+      'icon-fucking-selected'
     ])
 
     this.assets.push({ name: 'office', type: 'jpg' })

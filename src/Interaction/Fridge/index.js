@@ -24,7 +24,7 @@ export default class Fridge extends Interaction {
       case 'emma': {
         return this.points.emma
       }
-      case 'bossemma': {
+      case 'fucking': {
         return this.points.bossemma
       }
       case 'upskirt': {

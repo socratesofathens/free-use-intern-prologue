@@ -27,7 +27,7 @@ export default class Mug extends Interaction {
       case 'emma': {
         return this.points.emma
       }
-      case 'bossemma': {
+      case 'fucking': {
         return this.points.bossemma
       }
       case 'upskirt': {

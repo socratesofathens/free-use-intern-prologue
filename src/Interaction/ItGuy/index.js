@@ -32,7 +32,7 @@ class ItGuy extends Interaction {
 
         return this.points.emma0
       }
-      case 'bossemma': {
+      case 'fucking': {
         if (it <= 3) {
           return this.points.bossemma0
         }

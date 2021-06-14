@@ -513,6 +513,14 @@ class Room extends Scene {
         }
 
         return 'dry'
+      case 'icon-fucking':
+        if (wet) {
+          photos.fucking.select()
+
+          return this.saveText('Emma and the boss fucking.')
+        }
+
+        return 'dry'
       case 'icon-selfie':
         if (wet) {
           photos.selfie.select()

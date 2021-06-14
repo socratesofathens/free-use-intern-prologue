@@ -33,7 +33,7 @@ export default class Salesman extends Interaction {
           return this.points.emma4
         }
       }
-      case 'bossemma': {
+      case 'fucking': {
         if (sales === 0) {
           return this.points.bossemma0
         } else if (sales <= 3) {
