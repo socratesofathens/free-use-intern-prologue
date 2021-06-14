@@ -47,23 +47,24 @@ class Prologue extends Room {
       scene: this
     })
 
+    this.zones = [
+      {
+        name: 'intercom',
+        left: { x: 2263, y: 950 },
+        right: { x: 2600, y: 1220 },
+        hover: 'Talk to Intercom'
+      },
+      {
+        name: 'emmaction',
+        left: { x: 534, y: 58 },
+        right: { x: 1189, y: 1806 },
+        hover: 'Talk to Emma'
+      }
+    ]
+
     this.saves = [
       {
         background: 'doors',
-        zones: [
-          {
-            name: 'intercom',
-            left: { x: 2263, y: 950 },
-            right: { x: 2600, y: 1220 },
-            hover: 'Talk to Intercom'
-          },
-          {
-            name: 'emmaction',
-            left: { x: 534, y: 58 },
-            right: { x: 1189, y: 1806 },
-            hover: 'Talk to Emma'
-          }
-        ],
         images: [
           {
             name: 'emma-side'

@@ -28,6 +28,33 @@ class UnderDesk extends Room {
 
     this.saves = json
 
+    this.zones = [
+      {
+        name: 'upskirt',
+        left: {
+          x: 843,
+          y: 52
+        },
+        right: {
+          x: 2758,
+          y: 1680
+        },
+        hover: 'Look up skirt'
+      },
+      {
+        name: 'cradle-under',
+        left: {
+          x: 0,
+          y: 0
+        },
+        right: {
+          x: 200,
+          y: 200
+        },
+        hover: 'Grab cradle'
+      }
+    ]
+
     super.setup()
   }
 }

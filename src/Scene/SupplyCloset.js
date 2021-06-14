@@ -11,7 +11,8 @@ export default class SupplyCloset extends Room {
       'supplycloset',
       'salesman',
       'supplycloset-arrow',
-      'item-teabag'
+      'item-teabag',
+      'item-coffee'
     ])
 
     this.contrast = true
@@ -25,6 +26,21 @@ export default class SupplyCloset extends Room {
       scene: this
     })
 
+    this.zones = [
+      {
+        name: 'leave-supply-closet',
+        left: { x: 2844, y: 1527 },
+        right: { x: 3174, y: 1729 },
+        hover: 'Return to Hallway'
+      },
+      {
+        name: 'salesman',
+        left: { x: 1500, y: 0 },
+        right: { x: 2500, y: 2000 },
+        hover: 'Talk to Salesman'
+      }
+    ]
+
     this.saves = [{
       images: [
         { name: 'supplycloset' },
@@ -36,20 +52,6 @@ export default class SupplyCloset extends Room {
           }
         },
         { name: 'supplycloset-arrow' }
-      ],
-      zones: [
-        {
-          name: 'leave-supply-closet',
-          left: { x: 2844, y: 1527 },
-          right: { x: 3174, y: 1729 },
-          hover: 'Return to Hallway'
-        },
-        {
-          name: 'salesman',
-          left: { x: 1500, y: 0 },
-          right: { x: 2500, y: 2000 },
-          hover: 'Talk to Salesman'
-        }
       ]
     }]
 

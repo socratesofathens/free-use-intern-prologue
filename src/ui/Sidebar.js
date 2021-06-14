@@ -92,6 +92,14 @@ export default class Sidebar {
             figure: null,
             photo: null
           }))
+        copy.items = copy
+          .items
+          .map(item => ({
+            ...item,
+            item: null
+          }))
+
+        console.log('copy test:', copy)
 
         const json = JSON.stringify(copy)
 
@@ -141,9 +149,7 @@ export default class Sidebar {
         this
           .scene
           .game
-          .state = {
-            ...this.scene.initial
-          }
+          .state = JSON.parse(JSON.stringify({ ...this.initial }))
 
         this.scene.interaction = null
 

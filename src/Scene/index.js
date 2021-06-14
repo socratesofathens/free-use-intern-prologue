@@ -64,7 +64,7 @@ class Scene extends Phaser.Scene {
 
   addItem = (options) => {
     this.game.state.items.forEach((item, index) => {
-      item.item.destroy()
+      item.item?.destroy()
     })
 
     const already = this
@@ -110,6 +110,7 @@ class Scene extends Phaser.Scene {
   }
 
   animate = (animation) => {
+    console.log('animation test:', animation)
     this
       .game
       .state
@@ -147,6 +148,7 @@ class Scene extends Phaser.Scene {
   }
 
   create = () => {
+    console.log('create test:')
     this.setBackground({
       color: this.color
     })
@@ -205,10 +207,18 @@ class Scene extends Phaser.Scene {
       for (const name in this.images) {
         const image = this.images[name]
 
-        image.destroy()
+        if (image) {
+          image.destroy()
+        }
 
         delete this.images[name]
       }
+
+      this.sprites.forEach(sprite => {
+        sprite.destroy()
+      })
+
+      this.sprites = []
 
       this.save = data
       this
@@ -216,10 +226,9 @@ class Scene extends Phaser.Scene {
         .state
         .point = this.save.point
 
-      this.game.state.intercom = this.save.intercom
-      this.game.state.taken = this.save.taken
-      this.game.state.steve = this.save.steve
-      this.game.state.loaded = this.save.loaded
+      console.log('this.save test:', this.save)
+
+      this.game.state = JSON.parse(JSON.stringify({ ...this.save }))
     } else {
       this.save = null
     }
@@ -315,17 +324,6 @@ class Scene extends Phaser.Scene {
       animations,
       last
     } = this.save
-
-    if (scene) {
-      this.save = null
-
-      const lower = scene.toLowerCase()
-
-      this.game.state.images = []
-      this.images = {}
-
-      this.scene.start(lower)
-    }
 
     if (fullscreen) {
       this.fullscreen = this.see({
@@ -439,6 +437,19 @@ class Scene extends Phaser.Scene {
       this.reload()
     }
 
+    if (scene) {
+      this.save = null
+
+      const lower = scene.toLowerCase()
+
+      this.game.state.images = []
+      this.images = {}
+      this.animations = []
+      this.game.state.animations = []
+
+      this.scene.start(lower)
+    }
+
     const next = this.extract(1)
     if (!next) {
       this.reload()
@@ -538,7 +549,7 @@ class Scene extends Phaser.Scene {
   setup () {
     this
       .game
-      .state ??= { ...this.initial }
+      .state ??= JSON.parse(JSON.stringify({ ...this.initial }))
     this.game.state.images = []
 
     if (this.save) {

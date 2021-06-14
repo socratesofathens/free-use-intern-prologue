@@ -40,34 +40,35 @@ class Hallway extends Room {
 
     this.picture = new Picture({ scene: this })
 
+    this.zones = [
+      {
+        name: 'office-door',
+        left: { x: 1792, y: 699 },
+        right: { x: 2065, y: 1069 },
+        hover: "Go to Boss's office"
+      },
+      {
+        name: 'kitchenette-door',
+        left: { x: 0, y: 0 },
+        right: { x: 922, y: 1850 },
+        hover: 'Go to kitchenette'
+      },
+      {
+        name: 'supply-closet-door',
+        left: { x: 2219, y: 86 },
+        right: { x: 2410, y: 1499 },
+        hover: 'Go to supply closet'
+      },
+      {
+        name: 'picture',
+        left: { x: 1324, y: 366 },
+        right: { x: 1489, y: 761 },
+        hover: 'Look at photo'
+      }
+    ]
+
     const point = {
-      images: [{ name: 'hallway' }],
-      zones: [
-        {
-          name: 'office-door',
-          left: { x: 1792, y: 699 },
-          right: { x: 2065, y: 1069 },
-          hover: "Go to Boss's office"
-        },
-        {
-          name: 'kitchenette-door',
-          left: { x: 0, y: 0 },
-          right: { x: 922, y: 1850 },
-          hover: 'Go to kitchenette'
-        },
-        {
-          name: 'supply-closet-door',
-          left: { x: 2219, y: 86 },
-          right: { x: 2410, y: 1499 },
-          hover: 'Go to supply closet'
-        },
-        {
-          name: 'picture',
-          left: { x: 1324, y: 366 },
-          right: { x: 1489, y: 761 },
-          hover: 'Look at photo'
-        }
-      ]
+      images: [{ name: 'hallway' }]
     }
 
     if (!this.game.state['coffee-machine']) {

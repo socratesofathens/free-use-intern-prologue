@@ -84,21 +84,21 @@ class Room extends Scene {
     const { name } = photo
     const lower = name.toLowerCase()
 
+    if (!this.game.state.photos.includes(photo)) {
+      this.game.state.photos.push(photo)
+    } else {
+      console.warn('State already has photo', photo)
+    }
+
     const { photos } = this.phone
     if (!photos[lower]) {
       const icon = photos.addIcon(photo)
       photos[icon.lower] = icon
 
-      this
-        .game
-        .state
-        .photos
-        .push(photo)
-
       return icon
     } else {
       console
-        .warn('Photo already added:', photo)
+        .warn('Phone already has photo:', photo)
     }
   }
 
@@ -231,8 +231,7 @@ class Room extends Scene {
         apps,
         interaction,
         point,
-        final,
-        zones
+        final
       } = this.save
 
       const isZero = interaction === 0
@@ -254,8 +253,7 @@ class Room extends Scene {
       }
 
       if (dialogue || speakerName) {
-        this
-          .setText(dialogue, speakerName)
+        this.setText(dialogue, speakerName)
       }
 
       if (photo) {
@@ -268,12 +266,6 @@ class Room extends Scene {
 
       if (apps === false && open) {
         this.phone.openPhotos()
-      }
-
-      if (zones) {
-        zones.forEach(zone => {
-          this.spot(zone)
-        })
       }
 
       if (final) {
@@ -381,6 +373,10 @@ class Room extends Scene {
     })
 
     super.setup()
+
+    this.zones?.forEach(zone => {
+      this.spot(zone)
+    })
   }
 
   use (figure, wet = true) {

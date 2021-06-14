@@ -28,16 +28,17 @@ export default class Mugs extends Room {
       scene: this
     })
 
+    this.zones = [{
+      name: 'leave-mugs',
+      left: { x: 0, y: 0 },
+      right: {
+        x: 3300, y: 1900
+      },
+      hover: 'Return to Kitchenette'
+    }]
+
     const point = {
-      images: [{ name: 'mugs' }],
-      zones: [{
-        name: 'leave-mugs',
-        left: { x: 0, y: 0 },
-        right: {
-          x: 3300, y: 1900
-        },
-        hover: 'Return to Kitchenette'
-      }]
+      images: [{ name: 'mugs' }]
     }
 
     const bits = [

@@ -11,8 +11,8 @@
     "speakerName": "Salesman",
     "dialogue": "By gum, it would be an honor! Thanks to you, I'll be in fine fettle for the rest of the day.",
     "item": {
-      "name": "icon-coffee",
-      "hover": "Use icon-coffee"
+      "name": "coffee",
+      "hover": "Use coffee"
     },
     "state": {
       "salesman": "5"
