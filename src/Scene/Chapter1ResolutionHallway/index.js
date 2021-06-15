@@ -4,7 +4,7 @@ import SupplyClosetDoor1 from '../../Interaction/SupplyClosetDoor1'
 
 import Room from '../Room'
 
-import json from './index'
+import json from './index.json'
 
 class Chapter1ResolutionHallway extends Room {
   constructor () {

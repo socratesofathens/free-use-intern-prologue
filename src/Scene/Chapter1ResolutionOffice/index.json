@@ -3,18 +3,15 @@
     "images": [
       {
         "title": "office"
-      },
-      {
-        "title": "resolution-mug-[#]"
       }
     ],
     "animations": [
       {
         "keys": [
           "bossgroping1",
-          "65"
+          "bossgroping2"
         ],
-        "duration": "bossgroping2.png",
+        "duration": "650",
         "key": "bossgroping"
       }
     ],

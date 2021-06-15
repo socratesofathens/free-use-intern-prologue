@@ -1,10 +1,12 @@
 import Room from '../Room'
 
-import json from './index'
+import json from './index.json'
 
 class Chapter1ResolutionOfficeGroping extends Room {
   constructor () {
     super('chapter-1-resolution-office-groping', 0x000000)
+
+    this.contrast = true
 
     this.loadPngs([
       'bossgroping1',

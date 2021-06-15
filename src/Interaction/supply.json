@@ -37,16 +37,15 @@
       {
         "keys": [
           "salesman-resolution-1",
-          "65"
+          "salesman-resolution-2"
         ],
-        "duration": "salesman-resolution-2.png",
+        "duration": "650",
         "key": "salesmanresolution1"
       }
     ]
   },
   {
-    "speakerName": "Free Use Intern will continue in Chapter 2",
-    "dialogue": "The XXX-Files"
+    "dialogue": "Free Use Intern will continue in Chapter 2: The XXX-Files"
   },
   {
     "dialogue": "To show your support, help us, get the next chapter out as quickly as possible, and let Quinn start using his friend, visit patreon.com/pan or subscribestar.adult/pan"

@@ -18,12 +18,14 @@ export default class Chapter1End extends Room {
       'boss-teabag': bossTeabag
     } = this.game.state
 
+    const mood = parseInt(bossMood)
+
     if (correctMug) {
       if (mugFull === 'COFFEE') {
         if (sugarMug) {
           this.saves = jsons.coffeeUnsugar
         } else {
-          if (bossMood <= 4) {
+          if (mood <= 4) {
             this.saves = jsons.coffeeSugar0
           } else {
             this.saves = jsons.coffeeSugar5
@@ -35,7 +37,7 @@ export default class Chapter1End extends Room {
           if (sugarMug) {
             this.saves = jsons.teaSugar
           } else {
-            if (bossMood) {
+            if (mood) {
               this.saves = jsons.teaBoss1
             } else {
               this.saves = jsons.teaBoss0

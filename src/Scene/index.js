@@ -120,8 +120,10 @@ class Scene extends Phaser.Scene {
       key, duration, keys
     } = animation
 
+    const parsed = parseInt(duration)
+
     const frames = keys
-      .map(key => ({ key, duration }))
+      .map(key => ({ key, duration: parsed }))
 
     this.anims.create({
       key,

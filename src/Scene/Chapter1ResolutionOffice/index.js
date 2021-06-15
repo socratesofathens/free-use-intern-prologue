@@ -1,6 +1,6 @@
 import Room from '../Room'
 
-import json from './index'
+import json from './index.json'
 
 class Chapter1ResolutionOffice extends Room {
   constructor () {
