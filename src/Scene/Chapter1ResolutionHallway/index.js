@@ -8,7 +8,6 @@ import json from './index'
 
 class Chapter1ResolutionHallway extends Room {
   constructor () {
-    console.log('hallway test')
     super('chapter-1-resolution-hallway', 0x000000)
 
     this.loadPngs([
@@ -17,8 +16,6 @@ class Chapter1ResolutionHallway extends Room {
       'salesman-resolution-1',
       'salesman-resolution-2'
     ])
-
-    this.assets.push({ name: 'office', type: 'jpg' })
   }
 
   setup = () => {

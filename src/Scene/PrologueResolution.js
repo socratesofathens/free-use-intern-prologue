@@ -7,10 +7,9 @@ class Office extends Room {
     this.loadPngs([
       'boss',
       'bosssex1',
-      'bosssex2'
+      'bosssex2',
+      'office'
     ])
-
-    this.assets.push({ name: 'office', type: 'jpg' })
   }
 
   setup = () => {

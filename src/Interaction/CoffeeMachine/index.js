@@ -14,8 +14,10 @@ class CoffeeMachine extends Interaction {
       selected,
       'coffee-machine': coffeeMachine,
       'mug-full': mugFull,
-      mug
+      mug: mugString
     } = state
+
+    const mug = parseInt(mugString)
 
     switch (selected) {
       case 'mug': {
@@ -41,13 +43,14 @@ class CoffeeMachine extends Interaction {
       case 'coffee': {
         if (coffeeMachine) {
           if (mug) {
+            console.log('true test:')
             const empty = `empty-mug-${mug}`
             const add = `coffee-mug-${mug}`
 
             const last = this.points.coffeeTrueElse.length - 1
             const point = this.points.coffeeTrueElse[last]
             point.items = [
-              ...point.items,
+              { name: 'coffee', remove: true },
               { name: empty, remove: true },
               { name: add, hover: 'Use mug of coffee' }
             ]
@@ -57,11 +60,15 @@ class CoffeeMachine extends Interaction {
             return this.points.coffeeTrue0
           }
         } else {
-          if (mugFull === 'EMPTY') {
-            return this.points.coffeeFalseEmpty
-          }
-          if (mugFull === 'TEA') {
-            return this.points.coffeeFalseTea
+          if (mug) {
+            if (mugFull === 'EMPTY') {
+              return this.points.coffeeFalseEmpty
+            }
+            if (mugFull === 'TEA') {
+              return this.points.coffeeFalseTea
+            }
+          } else {
+            return this.points.coffeeTrue0
           }
         }
         break
@@ -70,15 +77,22 @@ class CoffeeMachine extends Interaction {
         if (mug) {
           const empty = `empty-mug-${mug}`
           const add = `tea-mug-${mug}`
+          console.log('add test:', add)
 
-          const last = this.points.teaMug0.length - 1
-          const point = this.points.teaMug0[last]
+          const last = this.points.teaMugElse.length - 1
+          const point = this.points.teaMugElse[last]
           point.items ??= []
           point.items = [
-            ...point.items,
+            { name: 'teabag', remove: true },
             { name: empty, remove: true },
             { name: add, hover: 'Use mug of tea' }
           ]
+          console.log('point items test:', point.items)
+
+          console.log(
+            'this.points.teaMugElse test:',
+            this.points.teaMugElse
+          )
 
           return this.points.teaMugElse
         } else {

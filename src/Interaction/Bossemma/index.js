@@ -48,30 +48,6 @@ class Bossemma extends Interaction {
       case 'web': {
         return this.points.web
       }
-      case 'mug': {
-        if (mugFull === 'EMPTY') {
-          if (correctMug) {
-            if (bossMug) {
-              return this.points.whatNow
-            }
-
-            return this.points.whatOnEarth
-          } else {
-            return this.points.whatIsIt
-          }
-        } else {
-          const last = this.points.end.json.length - 1
-          const point = this.points.end.json[last]
-
-          const name = `mug-${mugFull}-${mug}`
-          point.items = [
-            ...point.items,
-            { name, remove: true }
-          ]
-
-          return this.points.end.json
-        }
-      }
       case 'teabag': {
         if (teabag) {
           return this.points.teabag1
@@ -84,6 +60,31 @@ class Bossemma extends Interaction {
       }
       case 'email': {
         return this.points.email
+      }
+    }
+
+    const mugSelected = selected?.includes('mug')
+    if (mugSelected) {
+      if (mugFull === 'EMPTY') {
+        if (correctMug) {
+          if (bossMug) {
+            return this.points.whatNow
+          }
+
+          return this.points.whatOnEarth
+        } else {
+          return this.points.whatIsIt
+        }
+      } else {
+        const last = this.points.end.length - 1
+        const point = this.points.end[last]
+
+        const name = `mug-${mugFull}-${mug}`
+        point.items = [
+          { name, remove: true }
+        ]
+
+        return this.points.end
       }
     }
 

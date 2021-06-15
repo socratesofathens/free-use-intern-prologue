@@ -17,17 +17,7 @@
   },
   {
     "speakerName": "Salesman",
-    "dialogue": "Of course! Though to be fair, most anything is better than that pigeon sweat. Here you go, my friend.",
-    "items": [
-      {
-        "name": "teabag",
-        "hover": "Use teabag"
-      },
-      {
-        "name": "panties",
-        "remove": true
-      }
-    ]
+    "dialogue": "Of course! Though to be fair, most anything is better than that pigeon sweat. Here you go, my friend." 
   },
   {
     "speakerName": "Quinn",
@@ -47,6 +37,16 @@
   },
   {
     "speakerName": "Quinn",
-    "dialogue": "Uh huh. Sure. Thanks."
+    "dialogue": "Uh huh. Sure. Thanks.",
+    "items": [
+      {
+        "name": "teabag",
+        "hover": "Use teabag"
+      },
+      {
+        "name": "panties",
+        "remove": true
+      }
+    ]
   }
 ]

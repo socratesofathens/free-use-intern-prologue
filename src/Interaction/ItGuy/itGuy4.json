@@ -13,9 +13,6 @@
   },
   {
     "speakerName": "IT Guy",
-    "dialogue": "No!",
-    "state": {
-      "it-guy": "5"
-    }
+    "dialogue": "No!"
   }
 ]

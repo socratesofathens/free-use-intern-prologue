@@ -1,5 +1,6 @@
 import LeaveSupplyCloset from '../Interaction/LeaveSupplyCloset'
 import Salesman from '../Interaction/Salesman'
+import Coffee from '../Interaction/Coffee'
 
 import Room from './Room'
 
@@ -25,6 +26,7 @@ export default class SupplyCloset extends Room {
     this.salesman = new Salesman({
       scene: this
     })
+    this.coffee = new Coffee({ scene: this })
 
     this.zones = [
       {
@@ -38,6 +40,12 @@ export default class SupplyCloset extends Room {
         left: { x: 1500, y: 0 },
         right: { x: 2500, y: 2000 },
         hover: 'Talk to Salesman'
+      },
+      {
+        name: 'coffee',
+        left: { x: 875, y: 172 },
+        right: { x: 1256, y: 541 },
+        hover: 'Take coffee'
       }
     ]
 

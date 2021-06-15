@@ -10,6 +10,8 @@ class Office extends Room {
   constructor () {
     super('office', 0x000000)
 
+    this.contrast = true
+
     this.loadPngs([
       'bosssex1',
       'bosssex2',
@@ -19,8 +21,6 @@ class Office extends Room {
       'icon-fucking-selected',
       'item-panties'
     ])
-
-    this.assets.push({ name: 'office', type: 'jpg' })
   }
 
   setup = () => {

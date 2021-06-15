@@ -96,14 +96,8 @@ export default class Kitchenette extends Room {
     const point = {
       images: [
         { name: 'kitchenette' },
-        {
-          name: 'itguy',
-          position: {
-            x: 0.38181,
-            y: 0.52365
-          }
-        },
-        { name: 'kitchenettearrow' }
+        { name: 'itguy' },
+        { name: 'kitchenette-arrow' }
       ]
     }
 

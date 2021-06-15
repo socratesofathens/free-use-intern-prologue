@@ -15,6 +15,11 @@ import Hallway from './Scene/Hallway'
 import Kitchenette from './Scene/Kitchenette'
 import Mugs from './Scene/Mugs'
 import SupplyCloset from './Scene/SupplyCloset'
+import Chapter1End from './Scene/Chapter1End'
+import Chapter1ResolutionBestEnding from './Scene/Chapter1ResolutionBestEnding'
+import Chapter1ResolutionHallway from './Scene/Chapter1ResolutionHallway'
+import Chapter1ResolutionOffice from './Scene/Chapter1ResolutionOffice'
+import Chapter1ResolutionOfficeGroping from './Scene/Chapter1ResolutionOfficeGroping'
 
 const config = {
   type: Phaser.AUTO,
@@ -25,7 +30,24 @@ const config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH
   },
-  scene: [Title, Introduction, Prologue, PrologueResolution, One, Office, UnderDesk, Hallway, Kitchenette, Mugs, SupplyCloset]
+  scene: [
+    Title,
+    Introduction,
+    Prologue,
+    PrologueResolution,
+    One,
+    Office,
+    UnderDesk,
+    Hallway,
+    Kitchenette,
+    Mugs,
+    SupplyCloset,
+    Chapter1End,
+    Chapter1ResolutionBestEnding,
+    Chapter1ResolutionHallway,
+    Chapter1ResolutionOffice,
+    Chapter1ResolutionOfficeGroping
+  ]
 }
 
 export default new Phaser.Game(config)

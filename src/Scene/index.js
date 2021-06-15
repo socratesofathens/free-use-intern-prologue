@@ -14,7 +14,7 @@ class Scene extends Phaser.Scene {
     super(name)
 
     this.auto = false
-    this.debug = true
+    this.debug = false
     this.assets = []
     this.name = name
     this.color = color
@@ -181,6 +181,7 @@ class Scene extends Phaser.Scene {
     const copy = { ...state, point: sum }
 
     if (this.interaction) {
+      console.log('copy test:', copy)
       return this
         .interaction
         .read(copy)

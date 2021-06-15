@@ -1,18 +1,11 @@
 [
   {
-    "dialogue": "Despite the fact that the machine is broken, I'm still able to get hot water out of it. I fill the mug with hot water, bob the teabag around in it until I feel like overtaxing Boston, and then discard it."
+    "dialogue": "Despite the fact that the machine is broken, I'm still able to get hot water out of it. I fill the mug with hot water, bob the teabag around in it until I feel a desire to overtax Boston, and then discard it."
   },
   {
-    "speakerName": "Cup of tea",
-    "dialogue": "accomplished!",
+    "dialogue": "Cup of tea: accomplished!",
     "state": {
       "mug-full": "TEA"
-    },
-    "items": [
-      {
-        "name": "teabag",
-        "remove": true
-      }
-    ]
+    }
   }
 ]

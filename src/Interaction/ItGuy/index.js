@@ -18,6 +18,8 @@ class ItGuy extends Interaction {
 
     const it = parseInt(itGuy)
 
+    console.log('selected test:', selected)
+
     switch (selected) {
       case 'camera': {
         return this.points.camera
@@ -33,7 +35,7 @@ class ItGuy extends Interaction {
         return this.points.emma0
       }
       case 'fucking': {
-        if (it <= 3) {
+        if (it <= 4) {
           return this.points.bossemma0
         }
 
@@ -49,7 +51,7 @@ class ItGuy extends Interaction {
         return this.points.web
       }
       case 'mug': {
-        if (it <= 3) {
+        if (it <= 4) {
           return this.points.mug0
         } else {
           if (mugRepair) {
@@ -63,7 +65,7 @@ class ItGuy extends Interaction {
         return this.points.teabag
       }
       case 'panties': {
-        if (it <= 3) {
+        if (it <= 4) {
           return this.points.panties0
         }
 

@@ -21,8 +21,6 @@ class Chapter1ResolutionOfficeGroping extends Room {
       'resolution-mug-10',
       'resolution-mug-11'
     ])
-
-    this.assets.push({ name: 'office', type: 'jpg' })
   }
 
   setup = () => {

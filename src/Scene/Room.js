@@ -275,6 +275,7 @@ class Room extends Scene {
   }
 
   select (figure) {
+    console.log('select test:')
     this.selected = figure
 
     return figure?.select()
@@ -389,6 +390,11 @@ class Room extends Scene {
     const { apps, photos } = this.phone
 
     switch (name) {
+      case 'coffee': {
+        return this.interact({
+          interaction: this.coffee, dry: !wet
+        })
+      }
       case 'supply-closet-door-1': {
         return this.interact({
           interaction: this.supplyClosetDoor1, dry: !wet
@@ -494,11 +500,18 @@ class Room extends Scene {
         return this.interact({
           interaction: this.bossemma, dry: !wet
         })
+      case 'item-coffee':
+        if (wet) {
+          this.game.state.selected = 'coffee'
+          this.game.state.selecting = true
+          return this.saveText('More Americans drink coffee daily than tap water.')
+        }
+        return 'dry'
       case 'item-teabag':
         if (wet) {
           this.game.state.selected = 'teabag'
           this.game.state.selecting = true
-          return this.saveText('Tea contains several stimulants including caffeine, theobromine, theophylline and L-theanine.')
+          return this.saveText('Tea contains several stimulants including caffeine, theobromine, and L-theanine.')
         }
         return 'dry'
       case 'item-panties':
@@ -651,11 +664,15 @@ class Room extends Scene {
 
   validate (pass) {
     const next = this.extract(1)
+    console.log('next test:', next)
     const not = !next
+    console.log('not test:', not)
 
     const free = pass || !this.selecting
+    console.log('free test:', free)
 
     const valid = not && free
+    console.log('valid test:', valid)
 
     return valid
   }

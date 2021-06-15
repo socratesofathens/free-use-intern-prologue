@@ -83,6 +83,8 @@ export default class Mug extends Interaction {
             }
           })
 
+          console.log('typeof test:', typeof this.number)
+
           const point = replaced[replaced.length - 1]
           point.state = {
             mug: this.number,

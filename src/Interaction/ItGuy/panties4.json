@@ -1,11 +1,7 @@
 [
   {
     "speakerName": "IT Guy",
-    "dialogue": "Suh-weet! I feel better than Daenerys Targaryen on prom night!",
-    "items": [{
-      "name": "panties",
-      "remove": true
-    }]
+    "dialogue": "Suh-weet! I feel better than Daenerys Targaryen on prom night!"
   },
   {
     "speakerName": "Quinn",
@@ -37,6 +33,14 @@
     "state": {
       "it-guy": "5",
       "coffee-machine": true
-    }
+    },
+    "items": [{
+      "name": "panties",
+      "remove": true
+    }],
+    "images": [{
+      "name": "kitchenettesmoke",
+      "remove": true
+    }]
   }
 ]

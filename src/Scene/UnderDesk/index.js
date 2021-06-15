@@ -45,11 +45,11 @@ class UnderDesk extends Room {
         name: 'cradle-under',
         left: {
           x: 0,
-          y: 0
+          y: 1200
         },
         right: {
-          x: 200,
-          y: 200
+          x: 600,
+          y: 1800
         },
         hover: 'Grab cradle'
       }

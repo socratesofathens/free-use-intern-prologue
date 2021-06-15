@@ -1,0 +1,21 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "You see! There really is a female intern here."
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "By Jove! It seems I have done you a great disservice, my good man. My heartiest apologies. What did you say your name was?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Quinn."
+  },
+  {
+    "speakerName": "Salesman",
+    "dialogue": "Good to meet you, young Quinn! I'm the top salesman at this Acuity branch; anything I can do to assist you, let me know.",
+    "state": {
+      "salesman": "4"
+    }
+  }
+]

@@ -67,7 +67,9 @@ export default class Figure {
 
   inRoom (callback, pointerIn) {
     return () => {
+      console.log('inRoom test:')
       if (this.scene.selecting) {
+        console.log('selecting test:')
         if (!pointerIn) {
           return callback()
         }
@@ -112,16 +114,22 @@ export default class Figure {
       }
 
       if (this.scene.validate) {
+        console.log('validate test:')
         const icon = this.name.includes('icon-')
         const selected = this.name.includes('-selected')
         const pass = icon && !selected
         const valid = this.scene.validate(pass)
+
+        console.log('dialogue test:', this.scene.dialogue)
+        console.log('valid test:', valid)
+        console.log('this.hover test:', this.hover)
 
         if (
           this.scene.dialogue &&
           valid &&
           this.hover
         ) {
+          console.log('true test:')
           const { interaction } = this.scene
 
           const used = this.scene.use(this, false)
@@ -132,8 +140,11 @@ export default class Figure {
           this.scene.interaction = interaction
 
           if (next || dry) {
+            console.log('callback test:', callback)
             callback()
           }
+        } else {
+          console.log('false test:')
         }
       }
     }

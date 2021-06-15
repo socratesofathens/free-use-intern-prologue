@@ -47,6 +47,25 @@ export default class Chapter1End extends Room {
       this.saves = jsons.incorrect
     }
 
+    this.saves[0].images = [
+      {
+        name: 'office'
+      },
+      {
+        title: 'office-arrow'
+      }
+    ]
+    this.saves[0].animations = [
+      {
+        keys: [
+          'bosssex1',
+          'bosssex2'
+        ],
+        duration: '650',
+        key: 'bosssex'
+      }
+    ]
+
     super.setup()
   }
 }
