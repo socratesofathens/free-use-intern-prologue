@@ -18,8 +18,6 @@ class ItGuy extends Interaction {
 
     const it = parseInt(itGuy)
 
-    console.log('selected test:', selected)
-
     switch (selected) {
       case 'camera': {
         return this.points.camera

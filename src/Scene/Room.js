@@ -275,7 +275,6 @@ class Room extends Scene {
   }
 
   select (figure) {
-    console.log('select test:')
     this.selected = figure
 
     return figure?.select()
@@ -290,7 +289,7 @@ class Room extends Scene {
   setText = (dialogue, speakerName) => {
     const name = '[name]'
     const names = [
-      name,
+      'Quinn',
       'Quib',
       'Queasy',
       'Quesadilla',
@@ -664,15 +663,11 @@ class Room extends Scene {
 
   validate (pass) {
     const next = this.extract(1)
-    console.log('next test:', next)
     const not = !next
-    console.log('not test:', not)
 
     const free = pass || !this.selecting
-    console.log('free test:', free)
 
     const valid = not && free
-    console.log('valid test:', valid)
 
     return valid
   }

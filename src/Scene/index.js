@@ -181,7 +181,6 @@ class Scene extends Phaser.Scene {
     const copy = { ...state, point: sum }
 
     if (this.interaction) {
-      console.log('copy test:', copy)
       return this
         .interaction
         .read(copy)

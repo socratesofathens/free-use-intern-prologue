@@ -5,6 +5,8 @@ import jsons from './*.json'
 export default class Chapter1End extends Room {
   constructor () {
     super('chapter-1-end', 0x000000)
+
+    this.contrast = true
   }
 
   setup = () => {

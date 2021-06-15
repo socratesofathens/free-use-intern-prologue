@@ -17,8 +17,6 @@ export default class Salesman extends Interaction {
 
     const sales = parseInt(salesman)
 
-    console.log('salesman selected test:', selected)
-
     switch (selected) {
       case 'camera': {
         return this.points.camera
@@ -27,7 +25,6 @@ export default class Salesman extends Interaction {
         return this.points.selfie
       }
       case 'emma': {
-        console.log('sales test:', sales)
         if (sales === 0) {
           return this.points.emma0
         } else if (sales <= 3) {
@@ -38,13 +35,10 @@ export default class Salesman extends Interaction {
       }
       case 'fucking': {
         if (sales === 0) {
-          console.log('0 test:')
           return this.points.bossemma0
         } else if (sales <= 3) {
-          console.log('3 test:')
           return this.points.bossemma1
         } else {
-          console.log('else test:')
           return this.points.bossemma4
         }
       }

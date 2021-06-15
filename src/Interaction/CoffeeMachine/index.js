@@ -43,7 +43,6 @@ class CoffeeMachine extends Interaction {
       case 'coffee': {
         if (coffeeMachine) {
           if (mug) {
-            console.log('true test:')
             const empty = `empty-mug-${mug}`
             const add = `coffee-mug-${mug}`
 
@@ -77,7 +76,6 @@ class CoffeeMachine extends Interaction {
         if (mug) {
           const empty = `empty-mug-${mug}`
           const add = `tea-mug-${mug}`
-          console.log('add test:', add)
 
           const last = this.points.teaMugElse.length - 1
           const point = this.points.teaMugElse[last]
@@ -87,12 +85,6 @@ class CoffeeMachine extends Interaction {
             { name: empty, remove: true },
             { name: add, hover: 'Use mug of tea' }
           ]
-          console.log('point items test:', point.items)
-
-          console.log(
-            'this.points.teaMugElse test:',
-            this.points.teaMugElse
-          )
 
           return this.points.teaMugElse
         } else {

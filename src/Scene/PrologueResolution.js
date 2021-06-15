@@ -4,6 +4,8 @@ class Office extends Room {
   constructor () {
     super('prologue-resolution', 0x000000)
 
+    this.contrast = true
+
     this.loadPngs([
       'boss',
       'bosssex1',
