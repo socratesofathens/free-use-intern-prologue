@@ -89,7 +89,7 @@ export default class Mug extends Interaction {
             'correct-mug': mug === mugGoal
           }
           const remove = {
-            name: `mug-${mug}`,
+            name: `empty-mug-${mug}`,
             remove: true
           }
           const add = {
