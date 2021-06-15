@@ -15,6 +15,10 @@ class Bossemma extends Interaction {
       'boss-mood': bossMood,
       'boss-selfie': bossSelfie,
       'boss-teabag': bossTeabag,
+      'mug-full': mugFull,
+      'correct-mug': correctMug,
+      'boss-mug': bossMug,
+      mug,
       selected
     } = state
 
@@ -43,6 +47,30 @@ class Bossemma extends Interaction {
       }
       case 'web': {
         return this.points.web
+      }
+      case 'mug': {
+        if (mugFull === 'EMPTY') {
+          if (correctMug) {
+            if (bossMug) {
+              return this.points.whatNow
+            }
+
+            return this.points.whatOnEarth
+          } else {
+            return this.points.whatIsIt
+          }
+        } else {
+          const last = this.points.end.json.length - 1
+          const point = this.points.end.json[last]
+
+          const name = `mug-${mugFull}-${mug}`
+          point.items = [
+            ...point.items,
+            { name, remove: true }
+          ]
+
+          return this.points.end.json
+        }
       }
       case 'teabag': {
         if (teabag) {

@@ -99,8 +99,6 @@ export default class Sidebar {
             item: null
           }))
 
-        console.log('copy test:', copy)
-
         const json = JSON.stringify(copy)
 
         this

@@ -1,0 +1,85 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Sir, I have your coffee."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Ah, good lad! "
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "It wasn't easy, sir."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "It's a cup of coffee, Quade. How hard can it be?"
+  },
+  {
+    "dialogue": "If only he knew."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Boy, what's in this?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Coffee, sir. And I guess hot water."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "[name], I was extremely clear about this. I wanted a cup of coffee with milk and sugar."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Oh."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "..."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "And no hot water?"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "And hot water!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I'm sorry, sir, I–"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "If you can't even manage this, what's the good in having you around?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "My mom says I brighten up the room."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Get out!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "But, sir...–"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Out!"
+  },
+  {
+    "dialogue": "With a sigh, I leave. Emma gives me a sad look as our new boss - well, HER new boss - continues to rail her. "
+  },
+  {
+    "dialogue": "It looks like that'll never be me. If only I'd put sugar into the boss's coffee!"
+  },
+  {
+    "dialogue": "Click anywhere to try again!"
+  },
+  {
+    "scene": "prologue"
+  }
+]

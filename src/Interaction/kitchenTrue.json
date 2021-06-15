@@ -1,0 +1,49 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "The IT Guy fixed the coffee machine for me, so he should be next."
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "That sounds fair...",
+    "images": [
+      {
+        "title": "hallway",
+        "remove": true
+      },
+      {
+        "title": "emma-talk",
+        "remove": true
+      },
+      {
+        "title": "kitchenette"
+      }
+    ],
+    "animations": [
+      {
+        "keys": [
+          "it-resolution-1",
+          "65"
+        ],
+        "duration": "it-resolution-2.png",
+        "key": "itresolution"
+      }
+    ]
+  },
+  {
+    "speakerName": "Free Use Intern will continue in Chapter 2",
+    "dialogue": "The XXX-Files"
+  },
+  {
+    "dialogue": "To show your support, help us, get the next chapter out as quickly as possible, and let Quinn start using his friend, visit patreon.com/pan or subscribestar.adult/pan"
+  },
+  {
+    "dialogue": "Our supporters get previews of upcoming art, early access to new releases, and votes on which content is included in the game."
+  },
+  {
+    "dialogue": "In the meantime, why not try to unlock the best Chapter 1 ending?"
+  },
+  {
+    "scene": "one"
+  }
+]

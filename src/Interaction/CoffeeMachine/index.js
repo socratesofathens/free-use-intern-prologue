@@ -13,7 +13,8 @@ class CoffeeMachine extends Interaction {
     const {
       selected,
       'coffee-machine': coffeeMachine,
-      'mug-full': mugFull
+      'mug-full': mugFull,
+      mug
     } = state
 
     switch (selected) {
@@ -22,11 +23,6 @@ class CoffeeMachine extends Interaction {
           if (mugFull === 'EMPTY') {
             return this.points.mugTrueEmpty
           }
-
-          if (mugFull === 'BEANS') {
-            return this.points.mugTrueBeans
-          }
-
           if (mugFull === 'COFFEE') {
             return this.points.mugTrueCoffee
           }
@@ -35,13 +31,58 @@ class CoffeeMachine extends Interaction {
             case 'EMPTY': {
               return this.points.mugFalseEmpty
             }
-            case 'TEABAG': {
-              return this.points.mugFalseTeabag
-            }
             case 'TEA': {
               return this.points.mugFalseTea
             }
           }
+        }
+        break
+      }
+      case 'coffee': {
+        if (coffeeMachine) {
+          if (mug) {
+            const empty = `empty-mug-${mug}`
+            const add = `coffee-mug-${mug}`
+
+            const last = this.points.coffeeTrueElse.length - 1
+            const point = this.points.coffeeTrueElse[last]
+            point.items = [
+              ...point.items,
+              { name: empty, remove: true },
+              { name: add, hover: 'Use mug of coffee' }
+            ]
+
+            return this.points.coffeeTrueElse
+          } else {
+            return this.points.coffeeTrue0
+          }
+        } else {
+          if (mugFull === 'EMPTY') {
+            return this.points.coffeeFalseEmpty
+          }
+          if (mugFull === 'TEA') {
+            return this.points.coffeeFalseTea
+          }
+        }
+        break
+      }
+      case 'teabag': {
+        if (mug) {
+          const empty = `empty-mug-${mug}`
+          const add = `tea-mug-${mug}`
+
+          const last = this.points.teaMug0.length - 1
+          const point = this.points.teaMug0[last]
+          point.items ??= []
+          point.items = [
+            ...point.items,
+            { name: empty, remove: true },
+            { name: add, hover: 'Use mug of tea' }
+          ]
+
+          return this.points.teaMugElse
+        } else {
+          return this.points.teaMug0
         }
       }
     }

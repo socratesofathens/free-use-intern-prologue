@@ -1,0 +1,23 @@
+[
+  {
+    "speakerName": "Boss",
+    "dialogue": "Okay, Q-bert, that's it! I said you could stay until the end of the day, but you've gone too far. You're fired! Pack up your desk and leave!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "B-but...I don't have a desk."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Pick a desk; it's yours. Then: pack it up and leave!"
+  },
+  {
+    "dialogue": "Crap. It looks like I pushed things too far."
+  },
+  {
+    "dialogue": "Click anywhere to try again!"
+  },
+  {
+    "scene": "prologue"
+  }
+]

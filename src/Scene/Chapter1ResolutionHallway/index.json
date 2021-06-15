@@ -1,0 +1,86 @@
+[
+  {
+    "images": [
+      {
+        "title": "hallway"
+      },
+      {
+        "title": "emma-talk"
+      }
+    ],
+    "speakerName": "Emma",
+    "dialogue": "What a first day, hey?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Uh, yeah. Pretty wild."
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "I just hope that I'm doing a good job."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I mean, the boss seemed pretty satisfied."
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "Do you really think so??"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Uh, yeah. "
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "Phew!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Why did you let him...y'know."
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "What?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Take you."
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "He didn't take me anywhere, Quinn. I've still not had a proper tour!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "No, I mean, why did you let him...y'know, uh. Fuck you."
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "Oh, that? That's just the job."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Huh?"
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "Yeah, you heard him. It's just the Free Use Policy."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "But...you wouldn't normally..."
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "I mean, I don't want to get in trouble on my first day!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "...okay."
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "Speaking of: who's next?"
+  }
+]

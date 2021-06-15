@@ -1,0 +1,65 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Do you like nerds?"
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "Of course I do! You're my best friend."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Not what I meant, Emma."
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "Oh, I'm sorry! I just thought..."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "-sigh- Never mind. Let's go meet the IT guy, I'm sure you'll like him...and he's going to LOVE you."
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "I just want to make a good first impression!",
+    "images": [
+      {
+        "title": "hallway",
+        "remove": true
+      },
+      {
+        "title": "emma-talk",
+        "remove": true
+      },
+      {
+        "title": "kitchenette"
+      }
+    ],
+    "animations": [
+      {
+        "keys": [
+          "it-resolution-1",
+          "65"
+        ],
+        "duration": "it-resolution-2.png",
+        "key": "itresolution"
+      }
+    ]
+  },
+  {
+    "speakerName": "Free Use Intern will continue in Chapter 2",
+    "dialogue": "The XXX-Files"
+  },
+  {
+    "dialogue": "To show your support, help us, get the next chapter out as quickly as possible, and let Quinn start using his friend, visit patreon.com/pan or subscribestar.adult/pan"
+  },
+  {
+    "dialogue": "Our supporters get previews of upcoming art, early access to new releases, and votes on which content is included in the game."
+  },
+  {
+    "dialogue": "In the meantime, why not try to unlock the best Chapter 1 ending?"
+  },
+  {
+    "scene": "one"
+  }
+]

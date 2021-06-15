@@ -1,0 +1,56 @@
+[
+  {
+    "speakerName": "Boss",
+    "dialogue": "Oh, it's you again."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yes, sir! And I've brought you your two favorite things."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "A strong whisky and Tekken 2?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Even better, sir! A cup of coffee and a smile."
+  },
+  {
+    "dialogue": "I give him a huge grin as he sips his coffee."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "[name], did you forget to put milk in this?"
+  },
+  {
+    "dialogue": "Uh-oh."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Y-yes, sir. I mean, I couldn't find any, and...–"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "No! I've had enough of your excuses today. This is the last straw – Quincible, I'm going to have to ask you to leave."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "But sir, I...–"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "No! If I can go the rest of my life without hearing you talk again, I'll die a happy man. Stop talking and get out!"
+  },
+  {
+    "dialogue": "With a sigh, I leave. Emma gives me a sad look as our new boss - well, HER new boss - continues to rail her. "
+  },
+  {
+    "dialogue": "It looks like that'll never be me. If only I'd hassled the boss a little less!"
+  },
+  {
+    "dialogue": "Click anywhere to try again!"
+  },
+  {
+    "scene": "prologue"
+  }
+]

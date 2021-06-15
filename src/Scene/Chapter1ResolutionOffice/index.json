@@ -1,0 +1,75 @@
+[
+  {
+    "images": [
+      {
+        "title": "office"
+      },
+      {
+        "title": "resolution-mug-[#]"
+      }
+    ],
+    "animations": [
+      {
+        "keys": [
+          "bossgroping1",
+          "65"
+        ],
+        "duration": "bossgroping2.png",
+        "key": "bossgroping"
+      }
+    ],
+    "speakerName": "Boss",
+    "dialogue": "Quinn, you've done such a great job today, it's really put me in a splendid mood. Emma, come over here for a grope."
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "Yes, sir."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Ah, there's nothing like the feeling of a young intern's pert breasts while you're drinking a morning cup of tea."
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "Thank you, sir."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Although...I think this would be slightly more pleasant if your bra wasn't in the way. Why don't you take it off, young lady?"
+  },
+  {
+    "speakerName": "Emma",
+    "dialogue": "Yes, sir. Whatever you say, sir."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Fantastic! Now THAT's how you start a morning! You really should try it sometime, Quinn."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I'd love to, sir. How about right now?"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Not at the present, kiddo. I've got another task for you. But first, why don't you take Emma..."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Really??"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "...to whoever gave you this marvellous teabag. I'm sure he'd love a turn with her."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "...yes, sir."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Good lad!"
+  },
+  {
+    "scene": "chapter-1-resolution-best-ending"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Sir, I have your...–"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Damn it, [name], you had one job!! Bring me coffee in my favorite mug. What the hell do you call this??"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Well, sir, I...–"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "No! Forget it. If you can't even do one simple task, it's a waste of time having you around. Go home, Quirrell."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Y-yes, s-sir..."
+  },
+  {
+    "dialogue": "With a sigh, I leave. Emma gives me a sad look as our new boss - well, HER new boss - continues to rail her. "
+  },
+  {
+    "dialogue": "It looks like that'll never be me. If only I'd picked the right mug!"
+  },
+  {
+    "dialogue": "Click anywhere to try again!"
+  },
+  {
+    "scene": "prologue"
+  }
+]

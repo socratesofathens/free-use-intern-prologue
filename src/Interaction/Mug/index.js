@@ -93,10 +93,13 @@ export default class Mug extends Interaction {
             remove: true
           }
           const add = {
-            name: `mug-${this.number}`,
+            name: `empty-mug-${this.number}`,
             hover: 'Use mug'
           }
-          point.items = [remove, add]
+          point.items = [
+            remove,
+            add
+          ]
 
           return replaced
         }

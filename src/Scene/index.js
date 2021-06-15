@@ -110,7 +110,6 @@ class Scene extends Phaser.Scene {
   }
 
   animate = (animation) => {
-    console.log('animation test:', animation)
     this
       .game
       .state
@@ -148,7 +147,6 @@ class Scene extends Phaser.Scene {
   }
 
   create = () => {
-    console.log('create test:')
     this.setBackground({
       color: this.color
     })
@@ -226,9 +224,8 @@ class Scene extends Phaser.Scene {
         .state
         .point = this.save.point
 
-      console.log('this.save test:', this.save)
-
-      this.game.state = JSON.parse(JSON.stringify({ ...this.save }))
+      const string = JSON.stringify({ ...this.save })
+      this.game.state = JSON.parse(string)
     } else {
       this.save = null
     }

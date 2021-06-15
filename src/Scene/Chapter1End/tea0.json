@@ -1,0 +1,58 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Here you go, sir!"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Ah, excellent. Nothing to wake you up like a hot, strong cup of coffee."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Actually, sir, it's...–"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Tea???"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yes, sir. I thought you'd like...–"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Damn it, [name]! You can't just surprise a man like that."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Sorry, sir. I thought you liked tea."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "I do! Love it! But at my age, one's taste buds need some warning before an unexpected beverage is sprung on them. I'm sorry, Queef, but if you're going to be this wild and unpredictable, I'm going to have to ask you to leave."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "But...sir..."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Out, Queef!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Yes, sir."
+  },
+  {
+    "dialogue": "With a sigh, I leave. Emma gives me a sad look as our new boss - well, HER new boss - continues to rail her. "
+  },
+  {
+    "dialogue": "It looks like that'll never be me. If only I'd warned the boss that I was bringing him tea!"
+  },
+  {
+    "dialogue": "Click anywhere to try again!"
+  },
+  {
+    "scene": "prologue"
+  }
+]

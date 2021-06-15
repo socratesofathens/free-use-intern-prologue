@@ -1,0 +1,30 @@
+[
+  {
+    "images": [
+      {
+        "title": "supplycloset"
+      }
+    ],
+    "animations": [
+      {
+        "keys": [
+          "salesman-resolution-3",
+          "salesman-resolution-4.png"
+        ],
+        "duration": 650,
+        "key": "salesmanresolution2"
+      }
+    ],
+    "dialogue": "Congratulations on reaching the best Chapter 1 ending!"
+  },
+  {
+    "speakerName": "Free Use Intern will continue in Chapter 2",
+    "dialogue": "The XXX-Files"
+  },
+  {
+    "dialogue": "To show your support, help us, get the next chapter out as quickly as possible, and let Quinn start using his friend, visit patreon.com/pan or subscribestar.adult/pan"
+  },
+  {
+    "dialogue": "Our supporters get previews of upcoming art, early access to new releases, and votes on which content is included in the game"
+  }
+]

@@ -1,7 +1,11 @@
 [
   {
     "speakerName": "IT Guy",
-    "dialogue": "Suh-weet! I feel better than Daenerys Targaryen on prom night!"
+    "dialogue": "Suh-weet! I feel better than Daenerys Targaryen on prom night!",
+    "items": [{
+      "name": "panties",
+      "remove": true
+    }]
   },
   {
     "speakerName": "Quinn",

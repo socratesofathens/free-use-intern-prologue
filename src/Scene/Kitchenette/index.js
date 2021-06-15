@@ -15,7 +15,29 @@ export default class Kitchenette extends Room {
       'kitchenette',
       'kitchenettesmoke',
       'itguy',
-      'kitchenette-arrow'
+      'kitchenette-arrow',
+      'item-coffee-mug-1',
+      'item-coffee-mug-2',
+      'item-coffee-mug-3',
+      'item-coffee-mug-4',
+      'item-coffee-mug-5',
+      'item-coffee-mug-6',
+      'item-coffee-mug-7',
+      'item-coffee-mug-8',
+      'item-coffee-mug-9',
+      'item-coffee-mug-10',
+      'item-coffee-mug-11',
+      'item-tea-mug-1',
+      'item-tea-mug-2',
+      'item-tea-mug-3',
+      'item-tea-mug-4',
+      'item-tea-mug-5',
+      'item-tea-mug-6',
+      'item-tea-mug-7',
+      'item-tea-mug-8',
+      'item-tea-mug-9',
+      'item-tea-mug-10',
+      'item-tea-mug-11'
     ])
 
     this.contrast = true

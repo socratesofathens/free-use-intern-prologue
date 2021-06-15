@@ -1,0 +1,62 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Sir, I have your tea."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Excellent! You know, I didn't even realize I wanted tea until you brought me that teabag. Great initiative!"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Here you go, sir."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "-sips- "
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "..."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "What the hell is this!?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Your tea, sir."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "You put SUGAR in HOT TEA? Quincible, do you think I'm some kind of a savage??"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "No sir, I–"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "I'm sorry, [name], but this just won't do. I think you should go home early today."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "But...sir...you said...–"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "I said good day!"
+  },
+  {
+    "dialogue": "With a sigh, I leave. Emma gives me a sad look as our new boss - well, HER new boss - continues to rail her. "
+  },
+  {
+    "dialogue": "It looks like that'll never be me. If only I'd remembered he didn't like sugar in his tea!"
+  },
+  {
+    "dialogue": "Click anywhere to try again!"
+  },
+  {
+    "scene": "prologue"
+  }
+]

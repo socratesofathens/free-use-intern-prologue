@@ -1,0 +1,50 @@
+[
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Your coffee, sir!"
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Ah, excellent. Nothing like a cup of hot joe to wake one up in the morning! Well, except an enthusiastic intern."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "Thank you, sir."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Not you, [name]."
+  },
+  {
+    "dialogue": "I watch with anticipation as he takes a sip."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Excellent brew! Except...no milk?"
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I couldn't find any, sir."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Hmmf! Well, that's okay. For your first attempt. But before you leave today, I'd like a mug of coffee WITH milk."
+  },
+  {
+    "speakerName": "Quinn",
+    "dialogue": "I'll see what I can do, sir."
+  },
+  {
+    "speakerName": "Boss",
+    "dialogue": "Good lad! But this one is perfect for me to...for me to...ah, that's the spot!"
+  },
+  {
+    "dialogue": "I watch as the boss enthusiastically finishes inside Emma, sipping his coffee all the while."
+  },
+  {
+    "dialogue": "This is the weirdest job I've ever had."
+  },
+  {
+    "scene": "chapter-1-resolution-office"
+  }
+]
