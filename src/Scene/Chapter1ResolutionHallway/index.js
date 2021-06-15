@@ -16,6 +16,8 @@ class Chapter1ResolutionHallway extends Room {
       'salesman-resolution-1',
       'salesman-resolution-2'
     ])
+
+    this.contrast = true
   }
 
   setup = () => {
@@ -28,6 +30,27 @@ class Chapter1ResolutionHallway extends Room {
     })
 
     this.saves = json
+
+    this.zones = [
+      {
+        name: 'office-door-1',
+        left: { x: 1792, y: 699 },
+        right: { x: 2065, y: 1069 },
+        hover: 'The Boss'
+      },
+      {
+        name: 'kitchenette-door-1',
+        left: { x: 0, y: 0 },
+        right: { x: 922, y: 1850 },
+        hover: 'The IT Guy'
+      },
+      {
+        name: 'supply-closet-door-1',
+        left: { x: 2219, y: 86 },
+        right: { x: 2410, y: 1499 },
+        hover: 'The Salesman'
+      }
+    ]
 
     super.setup()
   }

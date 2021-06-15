@@ -23,13 +23,13 @@ export default class Chapter1End extends Room {
     if (correctMug) {
       if (mugFull === 'COFFEE') {
         if (sugarMug) {
-          this.saves = jsons.coffeeUnsugar
-        } else {
           if (mood <= 4) {
             this.saves = jsons.coffeeSugar0
           } else {
             this.saves = jsons.coffeeSugar5
           }
+        } else {
+          this.saves = jsons.coffeeUnsugar
         }
       }
       if (mugFull === 'TEA') {

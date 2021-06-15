@@ -1,46 +1,13 @@
 [
   {
     "images": [
+      { "title": "office" },
       {
-        "title": "office"
-      }
-    ],
-    "animations": [
-      {
-        "keys": [
-          "bossgroping1",
-          "bossgroping2"
-        ],
-        "duration": "650",
-        "key": "bossgroping"
+        "title": "boss"
       }
     ],
     "speakerName": "Boss",
-    "dialogue": "Quinn, you've done such a great job today, it's really put me in a splendid mood. Emma, come over here for a grope."
-  },
-  {
-    "speakerName": "Emma",
-    "dialogue": "Yes, sir."
-  },
-  {
-    "speakerName": "Boss",
-    "dialogue": "Ah, there's nothing like the feeling of a young intern's pert breasts while you're drinking a morning cup of tea."
-  },
-  {
-    "speakerName": "Emma",
-    "dialogue": "Thank you, sir."
-  },
-  {
-    "speakerName": "Boss",
-    "dialogue": "Although...I think this would be slightly more pleasant if your bra wasn't in the way. Why don't you take it off, young lady?"
-  },
-  {
-    "speakerName": "Emma",
-    "dialogue": "Yes, sir. Whatever you say, sir."
-  },
-  {
-    "speakerName": "Boss",
-    "dialogue": "Fantastic! Now THAT's how you start a morning! You really should try it sometime, Quinn."
+    "dialogue": "Now THAT's how you start a morning! You really should try it sometime, Quincy."
   },
   {
     "speakerName": "Quinn",
@@ -56,7 +23,7 @@
   },
   {
     "speakerName": "Boss",
-    "dialogue": "...to whoever gave you this marvellous teabag. I'm sure he'd love a turn with her."
+    "dialogue": "...to one of the other men in the office. I'm sure they'd love a turn with her."
   },
   {
     "speakerName": "Quinn",
@@ -67,6 +34,6 @@
     "dialogue": "Good lad!"
   },
   {
-    "scene": "chapter-1-resolution-best-ending"
+    "scene": "chapter-1-resolution-hallway"
   }
 ]

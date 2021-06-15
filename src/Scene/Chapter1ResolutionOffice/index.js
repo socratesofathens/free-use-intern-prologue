@@ -19,6 +19,8 @@ class Chapter1ResolutionOffice extends Room {
       'mug-10',
       'mug-11'
     ])
+
+    this.contrast = true
   }
 
   setup = () => {
