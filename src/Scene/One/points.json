@@ -14,11 +14,26 @@
       "coffee-machine": false,
       "sugar-mug": false,
       "panties": "0",
-      "resolution": "0"
+      "resolution": "0",
+      "coffee-got": 0
     },
+    "item": {
+      "name": "phone",
+      "hover": "Use phone"
+    }, 
     "fullscreen": {
       "name": "chapter1"
-    }
+    },
+    "photos": [
+      {
+        "name": "Selfie",
+        "hover": "Select selfie"
+      },
+      {
+        "name": "Emma",
+        "hover": "Select Emma"
+      }
+    ]
   },
   {
     "scene": "office"

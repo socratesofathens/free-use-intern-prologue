@@ -16,11 +16,7 @@ class Introduction extends Room {
   setup = () => {
     this.saves = [
       {
-        dialogue: 'So here\'s the thing.',
-        photo: {
-          name: 'Selfie',
-          hover: 'Select selfie'
-        }
+        dialogue: 'So here\'s the thing.'
       },
       {
         dialogue: 'Emma has been my best friend for as long as I can remember. We\'ve known each other our whole lives - she\'s the literal girl next door, and the kindest person I\'ve ever met. If you poured sugar and honey into a can of coke, Emma would still be sweeter.'

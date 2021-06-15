@@ -290,6 +290,7 @@ class Room extends Scene {
     const name = '[name]'
     const names = [
       'Quinn',
+      'Quaser',
       'Quib',
       'Queasy',
       'Quesadilla',

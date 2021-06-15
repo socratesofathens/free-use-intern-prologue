@@ -1,69 +1,21 @@
 [
   {
-    "speakerName": "Quinn",
-    "dialogue": "Actually, there is something you can help me with. I need to get the boss a coffee..."
-  },
-  {
     "speakerName": "Salesman",
-    "dialogue": "Pah! Coffee. Awful stuff. No, I have something far better."
+    "dialogue": "Jumping Jehoshaphat! What a beautiful sight. Thank you kindly for sharing this with me, young Quinn. Is there anything I can do for you in return?"
   },
   {
     "speakerName": "Quinn",
-    "dialogue": "Really? Can I have some?"
+    "dialogue": "Do you mind grabbing that coffee for me? I can't reach it."
   },
   {
     "speakerName": "Salesman",
-    "dialogue": "Indubitably, good man! On one condition."
-  },
-  {
-    "speakerName": "Quinn",
-    "dialogue": "What is it?"
-  },
-  {
-    "speakerName": "Salesman",
-    "dialogue": "I must confess to a rather shameful predilection. Don't be a pill about it:"
-  },
-  {
-    "speakerName": "Quinn",
-    "dialogue": "I promise, I won't."
-  },
-  {
-    "speakerName": "Salesman",
-    "dialogue": "I rather consider myself a collector of women's undergarments."
-  },
-  {
-    "speakerName": "Quinn",
-    "dialogue": "You mean, like...bras?"
-  },
-  {
-    "speakerName": "Salesman",
-    "dialogue": "Well, yes, but I was more thinking of...well, the unmentionables. A woman's pretties. Her knickers!"
-  },
-  {
-    "speakerName": "Quinn",
-    "dialogue": "You mean panties?"
-  },
-  {
-    "speakerName": "Salesman",
-    "dialogue": "That's the ticket!"
-  },
-  {
-    "speakerName": "Quinn",
-    "dialogue": "And if I get you Emma's panties, you'll give me something...better than coffee."
-  },
-  {
-    "speakerName": "Salesman",
-    "dialogue": "Quite right!"
-  },
-  {
-    "speakerName": "Quinn",
-    "dialogue": "I'll see what I can do."
-  },
-  {
-    "speakerName": "Salesman",
-    "dialogue": "Good chap. Run along, now!",
+    "dialogue": "By gum, it would be an honor! Thanks to you, I'll be in fine fettle for the rest of the day.",
+    "item": {
+      "name": "icon-coffee",
+      "hover": "Use icon-coffee"
+    },
     "state": {
-      "salesman": "5"
+      "coffee-got": "1"
     }
   }
 ]

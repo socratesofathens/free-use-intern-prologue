@@ -7,6 +7,8 @@ class Bossemma extends Interaction {
     super({ scene, name: 'bossemma' })
 
     this.points = jsons
+    this.points.bossMood5 = this.setup(this.points.bossMood5)
+    this.points.bossMood10 = this.setup(this.points.bossMood10)
   }
 
   select (state) {
@@ -22,8 +24,14 @@ class Bossemma extends Interaction {
       selected
     } = state
 
+    const mood = parseInt(bossMood)
+    if (mood >= 10) {
+      return this.points.bossMood10
+    }
+
     const selfie = parseInt(bossSelfie)
     const teabag = parseInt(bossTeabag)
+    const bossM = parseInt(bossMug)
 
     switch (selected) {
       case 'camera': {
@@ -67,7 +75,7 @@ class Bossemma extends Interaction {
     if (mugSelected) {
       if (mugFull === 'EMPTY') {
         if (correctMug) {
-          if (bossMug) {
+          if (bossM) {
             return this.points.whatNow
           }
 
@@ -89,7 +97,6 @@ class Bossemma extends Interaction {
     }
 
     const chat = parseInt(bossChat)
-    const mood = parseInt(bossMood)
 
     if (chat === 0) {
       return this.points.bossChat0

@@ -37,9 +37,32 @@ class Prologue extends Room {
       'phone',
       'pic-emma'
     ])
+
+    this
+      .sprites
+      .forEach(sprite => sprite
+        .destroy()
+      )
+
+    this.interaction = null
   }
 
   setup = () => {
+    this.game.state.loaded = true
+    this
+      .game
+      .state
+      .images
+      .forEach(image => {
+        image.figure.destroy()
+      })
+    this.game.state.scene = null
+    this
+      .game
+      .state = JSON.parse(
+        JSON.stringify({ ...this.initial })
+      )
+
     this.emma = new Emma({
       scene: this
     })
@@ -84,6 +107,10 @@ class Prologue extends Room {
           intercom: 0,
           take: false,
           emma: 0
+        },
+        photo: {
+          name: 'Selfie',
+          hover: 'Select selfie'
         }
       },
       { dialogue: ' ' }

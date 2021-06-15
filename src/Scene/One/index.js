@@ -9,9 +9,32 @@ class One extends Room {
     this.loadPngs([
       'chapter1'
     ])
+
+    this
+      .sprites
+      .forEach(sprite => sprite
+        .destroy()
+      )
+
+    this.interaction = null
   }
 
   setup = () => {
+    this.game.state.loaded = true
+    this
+      .game
+      .state
+      .images
+      .forEach(image => {
+        image.figure.destroy()
+      })
+    this.game.state.scene = null
+    this
+      .game
+      .state = JSON.parse(
+        JSON.stringify({ ...this.initial })
+      )
+
     this.saves = points
 
     const random = Math.random()

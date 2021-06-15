@@ -117,7 +117,7 @@ class Scene extends Phaser.Scene {
       .push(animation)
 
     const {
-      key, duration, keys
+      key, duration, keys, depth, fullscreen
     } = animation
 
     const parsed = parseInt(duration)
@@ -141,9 +141,15 @@ class Scene extends Phaser.Scene {
     sprite.play(key)
     this.sprites.push(sprite)
 
-    if (animation.fullscreen) {
+    if (depth) {
+      sprite.setDepth(depth)
+    }
+
+    if (fullscreen) {
       this.fullscreen = sprite
-      sprite.setDisplaySize(GAME_SIZE.width, GAME_SIZE.height)
+      sprite.setDisplaySize(
+        GAME_SIZE.width, GAME_SIZE.height
+      )
       sprite.setDepth(2)
     }
   }
@@ -576,14 +582,14 @@ class Scene extends Phaser.Scene {
       .figures
       .forEach(figure => figure.update())
 
-    const pageDown = this
-      .input
-      .keyboard
-      .addKey('PAGE_DOWN')
+    // const pageDown = this
+    //   .input
+    //   .keyboard
+    //   .addKey('PAGE_DOWN')
 
-    if (pageDown.isDown || this.auto) {
-      this.advance()
-    }
+    // if (pageDown.isDown || this.auto) {
+    //   this.advance()
+    // }
   }
 
   use (/* name */) {}

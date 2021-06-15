@@ -26,6 +26,10 @@ class ItGuy extends Interaction {
         return this.points.selfie
       }
       case 'emma': {
+        if (it >= 5) {
+          return this.points.emma5
+        }
+
         if (it) {
           return this.points.emma1
         }
@@ -77,7 +81,8 @@ class ItGuy extends Interaction {
       this.points.itGuy2,
       this.points.itGuy3,
       this.points.itGuy4,
-      this.points.itGuy5
+      this.points.itGuy5,
+      this.points.itGuy6
     ]
     const index = indexes[it]
 

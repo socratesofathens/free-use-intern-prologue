@@ -12,10 +12,12 @@ export default class Salesman extends Interaction {
   select (state) {
     const {
       selected,
-      salesman
+      salesman,
+      'coffee-got': coffeeGot
     } = state
 
     const sales = parseInt(salesman)
+    const got = parseInt(coffeeGot)
 
     switch (selected) {
       case 'camera': {
@@ -85,11 +87,11 @@ export default class Salesman extends Interaction {
     }
 
     if (sales === 4) {
-      return this.points.salesman4
-    }
-
-    if (sales === 5) {
-      return this.points.salesman5
+      if (got) {
+        return this.points.salesman4
+      } else {
+        return this.points.salesman5
+      }
     }
 
     return this.points.salesman0

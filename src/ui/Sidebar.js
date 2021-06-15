@@ -73,93 +73,93 @@ export default class Sidebar {
   }
 
   addMenu () {
-    const y = upY(0.1144540909)
+    // const y = upY(0.1144540909)
 
-    this.addButton({
-      content: 'Save',
-      position: { x: this.LEFT, y },
-      origin: { x: 0, y: 0 },
-      action: (pointer, x, y, event) => {
-        event.stopPropagation()
+    // this.addButton({
+    //   content: 'Save',
+    //   position: { x: this.LEFT, y },
+    //   origin: { x: 0, y: 0 },
+    //   action: (pointer, x, y, event) => {
+    //     event.stopPropagation()
 
-        const { state } = this.scene.game
+    //     const { state } = this.scene.game
 
-        const copy = { ...state }
-        copy.images = copy
-          .images
-          .map(image => ({
-            ...image,
-            figure: null,
-            photo: null
-          }))
-        copy.items = copy
-          .items
-          .map(item => ({
-            ...item,
-            item: null
-          }))
+    //     const copy = { ...state }
+    //     copy.images = copy
+    //       .images
+    //       .map(image => ({
+    //         ...image,
+    //         figure: null,
+    //         photo: null
+    //       }))
+    //     copy.items = copy
+    //       .items
+    //       .map(item => ({
+    //         ...item,
+    //         item: null
+    //       }))
 
-        const json = JSON.stringify(copy)
+    //     const json = JSON.stringify(copy)
 
-        this
-          .scene
-          .registry
-          .set('state', json)
-      }
-    })
+    //     this
+    //       .scene
+    //       .registry
+    //       .set('state', json)
+    //   }
+    // })
 
-    const loader = this.addButton({
-      content: 'Load',
-      position: { x: this.RIGHT, y },
-      origin: { x: 1, y: 0 },
-      action: (pointer, x, y, event) => {
-        event.stopPropagation()
+    // const loader = this.addButton({
+    //   content: 'Load',
+    //   position: { x: this.RIGHT, y },
+    //   origin: { x: 1, y: 0 },
+    //   action: (pointer, x, y, event) => {
+    //     event.stopPropagation()
 
-        const json = this
-          .scene
-          .registry
-          .get('state')
+    //     const json = this
+    //       .scene
+    //       .registry
+    //       .get('state')
 
-        if (!json) return json
+    //     if (!json) return json
 
-        const state = JSON.parse(json)
-        state.loaded = true
+    //     const state = JSON.parse(json)
+    //     state.loaded = true
 
-        this.scene.phone.photos.destroy()
-        this
-          .scene
-          .game
-          .state
-          .images
-          .forEach(image => {
-            image.figure.destroy()
-          })
-        this
-          .scene
-          .sprites
-          .forEach(sprite => sprite
-            .destroy()
-          )
+    //     this.scene.phone.photos.destroy()
+    //     this
+    //       .scene
+    //       .game
+    //       .state
+    //       .images
+    //       .forEach(image => {
+    //         image.figure.destroy()
+    //       })
+    //     this
+    //       .scene
+    //       .sprites
+    //       .forEach(sprite => sprite
+    //         .destroy()
+    //       )
 
-        const { scene } = state
-        state.scene = null
+    //     const { scene } = state
+    //     state.scene = null
 
-        this
-          .scene
-          .game
-          .state = JSON.parse(JSON.stringify({ ...this.initial }))
+    //     this
+    //       .scene
+    //       .game
+    //       .state = JSON.parse(JSON.stringify({ ...this.initial }))
 
-        this.scene.interaction = null
+    //     this.scene.interaction = null
 
-        this.scene.scene.start(
-          scene, state
-        )
-      }
-    })
+    //     this.scene.scene.start(
+    //       scene, state
+    //     )
+    //   }
+    // })
 
-    if (this.scene.game.state.loaded) {
-      this.flash(loader)
-    }
+    // if (this.scene.game.state.loaded) {
+    //   this.flash(loader)
+    // }
 
     this.panther = this.addPanther()
   }
