@@ -24,9 +24,14 @@ class Chapter1ResolutionOffice extends Room {
   }
 
   setup = () => {
-    const { mug } = this.game.state
+    const { mug, 'mug-full': mugFull } = this.game.state
+
     const name = `mug-${mug}`
     json[0].images.push({ name })
+
+    const lower = mugFull.toLowerCase()
+    const item = `${lower}-mug-${mug}`
+    json[0].items = [{ name: item, remove: true }]
 
     this.saves = json
 

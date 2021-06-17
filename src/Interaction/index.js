@@ -40,9 +40,8 @@ export default class Interaction {
       this.addImages(first, this.first)
     }
 
+    const last = points[points.length - 1]
     if (this.last) {
-      const last = points[points.length - 1]
-
       if (!last.dialogue) {
         last.dialogue = ' '
         last.interaction = 0
@@ -51,6 +50,10 @@ export default class Interaction {
       this.addImages(last, this.last)
     }
 
-    return [...points, { dialogue: ' ', last: true }]
+    if (last.scene) {
+      return points
+    } else {
+      return [...points, { dialogue: ' ', last: true }]
+    }
   }
 }
