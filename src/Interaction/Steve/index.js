@@ -23,9 +23,6 @@ class Steve extends Interaction {
     const last = [
       {
         dialogue: 'It rings out. Huh. For some reason, Steve isn\'t answering. I should try him again later.'
-      },
-      {
-        dialogue: ' '
       }
     ]
     const points = indexed || last

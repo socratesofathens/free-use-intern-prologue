@@ -112,8 +112,7 @@ class Prologue extends Room {
           name: 'Selfie',
           hover: 'Select selfie'
         }
-      },
-      { dialogue: ' ' }
+      }
     ]
 
     super.setup()

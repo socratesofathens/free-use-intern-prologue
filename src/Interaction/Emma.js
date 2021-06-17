@@ -28,7 +28,7 @@ class Emma extends Interaction {
       name: 'emma'
     })
 
-    const base = this.setup([
+    const base = [
       {
         speakerName: 'Quinn',
         dialogue: "Man, can you believe we're here?"
@@ -49,7 +49,7 @@ class Emma extends Interaction {
         speakerName: 'Quinn',
         dialogue: 'Let me figure out how to get in.'
       }
-    ])
+    ]
 
     function addEmma (state) {
       state.emma = state.emma + 1
@@ -57,7 +57,7 @@ class Emma extends Interaction {
       return state
     }
 
-    const emma1 = this.setup([
+    const emma1 = [
       {
         speakerName: 'Quinn',
         dialogue: 'Emma, I\'m not having any luck. Please, can you just talk to them?'
@@ -75,9 +75,9 @@ class Emma extends Interaction {
         dialogue: 'I\'m sorry, Quinn.'
       },
       { state: addEmma }
-    ])
+    ]
 
-    const emma5 = this.setup([
+    const emma5 = [
       {
         speakerName: 'Quinn',
         dialogue: 'Emma, I\'m not having any luck. Please, can you just talk to them?'
@@ -95,9 +95,9 @@ class Emma extends Interaction {
         dialogue: 'Did you try using Cloo? I find it helps me out whenever I get stuck.'
       },
       { state: addEmma }
-    ])
+    ]
 
-    const emma6 = this.setup([
+    const emma6 = [
       {
         speakerName: 'Quinn',
         dialogue: 'Emma, I\'m not having any luck. Please, can you just talk to them?'
@@ -181,9 +181,9 @@ class Emma extends Interaction {
       {
         scene: 'prologue-resolution'
       }
-    ])
+    ]
 
-    const intercom = this.setup([
+    const intercom = [
       {
         speakerName: 'Quinn',
         dialogue: 'Okay, slight problem...'
@@ -232,9 +232,9 @@ class Emma extends Interaction {
         dialogue: 'The things we do for hot best friends.'
       },
       { state: { emma: 1 } }
-    ])
+    ]
 
-    const untaken = this.setup([
+    const untaken = [
       {
         images: [
           { name: 'pic-emma', depth: 2 }
@@ -256,9 +256,9 @@ class Emma extends Interaction {
         }]
       },
       { state: { taken: true } }
-    ])
+    ]
 
-    const taken = this.setup([
+    const taken = [
       {
         dialogue: "Noooo! Seriously, I'm already freaking out enough today. Please?",
         speakerName: 'Emma'
@@ -266,24 +266,24 @@ class Emma extends Interaction {
       {
         dialogue: "I put my phone away. I just can't say no to that face. To those lips..."
       }
-    ])
+    ]
 
-    const selfie = this.setup([{
+    const selfie = [{
       speakerName: 'Emma',
       dialogue: "Oh hey, that's a great pic of you! You're such a cutie - you're going to make some woman very happy someday."
-    }])
+    }]
 
-    const emma = this.setup([{
+    const emma = [{
       speakerName: 'Emma',
       dialogue: 'Nooooo...you should delete that! I look so gross.'
-    }])
+    }]
 
-    const email = this.setup([{
+    const email = [{
       speakerName: 'Emma',
       dialogue: "Looks like this is definitely the right place. I'm so nervous!"
-    }])
+    }]
 
-    const web = this.setup([
+    const web = [
       {
         dialogue: 'I look Emma up on Cloo, as I\'ve done so many times before. One of her ex-boyfriends leaked a photo he took of her studying in her bedroom. I check all the time, in the hope he’ll share more.'
       },
@@ -291,9 +291,8 @@ class Emma extends Interaction {
         fullscreen: {
           name: 'emma-study'
         }
-      },
-      { dialogue: ' ' }
-    ])
+      }
+    ]
 
     this.points = {
       base,

@@ -27,7 +27,7 @@ class Intercom extends Interaction {
       name: 'intercom'
     })
 
-    const base = this.setup([
+    const base = [
       {
         speakerName: 'Quinn',
         dialogue: 'Uh, hello?'
@@ -121,9 +121,9 @@ class Intercom extends Interaction {
         dialogue: 'No problem.'
       },
       { state: { intercom: 1 } }
-    ])
+    ]
 
-    const intercom1 = this.setup([
+    const intercom1 = [
       {
         speakerName: 'Quinn',
         dialogue: 'Uh, hi.'
@@ -148,30 +148,30 @@ class Intercom extends Interaction {
         speakerName: 'Intercom',
         dialogue: 'Unless you can prove that you\'re either a chick or have one with you, you ain\'t coming up.'
       }
-    ])
+    ]
 
-    const camera = this.setup([
+    const camera = [
       {
         dialogue: 'Maybe if I take a photo of the intercom, I can show it TO the intercom, and convince it that I\'m also an intercom. It\'s sure to let me in then, right?'
       },
       {
         dialogue: 'Wait, no. That\'s stupid. Never mind.'
       }
-    ])
+    ]
 
-    const selfie = this.setup([
+    const selfie = [
       {
         dialogue: "I don't need to show the intercom a photo of myself. It can see me through the camera."
       }
-    ])
+    ]
 
-    const email0 = this.setup([
+    const email0 = [
       {
         dialogue: "You hold the email up to the camera, so they can see that you're meant to be here, but the doors don't open. Maybe you should try using the intercom."
       }
-    ])
+    ]
 
-    const email1 = this.setup([
+    const email1 = [
       {
         speakerName: 'Quinn',
         dialogue: "See! I'm meant to be here. I have the email and everything."
@@ -197,9 +197,9 @@ class Intercom extends Interaction {
         dialogue: "Well, I ain't letting you in. Not until you prove to me that you've got a chick with you."
       },
       { state: { intercom: 2 } }
-    ])
+    ]
 
-    const email2 = this.setup([
+    const email2 = [
       {
         speakerName: 'Quinn',
         dialogue: 'Look, there are two options.'
@@ -251,15 +251,15 @@ class Intercom extends Interaction {
       {
         scene: 'prologue-resolution'
       }
-    ])
+    ]
 
-    const web0 = this.setup([
+    const web0 = [
       {
         dialogue: "I quickly find the intercom's serial number and search for it on Cloo. It's an LT22-151212 model. Downloading a PDF version of the manual shows that it's fairly easy to use. All I have to do is press the button. Y'know, much like every other intercom ever."
       }
-    ])
+    ]
 
-    const web1 = this.setup([
+    const web1 = [
       {
         dialogue: 'I decide to see if Cloo can help me work out what to do next. "How to get past idiot security guard" doesn\'t yield any results.'
       },
@@ -269,15 +269,15 @@ class Intercom extends Interaction {
       {
         dialogue: "I don't actually need to get Emma to the intercom...I just have to trick the camera into thinking that she's there."
       }
-    ])
+    ]
 
-    const emma0 = this.setup([
+    const emma0 = [
       {
         dialogue: 'Maybe I should try talking to it first.'
       }
-    ])
+    ]
 
-    const emma1 = this.setup([
+    const emma1 = [
       {
         dialogue: "I hold up the photo of Emma to the intercom, trying to fool it into thinking she's standing in front of the camera."
       },
@@ -318,7 +318,7 @@ class Intercom extends Interaction {
       {
         scene: 'prologue-resolution'
       }
-    ])
+    ]
 
     this.points = {
       base,

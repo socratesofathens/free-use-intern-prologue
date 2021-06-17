@@ -14,7 +14,7 @@ class Scene extends Phaser.Scene {
     super(name)
 
     this.auto = false
-    this.debug = false
+    this.debug = true
     this.assets = []
     this.name = name
     this.color = color
@@ -165,11 +165,13 @@ class Scene extends Phaser.Scene {
       .addKey('SPACE')
     space.on('down', this.advance, this)
 
-    const pageUp = this.input.keyboard.addKey('PAGE_UP')
-    const auto = () => {
-      this.auto = !this.auto
+    if (this.debug) {
+      const pageUp = this.input.keyboard.addKey('PAGE_UP')
+      const auto = () => {
+        this.auto = !this.auto
+      }
+      pageUp.on('down', auto, this)
     }
-    pageUp.on('down', auto, this)
 
     this
       .input
@@ -582,14 +584,16 @@ class Scene extends Phaser.Scene {
       .figures
       .forEach(figure => figure.update())
 
-    // const pageDown = this
-    //   .input
-    //   .keyboard
-    //   .addKey('PAGE_DOWN')
+    if (this.debug) {
+      const pageDown = this
+        .input
+        .keyboard
+        .addKey('PAGE_DOWN')
 
-    // if (pageDown.isDown || this.auto) {
-    //   this.advance()
-    // }
+      if (pageDown.isDown || this.auto) {
+        this.advance()
+      }
+    }
   }
 
   use (/* name */) {}

@@ -27,7 +27,9 @@ export default class Interaction {
 
     const selected = this.select(state) || []
 
-    const selection = selected[state.point]
+    const set = this.setup(selected)
+
+    const selection = set[state.point]
 
     return selection
   }
@@ -47,9 +49,8 @@ export default class Interaction {
       }
 
       this.addImages(last, this.last)
-      last.last = true
     }
 
-    return points
+    return [...points, { dialogue: ' ', last: true }]
   }
 }

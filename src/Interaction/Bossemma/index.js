@@ -7,8 +7,6 @@ class Bossemma extends Interaction {
     super({ scene, name: 'bossemma' })
 
     this.points = jsons
-    this.points.bossMood5 = this.setup(this.points.bossMood5)
-    this.points.bossMood10 = this.setup(this.points.bossMood10)
   }
 
   select (state) {
