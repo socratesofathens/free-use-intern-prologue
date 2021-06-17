@@ -556,7 +556,9 @@ class Scene extends Phaser.Scene {
   setup () {
     this
       .game
-      .state ??= JSON.parse(JSON.stringify({ ...this.initial }))
+      .state ??= JSON.parse(
+        JSON.stringify({ ...this.initial })
+      )
     this.game.state.images = []
 
     if (this.save) {
@@ -567,6 +569,7 @@ class Scene extends Phaser.Scene {
 
       this.loadState()
 
+      this.interaction = 0
       this.read()
     }
   }

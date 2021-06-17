@@ -31,7 +31,7 @@ class Chapter1ResolutionOfficeGroping extends Room {
     const name = `resolution-mug-${mug}`
     json[0].images.push({ name })
 
-    const item = `team-mug-${mug}`
+    const item = `tea-mug-${mug}`
     json[0].items = [{ name: item, remove: true }]
 
     this.saves = json

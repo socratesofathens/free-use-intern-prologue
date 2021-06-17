@@ -35,12 +35,12 @@ class One extends Room {
         JSON.stringify({ ...this.initial })
       )
 
-    this.saves = points
-
     const random = Math.random()
     const mugGoal = Math.ceil(random * 9)
 
     this.game.state['mug-goal'] = mugGoal
+
+    this.saves = points
 
     super.setup()
   }
