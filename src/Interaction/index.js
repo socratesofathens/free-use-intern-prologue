@@ -35,6 +35,8 @@ export default class Interaction {
   }
 
   setup = (points) => {
+    if (!points.length) return points
+
     if (this.first) {
       const [first] = points
       this.addImages(first, this.first)
